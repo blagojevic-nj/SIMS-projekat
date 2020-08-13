@@ -7,50 +7,16 @@ public class RegistrovaniKorisnik extends Korisnik {
 	private Bedz bedz;
 	private int brojPratilaca;
 	private float prosecnaOcena;
-	private ArrayList<RegistrovaniKorisnik> praceni;
-	private ArrayList<Uredjaj> uredjaji;
-	private ArrayList<Kategorija> kategorije;
-	private ArrayList<Proizvod> proizvodi;
-	private ArrayList<Recept> recepti, sacuvani;
-	private ArrayList<Ocena> ocene;
-	private ArrayList<Recenzija> recenzije;
+	private ArrayList<String> praceni;
+	private ArrayList<Integer> uredjaji;
+	private ArrayList<Integer> kategorije;
+	private ArrayList<Integer> proizvodi;
+	private ArrayList<Integer> recepti;
+	private ArrayList<Integer> sacuvaniRecepti;
 	
-	
-	public ArrayList<RegistrovaniKorisnik> getPraceni() {
-		return praceni;
-	}
-
-	public ArrayList<Uredjaj> getUredjaji() {
-		return uredjaji;
-	}
-
-	public ArrayList<Kategorija> getKategorije() {
-		return kategorije;
-	}
-
-	public ArrayList<Proizvod> getProizvodi() {
-		return proizvodi;
-	}
-
-	public ArrayList<Recept> getRecepti() {
-		return recepti;
-	}
-
-	public ArrayList<Recept> getSacuvani() {
-		return sacuvani;
-	}
-
-	public ArrayList<Ocena> getOcene() {
-		return ocene;
-	}
-
-	public ArrayList<Recenzija> getRecenzije() {
-		return recenzije;
-	}
-
-	public RegistrovaniKorisnik(int id, String ime, String prezime, String email, Nalog nalog, boolean privilegovani,
-			Bedz bedz, int brojPratilaca, float prosecnaOcena) {
-		super(id, ime, prezime, email, nalog);
+	public RegistrovaniKorisnik(int id, String ime, String prezime, String email, String korisnickoIme,
+			boolean privilegovani, Bedz bedz, int brojPratilaca, float prosecnaOcena) {
+		super(id, ime, prezime, email, korisnickoIme);
 		this.privilegovani = privilegovani;
 		this.bedz = bedz;
 		this.brojPratilaca = brojPratilaca;
@@ -81,6 +47,40 @@ public class RegistrovaniKorisnik extends Korisnik {
 	public void setProsecnaOcena(float prosecnaOcena) {
 		this.prosecnaOcena = prosecnaOcena;
 	}
-	
-	
+	public ArrayList<String> getPraceni() {
+		return praceni;
+	}
+	public void setPraceni(ArrayList<String> praceni) {
+		this.praceni = praceni;
+	}
+	public ArrayList<Integer> getUredjaji() {
+		return uredjaji;
+	}
+	public void setUredjaji(ArrayList<Integer> uredjaji) {
+		this.uredjaji = uredjaji;
+	}
+	public ArrayList<Integer> getKategorije() {
+		return kategorije;
+	}
+	public void setKategorije(ArrayList<Integer> kategorije) {
+		this.kategorije = kategorije;
+	}
+	public ArrayList<Integer> getProizvodi() {
+		return proizvodi;
+	}
+	public void setProizvodi(ArrayList<Integer> proizvodi) {
+		this.proizvodi = proizvodi;
+	}
+	public ArrayList<Integer> getRecepti() {
+		return recepti;
+	}
+	public void setRecepti(ArrayList<Integer> recepti) {
+		this.recepti = recepti;
+	}
+	public ArrayList<Integer> getSacuvaniRecepti() {
+		return sacuvaniRecepti;
+	}
+	public void setSacuvaniRecepti(ArrayList<Integer> sacuvaniRecepti) {
+		this.sacuvaniRecepti = sacuvaniRecepti;
+	}
 }

@@ -1,46 +1,26 @@
 package model;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Recept {
-	private int id, vremePripreme;
+	private int id;
 	private String naziv, opis, koraci, youtubeLink;
 	private float ocena;
 	private Tezina tezina;
+	private int vremePripreme;
 	private boolean uredjen;
-	private LocalDateTime datum;
+	private LocalDate datum;
 	private ArrayList<UredjajUReceptu> uredjaji;
 	private ArrayList<Sastojak> sastojci;
-	private ArrayList<Kategorija> kategorije;
-	private RegistrovaniKorisnik autor;
-	
-	public void setAutor(RegistrovaniKorisnik autor) {
-		this.autor = autor;
-	}
-	public ArrayList<UredjajUReceptu> getUredjaji() {
-		return uredjaji;
-	}
-	public ArrayList<Sastojak> getSastojci() {
-		return sastojci;
-	}
-	public ArrayList<Kategorija> getKategorije() {
-		return kategorije;
-	}
-	public RegistrovaniKorisnik getAutor() {
-		return autor;
-	}
-	public ArrayList<Ocena> getOcene() {
-		return ocene;
-	}
-	public ArrayList<Recenzija> getRecenzije() {
-		return recenzije;
-	}
-	private ArrayList<Ocena> ocene;
+	private ArrayList<Integer> kategorije;
+	private String autor;	//korisnicko ime autora
+	private HashMap<Integer, TipOcene> ocene; // sifra korisnika i njegova ocena
 	private ArrayList<Recenzija> recenzije;
 	
 	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, String youtubeLink, float ocena,
-			Tezina tezina, boolean uredjen, LocalDateTime datum, RegistrovaniKorisnik autor) {
+			Tezina tezina, boolean uredjen, LocalDate datum, RegistrovaniKorisnik autor) {
 		super();
 		this.id = id;
 		this.vremePripreme = vremePripreme;
@@ -52,46 +32,14 @@ public class Recept {
 		this.tezina = tezina;
 		this.uredjen = uredjen;
 		this.datum = datum;
-		this.autor = autor;
+		this.autor = autor.getKorisnickoIme();
 	}
-	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, String youtubeLink, float ocena,
-			Tezina tezina, boolean uredjen, LocalDateTime datum) {
-		super();
-		this.id = id;
-		this.vremePripreme = vremePripreme;
-		this.naziv = naziv;
-		this.opis = opis;
-		this.koraci = koraci;
-		this.youtubeLink = youtubeLink;
-		this.ocena = ocena;
-		this.tezina = tezina;
-		this.uredjen = uredjen;
-		this.datum = datum;
-	}
-	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, float ocena, Tezina tezina,
-			boolean uredjen, LocalDateTime datum) {
-		super();
-		this.id = id;
-		this.vremePripreme = vremePripreme;
-		this.naziv = naziv;
-		this.opis = opis;
-		this.koraci = koraci;
-		this.ocena = ocena;
-		this.tezina = tezina;
-		this.uredjen = uredjen;
-		this.datum = datum;
-	}
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getVremePripreme() {
-		return vremePripreme;
-	}
-	public void setVremePripreme(int vremePripreme) {
-		this.vremePripreme = vremePripreme;
 	}
 	public String getNaziv() {
 		return naziv;
@@ -129,16 +77,59 @@ public class Recept {
 	public void setTezina(Tezina tezina) {
 		this.tezina = tezina;
 	}
+	public int getVremePripreme() {
+		return vremePripreme;
+	}
+	public void setVremePripreme(int vremePripreme) {
+		this.vremePripreme = vremePripreme;
+	}
 	public boolean isUredjen() {
 		return uredjen;
 	}
 	public void setUredjen(boolean uredjen) {
 		this.uredjen = uredjen;
 	}
-	public LocalDateTime getDatum() {
+	public LocalDate getDatum() {
 		return datum;
 	}
-	public void setDatum(LocalDateTime datum) {
+	public void setDatum(LocalDate datum) {
 		this.datum = datum;
 	}
+	public ArrayList<UredjajUReceptu> getUredjaji() {
+		return uredjaji;
+	}
+	public void setUredjaji(ArrayList<UredjajUReceptu> uredjaji) {
+		this.uredjaji = uredjaji;
+	}
+	public ArrayList<Sastojak> getSastojci() {
+		return sastojci;
+	}
+	public void setSastojci(ArrayList<Sastojak> sastojci) {
+		this.sastojci = sastojci;
+	}
+	public ArrayList<Integer> getKategorije() {
+		return kategorije;
+	}
+	public void setKategorije(ArrayList<Integer> kategorije) {
+		this.kategorije = kategorije;
+	}
+	public String getAutor() {
+		return autor;
+	}
+	public void setAutor(String autor) {
+		this.autor = autor;
+	}
+	public HashMap<Integer, TipOcene> getOcene() {
+		return ocene;
+	}
+	public void setOcene(HashMap<Integer, TipOcene> ocene) {
+		this.ocene = ocene;
+	}
+	public ArrayList<Recenzija> getRecenzije() {
+		return recenzije;
+	}
+	public void setRecenzije(ArrayList<Recenzija> recenzije) {
+		this.recenzije = recenzije;
+	}
+
 }

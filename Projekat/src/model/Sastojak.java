@@ -4,16 +4,14 @@ public class Sastojak {
 	private int kolicina;
 	private String mernaJedinica;
 	private TipSastojka tip;
-	private Recept Recept;
-	private Proizvod proizvod;
+	private String nazivProizvoda;
 	
-	public Sastojak(int kolicina, String mernaJedinica, TipSastojka tip, model.Recept recept, Proizvod proizvod) {
+	public Sastojak(int kolicina, String mernaJedinica, TipSastojka tip, String nazivProizvoda) {
 		super();
 		this.kolicina = kolicina;
 		this.mernaJedinica = mernaJedinica;
 		this.tip = tip;
-		Recept = recept;
-		this.proizvod = proizvod;
+		this.nazivProizvoda = nazivProizvoda;
 	}
 	public int getKolicina() {
 		return kolicina;
@@ -33,16 +31,11 @@ public class Sastojak {
 	public void setTip(TipSastojka tip) {
 		this.tip = tip;
 	}
-	public Recept getRecept() {
-		return Recept;
+	public String getNazivProizvoda() {
+		return nazivProizvoda;
 	}
-	public void setRecept(Recept recept) {
-		Recept = recept;
+	public void setNazivProizvoda(String nazivProizvoda) {
+		this.nazivProizvoda = nazivProizvoda;
 	}
-	public Proizvod getProizvod() {
-		return proizvod;
-	}
-	public void setProizvod(Proizvod proizvod) {
-		this.proizvod = proizvod;
-	}
+
 }

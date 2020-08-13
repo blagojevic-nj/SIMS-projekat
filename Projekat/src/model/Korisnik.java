@@ -3,15 +3,15 @@ package model;
 public class Korisnik {
 	private int id;
 	private String ime, prezime, email;
-	private Nalog nalog;
+	private String korisnickoIme;
 	
-	public Korisnik(int id, String ime, String prezime, String email, Nalog nalog) {
+	public Korisnik(int id, String ime, String prezime, String email, String korisnickoIme) {
 		super();
 		this.id = id;
 		this.ime = ime;
 		this.prezime = prezime;
 		this.email = email;
-		this.nalog = nalog;
+		this.korisnickoIme = korisnickoIme;
 	}
 	
 	public Korisnik(int id, String ime, String prezime, String email) {
@@ -46,10 +46,10 @@ public class Korisnik {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Nalog getNalog() {
-		return nalog;
+	public String getKorisnickoIme() {
+		return korisnickoIme;
 	}
-	public void setNalog(Nalog nalog) {
-		this.nalog = nalog;
+	public void setKorisnickoIme(String korisnickoIme) {
+		this.korisnickoIme = korisnickoIme;
 	}
 }

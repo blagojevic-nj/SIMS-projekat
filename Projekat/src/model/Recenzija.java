@@ -5,16 +5,15 @@ import java.time.LocalDateTime;
 public class Recenzija {
 	private String komentar;
 	private LocalDateTime datum;
-	private RegistrovaniKorisnik korisnik;
-	private Recept recept;
+	private int idKorisnika;
 	
-	public Recenzija(String komentar, LocalDateTime datum, RegistrovaniKorisnik korisnik, Recept recept) {
+	public Recenzija(String komentar, LocalDateTime datum, int idKorisnika) {
 		super();
 		this.komentar = komentar;
 		this.datum = datum;
-		this.korisnik = korisnik;
-		this.recept = recept;
+		this.idKorisnika = idKorisnika;
 	}
+	
 	public String getKomentar() {
 		return komentar;
 	}
@@ -27,18 +26,12 @@ public class Recenzija {
 	public void setDatum(LocalDateTime datum) {
 		this.datum = datum;
 	}
-	public RegistrovaniKorisnik getKorisnik() {
-		return korisnik;
+	public int getIdKorisnika() {
+		return idKorisnika;
 	}
-	public void setKorisnik(RegistrovaniKorisnik korisnik) {
-		this.korisnik = korisnik;
+	public void setIdKorisnika(int idKorisnika) {
+		this.idKorisnika = idKorisnika;
 	}
-	public Recept getRecept() {
-		return recept;
-	}
-	public void setRecept(Recept recept) {
-		this.recept = recept;
-	}
-	
+
 	
 }

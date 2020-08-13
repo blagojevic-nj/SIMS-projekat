@@ -2,6 +2,7 @@ package model;
 
 import java.util.ArrayList;
 
+//mozda nece ni trebati ova klasa...
 public class Aplikacija {
 	private String naziv;
 	ArrayList<Nalog> nalozi;

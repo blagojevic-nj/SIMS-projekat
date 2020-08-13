@@ -3,14 +3,14 @@ package model;
 public class Nalog {
 	private String korisnickoIme, lozinka;
 	private TipNaloga tip;
-	private Korisnik korisnik;
+	private int idKorisnika;
 	
-	public Nalog(String korisnickoIme, String lozinka, TipNaloga tip, Korisnik korisnik) {
+	public Nalog(String korisnickoIme, String lozinka, TipNaloga tip, int idKorisnika) {
 		super();
 		this.korisnickoIme = korisnickoIme;
 		this.lozinka = lozinka;
 		this.tip = tip;
-		this.korisnik = korisnik;
+		this.idKorisnika = idKorisnika;
 	}
 	
 	public Nalog(String korisnickoIme, String lozinka, TipNaloga tip) {
@@ -18,14 +18,6 @@ public class Nalog {
 		this.korisnickoIme = korisnickoIme;
 		this.lozinka = lozinka;
 		this.tip = tip;
-	}
-	
-	public Korisnik getKorisnik() {
-		return korisnik;
-	}
-
-	public void setKorisnik(Korisnik korisnik) {
-		this.korisnik = korisnik;
 	}
 
 	public String getKorisnickoIme() {
@@ -45,5 +37,11 @@ public class Nalog {
 	}
 	public void setTip(TipNaloga tip) {
 		this.tip = tip;
+	}
+	public int getIdKorisnika() {
+		return idKorisnika;
+	}
+	public void setIdKorisnika(int idKorisnika) {
+		this.idKorisnika = idKorisnika;
 	}
 }
