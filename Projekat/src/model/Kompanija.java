@@ -48,5 +48,11 @@ public class Kompanija {
 		this.mesto = mesto;
 	}
 	
+	public void addProizvod(Proizvod proizvod) {
+		proizvodi.add(proizvod);
+	}
 	
+	public boolean deleteProizvod(Proizvod proizvod) {
+		return proizvodi.remove(proizvod);
+	}
 }

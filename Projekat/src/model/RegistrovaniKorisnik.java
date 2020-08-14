@@ -83,4 +83,52 @@ public class RegistrovaniKorisnik extends Korisnik {
 	public void setSacuvaniRecepti(ArrayList<Integer> sacuvaniRecepti) {
 		this.sacuvaniRecepti = sacuvaniRecepti;
 	}
+	
+	public void addPracen(String pracen) {
+		praceni.add(pracen);
+	}
+	
+	public boolean deletePracen(String pracen) {
+		return praceni.remove(pracen);
+	}
+	
+	public void addRecept(int recept) {
+		recepti.add(recept);
+	}
+	
+	public boolean deleteRecept(Integer recept) {
+		return recepti.remove(recept);
+	}
+	
+	public void addSacuvaniRecept(int recept) {
+		sacuvaniRecepti.add(recept);
+	}
+	
+	public boolean deleteSacuvaniRecept(Integer recept) {
+		return sacuvaniRecepti.remove(recept);
+	}
+	
+	public void addUredjaj(int uredjaj) {
+		uredjaji.add(uredjaj);
+	}
+	
+	public boolean deleteUredjaj(Integer uredjaj) {
+		return uredjaji.remove(uredjaj);
+	}
+	
+	public void addKategorija(int kategorija) {
+		kategorije.add(kategorija);
+	}
+	
+	public boolean deleteKategorija(Integer kategorija) {
+		return kategorije.remove(kategorija);
+	}
+	
+	public void addProizvod(int proizvod) {
+		proizvodi.add(proizvod);
+	}
+	
+	public boolean deleteProizvod(Integer proizvod) {
+		return proizvodi.remove(proizvod);
+	}
 }

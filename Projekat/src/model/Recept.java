@@ -131,5 +131,44 @@ public class Recept {
 	public void setRecenzije(ArrayList<Recenzija> recenzije) {
 		this.recenzije = recenzije;
 	}
+	
+	public void addUredjaj(UredjajUReceptu uredjaj) {
+		uredjaji.add(uredjaj);
+	}
+	
+	public boolean deleteUredjaj(UredjajUReceptu uredjaj) {
+		return uredjaji.remove(uredjaj);
+	}
 
+	public void addSastojak(Sastojak sastojak) {
+		sastojci.add(sastojak);
+	}
+	
+	public boolean deleteSastojak(Sastojak sastojak) {
+		return sastojci.remove(sastojak);
+	}
+	
+	public void addKategorija(int kategorija) {
+		kategorije.add(kategorija);
+	}
+	
+	public boolean deleteKategorija(Integer kategorija) {
+		return kategorije.remove(kategorija);
+	}
+	
+	public void addRecenzija(Recenzija recenzija) {
+		recenzije.add(recenzija);
+	}
+	
+	public boolean deleteRecenzija(Recenzija recenzija) {
+		return recenzije.remove(recenzija);
+	}
+	
+	public void addOcena(int korisnik, TipOcene ocena) {
+		ocene.put(korisnik, ocena);
+	}
+	
+	public void deleteOcena(Integer korisnik) {
+		ocene.remove(korisnik);
+	}
 }

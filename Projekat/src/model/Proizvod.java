@@ -32,4 +32,11 @@ public class Proizvod {
 		this.recepti = recepti;
 	}
 	
+	public void addRecept(int recept) {
+		recepti.add(recept);
+	}
+	
+	public boolean deleteRecept(Integer recept) {
+		return recepti.remove(recept);
+	}
 }
