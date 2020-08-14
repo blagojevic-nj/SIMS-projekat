@@ -8,6 +8,7 @@ import java.util.HashMap;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import model.Bedz;
 import model.Korisnik;
 import model.Nalog;
 import model.RegistrovaniKorisnik;
@@ -17,14 +18,17 @@ public class KorisnikManager {
 	private static class KolekcijaNaloga {
 		public ArrayList<Nalog> nalozi;
 	}
-	private static HashMap<String, Nalog> sviNalozi;
-	private static HashMap<Integer, Korisnik> ucitaniKorisnici;
-	private static ArrayList<Nalog> promenjeniNalozi;
-	private static KorisnikManager instance = new KorisnikManager();
+	private HashMap<String, Nalog> sviNalozi;
+	private HashMap<Integer, Korisnik> ucitaniKorisnici;
+	private ArrayList<Nalog> promenjeniNalozi;
+	private static KorisnikManager instance = null;
 	static final String FOLDER_SA_KORISNICIMA = "korisnici";
 	
 	private KorisnikManager() {
+		sviNalozi = new HashMap<String, Nalog>();
+		ucitaniKorisnici = new HashMap<Integer, Korisnik>();
 		promenjeniNalozi = new ArrayList<Nalog>();
+		ucitajNaloge(FOLDER_SA_KORISNICIMA+"/nalozi.json");
 	}
 	
 	public static KorisnikManager getInstance() {
@@ -34,7 +38,7 @@ public class KorisnikManager {
 		return instance;
 	}
 	
-	public static void ucitajNaloge(String fajl) {
+	public void ucitajNaloge(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaNaloga kolekcija = mapper.readValue(new File(fajl), KolekcijaNaloga.class);
@@ -47,7 +51,7 @@ public class KorisnikManager {
 		}
 	}
 	
-	public static void sacuvajNaloge(String fajl) {
+	public void sacuvajNaloge(String fajl) {
 		KolekcijaNaloga kolekcija = new KolekcijaNaloga();
 		kolekcija.nalozi = (ArrayList<Nalog>) sviNalozi.values();
 		ObjectMapper mapper = new ObjectMapper();
@@ -68,28 +72,65 @@ public class KorisnikManager {
 		return false;
 	}
 	
-	public static boolean ucitajKorisnika(String fajl, TipNaloga tip) {
-		// TODO
+	public boolean ucitajKorisnika(String fajl, TipNaloga tip) {
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			if (tip == TipNaloga.REG_KORISNIK) {
+				RegistrovaniKorisnik rk = mapper.readValue(new File(fajl), RegistrovaniKorisnik.class);
+				ucitaniKorisnici.put(rk.getId(), rk);
+			}
+			else {
+				Korisnik k = mapper.readValue(new File(fajl), Korisnik.class);
+				ucitaniKorisnici.put(k.getId(), k);
+			}
+			return true;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return false;
 	}
 	
-	public static void sacuvajKorisnike() {
-		// TODO
+	public void sacuvajKorisnike() {
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.enable(SerializationFeature.INDENT_OUTPUT);
+		try {
+			for (Nalog n : promenjeniNalozi) {
+				mapper.writeValue(new File(FOLDER_SA_KORISNICIMA+"/"+n.getIdKorisnika()+".json"), 
+						ucitaniKorisnici.get(n.getIdKorisnika()));
+			}
+			promenjeniNalozi.clear();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
-	public RegistrovaniKorisnik registracijaKorisnika() {
-		// TODO
-		return null;
+	public RegistrovaniKorisnik registracijaKorisnika(String ime, String prezime, String email, String korisnickoIme, String lozinka) {
+		RegistrovaniKorisnik r = new RegistrovaniKorisnik(sviNalozi.size(), ime, prezime, email, korisnickoIme, false, Bedz.NEMA, 0, 0);
+		Nalog nalog = new Nalog(korisnickoIme, lozinka, TipNaloga.REG_KORISNIK, r.getId());
+		sviNalozi.put(korisnickoIme, nalog);
+		promenjeniNalozi.add(nalog);
+		ucitaniKorisnici.put(r.getId(), r);
+		return r;
 	}
 	
-	public Korisnik registracijaAdmina() {
-		// TODO
-		return null;
+	public Korisnik registracijaAdmina(String ime, String prezime, String email, String korisnickoIme, String lozinka) {
+		Korisnik a = new Korisnik(sviNalozi.size(), ime, prezime, email, korisnickoIme);
+		Nalog nalog = new Nalog(korisnickoIme, lozinka, TipNaloga.ADMIN, a.getId());
+		sviNalozi.put(korisnickoIme, nalog);
+		promenjeniNalozi.add(nalog);
+		ucitaniKorisnici.put(a.getId(), a);
+		return a;
 	}
 	
-	public Korisnik registracijaModeratora() {
-		// TODO
-		return null;
+	public Korisnik registracijaModeratora(String ime, String prezime, String email, String korisnickoIme, String lozinka) {
+		Korisnik m = new Korisnik(sviNalozi.size(), ime, prezime, email, korisnickoIme);
+		Nalog nalog = new Nalog(korisnickoIme, lozinka, TipNaloga.MODERATOR, m.getId());
+		sviNalozi.put(korisnickoIme, nalog);
+		promenjeniNalozi.add(nalog);
+		ucitaniKorisnici.put(m.getId(), m);
+		return m;
 	}
 	
 	public Korisnik getKorisnik(String korisnickoIme) {

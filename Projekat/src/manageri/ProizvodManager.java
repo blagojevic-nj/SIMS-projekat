@@ -14,12 +14,14 @@ public class ProizvodManager {
 	private static class KolekcijaProizvoda {
 		public ArrayList<Proizvod> proizvodi;
 	}
-	private static HashMap<Integer, Proizvod> sviProizvodi;
-	private static ArrayList<String> naziviProizvoda; // trebace za autocomplete prilikom izbora sastojaka
-	private static boolean promenjen;
-	private static ProizvodManager instance = new ProizvodManager();
+	private HashMap<Integer, Proizvod> sviProizvodi;
+	private ArrayList<String> naziviProizvoda; // trebace za autocomplete prilikom izbora sastojaka
+	private boolean promenjen;
+	private static ProizvodManager instance = null;
 	
 	private ProizvodManager() {
+		sviProizvodi = new HashMap<Integer, Proizvod>();
+		naziviProizvoda = new ArrayList<String>();
 		ucitajProizvode("podaci/proizvodi.json");
 		promenjen = false;
 	}
@@ -31,7 +33,7 @@ public class ProizvodManager {
 		return instance;
 	}
 	
-	public static void ucitajProizvode(String fajl) {
+	public void ucitajProizvode(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaProizvoda kolekcija = mapper.readValue(new File(fajl), KolekcijaProizvoda.class);
@@ -46,7 +48,7 @@ public class ProizvodManager {
 		}
 	}
 	
-	public static void sacuvajProizvode(String fajl) {
+	public void sacuvajProizvode(String fajl) {
 		KolekcijaProizvoda kolekcija = new KolekcijaProizvoda();
 		kolekcija.proizvodi = (ArrayList<Proizvod>) sviProizvodi.values();
 		ObjectMapper mapper = new ObjectMapper();
@@ -82,5 +84,4 @@ public class ProizvodManager {
 	public boolean isPromenjen() {
 		return promenjen;
 	}
-
 }

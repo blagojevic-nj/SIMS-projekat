@@ -5,10 +5,13 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 
+import model.Kategorija;
+import model.Proizvod;
 import model.Recept;
 import model.RegistrovaniKorisnik;
 import model.Sastojak;
@@ -32,16 +35,16 @@ public class ReceptManager {
 			return rezultat;
 		}
 	}
-	private static TabelaRecepata tabela;
-	private static boolean tabelaUcitana;
-	private static HashMap<Integer, Recept> ucitaniRecepti;
-	private static ArrayList<Recept> promenjeniRecepti;
-	private static ReceptManager instance = new ReceptManager();
+	private TabelaRecepata tabela;
+	private HashMap<Integer, Recept> ucitaniRecepti;
+	private ArrayList<Recept> promenjeniRecepti;
+	private static ReceptManager instance = null;
 	static final String FOLDER_SA_RECEPTIMA = "recepti";
 	
 	private ReceptManager() {
+		ucitaniRecepti = new HashMap<Integer, Recept>();
 		promenjeniRecepti = new ArrayList<Recept>();
-		tabelaUcitana = false;
+		tabela = null;
 	}
 	
 	public static ReceptManager getInstance() {
@@ -51,18 +54,17 @@ public class ReceptManager {
 		return instance;
 	}
 	
-	public static void ucitajTabelu(String fajl) {
+	public void ucitajTabelu(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			tabela = mapper.readValue(new File(fajl), TabelaRecepata.class);
-			tabelaUcitana = true;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public static boolean ucitajRecept(String fajl) {
+	public boolean ucitajRecept(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			Recept recept = mapper.readValue(new File(fajl), Recept.class);
@@ -75,7 +77,9 @@ public class ReceptManager {
 		return false;
 	}
 	
-	public static void sacuvajTabelu(String fajl) {
+	public void sacuvajTabelu(String fajl) {
+		if (tabela == null)
+			return;
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
@@ -86,7 +90,7 @@ public class ReceptManager {
 		}
 	}
 	
-	public static void sacuvajRecepte() {
+	public void sacuvajRecepte() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
@@ -103,9 +107,8 @@ public class ReceptManager {
 	public Recept noviRecept(String naziv, String opis, String koraci, Tezina tezina, int vremePripreme, 
 			ArrayList<UredjajUReceptu> uredjaji, ArrayList<Sastojak> sastojci, ArrayList<Integer> kategorije, 
 			RegistrovaniKorisnik autor, String youtubeLink) {
-		if (!tabelaUcitana) {
+		if (tabela == null)
 			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
-		}
 		int i = 1;
 		while (tabela.recepti.get(naziv.toLowerCase()) != null) {
 			naziv = naziv+" "+i;
@@ -140,14 +143,49 @@ public class ReceptManager {
 	}
 	
 	public ArrayList<Recept> pretraziPoNazivu(String tekst) {
-		if (!tabelaUcitana) {
+		if (tabela == null)
 			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
-		}
 		return getRecepti(tabela.pretraziPoNazivu(tekst));
 	}
 	
-	public ArrayList<Recept> pretraziPoKriterijumima() {
-		// TODO (implementiracu kasnije)
-		return null;
+	public ArrayList<Recept> pretraziPoKriterijumima(ArrayList<Proizvod> proizvodi, boolean sviUReceptu,
+			ArrayList<Proizvod> nepozeljni, ArrayList<Kategorija> kategorije, int maxVreme) {
+		if (tabela == null)
+			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
+		HashSet<Integer> medjuRezultat = new HashSet<Integer>();
+		if (proizvodi == null) {
+			medjuRezultat.addAll(tabela.recepti.values());
+		} else if (proizvodi.size() == 0) {
+			medjuRezultat.addAll(tabela.recepti.values());
+		} else {
+			if (sviUReceptu) {
+				medjuRezultat.addAll(tabela.recepti.values());
+				for (Proizvod p : proizvodi) {
+					medjuRezultat.retainAll(p.getRecepti());
+				}
+			} else {
+				for (Proizvod p : proizvodi) {
+					medjuRezultat.addAll(p.getRecepti());
+				}
+			}
+		}
+		if (nepozeljni != null) {
+			for (Proizvod p : nepozeljni) {
+				medjuRezultat.removeAll(p.getRecepti());
+			} 
+		}
+		if (kategorije != null) {
+			for (Kategorija k : kategorije) {
+				medjuRezultat.retainAll(k.getRecepti());
+			}
+		}
+		ArrayList<Recept> rezultat = new ArrayList<Recept>();
+		for (int sifra : medjuRezultat) {
+			Recept r = getRecept(sifra);
+			if (r.getVremePripreme() <= maxVreme) {
+				rezultat.add(r);
+			}
+		}
+		return rezultat;
 	}
 }

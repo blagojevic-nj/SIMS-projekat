@@ -14,12 +14,14 @@ public class KategorijaManager {
 	private static class KolekcijaKategorija {
 		public ArrayList<Kategorija> kategorije;
 	}
-	private static HashMap<Integer, Kategorija> sveKategorije;
-	private static ArrayList<String> naziviKategorija; // trebace za autocomplete prilikom izbora kategorija
-	private static boolean promenjen;
-	private static KategorijaManager instance = new KategorijaManager();
+	private HashMap<Integer, Kategorija> sveKategorije;
+	private ArrayList<String> naziviKategorija; // trebace za autocomplete prilikom izbora kategorija
+	private boolean promenjen;
+	private static KategorijaManager instance = null;
 	
 	private KategorijaManager() {
+		sveKategorije = new HashMap<Integer, Kategorija>();
+		naziviKategorija = new ArrayList<String>();
 		ucitajKategorije("podaci/kategorije.json");
 		promenjen = false;
 	}
@@ -31,7 +33,7 @@ public class KategorijaManager {
 		return instance;
 	}
 	
-	public static void ucitajKategorije(String fajl) {
+	public void ucitajKategorije(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaKategorija kolekcija = mapper.readValue(new File(fajl), KolekcijaKategorija.class);
@@ -46,7 +48,7 @@ public class KategorijaManager {
 		}
 	}
 	
-	public static void sacuvajKategorije(String fajl) {
+	public void sacuvajKategorije(String fajl) {
 		KolekcijaKategorija kolekcija = new KolekcijaKategorija();
 		kolekcija.kategorije = (ArrayList<Kategorija>) sveKategorije.values();
 		ObjectMapper mapper = new ObjectMapper();
@@ -82,5 +84,4 @@ public class KategorijaManager {
 	public boolean isPromenjen() {
 		return promenjen;
 	}
-
 }

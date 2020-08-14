@@ -14,12 +14,14 @@ public class UredjajManager {
 	private static class KolekcijaUredjaja {
 		public ArrayList<Uredjaj> uredjaji;
 	}
-	private static HashMap<Integer, Uredjaj> sviUredjaji;
-	private static ArrayList<String> naziviUredjaja; // trebace za autocomplete prilikom izbora uredjaja
-	private static boolean promenjen;
-	private static UredjajManager instance = new UredjajManager();
+	private HashMap<Integer, Uredjaj> sviUredjaji;
+	private ArrayList<String> naziviUredjaja; // trebace za autocomplete prilikom izbora uredjaja
+	private boolean promenjen;
+	private static UredjajManager instance = null;
 	
 	private UredjajManager() {
+		sviUredjaji = new HashMap<Integer, Uredjaj>();
+		naziviUredjaja = new ArrayList<String>();
 		ucitajUredjaje("podaci/uredjaji.json");
 		promenjen = false;
 	}
@@ -31,7 +33,7 @@ public class UredjajManager {
 		return instance;
 	}
 	
-	public static void ucitajUredjaje(String fajl) {
+	public void ucitajUredjaje(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaUredjaja kolekcija = mapper.readValue(new File(fajl), KolekcijaUredjaja.class);
@@ -46,7 +48,7 @@ public class UredjajManager {
 		}
 	}
 	
-	public static void sacuvajUredjaje(String fajl) {
+	public void sacuvajUredjaje(String fajl) {
 		KolekcijaUredjaja kolekcija = new KolekcijaUredjaja();
 		kolekcija.uredjaji = (ArrayList<Uredjaj>) sviUredjaji.values();
 		ObjectMapper mapper = new ObjectMapper();
@@ -82,5 +84,4 @@ public class UredjajManager {
 	public boolean isPromenjen() {
 		return promenjen;
 	}
-
 }
