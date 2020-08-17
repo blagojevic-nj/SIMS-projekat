@@ -214,9 +214,7 @@ public class MainWindow extends JFrame {
 		lbl_close.setOpaque(true);
 		contentPane.add(lbl_close);
 		
-		
-		
-		
+			
 		cardLayout.show(panel_container_Menu, "Pretraga");
 	}
 }

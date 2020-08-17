@@ -33,7 +33,7 @@ public class KategorijaManager {
 		return instance;
 	}
 	
-	public void ucitajKategorije(String fajl) {
+	private void ucitajKategorije(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaKategorija kolekcija = mapper.readValue(new File(fajl), KolekcijaKategorija.class);

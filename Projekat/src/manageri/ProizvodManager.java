@@ -33,7 +33,7 @@ public class ProizvodManager {
 		return instance;
 	}
 	
-	public void ucitajProizvode(String fajl) {
+	private void ucitajProizvode(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaProizvoda kolekcija = mapper.readValue(new File(fajl), KolekcijaProizvoda.class);

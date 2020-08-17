@@ -20,7 +20,8 @@ import model.UredjajUReceptu;
 
 public class ReceptManager {
 	private static class TabelaRecepata {
-		public HashMap<String, Integer> recepti;
+		public HashMap<String, Integer> recepti;	// {naziv recepta sa malim slovima : sifra recepta}
+		public ArrayList<Integer> najpopularniji;	// sadrzi sifre max 10 najpopularnijih recepata
 		
 		public ArrayList<Integer> pretraziPoNazivu(String tekst) {
 			ArrayList<Integer> rezultat = new ArrayList<Integer>();
@@ -34,17 +35,22 @@ public class ReceptManager {
 			}
 			return rezultat;
 		}
+		
+		public void azurirajPopularnost(int sifra, int mesto) {
+			najpopularniji.remove(sifra);
+			najpopularniji.add(mesto, sifra);
+		}
 	}
 	private TabelaRecepata tabela;
 	private HashMap<Integer, Recept> ucitaniRecepti;
-	private ArrayList<Recept> promenjeniRecepti;
+	private ArrayList<Recept> promenjeniRecepti;	// ovi recepti ce biti upisani nazad u fajl
 	private static ReceptManager instance = null;
 	static final String FOLDER_SA_RECEPTIMA = "recepti";
 	
 	private ReceptManager() {
 		ucitaniRecepti = new HashMap<Integer, Recept>();
 		promenjeniRecepti = new ArrayList<Recept>();
-		tabela = null;
+		ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
 	}
 	
 	public static ReceptManager getInstance() {
@@ -54,7 +60,7 @@ public class ReceptManager {
 		return instance;
 	}
 	
-	public void ucitajTabelu(String fajl) {
+	private void ucitajTabelu(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			tabela = mapper.readValue(new File(fajl), TabelaRecepata.class);
@@ -78,8 +84,6 @@ public class ReceptManager {
 	}
 	
 	public void sacuvajTabelu(String fajl) {
-		if (tabela == null)
-			return;
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
@@ -104,18 +108,17 @@ public class ReceptManager {
 		}
 	}
 	
+	// metoda za dodavanje novog recepta
 	public Recept noviRecept(String naziv, String opis, String koraci, Tezina tezina, int vremePripreme, 
 			ArrayList<UredjajUReceptu> uredjaji, ArrayList<Sastojak> sastojci, ArrayList<Integer> kategorije, 
 			RegistrovaniKorisnik autor, String youtubeLink) {
-		if (tabela == null)
-			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
 		int i = 1;
 		while (tabela.recepti.get(naziv.toLowerCase()) != null) {
 			naziv = naziv+" "+i;
 			i++;
 		}
 		Recept recept = new Recept(tabela.recepti.size(), vremePripreme, naziv, opis, koraci,
-				youtubeLink, 0, tezina, false, LocalDate.now(), autor);
+				youtubeLink, 0, tezina, false, LocalDate.now(), autor, 0);
 		recept.setUredjaji(uredjaji);
 		recept.setSastojci(sastojci);
 		recept.setKategorije(kategorije);
@@ -125,6 +128,7 @@ public class ReceptManager {
 		return recept;
 	}
 	
+	// vraca recept sa odredjenom sifrom
 	public Recept getRecept(int sifra) {
 		Recept recept = ucitaniRecepti.get(sifra);
 		if (recept == null) {	// page fault
@@ -134,6 +138,7 @@ public class ReceptManager {
 		return recept;
 	}
 	
+	// vraca kolekciju recepata na osnovu kolekcije sifara
 	public ArrayList<Recept> getRecepti(ArrayList<Integer> sifre) {
 		ArrayList<Recept> rezultat = new ArrayList<Recept>();
 		for (int sifra : sifre) {
@@ -142,16 +147,14 @@ public class ReceptManager {
 		return rezultat;
 	}
 	
+	// vraca recepte ciji nazivi sadrze zadati tekst
 	public ArrayList<Recept> pretraziPoNazivu(String tekst) {
-		if (tabela == null)
-			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
 		return getRecepti(tabela.pretraziPoNazivu(tekst));
 	}
 	
+	// detaljna pretraga
 	public ArrayList<Recept> pretraziPoKriterijumima(ArrayList<Proizvod> proizvodi, boolean sviUReceptu,
 			ArrayList<Proizvod> nepozeljni, ArrayList<Kategorija> kategorije, int maxVreme) {
-		if (tabela == null)
-			ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
 		HashSet<Integer> medjuRezultat = new HashSet<Integer>();
 		if (proizvodi == null) {
 			medjuRezultat.addAll(tabela.recepti.values());
@@ -188,4 +191,52 @@ public class ReceptManager {
 		}
 		return rezultat;
 	}
+	
+	// vraca najnovije recepte za pocetnu stranicu
+	public ArrayList<Recept> getNajnovijih10() {
+		ArrayList<Recept> rezultat = new ArrayList<Recept>();
+		int sifra = tabela.recepti.size()-1;	// sifra najnovijeg recepta
+		int i = 0;	// brojac
+		while (sifra >= 0 && i < 10) {
+			Recept r = getRecept(sifra);
+			if (r.isUredjen()) {
+				rezultat.add(r);
+				i++;
+			}
+			sifra--;
+		}
+		return rezultat;
+	}
+	
+	// vraca najpopularnije recepte za pocetnu stranicu
+	public ArrayList<Recept> getNajpopularnijih10() {
+		return getRecepti(tabela.najpopularniji);
+	}
+	
+	// ovu metodu treba pozivati nakon sto neko pregleda recept
+	// inkrementuje se broj pregleda i azurira se popularnost
+	public void pregledaoRecept(Recept recept, RegistrovaniKorisnik korisnik) {
+		if (korisnik == null) {	// ako je neregistrovani
+			recept.inkrementPregled();
+			promenjeniRecepti.add(recept);
+		} else if (korisnik.getKorisnickoIme() != recept.getAutor()) {	// ako recept nije svoj
+			recept.inkrementPregled();
+			promenjeniRecepti.add(recept);
+		} else {
+			return;
+		}
+		int mesto = tabela.najpopularniji.size();
+		// uporedjuje se popularnost aktuelnog recepta sa popularnoscu ostalih najpopularnijih recepata
+		while (mesto > 0) {
+			Recept r = getRecept(tabela.najpopularniji.get(mesto-1));
+			if (recept.getPregleda() > r.getPregleda()) {
+				mesto--;
+			} else {
+				break;
+			}
+		}
+		if (mesto < 10)
+			tabela.azurirajPopularnost(recept.getId(), mesto);
+	}
 }
+

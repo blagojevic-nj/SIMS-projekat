@@ -33,7 +33,7 @@ public class UredjajManager {
 		return instance;
 	}
 	
-	public void ucitajUredjaje(String fajl) {
+	private void ucitajUredjaje(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaUredjaja kolekcija = mapper.readValue(new File(fajl), KolekcijaUredjaja.class);

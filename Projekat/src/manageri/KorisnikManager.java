@@ -38,7 +38,7 @@ public class KorisnikManager {
 		return instance;
 	}
 	
-	public void ucitajNaloge(String fajl) {
+	private void ucitajNaloge(String fajl) {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaNaloga kolekcija = mapper.readValue(new File(fajl), KolekcijaNaloga.class);
@@ -148,5 +148,15 @@ public class KorisnikManager {
 	
 	public boolean isPromenjen() {
 		return !promenjeniNalozi.isEmpty();
+	}
+	
+	public boolean validnoKorisnickoIme(String korisnickoIme) {
+		if (korisnickoIme.matches("[a-zA-Z0-9._]{6,30}")) {
+			if (sviNalozi.get(korisnickoIme) != null) {
+				return false;
+			}
+			return true;
+		}
+		return false;
 	}
 }

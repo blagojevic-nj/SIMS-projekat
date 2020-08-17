@@ -18,9 +18,10 @@ public class Recept {
 	private String autor;	//korisnicko ime autora
 	private HashMap<Integer, TipOcene> ocene; // sifra korisnika i njegova ocena
 	private ArrayList<Recenzija> recenzije;
+	private int pregleda;
 	
 	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, String youtubeLink, float ocena,
-			Tezina tezina, boolean uredjen, LocalDate datum, RegistrovaniKorisnik autor) {
+			Tezina tezina, boolean uredjen, LocalDate datum, RegistrovaniKorisnik autor, int pregleda) {
 		super();
 		this.id = id;
 		this.vremePripreme = vremePripreme;
@@ -33,6 +34,7 @@ public class Recept {
 		this.uredjen = uredjen;
 		this.datum = datum;
 		this.autor = autor.getKorisnickoIme();
+		this.pregleda = pregleda;
 	}
 
 	public int getId() {
@@ -131,7 +133,15 @@ public class Recept {
 	public void setRecenzije(ArrayList<Recenzija> recenzije) {
 		this.recenzije = recenzije;
 	}
-	
+	public int getPregleda() {
+		return pregleda;
+	}
+	public void setPregleda(int pregleda) {
+		this.pregleda = pregleda;
+	}
+	public void inkrementPregled() {
+		pregleda++;
+	}
 	public void addUredjaj(UredjajUReceptu uredjaj) {
 		uredjaji.add(uredjaj);
 	}
