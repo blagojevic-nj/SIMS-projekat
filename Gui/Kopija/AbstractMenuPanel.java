@@ -10,7 +10,7 @@ public class AbstractMenuPanel extends JPanel {
 	public AbstractMenuPanel()
 	{
 		setBackground(Color.LIGHT_GRAY);
-		setBounds(0, 0, 300, getHeight());
+		setBounds(0, 0, 300, 700);
 	}
 
 

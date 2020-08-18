@@ -45,6 +45,7 @@ public class MainWindow extends JFrame {
  * 
  */
 
+		
 		JPanel mainContentContainerPanel = new JPanel();
 		contentCardLayout = new CardLayout();
 		
@@ -52,6 +53,15 @@ public class MainWindow extends JFrame {
 		mainContentContainerPanel.setBounds(50, 0, getWidth(), getHeight());
 		mainContentContainerPanel.setLayout(contentCardLayout);
 		contentPane.add(mainContentContainerPanel,1);
+		
+		
+		JPanel  bzvz = new JPanel();
+		bzvz.setBounds(50, 0, 50, 50);
+		bzvz.setBackground(Color.RED);
+		
+		mainContentContainerPanel.add(bzvz,"prvi");
+		
+		contentCardLayout.show(mainContentContainerPanel, "prvi");
 		
 /*
  * 
