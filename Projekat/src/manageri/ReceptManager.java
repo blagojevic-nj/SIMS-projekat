@@ -1,6 +1,9 @@
 package manageri;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -46,6 +49,7 @@ public class ReceptManager {
 	private ArrayList<Recept> promenjeniRecepti;	// ovi recepti ce biti upisani nazad u fajl
 	private static ReceptManager instance = null;
 	static final String FOLDER_SA_RECEPTIMA = "recepti";
+	static final String FOLDER_SA_SLIKAMA = "recepti/slike";
 	
 	private ReceptManager() {
 		ucitaniRecepti = new HashMap<Integer, Recept>();
@@ -238,5 +242,29 @@ public class ReceptManager {
 		if (mesto < 10)
 			tabela.azurirajPopularnost(recept.getId(), mesto);
 	}
+	
+	// ova metoda kopira izabranu sliku u folder sa slikama pod nazivom {sifraRecepta}.png
+	public static void dodajSliku(int sifraRecepta, String putanjaDoSlike) {
+		FileInputStream fileInputStream = null;
+		FileOutputStream fileOutputStream = null;
+		try {
+			fileInputStream = new FileInputStream(new File(putanjaDoSlike));
+			fileOutputStream = new FileOutputStream(new File(FOLDER_SA_SLIKAMA+"/"+sifraRecepta+".png"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		int bufferSize;
+		byte[] buffer = new byte[1024];
+		try {
+			while ((bufferSize = fileInputStream.read(buffer)) > 0) {
+			    fileOutputStream.write(buffer, 0, bufferSize);
+			}
+			fileInputStream.close();
+			fileOutputStream.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 }
 
