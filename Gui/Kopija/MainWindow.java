@@ -52,93 +52,33 @@ public class MainWindow extends JFrame {
 		contentPane.add(smallPanelMenu);
 		smallPanelMenu.setLayout(null);
 		
-		JLabel reduce = new JLabel(new ImageIcon("images/reduce.png"));
-		reduce.setBounds(0, getHeight()/2-25, 50, 50);
-		
-		reduce.setVisible(false);
-		
-		JLabel expand = new JLabel(new ImageIcon("images/expand.png"));
-		expand.setBounds(0, getHeight()/2-25, 50, 50);
-		
-		reduce.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				panelMenu.setVisible(false);
-				reduce.setVisible(false);
-				expand.setVisible(true);
-				smallPanelMenu.setBounds(0, 0, 50, getHeight());
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				
-			}
-			
-		});
-		smallPanelMenu.add(reduce);
-		
-		
-		expand.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				smallPanelMenu.setBounds(300, 0, 50, getHeight());
-				panelMenu.setVisible(true);
-				expand.setVisible(false);
-				reduce.setVisible(true);
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				
-			}
-			
-		});
-		
-		smallPanelMenu.add(expand);
-		
-		
+/*
+ * 
+ * Home dugme// Bice collapse verovatno....
+ * 
+ */
 		JButton home = new JButton(new ImageIcon("images/home.png"));
 		home.setBorderPainted(false);
 		home.setFocusPainted(false);
 		home.setContentAreaFilled(false);
 		home.setBounds(5, 10, 40, 40);
-	
+		home.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e)
+			{
+				smallPanelMenu.setBounds(0, 0, 50, getHeight());
+				panelMenu.setVisible(false);
+			}
+		});
 		smallPanelMenu.add(home);
 		
 		
-		
+/*
+ * 
+ * Logout dugme
+ * 
+ */		
 		JButton logout = new JButton(new ImageIcon("images/exit.png"));
 		logout.setBorderPainted(false);
 		logout.setFocusPainted(false);
@@ -146,12 +86,80 @@ public class MainWindow extends JFrame {
 		logout.setBounds(10, 140, 30, 30);
 		
 		logout.setVisible(false);
-		
 		smallPanelMenu.add(logout);
 		
-		/*
-		 * Labela koja sluzi za pomeranje prozora
-		 */
+
+		
+/*
+ * 
+ * Login dugme
+ * 
+ */
+		
+		JButton login = new JButton(new ImageIcon("images/login.png"));
+		login.setBounds(10, 80, 30, 30);
+		login.setBorderPainted(false);
+		login.setFocusPainted(false);
+		login.setContentAreaFilled(false);
+		login.setToolTipText("Prijavi se");
+		
+		smallPanelMenu.add(login);
+		
+		login.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				smallPanelMenu.setBounds(300, 0, 50, getHeight());
+				panelMenu.setVisible(true);
+			}
+			
+		});
+		
+/*
+ * 
+ * Registracija dugme
+ * 
+ */
+		JButton register = new JButton(new ImageIcon("images/register.png"));
+		register.setBounds(10, 140, 30, 30);
+		register.setBorderPainted(false);
+		register.setFocusPainted(false);
+		register.setContentAreaFilled(false);
+		register.setToolTipText("Registruj se");
+		register.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				smallPanelMenu.setBounds(300, 0, 50, getHeight());
+				panelMenu.setVisible(true);
+				
+			}
+		});
+		smallPanelMenu.add(register);
+		
+		JButton exit = new JButton(new ImageIcon("images/close.png"));
+		exit.setBounds(10, getHeight()-50, 30, 30);
+		exit.setBorderPainted(false);
+		exit.setFocusPainted(false);
+		exit.setContentAreaFilled(false);
+		
+		exit.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				System.exit(0);
+			}
+			
+		});
+		smallPanelMenu.add(exit);
+		
+
+/*
+ * 
+ * Labela koja sluzi za pomeranje prozora
+ * 
+ */
 		JLabel label = new JLabel("");
 		label.addMouseListener(new MouseAdapter() {
 			@Override
@@ -175,53 +183,6 @@ public class MainWindow extends JFrame {
 		label.setBackground(Color.white);
 		label.setOpaque(true);
 		contentPane.add(label);
-
-		
-		JButton login = new JButton(new ImageIcon("images/login.png"));
-		login.setBounds(10, 80, 30, 30);
-		login.setBorderPainted(false);
-		login.setFocusPainted(false);
-		login.setContentAreaFilled(false);
-		login.setToolTipText("Prijavi se");
-		
-		smallPanelMenu.add(login);
-		
-		login.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				
-			}
-			
-		});
-		
-		
-		JButton register = new JButton(new ImageIcon("images/register.png"));
-		register.setBounds(10, 140, 30, 30);
-		register.setBorderPainted(false);
-		register.setFocusPainted(false);
-		register.setContentAreaFilled(false);
-		register.setToolTipText("Registruj se");
-		
-		smallPanelMenu.add(register);
-		
-		JButton exit = new JButton(new ImageIcon("images/close.png"));
-		exit.setBounds(10, getHeight()-50, 30, 30);
-		exit.setBorderPainted(false);
-		exit.setFocusPainted(false);
-		exit.setContentAreaFilled(false);
-		
-		exit.addActionListener(new ActionListener() {
-
-			@Override
-			public void actionPerformed(ActionEvent arg0) {
-				System.exit(0);
-			}
-			
-		});
-		smallPanelMenu.add(exit);
-		
-
 		
 	}
 	
