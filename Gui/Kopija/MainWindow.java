@@ -1,55 +1,82 @@
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
-	private JPanel contentPane;
 	private int xx, xy;
-	
+	private CardLayout menuCardLayout,contentCardLayout;
 	public MainWindow() {
 		
 		ImageIcon logo = new ImageIcon("images/fork.png");
-		
 		setIconImage(logo.getImage());
 		setUndecorated(true);
 		setSize(1200, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
-		
-		contentPane = new JPanel();
+/*
+ * 
+ * Content pane koji je layered da bi se preklapali paneli kako treba
+ * 
+ */
+		JLayeredPane contentPane = new JLayeredPane();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		contentPane.setBackground(Color.white);
 		setContentPane(contentPane);
 		
+/*
+ * 
+ *Desni panel koji ce sadrzati sve "Bele (Velike desno) panele", AbstractMainContentContainer clasa...
+ * 
+ */
+
+		JPanel mainContentContainerPanel = new JPanel();
+		contentCardLayout = new CardLayout();
+		
+		mainContentContainerPanel.setBackground(Color.WHITE);
+		mainContentContainerPanel.setBounds(50, 0, getWidth(), getHeight());
+		mainContentContainerPanel.setLayout(contentCardLayout);
+		contentPane.add(mainContentContainerPanel,1);
+		
+/*
+ * 
+ *Levi panel koji ce sadrzati sve male sive panele", AbstractMenuPanel clasa...
+ * 
+ */
+		
 		JPanel panelMenu = new JPanel();
+		menuCardLayout = new CardLayout();
+		
 		panelMenu.setBackground(Color.LIGHT_GRAY);
 		panelMenu.setBounds(0, 0, 300, getHeight());
-		contentPane.add(panelMenu);
-		panelMenu.setLayout(null);
+		panelMenu.setLayout(menuCardLayout);
 		panelMenu.setVisible(false);
+		contentPane.add(panelMenu, 0);
+/*
+ * 
+ * Traca sa dugmicima...
+ * 
+ */
 		
 		JPanel smallPanelMenu = new JPanel();
 		smallPanelMenu.setBackground(Color.DARK_GRAY);
 		smallPanelMenu.setBounds(0, 0, 50, getHeight());
-		contentPane.add(smallPanelMenu);
+		contentPane.add(smallPanelMenu,0);
 		smallPanelMenu.setLayout(null);
 		
 /*
