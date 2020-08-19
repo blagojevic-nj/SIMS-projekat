@@ -148,12 +148,19 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
+<<<<<<< Updated upstream
 				if(!expands) {
 					smallPanelMenu.setBounds(300, 0, 50, getHeight());
 					panelMenu.setVisible(true);
 					expands = true;
 					rP.blokada(false);	
 				}
+=======
+				smallPanelMenu.setBounds(300, 0, 50, getHeight());
+				panelMenu.setVisible(true);
+				menuCardLayout.show(panelMenu, "panelLogIn");
+				
+>>>>>>> Stashed changes
 			}
 			
 		});
@@ -190,6 +197,11 @@ public class MainWindow extends JFrame {
 		exit.setFocusPainted(false);
 		exit.setContentAreaFilled(false);
 		
+/*
+ * 
+ * Exit dugme
+ * 
+ */
 		exit.addActionListener(new ActionListener() {
 
 			@Override
@@ -229,11 +241,26 @@ public class MainWindow extends JFrame {
 		label.setOpaque(true);
 		contentPane.add(label);
 		
+<<<<<<< Updated upstream
 		//ovde bi trebao da imam listu recepata ali mi nemamo nista 
 		rP = new ReceptiPanel(new ArrayList<Recept>());
 		
 		
 		mainContentContainerPanel.add(rP, "Recepti");
+=======
+	
+/*
+ * 
+ * Login Panel
+ * 
+ */
+	Login panelLogIn = new Login();
+	panelMenu.add(panelLogIn,"panelLogIn");	
+	
+	
+	
+>>>>>>> Stashed changes
 	}
+	
 	
 }
