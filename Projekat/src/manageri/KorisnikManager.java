@@ -3,7 +3,6 @@ package manageri;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -166,8 +165,5 @@ public class KorisnikManager {
 	
 	public Nalog getNalog(String username) {
 		return sviNalozi.get(username);
-		
 	}
-
-
 }
