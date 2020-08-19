@@ -5,11 +5,16 @@ import java.awt.Color;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+
+import manageri.KorisnikManager;
+
 import javax.swing.JSeparator;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
@@ -21,6 +26,8 @@ public class Login extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JPasswordField passwordField;
 	private JTextField textField;
+	
+	private KorisnikManager km = KorisnikManager.getInstance();
 
 	public Login()
 	{
@@ -48,14 +55,10 @@ public class Login extends JPanel{
 				 if (key == KeyEvent.VK_ENTER) {
 						String username = textField.getText();
 						String password =String.valueOf(passwordField.getPassword());
-						try
-						{
-							uloguj();
-						}catch(Exception e1)
+						if(! uloguj(username,password))
 						{
 							JOptionPane.showMessageDialog(null, "Netačan username/password");
-
-						}												
+						}											
 				    }
 				}
 				});
@@ -79,19 +82,35 @@ public class Login extends JPanel{
 				 if (key == KeyEvent.VK_ENTER) {
 						String username = textField.getText();
 						String password =String.valueOf(passwordField.getPassword());
-						try
-						{
-							uloguj();
-						}catch(Exception e1)
+						if(! uloguj(username,password))
 						{
 							JOptionPane.showMessageDialog(null, "Netačan username/password");
-
 						}												
 				    }
 				}
 				});
 		
 		
+		JButton btnNewButton = new JButton(new ImageIcon("data/ikonice/login.png"));
+		btnNewButton.setBounds(220, 435, 30, 30);
+		btnNewButton.setBorderPainted(false);
+		btnNewButton.setFocusPainted(false);
+		btnNewButton.setContentAreaFilled(false);
+		btnNewButton.setToolTipText("Prijavi se");
+		add(btnNewButton);
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) 
+			{
+				String username= textField.getText();
+				String password = String.valueOf(passwordField.getPassword());
+				if(! uloguj(username,password))
+				{
+					JOptionPane.showMessageDialog(null, "Netačan username/password");
+				}
+			}
+		});
 		
 		
 		
@@ -118,18 +137,12 @@ public class Login extends JPanel{
 		JSeparator separator_1 = new JSeparator();
 		separator_1.setBounds(50, 346, 200, 5);
 		add(separator_1);
-		
-		JButton btnNewButton = new JButton(new ImageIcon("images/login.png"));
-		btnNewButton.setBounds(220, 435, 30, 30);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
-		btnNewButton.setToolTipText("Prijavi se");
-		add(btnNewButton);
+
 	}
 	
-	private boolean uloguj()
+	private boolean uloguj(String usr,String psd)
 	{
+		
 		return true;
 	}
 }
