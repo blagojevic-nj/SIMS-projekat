@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.Nalog;
 import model.Recept;
 
 public class MainWindow extends JFrame {
@@ -29,6 +30,10 @@ public class MainWindow extends JFrame {
 	private int xx, xy;
 	private CardLayout menuCardLayout,contentCardLayout;
 	//private ReceptManager rM = ReceptManager.getInstance();
+	
+	
+	static Nalog trenutniNalog = null;
+	
 	
 	public MainWindow() {
 		
@@ -142,7 +147,6 @@ public class MainWindow extends JFrame {
 		login.setToolTipText("Prijavi se");
 		
 		smallPanelMenu.add(login);
-		
 		login.addActionListener(new ActionListener() {
 
 			@Override
