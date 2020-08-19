@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -17,15 +18,17 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import model.Recept;
+
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
 	
+	//flag da li je prosiren skriveni panel
+	static boolean expands = false;
+	private ReceptiPanel rP;
 	private int xx, xy;
 	private CardLayout menuCardLayout,contentCardLayout;
-	
-	
-	
-	
+	//private ReceptManager rM = ReceptManager.getInstance();
 	
 	public MainWindow() {
 		
@@ -43,7 +46,6 @@ public class MainWindow extends JFrame {
 		JLayeredPane contentPane = new JLayeredPane();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
-		contentPane.setBackground(Color.white);
 		setContentPane(contentPane);
 		
 /*
@@ -56,8 +58,7 @@ public class MainWindow extends JFrame {
 		JPanel mainContentContainerPanel = new JPanel();
 		contentCardLayout = new CardLayout();
 		
-		mainContentContainerPanel.setBackground(Color.WHITE);
-		mainContentContainerPanel.setBounds(50, 0, getWidth(), getHeight());
+		mainContentContainerPanel.setBounds(100, 30, 1040, 650);
 		mainContentContainerPanel.setLayout(contentCardLayout);
 		contentPane.add(mainContentContainerPanel,1);
 		
@@ -104,6 +105,8 @@ public class MainWindow extends JFrame {
 			{
 				smallPanelMenu.setBounds(0, 0, 50, getHeight());
 				panelMenu.setVisible(false);
+				expands = false;
+				rP.blokada(true);
 			}
 		});
 		smallPanelMenu.add(home);
@@ -145,8 +148,12 @@ public class MainWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent arg0) 
 			{
-				smallPanelMenu.setBounds(300, 0, 50, getHeight());
-				panelMenu.setVisible(true);
+				if(!expands) {
+					smallPanelMenu.setBounds(300, 0, 50, getHeight());
+					panelMenu.setVisible(true);
+					expands = true;
+					rP.blokada(false);	
+				}
 			}
 			
 		});
@@ -166,8 +173,12 @@ public class MainWindow extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				smallPanelMenu.setBounds(300, 0, 50, getHeight());
-				panelMenu.setVisible(true);
+				if(!expands) {
+					smallPanelMenu.setBounds(300, 0, 50, getHeight());
+					panelMenu.setVisible(true);
+					expands = true;
+					rP.blokada(false);	
+				}
 				
 			}
 		});
@@ -215,10 +226,14 @@ public class MainWindow extends JFrame {
 		});
 		label.setBounds(0, 0,1200,25);
 		label.setVerticalAlignment(SwingConstants.TOP);
-		label.setBackground(Color.white);
 		label.setOpaque(true);
 		contentPane.add(label);
 		
+		//ovde bi trebao da imam listu recepata ali mi nemamo nista 
+		rP = new ReceptiPanel(new ArrayList<Recept>());
+		
+		
+		mainContentContainerPanel.add(rP, "Recepti");
 	}
 	
 }
