@@ -22,13 +22,14 @@ public class KorisnikManager {
 	private HashMap<Integer, Korisnik> ucitaniKorisnici;
 	private ArrayList<Nalog> promenjeniNalozi;
 	private static KorisnikManager instance = null;
-	static final String FOLDER_SA_KORISNICIMA = "korisnici";
+	static final String FOLDER_SA_KORISNICIMA = "data/korisnici";
+	static final String FAJL_SA_NALOZIMA = FOLDER_SA_KORISNICIMA+"/nalozi.json";
 	
 	private KorisnikManager() {
 		sviNalozi = new HashMap<String, Nalog>();
 		ucitaniKorisnici = new HashMap<Integer, Korisnik>();
 		promenjeniNalozi = new ArrayList<Nalog>();
-		ucitajNaloge(FOLDER_SA_KORISNICIMA+"/nalozi.json");
+		ucitajNaloge();
 	}
 	
 	public static KorisnikManager getInstance() {
@@ -38,10 +39,10 @@ public class KorisnikManager {
 		return instance;
 	}
 	
-	private void ucitajNaloge(String fajl) {
+	private void ucitajNaloge() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			KolekcijaNaloga kolekcija = mapper.readValue(new File(fajl), KolekcijaNaloga.class);
+			KolekcijaNaloga kolekcija = mapper.readValue(new File(FAJL_SA_NALOZIMA), KolekcijaNaloga.class);
 			for (Nalog n : kolekcija.nalozi) {
 				sviNalozi.put(n.getKorisnickoIme(), n);
 			}
@@ -51,13 +52,13 @@ public class KorisnikManager {
 		}
 	}
 	
-	public void sacuvajNaloge(String fajl) {
+	public void sacuvajNaloge() {
 		KolekcijaNaloga kolekcija = new KolekcijaNaloga();
 		kolekcija.nalozi = (ArrayList<Nalog>) sviNalozi.values();
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
-			mapper.writeValue(new File(fajl), kolekcija);
+			mapper.writeValue(new File(FAJL_SA_NALOZIMA), kolekcija);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

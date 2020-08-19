@@ -48,13 +48,14 @@ public class ReceptManager {
 	private HashMap<Integer, Recept> ucitaniRecepti;
 	private ArrayList<Recept> promenjeniRecepti;	// ovi recepti ce biti upisani nazad u fajl
 	private static ReceptManager instance = null;
-	static final String FOLDER_SA_RECEPTIMA = "recepti";
-	static final String FOLDER_SA_SLIKAMA = "recepti/slike";
+	static final String FOLDER_SA_RECEPTIMA = "data/recepti";
+	static final String FOLDER_SA_SLIKAMA = FOLDER_SA_RECEPTIMA+"/slike";
+	static final String FAJL_SA_TABELOM = FOLDER_SA_RECEPTIMA+"/tabela.json";
 	
 	private ReceptManager() {
 		ucitaniRecepti = new HashMap<Integer, Recept>();
 		promenjeniRecepti = new ArrayList<Recept>();
-		ucitajTabelu(FOLDER_SA_RECEPTIMA+"/tabela.json");
+		ucitajTabelu();
 	}
 	
 	public static ReceptManager getInstance() {
@@ -64,10 +65,10 @@ public class ReceptManager {
 		return instance;
 	}
 	
-	private void ucitajTabelu(String fajl) {
+	private void ucitajTabelu() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			tabela = mapper.readValue(new File(fajl), TabelaRecepata.class);
+			tabela = mapper.readValue(new File(FAJL_SA_TABELOM), TabelaRecepata.class);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -87,11 +88,11 @@ public class ReceptManager {
 		return false;
 	}
 	
-	public void sacuvajTabelu(String fajl) {
+	public void sacuvajTabelu() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
-			mapper.writeValue(new File(fajl), tabela);
+			mapper.writeValue(new File(FAJL_SA_TABELOM), tabela);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

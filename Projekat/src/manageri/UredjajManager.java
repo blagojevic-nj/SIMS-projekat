@@ -18,11 +18,12 @@ public class UredjajManager {
 	private ArrayList<String> naziviUredjaja; // trebace za autocomplete prilikom izbora uredjaja
 	private boolean promenjen;
 	private static UredjajManager instance = null;
+	static final String FAJL_SA_UREDJAJIMA = "data/podaci/uredjaji.json";
 	
 	private UredjajManager() {
 		sviUredjaji = new HashMap<Integer, Uredjaj>();
 		naziviUredjaja = new ArrayList<String>();
-		ucitajUredjaje("podaci/uredjaji.json");
+		ucitajUredjaje();
 		promenjen = false;
 	}
 	
@@ -33,10 +34,10 @@ public class UredjajManager {
 		return instance;
 	}
 	
-	private void ucitajUredjaje(String fajl) {
+	private void ucitajUredjaje() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			KolekcijaUredjaja kolekcija = mapper.readValue(new File(fajl), KolekcijaUredjaja.class);
+			KolekcijaUredjaja kolekcija = mapper.readValue(new File(FAJL_SA_UREDJAJIMA), KolekcijaUredjaja.class);
 			naziviUredjaja.ensureCapacity(kolekcija.uredjaji.size());
 			for (Uredjaj u : kolekcija.uredjaji) {
 				sviUredjaji.put(u.getSifra(), u);
@@ -48,13 +49,13 @@ public class UredjajManager {
 		}
 	}
 	
-	public void sacuvajUredjaje(String fajl) {
+	public void sacuvajUredjaje() {
 		KolekcijaUredjaja kolekcija = new KolekcijaUredjaja();
 		kolekcija.uredjaji = (ArrayList<Uredjaj>) sviUredjaji.values();
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
-			mapper.writeValue(new File(fajl), kolekcija);
+			mapper.writeValue(new File(FAJL_SA_UREDJAJIMA), kolekcija);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

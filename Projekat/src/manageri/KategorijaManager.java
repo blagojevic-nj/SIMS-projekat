@@ -18,11 +18,12 @@ public class KategorijaManager {
 	private ArrayList<String> naziviKategorija; // trebace za autocomplete prilikom izbora kategorija
 	private boolean promenjen;
 	private static KategorijaManager instance = null;
+	static final String FAJL_SA_KATEGORIJAMA = "data/podaci/kategorije.json";
 	
 	private KategorijaManager() {
 		sveKategorije = new HashMap<Integer, Kategorija>();
 		naziviKategorija = new ArrayList<String>();
-		ucitajKategorije("podaci/kategorije.json");
+		ucitajKategorije();
 		promenjen = false;
 	}
 	
@@ -33,10 +34,10 @@ public class KategorijaManager {
 		return instance;
 	}
 	
-	private void ucitajKategorije(String fajl) {
+	private void ucitajKategorije() {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
-			KolekcijaKategorija kolekcija = mapper.readValue(new File(fajl), KolekcijaKategorija.class);
+			KolekcijaKategorija kolekcija = mapper.readValue(new File(FAJL_SA_KATEGORIJAMA), KolekcijaKategorija.class);
 			naziviKategorija.ensureCapacity(kolekcija.kategorije.size());
 			for (Kategorija k : kolekcija.kategorije) {
 				sveKategorije.put(k.getSifra(), k);
@@ -48,13 +49,13 @@ public class KategorijaManager {
 		}
 	}
 	
-	public void sacuvajKategorije(String fajl) {
+	public void sacuvajKategorije() {
 		KolekcijaKategorija kolekcija = new KolekcijaKategorija();
 		kolekcija.kategorije = (ArrayList<Kategorija>) sveKategorije.values();
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {
-			mapper.writeValue(new File(fajl), kolekcija);
+			mapper.writeValue(new File(FAJL_SA_KATEGORIJAMA), kolekcija);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
