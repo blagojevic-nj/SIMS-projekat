@@ -161,7 +161,8 @@ public class Login extends JPanel{
 	}
 
 
-/**Postavlja trenutnog korisnika u mainWindow arg je korisnicko ime*/
+/**Postavlja trenutnog korisnika u mainWindow arg je korisnicko ime
+ * komentar*/
 	private void postaviTrenutnogKorisnika(Nalog n)
 	{
 		MainWindow.trenutniNalog = n;
