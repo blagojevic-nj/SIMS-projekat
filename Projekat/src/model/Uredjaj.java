@@ -4,6 +4,9 @@ public class Uredjaj {
 	private int sifra;
 	private String naziv;
 	
+	public Uredjaj() {
+	}
+	
 	public Uredjaj(int sifra, String naziv) {
 		super();
 		this.sifra = sifra;

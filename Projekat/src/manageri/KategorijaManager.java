@@ -12,7 +12,7 @@ import model.Kategorija;
 
 public class KategorijaManager {
 	private static class KolekcijaKategorija {
-		public ArrayList<Kategorija> kategorije;
+		public ArrayList<Kategorija> kategorije = new ArrayList<Kategorija>();
 	}
 	private HashMap<Integer, Kategorija> sveKategorije;
 	private ArrayList<String> naziviKategorija; // trebace za autocomplete prilikom izbora kategorija
@@ -38,7 +38,9 @@ public class KategorijaManager {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaKategorija kolekcija = mapper.readValue(new File(FAJL_SA_KATEGORIJAMA), KolekcijaKategorija.class);
-			naziviKategorija.ensureCapacity(kolekcija.kategorije.size());
+			for (int i = 0; i < kolekcija.kategorije.size(); i++) {
+				naziviKategorija.add(null);
+			}
 			for (Kategorija k : kolekcija.kategorije) {
 				sveKategorije.put(k.getSifra(), k);
 				naziviKategorija.set(k.getSifra(), k.getNaziv());
@@ -51,7 +53,9 @@ public class KategorijaManager {
 	
 	public void sacuvajKategorije() {
 		KolekcijaKategorija kolekcija = new KolekcijaKategorija();
-		kolekcija.kategorije = (ArrayList<Kategorija>) sveKategorije.values();
+		for (Kategorija k : sveKategorije.values()) {
+			kolekcija.kategorije.add(k);
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {

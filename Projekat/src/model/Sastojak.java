@@ -6,6 +6,8 @@ public class Sastojak {
 	private TipSastojka tip;
 	private String nazivProizvoda;
 	
+	public Sastojak() {
+	}
 	public Sastojak(int kolicina, String mernaJedinica, TipSastojka tip, String nazivProizvoda) {
 		super();
 		this.kolicina = kolicina;

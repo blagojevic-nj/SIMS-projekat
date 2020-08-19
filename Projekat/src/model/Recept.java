@@ -20,6 +20,9 @@ public class Recept {
 	private ArrayList<Recenzija> recenzije;
 	private int pregleda;
 	
+	public Recept() {
+	}
+	
 	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, String youtubeLink, float ocena,
 			Tezina tezina, boolean uredjen, LocalDate datum, RegistrovaniKorisnik autor, int pregleda) {
 		super();

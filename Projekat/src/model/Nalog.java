@@ -5,6 +5,9 @@ public class Nalog {
 	private TipNaloga tip;
 	private int idKorisnika;
 	
+	public Nalog() {
+	}
+	
 	public Nalog(String korisnickoIme, String lozinka, TipNaloga tip, int idKorisnika) {
 		super();
 		this.korisnickoIme = korisnickoIme;

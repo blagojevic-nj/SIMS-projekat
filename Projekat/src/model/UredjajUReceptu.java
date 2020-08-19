@@ -4,6 +4,8 @@ public class UredjajUReceptu {
 	private boolean pozeljan;
 	private Uredjaj uredjaj;
 	
+	public UredjajUReceptu() {
+	}
 	public UredjajUReceptu(boolean pozeljan, Uredjaj uredjaj) {
 		super();
 		this.pozeljan = pozeljan;

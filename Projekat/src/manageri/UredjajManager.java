@@ -12,7 +12,7 @@ import model.Uredjaj;
 
 public class UredjajManager {
 	private static class KolekcijaUredjaja {
-		public ArrayList<Uredjaj> uredjaji;
+		public ArrayList<Uredjaj> uredjaji = new ArrayList<Uredjaj>();
 	}
 	private HashMap<Integer, Uredjaj> sviUredjaji;
 	private ArrayList<String> naziviUredjaja; // trebace za autocomplete prilikom izbora uredjaja
@@ -38,7 +38,9 @@ public class UredjajManager {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaUredjaja kolekcija = mapper.readValue(new File(FAJL_SA_UREDJAJIMA), KolekcijaUredjaja.class);
-			naziviUredjaja.ensureCapacity(kolekcija.uredjaji.size());
+			for (int i = 0; i < kolekcija.uredjaji.size(); i++) {
+				naziviUredjaja.add(null);
+			}
 			for (Uredjaj u : kolekcija.uredjaji) {
 				sviUredjaji.put(u.getSifra(), u);
 				naziviUredjaja.set(u.getSifra(), u.getNaziv());
@@ -51,7 +53,9 @@ public class UredjajManager {
 	
 	public void sacuvajUredjaje() {
 		KolekcijaUredjaja kolekcija = new KolekcijaUredjaja();
-		kolekcija.uredjaji = (ArrayList<Uredjaj>) sviUredjaji.values();
+		for (Uredjaj u : sviUredjaji.values()) {
+			kolekcija.uredjaji.add(u);
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {

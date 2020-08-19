@@ -7,6 +7,9 @@ public class Kategorija {
 	private String naziv;
 	private ArrayList<Integer> recepti;
 	
+	public Kategorija() {
+	}
+	
 	public Kategorija(int sifra, String naziv) {
 		super();
 		this.sifra = sifra;

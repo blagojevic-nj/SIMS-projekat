@@ -4,6 +4,8 @@ public class Mesto {
 	private int ppt;
 	private String naziv;
 	
+	public Mesto() {
+	}
 	public Mesto(int ppt, String naziv) {
 		super();
 		this.ppt = ppt;

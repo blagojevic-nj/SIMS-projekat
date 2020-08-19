@@ -7,6 +7,8 @@ public class Proizvod {
 	private String naziv;
 	private ArrayList<Integer> recepti;
 	
+	public Proizvod() {
+	}
 	public Proizvod(int sifra, String naziv) {
 		super();
 		this.sifra = sifra;

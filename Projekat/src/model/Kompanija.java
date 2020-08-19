@@ -10,6 +10,8 @@ public class Kompanija {
 	public ArrayList<Proizvod> getProizvodi() {
 		return proizvodi;
 	}
+	public Kompanija() {
+	}
 	public Kompanija(String naziv, String telefon, String email) {
 		super();
 		this.naziv = naziv;

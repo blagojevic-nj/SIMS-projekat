@@ -5,6 +5,9 @@ public class Korisnik {
 	private String ime, prezime, email;
 	private String korisnickoIme;
 	
+	public Korisnik() {
+	}
+	
 	public Korisnik(int id, String ime, String prezime, String email, String korisnickoIme) {
 		super();
 		this.id = id;

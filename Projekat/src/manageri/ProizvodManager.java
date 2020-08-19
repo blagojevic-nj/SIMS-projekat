@@ -12,7 +12,7 @@ import model.Proizvod;
 
 public class ProizvodManager {
 	private static class KolekcijaProizvoda {
-		public ArrayList<Proizvod> proizvodi;
+		public ArrayList<Proizvod> proizvodi = new ArrayList<Proizvod>();
 	}
 	private HashMap<Integer, Proizvod> sviProizvodi;
 	private ArrayList<String> naziviProizvoda; // trebace za autocomplete prilikom izbora sastojaka
@@ -38,7 +38,9 @@ public class ProizvodManager {
 		ObjectMapper mapper = new ObjectMapper();
 		try {
 			KolekcijaProizvoda kolekcija = mapper.readValue(new File(FAJL_SA_PROIZVODIMA), KolekcijaProizvoda.class);
-			naziviProizvoda.ensureCapacity(kolekcija.proizvodi.size());
+			for (int i = 0; i < kolekcija.proizvodi.size(); i++) {
+				naziviProizvoda.add(null);
+			}
 			for (Proizvod p : kolekcija.proizvodi) {
 				sviProizvodi.put(p.getSifra(), p);
 				naziviProizvoda.set(p.getSifra(), p.getNaziv());
@@ -51,7 +53,9 @@ public class ProizvodManager {
 	
 	public void sacuvajProizvode() {
 		KolekcijaProizvoda kolekcija = new KolekcijaProizvoda();
-		kolekcija.proizvodi = (ArrayList<Proizvod>) sviProizvodi.values();
+		for (Proizvod p : sviProizvodi.values()) {
+			kolekcija.proizvodi.add(p);
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {

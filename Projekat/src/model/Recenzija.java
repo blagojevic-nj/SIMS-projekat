@@ -7,6 +7,9 @@ public class Recenzija {
 	private LocalDateTime datum;
 	private int idKorisnika;
 	
+	public Recenzija() {
+	}
+	
 	public Recenzija(String komentar, LocalDateTime datum, int idKorisnika) {
 		super();
 		this.komentar = komentar;

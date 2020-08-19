@@ -1,0 +1,67 @@
+{
+  "kategorije" : [ {
+    "sifra" : 0,
+    "naziv" : "Kolaci",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 1,
+    "naziv" : "Namazi",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 2,
+    "naziv" : "Predjela i prilozi",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 3,
+    "naziv" : "Testa",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 4,
+    "naziv" : "Umaci",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 5,
+    "naziv" : "Vocni deserti",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 6,
+    "naziv" : "Mesna jela",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 7,
+    "naziv" : "Pica",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 8,
+    "naziv" : "Salate",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 9,
+    "naziv" : "Testenine",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 10,
+    "naziv" : "Variva i pilavi",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 11,
+    "naziv" : "Morski i recni specijaliteti",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 12,
+    "naziv" : "Posna jela",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 13,
+    "naziv" : "Supe i corbe",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 14,
+    "naziv" : "Torte",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 15,
+    "naziv" : "Vegetarijanska jela",
+    "recepti" : [ ]
+  } ]
+}

@@ -14,6 +14,9 @@ public class RegistrovaniKorisnik extends Korisnik {
 	private ArrayList<Integer> recepti;
 	private ArrayList<Integer> sacuvaniRecepti;
 	
+	public RegistrovaniKorisnik() {
+	}
+	
 	public RegistrovaniKorisnik(int id, String ime, String prezime, String email, String korisnickoIme,
 			boolean privilegovani, Bedz bedz, int brojPratilaca, float prosecnaOcena) {
 		super(id, ime, prezime, email, korisnickoIme);

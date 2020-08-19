@@ -23,8 +23,8 @@ import model.UredjajUReceptu;
 
 public class ReceptManager {
 	private static class TabelaRecepata {
-		public HashMap<String, Integer> recepti;	// {naziv recepta sa malim slovima : sifra recepta}
-		public ArrayList<Integer> najpopularniji;	// sadrzi sifre max 10 najpopularnijih recepata
+		public HashMap<String, Integer> recepti = new HashMap<String, Integer>();	// {naziv recepta sa malim slovima : sifra recepta}
+		public ArrayList<Integer> najpopularniji = new ArrayList<Integer>();	// sadrzi sifre max 10 najpopularnijih recepata
 		
 		public ArrayList<Integer> pretraziPoNazivu(String tekst) {
 			ArrayList<Integer> rezultat = new ArrayList<Integer>();

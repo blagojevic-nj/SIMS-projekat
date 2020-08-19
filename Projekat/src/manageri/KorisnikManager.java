@@ -16,7 +16,7 @@ import model.TipNaloga;
 
 public class KorisnikManager {
 	private static class KolekcijaNaloga {
-		public ArrayList<Nalog> nalozi;
+		public ArrayList<Nalog> nalozi = new ArrayList<Nalog>();
 	}
 	private HashMap<String, Nalog> sviNalozi;
 	private HashMap<Integer, Korisnik> ucitaniKorisnici;
@@ -54,7 +54,9 @@ public class KorisnikManager {
 	
 	public void sacuvajNaloge() {
 		KolekcijaNaloga kolekcija = new KolekcijaNaloga();
-		kolekcija.nalozi = (ArrayList<Nalog>) sviNalozi.values();
+		for (Nalog n : sviNalozi.values()) {
+			kolekcija.nalozi.add(n);
+		}
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {

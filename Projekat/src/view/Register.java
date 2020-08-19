@@ -155,7 +155,7 @@ public class Register extends JPanel{
 			}
 			fireClearSignal();
 			km.sacuvajKorisnike();
-			km.sacuvajNaloge("data/korisnici/users");
+			km.sacuvajNaloge();
 			return true;
 
 		}
