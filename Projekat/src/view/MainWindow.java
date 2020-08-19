@@ -18,7 +18,6 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import model.Nalog;
 import model.Recept;
 
 public class MainWindow extends JFrame {
@@ -30,10 +29,6 @@ public class MainWindow extends JFrame {
 	private int xx, xy;
 	private CardLayout menuCardLayout,contentCardLayout;
 	//private ReceptManager rM = ReceptManager.getInstance();
-	
-	
-	static Nalog trenutniNalog = null;
-	
 	
 	public MainWindow() {
 		
@@ -66,6 +61,13 @@ public class MainWindow extends JFrame {
 		mainContentContainerPanel.setBounds(100, 30, 1040, 650);
 		mainContentContainerPanel.setLayout(contentCardLayout);
 		contentPane.add(mainContentContainerPanel,1);
+		
+
+		//Za testiranje
+				UredjajiPanel recept = new UredjajiPanel();
+				recept.setSize(getWidth(), getHeight());
+				mainContentContainerPanel.add(recept, "recept");
+				contentCardLayout.show(mainContentContainerPanel, "recept");
 		
 /*
  * 
@@ -147,6 +149,7 @@ public class MainWindow extends JFrame {
 		login.setToolTipText("Prijavi se");
 		
 		smallPanelMenu.add(login);
+		
 		login.addActionListener(new ActionListener() {
 
 			@Override
