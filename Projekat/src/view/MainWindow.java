@@ -29,7 +29,7 @@ public class MainWindow extends JFrame {
 	
 	public MainWindow() {
 		
-		ImageIcon logo = new ImageIcon("src/images/fork.png");
+		ImageIcon logo = new ImageIcon("data/ikonice/fork.png");
 		setIconImage(logo.getImage());
 		setUndecorated(true);
 		setSize(1200, 700);
@@ -92,7 +92,7 @@ public class MainWindow extends JFrame {
  * Home dugme// Bice collapse verovatno....
  * 
  */
-		JButton home = new JButton(new ImageIcon("src/images/home.png"));
+		JButton home = new JButton(new ImageIcon("data/ikonice/home.png"));
 		home.setBorderPainted(false);
 		home.setFocusPainted(false);
 		home.setContentAreaFilled(false);
@@ -114,7 +114,7 @@ public class MainWindow extends JFrame {
  * Logout dugme
  * 
  */		
-		JButton logout = new JButton(new ImageIcon("src/images/exit.png"));
+		JButton logout = new JButton(new ImageIcon("data/ikonice/exit.png"));
 		logout.setBorderPainted(false);
 		logout.setFocusPainted(false);
 		logout.setContentAreaFilled(false);
@@ -131,7 +131,7 @@ public class MainWindow extends JFrame {
  * 
  */
 		
-		JButton login = new JButton(new ImageIcon("src/images/login.png"));
+		JButton login = new JButton(new ImageIcon("data/ikonice/login.png"));
 		login.setBounds(10, 80, 30, 30);
 		login.setBorderPainted(false);
 		login.setFocusPainted(false);
@@ -156,7 +156,7 @@ public class MainWindow extends JFrame {
  * Registracija dugme
  * 
  */
-		JButton register = new JButton(new ImageIcon("src/images/register.png"));
+		JButton register = new JButton(new ImageIcon("data/ikonice/register.png"));
 		register.setBounds(10, 140, 30, 30);
 		register.setBorderPainted(false);
 		register.setFocusPainted(false);
@@ -173,7 +173,7 @@ public class MainWindow extends JFrame {
 		});
 		smallPanelMenu.add(register);
 		
-		JButton exit = new JButton(new ImageIcon("src/images/close.png"));
+		JButton exit = new JButton(new ImageIcon("data/ikonice/close.png"));
 		exit.setBounds(10, getHeight()-50, 30, 30);
 		exit.setBorderPainted(false);
 		exit.setFocusPainted(false);
