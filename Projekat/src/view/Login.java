@@ -7,6 +7,8 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import manageri.KorisnikManager;
+import model.Korisnik;
+import model.Nalog;
 
 import javax.swing.JSeparator;
 import javax.swing.JLabel;
@@ -145,8 +147,31 @@ public class Login extends JPanel{
 	
 	private boolean uloguj(String usr,String psd)
 	{
-		km.postoji(usr, psd);
-		System.out.println("Successful login");
-		return true;
+		if(km.postoji(usr, psd))
+		{
+			Nalog real = km.getNalog(usr);
+			if(real.getLozinka().equals(psd))
+			{
+				postaviTrenutnogKorisnika(real);
+				return true;
+			}	
+		}
+
+		return false;
 	}
+
+
+/**Postavlja trenutnog korisnika u mainWindow arg je korisnicko ime
+ * komentar*/
+	private void postaviTrenutnogKorisnika(Nalog n)
+	{
+		MainWindow.trenutniNalog = n;
+		System.out.println("Successful login");
+	}
+
+
+
+
+
+
 }

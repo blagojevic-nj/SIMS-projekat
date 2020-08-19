@@ -3,6 +3,7 @@ package manageri;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -154,7 +155,7 @@ public class KorisnikManager {
 	}
 	
 	public boolean validnoKorisnickoIme(String korisnickoIme) {
-		if (korisnickoIme.matches("[a-zA-Z0-9._]{6,30}")) {
+		if (korisnickoIme.matches("[a-zA-Z0-9._]{4,30}")) {
 			if (sviNalozi.get(korisnickoIme) != null) {
 				return false;
 			}
@@ -162,4 +163,11 @@ public class KorisnikManager {
 		}
 		return false;
 	}
+	
+	public Nalog getNalog(String username) {
+		return sviNalozi.get(username);
+		
+	}
+
+
 }
