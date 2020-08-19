@@ -36,80 +36,80 @@ public class Register extends JPanel{
 			
 			
 			JSeparator separator = new JSeparator();
-			separator.setBounds(50, 150, 200, 5);
+			separator.setBounds(50, 100, 200, 5);
 			add(separator);
 			
 			
 			JLabel lblLogin = new JLabel("Registracija");
 			lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 35));
-			lblLogin.setBounds(50, 80, 200, 60);
+			lblLogin.setBounds(50, 30, 200, 60);
 			add(lblLogin);
 			
 			JLabel lblUsername = new JLabel("Username");
 			lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblUsername.setBounds(50, 377, 200, 25);
+			lblUsername.setBounds(50, 330, 200, 25);
 			add(lblUsername);
 			
 			JLabel lblPassword = new JLabel("Password");
 			lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblPassword.setBounds(50, 442, 200, 25);
+			lblPassword.setBounds(50, 395, 200, 25);
 			add(lblPassword);
 			
 			textField = new JTextField();
-			textField.setBounds(50, 402, 200, 25);
+			textField.setBounds(50, 360, 200, 25);
 			add(textField);
 			textField.setColumns(10);
 			
 			passwordField = new JPasswordField();
-			passwordField.setLocation(50, 467);
+			passwordField.setLocation(50, 425);
 			passwordField.setSize(200, 25);
 			add(passwordField);
 			
 			JLabel lblPotvrdiPassword = new JLabel("Potvrdi Password");
 			lblPotvrdiPassword.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblPotvrdiPassword.setBounds(50, 507, 200, 25);
+			lblPotvrdiPassword.setBounds(50, 460, 200, 25);
 			add(lblPotvrdiPassword);
 			
 			passwordField_1 = new JPasswordField();
-			passwordField_1.setBounds(50, 532, 200, 25);
+			passwordField_1.setBounds(50, 490, 200, 25);
 			add(passwordField_1);
 			
 			JLabel lblEmail = new JLabel("E-mail");
 			lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblEmail.setBounds(50, 295, 200, 25);
+			lblEmail.setBounds(50, 245, 200, 25);
 			add(lblEmail);
 			
 			JLabel lblPrezime = new JLabel("Prezime");
 			lblPrezime.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblPrezime.setBounds(50, 230, 200, 25);
+			lblPrezime.setBounds(50, 180, 200, 25);
 			add(lblPrezime);
 			
 			textField_1 = new JTextField();
 			textField_1.setColumns(10);
-			textField_1.setBounds(50, 190, 200, 25);
+			textField_1.setBounds(50, 140, 200, 25);
 			add(textField_1);
 			
 			JLabel lblIme = new JLabel("Ime");
 			lblIme.setFont(new Font("Tahoma", Font.PLAIN, 15));
-			lblIme.setBounds(50, 165, 200, 25);
+			lblIme.setBounds(50, 115, 200, 25);
 			add(lblIme);
 			
 			JSeparator separator_1 = new JSeparator();
-			separator_1.setBounds(50, 360, 200, 5);
+			separator_1.setBounds(50, 310, 200, 5);
 			add(separator_1);
 			
 			JSeparator separator_2 = new JSeparator();
-			separator_2.setBounds(50, 567, 200, 16);
+			separator_2.setBounds(50, 525, 200, 16);
 			add(separator_2);
 			
 			textField_2 = new JTextField();
 			textField_2.setColumns(10);
-			textField_2.setBounds(50, 260, 200, 25);
+			textField_2.setBounds(50, 210, 200, 25);
 			add(textField_2);
 			
 			textField_3 = new JTextField();
 			textField_3.setColumns(10);
-			textField_3.setBounds(50, 325, 200, 25);
+			textField_3.setBounds(50, 275, 200, 25);
 			add(textField_3);
 			
 			JButton btnNewButton = new JButton("Registracija");
@@ -127,8 +127,9 @@ public class Register extends JPanel{
 					String psd2 = String.valueOf(passwordField_1.getPassword());
 					if(!Registracija(ime, prz, mail, usr, psd1, psd2))
 					{
-						JOptionPane.showMessageDialog(null, "Invalid username/password");
+						System.out.println("FAil");
 					}
+					System.out.println("Success Registrovan!!!");
 				}
 			});
 
@@ -152,6 +153,9 @@ public class Register extends JPanel{
 			{
 				km.registracijaKorisnika(ime, prz, mail, usr, psd1);
 			}
+			fireClearSignal();
+			km.sacuvajKorisnike();
+			km.sacuvajNaloge("data/korisnici/users");
 			return true;
 
 		}
@@ -166,7 +170,7 @@ public class Register extends JPanel{
 			//Ako ime ili prz sadrza brojeve...
 			if(ime.matches(".*\\d.*") || prz.matches(".*\\d.*")  )
 			{
-				JOptionPane.showMessageDialog(null, "Ime i prezime ne seju sadržati broj!");
+				JOptionPane.showMessageDialog(null, "Ime i prezime ne smeju sadržati broj!");
 				return false;
 			}
 			if(psd1.length()<8)
@@ -174,6 +178,11 @@ public class Register extends JPanel{
 				JOptionPane.showMessageDialog(null, "Šifra mora biti duga najmanje 8 karaktera!");
 				return false;
 			}
+			//if(!km.validnoKorisnickoIme(usr))
+			//{
+			//	JOptionPane.showMessageDialog(null, "Korisničko ime nije validno!");
+			//	return false;
+			//}
 			
 			
 			return true;

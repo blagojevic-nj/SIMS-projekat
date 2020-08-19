@@ -154,8 +154,6 @@ public class MainWindow extends JFrame {
 					expands = true;
 					rP.blokada(false);	
 				}
-				smallPanelMenu.setBounds(300, 0, 50, getHeight());
-				panelMenu.setVisible(true);
 				menuCardLayout.show(panelMenu, "panelLogIn");
 				
 			}
@@ -183,6 +181,8 @@ public class MainWindow extends JFrame {
 					expands = true;
 					rP.blokada(false);	
 				}
+				System.out.println("lbvsdhlbsn");
+				menuCardLayout.show(panelMenu, "panelRegister");
 				
 			}
 		});
@@ -251,9 +251,15 @@ public class MainWindow extends JFrame {
  */
 	Login panelLogIn = new Login();
 	panelMenu.add(panelLogIn,"panelLogIn");	
-	
-	
-	
+
+		
+/*
+ * 
+ * Register Panel
+ * 
+ */
+	Register panelRegister = new Register();
+	panelMenu.add(panelRegister,"panelRegister");	
 	}
 	
 	

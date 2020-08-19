@@ -37,7 +37,7 @@ public class Login extends JPanel{
 
 		
 		textField = new JTextField();
-		textField.setBounds(50, 210, 200, 25);
+		textField.setBounds(50, 160, 200, 25);
 		add(textField);
 		textField.setColumns(10);
 		textField.addKeyListener(new KeyListener() {
@@ -64,7 +64,7 @@ public class Login extends JPanel{
 				});
 
 		passwordField = new JPasswordField();
-		passwordField.setLocation(50, 275);
+		passwordField.setLocation(50, 225);
 		passwordField.setSize(200, 25);
 		add(passwordField);
 		passwordField.addKeyListener(new KeyListener() {
@@ -91,11 +91,14 @@ public class Login extends JPanel{
 				});
 		
 		
-		JButton btnNewButton = new JButton(new ImageIcon("data/ikonice/login.png"));
-		btnNewButton.setBounds(220, 435, 30, 30);
-		btnNewButton.setBorderPainted(false);
-		btnNewButton.setFocusPainted(false);
-		btnNewButton.setContentAreaFilled(false);
+		//JButton btnNewButton = new JButton(new ImageIcon("data/ikonice/login.png"));
+		JButton btnNewButton = new JButton();
+		btnNewButton.setText("Prijavi se");
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btnNewButton.setBounds(150, 385, 100, 40);
+		//btnNewButton.setBorderPainted(false);
+		//btnNewButton.setFocusPainted(false);
+		//btnNewButton.setContentAreaFilled(false);
 		btnNewButton.setToolTipText("Prijavi se");
 		add(btnNewButton);
 		btnNewButton.addActionListener(new ActionListener() {
@@ -115,34 +118,35 @@ public class Login extends JPanel{
 		
 		
 		JSeparator separator = new JSeparator();
-		separator.setBounds(50, 150, 200, 5);
+		separator.setBounds(50, 100, 200, 5);
 		add(separator);
 		
 		
 		JLabel lblLogin = new JLabel("Log In");
 		lblLogin.setFont(new Font("Tahoma", Font.PLAIN, 35));
-		lblLogin.setBounds(50, 80, 200, 60);
+		lblLogin.setBounds(50, 30, 200, 60);
 		add(lblLogin);
 		
 		JLabel lblUsername = new JLabel("Username");
 		lblUsername.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblUsername.setBounds(50, 185, 200, 25);
+		lblUsername.setBounds(50, 135, 200, 25);
 		add(lblUsername);
 		
 		JLabel lblPassword = new JLabel("Password");
 		lblPassword.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		lblPassword.setBounds(50, 250, 200, 25);
+		lblPassword.setBounds(50, 200, 200, 25);
 		add(lblPassword);
 		
 		JSeparator separator_1 = new JSeparator();
-		separator_1.setBounds(50, 346, 200, 5);
+		separator_1.setBounds(50, 295, 200, 5);
 		add(separator_1);
 
 	}
 	
 	private boolean uloguj(String usr,String psd)
 	{
-		
+		km.postoji(usr, psd);
+		System.out.println("Successful login");
 		return true;
 	}
 }
