@@ -75,8 +75,7 @@ public class MainWindow extends JFrame {
 		recept.setSize(getWidth(), getHeight());
 		mainContentContainerPanel.add(recept, "addRecept");
 		KategorijePanel kPanel = new KategorijePanel(mainContentContainerPanel, contentCardLayout);
-		mainContentContainerPanel.add(kPanel, 
-				"kategorije");
+		mainContentContainerPanel.add(kPanel, "kategorije");
 		SastojciPanel sPanel = new SastojciPanel(mainContentContainerPanel, contentCardLayout);
 		mainContentContainerPanel.add(sPanel, "sastojci");
 		UredjajiPanel uPanel = new UredjajiPanel(mainContentContainerPanel, contentCardLayout);
@@ -126,10 +125,17 @@ public class MainWindow extends JFrame {
  */
 		PretragaPanel panelPretraga = new PretragaPanel();
 		panelMenu.add(panelPretraga, "panelPretraga");
+/*
+ * 
+ * Recepti Panel
+ * 
+ */
+		//ovde bi trebao da imam listu recepata ali mi nemamo nista 
+		rP = new ReceptiPanel(rM.getNajpopularnijih10());
+		mainContentContainerPanel.add(rP, "Recepti");
+		contentCardLayout.show(mainContentContainerPanel, "Recepti");
 	
-	
-	}
-	
+	}	
 	
 	
 	public  void fireNalogChanged()
@@ -405,13 +411,7 @@ public class MainWindow extends JFrame {
 				label.setVerticalAlignment(SwingConstants.TOP);
 				label.setOpaque(true);
 				contentPane.add(label);
-				
-				//ovde bi trebao da imam listu recepata ali mi nemamo nista 
-				rP = new ReceptiPanel(rM.getNajpopularnijih10());
-				
-				
-				mainContentContainerPanel.add(rP, "Recepti");
-				contentCardLayout.show(mainContentContainerPanel, "Recepti");
+
 	}
 	
 	
