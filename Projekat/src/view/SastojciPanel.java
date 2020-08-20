@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.FocusEvent;
@@ -37,6 +38,8 @@ public class SastojciPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private JTextField txtKolicina;
 	private JTextField txtMernaJedinica;
+	private JPanel panel;
+	private CardLayout layout;
 	private DefaultListModel<CheckboxListItem> l1 = new DefaultListModel<>();
 
 	public ArrayList<Sastojak> getBiraniSastojci() {
@@ -45,7 +48,9 @@ public class SastojciPanel extends JPanel {
 	/**
 	 * Panela koja se prikazuje kad biramo sastojke
 	 */
-	public SastojciPanel() {
+	public SastojciPanel(JPanel containerPanel, CardLayout contentLayout) {
+		panel = containerPanel;
+		layout = contentLayout;
 		setToolTipText("proizvod");
 		manager = ProizvodManager.getInstance();
 		setBackground(Color.WHITE);
@@ -189,6 +194,7 @@ public class SastojciPanel extends JPanel {
 						biraniSastojci.add(birana);
 					}
 				}
+				layout.show(panel, "addRecept");
 			}
 		});
 		

@@ -1,5 +1,6 @@
 package view;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
@@ -25,12 +26,16 @@ public class UredjajiPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private UredjajManager manager;
+	private JPanel panel;
+	private CardLayout layout;
 	private ArrayList<Uredjaj> biraniUredjaji = new ArrayList<Uredjaj>();
 
 	/**
 	 * Panel koji se prikazuje prilikom odabira uredjaja
 	 */
-	public UredjajiPanel() {
+	public UredjajiPanel(JPanel containerPanel, CardLayout contentLayout) {
+		panel = containerPanel;
+		layout = contentLayout;
 		manager = UredjajManager.getInstance();
 		setBackground(Color.WHITE);
 		setLayout(new MigLayout("", "[grow]", "[grow][]"));
@@ -83,11 +88,16 @@ public class UredjajiPanel extends JPanel {
 					}	
 					}
 				}
+				layout.show(panel, "addRecept");
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));
 		add(btnNewButton, "cell 0 1,growx");
 
+	}
+
+	public ArrayList<Uredjaj> getBiraniUredjaji() {
+		return biraniUredjaji;
 	}
 
 }

@@ -2,6 +2,7 @@ package view;
 
 import javax.swing.JPanel;
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JList;
 import net.miginfocom.swing.MigLayout;
@@ -22,6 +23,8 @@ public class KategorijePanel extends JPanel {
 
 	private KategorijaManager manager;
 	private ArrayList<Kategorija> biraneKategorije = new ArrayList<Kategorija>();
+	private JPanel panel;
+	private CardLayout layout;
 	private static final long serialVersionUID = 1L;
 
 	public ArrayList<Kategorija> getBiraneKategorije() {
@@ -31,7 +34,9 @@ public class KategorijePanel extends JPanel {
 	/**
 	 * Panela koja se prikazuje kad biramo kategorije
 	 */
-	public KategorijePanel() {
+	public KategorijePanel(JPanel containerPanel, CardLayout contentLayout) {
+		panel = containerPanel;
+		layout = contentLayout;
 		manager = KategorijaManager.getInstance();
 		setBackground(Color.WHITE);
 		setLayout(new MigLayout("", "[grow]", "[grow][]"));
@@ -84,6 +89,7 @@ public class KategorijePanel extends JPanel {
 					}	
 					}
 				}
+				layout.show(panel, "addRecept");
 			}
 		});
 		btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 16));

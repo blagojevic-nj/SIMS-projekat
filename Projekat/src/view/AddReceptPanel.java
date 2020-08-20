@@ -2,12 +2,17 @@ package view;
 
 import javax.swing.JPanel;
 import net.miginfocom.swing.MigLayout;
+
+import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 
+import model.Kategorija;
+import model.Sastojak;
 import model.Tezina;
+import model.Uredjaj;
 
 import javax.swing.JTextArea;
 import javax.swing.JComboBox;
@@ -23,6 +28,7 @@ import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.util.ArrayList;
 
 
 
@@ -49,11 +55,17 @@ public class AddReceptPanel extends JPanel {
 	private JButton btnUredjaji;
 	private JButton btnSastojci;
 	private JPanel panel;
+	private CardLayout layout;
+	//private ArrayList<Kategorija> kategorije;
+	//private ArrayList<Uredjaj> uredjaji;
+	//private ArrayList<Sastojak> sastojci;
 
 	/**
 	 * Create the panel.
 	 */
-	public AddReceptPanel(JFrame frame) {
+	public AddReceptPanel(JFrame frame, JPanel containerPanel, CardLayout contentLayout) {
+		layout = contentLayout;
+		panel = containerPanel;
 		parent = frame;
 		setBackground(Color.WHITE);
 		setLayout(new MigLayout("", "[][grow][][][][][][][grow][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][grow][][][][][grow]", "[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][grow][][][][][grow][][][grow][grow][][grow]"));
@@ -180,6 +192,7 @@ public class AddReceptPanel extends JPanel {
 		add(btnPutanjaDoSlike, "cell 1 21 16 1,growx");
 		
 		btnKreirajRecept = new JButton("Kreiraj Recept");
+		btnKreirajRecept.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnKreirajRecept.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
@@ -219,19 +232,43 @@ public class AddReceptPanel extends JPanel {
 				String koraci = txtrUnesiteKorake.getText();
 				Tezina tesko = (Tezina) tezina.getSelectedItem();
 				
-				//TODO napraviti Restoran
+				ArrayList<Kategorija> kategorije = MainWindow.kPanel.getBiraneKategorije();
+				ArrayList<Sastojak> sastojci = MainWindow.sPanel.getBiraniSastojci();
+				ArrayList<Uredjaj> uredjaji = MainWindow.uPanel.getBiraniUredjaji();
+				
+				//TODO treba nam trenutni korisnik, pa mozemo napraviti Restoran
 			}
 		});
+		add(btnKreirajRecept, "cell 2 40 46 5,growx");
 		
 		
-		//TODO povezati sa ostalim panelama
+		
+		
 		btnKategorije = new JButton("Kategorije");
+		btnKategorije.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				layout.show(panel, "kategorije");
+			}
+		});
 		add(btnKategorije, "cell 1 25 16 1,growx");
 		
 		btnUredjaji = new JButton("Uredjaji");
+		btnUredjaji.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				layout.show(panel, "uredjaji");
+			}
+		});
 		add(btnUredjaji, "cell 1 29 16 1,growx");
 		
 		btnSastojci = new JButton("Sastojci");
+		btnSastojci.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				layout.show(panel, "sastojci");
+			}
+		});
 		add(btnSastojci, "cell 1 33 16 1,growx");
 		
 		//panel = new JPanel();

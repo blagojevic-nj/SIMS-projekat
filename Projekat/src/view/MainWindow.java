@@ -28,7 +28,11 @@ public class MainWindow extends JFrame {
 	private ReceptiPanel rP;
 	private int xx, xy;
 	private CardLayout menuCardLayout,contentCardLayout;
+	static KategorijePanel kPanel;
+	static UredjajiPanel uPanel;
+	static SastojciPanel sPanel;
 	//private ReceptManager rM = ReceptManager.getInstance();
+	
 	
 	public MainWindow() {
 		
@@ -64,10 +68,17 @@ public class MainWindow extends JFrame {
 		
 
 		//Za testiranje
-				AddReceptPanel recept = new AddReceptPanel(this);
+				AddReceptPanel recept = new AddReceptPanel(this, mainContentContainerPanel, contentCardLayout);
 				recept.setSize(getWidth(), getHeight());
-				mainContentContainerPanel.add(recept, "recept");
-				contentCardLayout.show(mainContentContainerPanel, "recept");
+				mainContentContainerPanel.add(recept, "addRecept");
+				kPanel = new KategorijePanel(mainContentContainerPanel, contentCardLayout);
+				mainContentContainerPanel.add(kPanel, 
+						"kategorije");
+				sPanel = new SastojciPanel(mainContentContainerPanel, contentCardLayout);
+				mainContentContainerPanel.add(sPanel, "sastojci");
+				uPanel = new UredjajiPanel(mainContentContainerPanel, contentCardLayout);
+				mainContentContainerPanel.add(uPanel, "uredjaji");
+				contentCardLayout.show(mainContentContainerPanel, "addRecept");
 		
 /*
  * 
