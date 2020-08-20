@@ -35,7 +35,7 @@ public class MaliPrikazRecepta extends JPanel{
 		zoomPanel.setVisible(false);
 		
 		
-		ImageIcon img = new ImageIcon("data/images/"+r.getId()+".jpg");
+		ImageIcon img = new ImageIcon("data/recepti/images/"+r.getId()+".jpg");
 		Image resize = img.getImage().getScaledInstance(240, 240, Image.SCALE_SMOOTH);
 		
 		JLabel slika = new JLabel(new ImageIcon(resize));
@@ -91,14 +91,14 @@ public class MaliPrikazRecepta extends JPanel{
 		
 		JLabel ocena = new JLabel("Ocena: ");
 		ocena.setFont(new Font("Lucida Sans", Font.ITALIC, 14));
-		JLabel star = new JLabel(new ImageIcon("data/images/stars/"+(int)r.getOcena() + ".png"));
+		JLabel star = new JLabel(new ImageIcon("data/ikonice/stars/"+(int)r.getOcena() + ".png"));
 		
 		add(ocena);
 		add(star, "wrap");
 		
 		JLabel tezina = new JLabel("Tezina: ");
 		tezina.setFont(new Font("Lucida Sans", 2, 14));
-		JLabel tez = new JLabel(new ImageIcon("data/images/tezina/"+ r.getTezina().toString() + ".png"));
+		JLabel tez = new JLabel(new ImageIcon("data/ikonice/tezina/"+ r.getTezina().toString() + ".png"));
 		
 		add(tezina);
 		add(tez, "center, wrap");

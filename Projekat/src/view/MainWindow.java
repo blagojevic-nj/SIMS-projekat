@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -18,7 +17,9 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
-import model.Recept;
+import manageri.ReceptManager;
+import model.Nalog;
+
 
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -31,11 +32,10 @@ public class MainWindow extends JFrame {
 	static KategorijePanel kPanel;
 	static UredjajiPanel uPanel;
 	static SastojciPanel sPanel;
-	//private ReceptManager rM = ReceptManager.getInstance();
-	
+	static ReceptManager rM = ReceptManager.getInstance();
+	static Nalog trenutniNalog;
 	
 	public MainWindow() {
-		
 		ImageIcon logo = new ImageIcon("data/ikonice/fork.png");
 		setIconImage(logo.getImage());
 		setUndecorated(true);
@@ -68,17 +68,17 @@ public class MainWindow extends JFrame {
 		
 
 		//Za testiranje
-				AddReceptPanel recept = new AddReceptPanel(this, mainContentContainerPanel, contentCardLayout);
-				recept.setSize(getWidth(), getHeight());
-				mainContentContainerPanel.add(recept, "addRecept");
-				kPanel = new KategorijePanel(mainContentContainerPanel, contentCardLayout);
-				mainContentContainerPanel.add(kPanel, 
-						"kategorije");
-				sPanel = new SastojciPanel(mainContentContainerPanel, contentCardLayout);
-				mainContentContainerPanel.add(sPanel, "sastojci");
-				uPanel = new UredjajiPanel(mainContentContainerPanel, contentCardLayout);
-				mainContentContainerPanel.add(uPanel, "uredjaji");
-				contentCardLayout.show(mainContentContainerPanel, "addRecept");
+		AddReceptPanel recept = new AddReceptPanel(this, mainContentContainerPanel, contentCardLayout);
+		recept.setSize(getWidth(), getHeight());
+		mainContentContainerPanel.add(recept, "addRecept");
+		kPanel = new KategorijePanel(mainContentContainerPanel, contentCardLayout);
+		mainContentContainerPanel.add(kPanel, 
+				"kategorije");
+		sPanel = new SastojciPanel(mainContentContainerPanel, contentCardLayout);
+		mainContentContainerPanel.add(sPanel, "sastojci");
+		uPanel = new UredjajiPanel(mainContentContainerPanel, contentCardLayout);
+		mainContentContainerPanel.add(uPanel, "uredjaji");
+		contentCardLayout.show(mainContentContainerPanel, "addRecept");
 		
 /*
  * 
@@ -257,10 +257,11 @@ public class MainWindow extends JFrame {
 		contentPane.add(label);
 		
 		//ovde bi trebao da imam listu recepata ali mi nemamo nista 
-		rP = new ReceptiPanel(new ArrayList<Recept>());
+		rP = new ReceptiPanel(rM.getNajpopularnijih10());
 		
 		
 		mainContentContainerPanel.add(rP, "Recepti");
+		contentCardLayout.show(mainContentContainerPanel, "Recepti");
 	
 /*
  * 

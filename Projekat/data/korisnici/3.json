@@ -1,0 +1,17 @@
+{
+  "id" : 3,
+  "ime" : "Njegos",
+  "prezime" : "Blagojevic",
+  "email" : "njegos@gmail.com",
+  "korisnickoIme" : "njegi99",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : null,
+  "uredjaji" : null,
+  "kategorije" : null,
+  "proizvodi" : null,
+  "recepti" : null,
+  "sacuvaniRecepti" : null
+}

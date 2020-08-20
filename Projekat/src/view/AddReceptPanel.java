@@ -1,34 +1,36 @@
 package view;
 
-import javax.swing.JPanel;
-import net.miginfocom.swing.MigLayout;
-
 import java.awt.CardLayout;
 import java.awt.Color;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-
-import model.Kategorija;
-import model.Sastojak;
-import model.Tezina;
-import model.Uredjaj;
-
-import javax.swing.JTextArea;
-import javax.swing.JComboBox;
-import javax.swing.JFileChooser;
-import javax.swing.JFrame;
-
 import java.awt.Font;
-import javax.swing.border.MatteBorder;
-import javax.swing.JButton;
-
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.File;
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+import javax.swing.border.MatteBorder;
+
+import manageri.KorisnikManager;
+import model.Kategorija;
+import model.Recept;
+import model.RegistrovaniKorisnik;
+import model.Sastojak;
+import model.Tezina;
+import model.Uredjaj;
+import model.UredjajUReceptu;
+import net.miginfocom.swing.MigLayout;
 
 
 
@@ -209,7 +211,7 @@ public class AddReceptPanel extends JPanel {
 					validan = false;
 				}
 				
-				int vreme;
+				int vreme = 0;
 				try {
 					vreme = Integer.parseInt(txtVremePripreme.getText());
 				}catch (Exception e) {
@@ -236,7 +238,16 @@ public class AddReceptPanel extends JPanel {
 				ArrayList<Sastojak> sastojci = MainWindow.sPanel.getBiraniSastojci();
 				ArrayList<Uredjaj> uredjaji = MainWindow.uPanel.getBiraniUredjaji();
 				
-				//TODO treba nam trenutni korisnik, pa mozemo napraviti Restoran
+				ArrayList<UredjajUReceptu> uredj = new ArrayList<UredjajUReceptu>();
+				for(Uredjaj u : uredjaji)
+					uredj.add(new UredjajUReceptu(true, u));
+				ArrayList<Integer> kat = new ArrayList<Integer>();
+				for(Kategorija k: kategorije)
+					kat.add(k.getSifra());
+				
+				MainWindow.rM.noviRecept(naziv, "", koraci, tesko, vreme, uredj, sastojci, kat, (RegistrovaniKorisnik) KorisnikManager.getInstance().getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme()), "");
+				MainWindow.rM.sacuvajRecepte();
+				MainWindow.rM.sacuvajTabelu();
 			}
 		});
 		add(btnKreirajRecept, "cell 2 40 46 5,growx");

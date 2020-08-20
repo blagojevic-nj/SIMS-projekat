@@ -1,0 +1,49 @@
+{
+  "id" : 0,
+  "naziv" : "Recept 1",
+  "opis" : "",
+  "koraci" : "dsaadksajdhk",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 10,
+  "uredjen" : false,
+  "datum" : {
+    "year" : 2020,
+    "month" : "AUGUST",
+    "dayOfMonth" : 20,
+    "dayOfWeek" : "THURSDAY",
+    "era" : "CE",
+    "dayOfYear" : 233,
+    "leapYear" : true,
+    "monthValue" : 8,
+    "chronology" : {
+      "id" : "ISO",
+      "calendarType" : "iso8601"
+    }
+  },
+  "uredjaji" : [ {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 2,
+      "naziv" : "Sokovnik"
+    }
+  }, {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 3,
+      "naziv" : "Blender"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "Articoka"
+  } ],
+  "kategorije" : [ 5 ],
+  "autor" : "njegi99",
+  "ocene" : null,
+  "recenzije" : null,
+  "pregleda" : 0
+}
