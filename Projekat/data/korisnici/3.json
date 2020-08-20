@@ -1,0 +1,17 @@
+{
+  "id" : 3,
+  "ime" : "David",
+  "prezime" : "Makan",
+  "email" : "davem@gmail.com",
+  "korisnickoIme" : "m_david",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : null,
+  "uredjaji" : null,
+  "kategorije" : null,
+  "proizvodi" : null,
+  "recepti" : null,
+  "sacuvaniRecepti" : null
+}
