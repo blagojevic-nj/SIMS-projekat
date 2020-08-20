@@ -1,4 +1,6 @@
 {
-  "recepti" : { },
+  "recepti" : {
+    "recept 1" : 0
+  },
   "najpopularniji" : [ ]
 }
