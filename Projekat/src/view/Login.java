@@ -28,11 +28,12 @@ public class Login extends JPanel{
 	private static final long serialVersionUID = 1L;
 	private JPasswordField passwordField;
 	private JTextField textField;
-	
+	private MainWindow m;
 	private KorisnikManager km = KorisnikManager.getInstance();
 
-	public Login()
+	public Login(MainWindow mw)
 	{
+		m = mw;
 		setBackground(Color.LIGHT_GRAY);
 		setBounds(0, 0, 300, 700);
 		setLayout(null);
@@ -143,8 +144,15 @@ public class Login extends JPanel{
 		separator_1.setBounds(50, 295, 200, 5);
 		add(separator_1);
 
+		
+		/*****************************************************************************/
+		setDefaultLogin();
+		
+		
 	}
 	
+	
+	/**Postavlja trenutnog korisnika u mainWindow*/
 	private boolean uloguj(String usr,String psd)
 	{
 		if(km.postoji(usr, psd))
@@ -152,7 +160,10 @@ public class Login extends JPanel{
 			Nalog real = km.getNalog(usr);
 			if(real.getLozinka().equals(psd))
 			{
-				postaviTrenutnogKorisnika(real);
+				m.trenutniNalog=real;
+				m.fireNalogChanged();
+				JOptionPane.showMessageDialog(null, "Uspešna prijava!");
+				m.collapseSmallMenu();
 				return true;
 			}	
 		}
@@ -160,14 +171,14 @@ public class Login extends JPanel{
 		return false;
 	}
 
-
-/**Postavlja trenutnog korisnika u mainWindow arg je korisnicko ime
- * komentar*/
-	private void postaviTrenutnogKorisnika(Nalog n)
+	
+	/**Zbog testitanja*/
+	private void setDefaultLogin()
 	{
-		MainWindow.trenutniNalog = n;
-		System.out.println("Successful login");
+		textField.setText("lule");
+		passwordField.setText("123456789");
 	}
+
 
 
 

@@ -45,7 +45,7 @@ public class AddReceptPanel extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private JFrame parent;
+	private MainWindow parent;
 	private JTextField txtNazivRecepta;
 	private JTextField txtVremePripreme;
 	private JTextArea txtrUnesiteKorake;
@@ -65,7 +65,7 @@ public class AddReceptPanel extends JPanel {
 	/**
 	 * Create the panel.
 	 */
-	public AddReceptPanel(JFrame frame, JPanel containerPanel, CardLayout contentLayout) {
+	public AddReceptPanel(MainWindow frame, JPanel containerPanel, CardLayout contentLayout) {
 		layout = contentLayout;
 		panel = containerPanel;
 		parent = frame;
@@ -234,20 +234,30 @@ public class AddReceptPanel extends JPanel {
 				String koraci = txtrUnesiteKorake.getText();
 				Tezina tesko = (Tezina) tezina.getSelectedItem();
 				
-				ArrayList<Kategorija> kategorije = MainWindow.kPanel.getBiraneKategorije();
-				ArrayList<Sastojak> sastojci = MainWindow.sPanel.getBiraniSastojci();
-				ArrayList<Uredjaj> uredjaji = MainWindow.uPanel.getBiraniUredjaji();
 				
-				ArrayList<UredjajUReceptu> uredj = new ArrayList<UredjajUReceptu>();
-				for(Uredjaj u : uredjaji)
-					uredj.add(new UredjajUReceptu(true, u));
-				ArrayList<Integer> kat = new ArrayList<Integer>();
-				for(Kategorija k: kategorije)
-					kat.add(k.getSifra());
+/*********************************************************************************************/
+
+/*Proslediti panele kao argumente pa onda pozivati metode, ne static!*/
 				
-				MainWindow.rM.noviRecept(naziv, "", koraci, tesko, vreme, uredj, sastojci, kat, (RegistrovaniKorisnik) KorisnikManager.getInstance().getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme()), "");
-				MainWindow.rM.sacuvajRecepte();
-				MainWindow.rM.sacuvajTabelu();
+				//ArrayList<Kategorija> kategorije = MainWindow.kPanel.getBiraneKategorije();
+				//ArrayList<Sastojak> sastojci = MainWindow.sPanel.getBiraniSastojci();
+				//ArrayList<Uredjaj> uredjaji = MainWindow.uPanel.getBiraniUredjaji();
+
+				
+	//			ArrayList<UredjajUReceptu> uredj = new ArrayList<UredjajUReceptu>();
+	//			for(Uredjaj u : uredjaji)
+	//				uredj.add(new UredjajUReceptu(true, u));
+	//			ArrayList<Integer> kat = new ArrayList<Integer>();
+	//			for(Kategorija k: kategorije)
+	//				kat.add(k.getSifra());
+				
+	//			MainWindow.rM.noviRecept(naziv, "", koraci, tesko, vreme, uredj, sastojci, kat, (RegistrovaniKorisnik) KorisnikManager.getInstance().getKorisnik(parent.trenutniNalog.getKorisnickoIme()), "");
+	//			MainWindow.rM.sacuvajRecepte();
+	//			MainWindow.rM.sacuvajTabelu();
+				
+				
+/*********************************************************************************************/
+
 			}
 		});
 		add(btnKreirajRecept, "cell 2 40 46 5,growx");
