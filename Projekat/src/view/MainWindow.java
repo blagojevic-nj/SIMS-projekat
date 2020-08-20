@@ -206,17 +206,50 @@ public class MainWindow extends JFrame {
 		});
 		smallPanelMenu.add(register);
 		
-		JButton exit = new JButton(new ImageIcon("data/ikonice/close.png"));
-		exit.setBounds(10, getHeight()-50, 30, 30);
-		exit.setBorderPainted(false);
-		exit.setFocusPainted(false);
-		exit.setContentAreaFilled(false);
+		
+		/*
+		 * Pretraga dugme
+		 */
+		
+		JButton pretraga = new JButton(new ImageIcon("data/ikonice/search.png"));
+		pretraga.setBounds(10, 200, 30, 30);
+		pretraga.setBorderPainted(false);
+		pretraga.setFocusPainted(false);
+		pretraga.setContentAreaFilled(false);
+		pretraga.setToolTipText("Pretrazi");
+		
+		smallPanelMenu.add(pretraga);
+		
+		pretraga.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) 
+			{
+				if(!expands) {
+					smallPanelMenu.setBounds(300, 0, 50, getHeight());
+					panelMenu.setVisible(true);
+					expands = true;
+					rP.blokada(false);	
+				}
+				menuCardLayout.show(panelMenu, "panelPretraga");
+				
+			}
+		});
+		smallPanelMenu.add(pretraga);
+
 		
 /*
  * 
  * Exit dugme
  * 
  */
+		
+		JButton exit = new JButton(new ImageIcon("data/ikonice/close.png"));
+		exit.setBounds(10, getHeight()-50, 30, 30);
+		exit.setBorderPainted(false);
+		exit.setFocusPainted(false);
+		exit.setContentAreaFilled(false);
+
 		exit.addActionListener(new ActionListener() {
 
 			@Override
@@ -278,7 +311,17 @@ public class MainWindow extends JFrame {
  * 
  */
 	Register panelRegister = new Register();
-	panelMenu.add(panelRegister,"panelRegister");	
+	panelMenu.add(panelRegister,"panelRegister");
+	
+	
+/*
+ * 
+ * Pretraga Panel
+ * 
+ */
+	PretragaPanel panelPretraga = new PretragaPanel();
+	panelMenu.add(panelPretraga, "panelPretraga");
+	
 	}
 	
 	

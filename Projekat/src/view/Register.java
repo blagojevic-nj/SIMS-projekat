@@ -2,7 +2,6 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -12,8 +11,6 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JSeparator;
 import javax.swing.JTextField;
-
-import org.w3c.dom.Text;
 
 import manageri.KorisnikManager;
 
