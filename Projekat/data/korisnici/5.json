@@ -1,0 +1,17 @@
+{
+  "id" : 5,
+  "ime" : "s",
+  "prezime" : "s",
+  "email" : "s",
+  "korisnickoIme" : "12345678",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : null,
+  "uredjaji" : null,
+  "kategorije" : null,
+  "proizvodi" : null,
+  "recepti" : null,
+  "sacuvaniRecepti" : null
+}
