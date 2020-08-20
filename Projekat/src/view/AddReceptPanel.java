@@ -42,7 +42,7 @@ public class AddReceptPanel extends JPanel {
 	private JTextField txtVremePripreme;
 	private JTextArea txtrUnesiteKorake;
 	private JTextField txtYoutubeLink;
-	private JButton txtPutanjaDoSlike;
+	private JButton btnPutanjaDoSlike;
 	private JButton btnKreirajRecept;
 	private File slika;
 	private JButton btnKategorije;
@@ -156,6 +156,29 @@ public class AddReceptPanel extends JPanel {
 		
 		JFileChooser fc  = new JFileChooser();
 		
+		btnPutanjaDoSlike = new JButton();
+		btnPutanjaDoSlike.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				fc.addChoosableFileFilter(new ImageFilter());
+				fc.setAcceptAllFileFilterUsed(false);
+				int returnVal =fc.showDialog(parent, "Birajte sliku");
+				if(returnVal == JFileChooser.APPROVE_OPTION) {
+					File slika = fc.getSelectedFile();
+				}
+			}
+		});
+		
+		JComboBox<Tezina> tezina = new JComboBox<Tezina>();
+		tezina.addItem(Tezina.LAKO);
+		tezina.addItem(Tezina.SREDNJE);
+		tezina.addItem(Tezina.TESKO);
+		tezina.setToolTipText("Tezina recepta");
+		add(tezina, "cell 1 17 16 1,growx");
+		btnPutanjaDoSlike.setToolTipText("Putanja slike");
+		btnPutanjaDoSlike.setText("Putanja do slike ");
+		add(btnPutanjaDoSlike, "cell 1 21 16 1,growx");
+		
 		btnKreirajRecept = new JButton("Kreiraj Recept");
 		btnKreirajRecept.addMouseListener(new MouseAdapter() {
 			@Override
@@ -185,13 +208,6 @@ public class AddReceptPanel extends JPanel {
 							+ "su neke informacije nekorektne!" , "Greska", JOptionPane.ERROR_MESSAGE);
 				}
 				
-				String putanjaSlike;
-				if(txtPutanjaDoSlike.getText().equals("Putanja do slike")) {
-					putanjaSlike = null;
-				}else {
-					putanjaSlike = txtPutanjaDoSlike.getText(); 
-				}
-				
 				String youtube;
 				if(txtYoutubeLink.getText().equals("Youtube link")) {
 					youtube = null;
@@ -201,34 +217,14 @@ public class AddReceptPanel extends JPanel {
 				
 				String naziv = txtNazivRecepta.getText();
 				String koraci = txtrUnesiteKorake.getText();
+				Tezina tesko = (Tezina) tezina.getSelectedItem();
 				
 				//TODO napraviti Restoran
 			}
 		});
 		
-		txtPutanjaDoSlike = new JButton();
-		txtPutanjaDoSlike.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				fc.addChoosableFileFilter(new ImageFilter());
-				fc.setAcceptAllFileFilterUsed(false);
-				int returnVal =fc.showDialog(parent, "Birajte sliku");
-				if(returnVal == JFileChooser.APPROVE_OPTION) {
-					File slika = fc.getSelectedFile();
-				}
-			}
-		});
 		
-		JComboBox<Tezina> tezina = new JComboBox<Tezina>();
-		tezina.addItem(Tezina.LAKO);
-		tezina.addItem(Tezina.SREDNJE);
-		tezina.addItem(Tezina.TESKO);
-		tezina.setToolTipText("Tezina recepta");
-		add(tezina, "cell 1 17 16 1,growx");
-		txtPutanjaDoSlike.setToolTipText("Putanja slike");
-		txtPutanjaDoSlike.setText("Putanja do slike ");
-		add(txtPutanjaDoSlike, "cell 1 21 16 1,growx");
-		
+		//TODO povezati sa ostalim panelama
 		btnKategorije = new JButton("Kategorije");
 		add(btnKategorije, "cell 1 25 16 1,growx");
 		

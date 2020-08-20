@@ -24,8 +24,12 @@ public class KategorijePanel extends JPanel {
 	private ArrayList<Kategorija> biraneKategorije = new ArrayList<Kategorija>();
 	private static final long serialVersionUID = 1L;
 
+	public ArrayList<Kategorija> getBiraneKategorije() {
+		return biraneKategorije;
+	}
+
 	/**
-	 * Create the panel.
+	 * Panela koja se prikazuje kad biramo kategorije
 	 */
 	public KategorijePanel() {
 		manager = KategorijaManager.getInstance();

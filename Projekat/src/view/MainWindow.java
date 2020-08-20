@@ -64,7 +64,7 @@ public class MainWindow extends JFrame {
 		
 
 		//Za testiranje
-				UredjajiPanel recept = new UredjajiPanel();
+				AddReceptPanel recept = new AddReceptPanel(this);
 				recept.setSize(getWidth(), getHeight());
 				mainContentContainerPanel.add(recept, "recept");
 				contentCardLayout.show(mainContentContainerPanel, "recept");

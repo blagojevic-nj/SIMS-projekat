@@ -9,7 +9,7 @@ import javax.swing.ListCellRenderer;
 public class CheckBoxListCellRenderer extends JCheckBox implements ListCellRenderer<CheckboxListItem> {
 
 	 /**
-	 * 
+	 * Da bi se prikazao checkbox u listi kako treba
 	 */
 	private static final long serialVersionUID = 1L;
 	 public Component getListCellRendererComponent(

@@ -4,7 +4,7 @@ import java.awt.Component;
 
 class CheckboxListItem extends Component{
 	   /**
-	 * 
+	 * checkbox unutar liste, pomocna klasa za prikaz
 	 */
 	private static final long serialVersionUID = 1L;
 	private String label;

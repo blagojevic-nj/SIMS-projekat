@@ -12,7 +12,7 @@ public class Utils {
     public final static String png = "png";
 
     /*
-     * Get the extension of a file.
+     * Da dobijemo extenzije za fajl, pomoc za filter
      */  
     public static String getExtension(File f) {
         String ext = null;

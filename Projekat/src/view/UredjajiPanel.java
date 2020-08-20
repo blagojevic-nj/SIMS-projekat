@@ -28,7 +28,7 @@ public class UredjajiPanel extends JPanel {
 	private ArrayList<Uredjaj> biraniUredjaji = new ArrayList<Uredjaj>();
 
 	/**
-	 * Create the panel.
+	 * Panel koji se prikazuje prilikom odabira uredjaja
 	 */
 	public UredjajiPanel() {
 		manager = UredjajManager.getInstance();
