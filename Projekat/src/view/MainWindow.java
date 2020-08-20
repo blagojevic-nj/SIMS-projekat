@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 import javax.swing.border.EmptyBorder;
 
+import manageri.KorisnikManager;
 import manageri.ReceptManager;
 import model.Nalog;
 import model.TipNaloga;
@@ -36,6 +37,7 @@ public class MainWindow extends JFrame {
 	private int xx, xy;
 	private CardLayout menuCardLayout,contentCardLayout;
 	static ReceptManager rM = ReceptManager.getInstance();
+	static KorisnikManager km = KorisnikManager.getInstance();
 	Nalog trenutniNalog;
 	
 	public MainWindow() {
@@ -134,6 +136,13 @@ public class MainWindow extends JFrame {
 		rP = new ReceptiPanel(rM.getNajpopularnijih10());
 		mainContentContainerPanel.add(rP, "Recepti");
 		contentCardLayout.show(mainContentContainerPanel, "Recepti");
+/*
+ * 
+ * Podesavanja Panel
+ * 
+ */
+		UserSettingsPanel userPanel = new UserSettingsPanel(km, trenutniNalog);
+		mainContentContainerPanel.add(userPanel,"userPanel");
 	
 	}	
 	
@@ -216,6 +225,7 @@ public class MainWindow extends JFrame {
 					@Override
 					public void actionPerformed(ActionEvent e)
 					{
+						contentCardLayout.show(mainContentContainerPanel, "Recepti");
 						collapseSmallMenu();
 					}
 				});
@@ -318,8 +328,9 @@ public class MainWindow extends JFrame {
 								if(!expands) {
 									System.out.println("Podesavanja");
 									collapseSmallMenu();
+									
 								}
-								//menuCardLayout.show(panelMenu, "panelRegister");
+								contentCardLayout.show(mainContentContainerPanel, "userPanel");
 								
 							}
 						});
