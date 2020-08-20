@@ -1,10 +1,5 @@
 {
   "nalozi" : [ {
-    "korisnickoIme" : "m_david",
-    "lozinka" : "123456dm",
-    "tip" : "REG_KORISNIK",
-    "idKorisnika" : 3
-  }, {
     "korisnickoIme" : "Gosnje",
     "lozinka" : "123456789",
     "tip" : "REG_KORISNIK",
