@@ -124,9 +124,8 @@ public class Register extends JPanel{
 					String psd2 = String.valueOf(passwordField_1.getPassword());
 					if(!Registracija(ime, prz, mail, usr, psd1, psd2))
 					{
-						System.out.println("FAil");
+						System.out.println("FAil");						
 					}
-					System.out.println("Success Registrovan!!!");
 				}
 			});
 
@@ -136,9 +135,9 @@ public class Register extends JPanel{
 		
 		private boolean Registracija(String ime, String prz, String mail, String usr,String psd1,String psd2) 
 		{
-			if(!proveriPassword(psd1, psd2))
+			if(!checkPraznaPolja())
 			{
-				JOptionPane.showMessageDialog(null, "Šifra 1 i šifra 2 nisu podudarne!");
+				JOptionPane.showMessageDialog(null, "Sva polja moraju biti popunjena!");
 				return false;
 			}
 			if(km.getKorisnik(usr) != null)
@@ -146,14 +145,22 @@ public class Register extends JPanel{
 				JOptionPane.showMessageDialog(null, "Korisničko ime zauzeto");
 				return false;
 			}
+			if(!proveriPassword(psd1, psd2))
+			{
+				JOptionPane.showMessageDialog(null, "Šifra 1 i šifra 2 nisu podudarne!");
+				return false;
+			}
 			if(finalnaProvera(ime, prz, mail, usr, psd1, psd2))
 			{
 				km.registracijaKorisnika(ime, prz, mail, usr, psd1);
+				System.out.println("Success Registrovan!!!");
+				fireClearSignal();
+				km.sacuvajKorisnike();
+				km.sacuvajNaloge();
+				return true;
 			}
-			fireClearSignal();
-			km.sacuvajKorisnike();
-			km.sacuvajNaloge();
-			return true;
+			return false;
+
 
 		}
 		
@@ -175,14 +182,32 @@ public class Register extends JPanel{
 				JOptionPane.showMessageDialog(null, "Šifra mora biti duga najmanje 8 karaktera!");
 				return false;
 			}
-			//if(!km.validnoKorisnickoIme(usr))
-			//{
-			//	JOptionPane.showMessageDialog(null, "Korisničko ime nije validno!");
-			//	return false;
-			//}
-			
-			
+			if(!km.validnoKorisnickoIme(usr))
+			{
+				JOptionPane.showMessageDialog(null, "Korisničko ime nije validno!");
+				return false;
+			}
+						
 			return true;
+		}
+		
+		private boolean checkPraznaPolja() 
+		{
+			String str1 = textField.getText();
+			String str2 = textField_1.getText();
+			String str3 = textField_2.getText();
+			String str4 = textField_3.getText();
+
+			
+			String ps1  = String.valueOf(passwordField.getPassword());
+			String ps2  = String.valueOf(passwordField_1.getPassword());
+
+			if(str1.isBlank() || str2.isBlank() || str3.isBlank() || str4.isBlank() || ps1.isBlank() ||ps2.isBlank())
+			{
+				return false;
+			}
+			return true;
+
 		}
 		
 		/**Brise sve podatke iz svih boxova...*/
