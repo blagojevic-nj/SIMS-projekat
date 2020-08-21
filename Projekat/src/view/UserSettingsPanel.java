@@ -4,6 +4,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
 import manageri.KorisnikManager;
+import model.Korisnik;
 import model.Nalog;
 import javax.swing.UIManager;
 
@@ -19,29 +20,53 @@ import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class UserSettingsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JPanel main,trenutniPanel;
-	private JLabel naslov,username,lblNewLabel,lblSauvaniRecepti_1,lblSauvaniRecepti_2,lblSauvaniRecepti_3,lblSauvaniRecepti_4,lblSauvaniRecepti_5,lblSauvaniRecepti_6,lblSauvaniRecepti_7,lblSauvaniRecepti_8;
+	private JPanel main,trenutniPanel,info;
+	private JLabel naslov,username,lblNewLabel,lblSauvaniRecepti_1,lblSauvaniRecepti_3,lblSauvaniRecepti_4,lblSauvaniRecepti_5,lblSauvaniRecepti_6,lblSauvaniRecepti_7,lblSauvaniRecepti_8;
 	private KorisnikManager km;
 	private Nalog trenutni;
 	private MainWindow mw;
 	private Image img;
+	private JLabel lblKorisnikoIme;
+	private JLabel lblPreyime;
+	private JLabel label_2;
+	private JLabel lblEmail;
+	private JLabel lblTipNaloga;
+	private JLabel lblPromenaifre;
+	private JSeparator separator_2;
+	private JButton btnSifra;
+	private JLabel lblNewLabel_2;
+	private JLabel lblNewLabel_3;
+	private JLabel lblNewLabel_4;
+	private JLabel lblPrivrez;
+	private JLabel lblBrprtrez;
+	private JLabel lblBedzrez;
+	private JLabel lblOcenarez;
+	private JTextField txtPrz;
+	private JTextField txtIme;
+	private JTextField txtMail;
+	private JTextField txtTipnaloga;
+	private JTextField txtUsername;
+	private JButton btnOdbaci;
+	private Korisnik korisnik;
+	
 	
 	public UserSettingsPanel(MainWindow mainWindow,KorisnikManager manager, Nalog trenutniNalog) {
 		mw=mainWindow;
 		km = manager;
 		trenutni = trenutniNalog;
-		
+		korisnik = MainWindow.km.getKorisnik(trenutni.getKorisnickoIme());
 		
 		
 
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 	    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
-	    //setPreferredSize(size);
-	    //setMinimumSize(size);
-	    //setMaximumSize(size);
 	    setSize(size);		
 		setLayout(null);
 		setBounds(0,0,1040,650);
@@ -57,8 +82,9 @@ public class UserSettingsPanel extends JPanel {
 		initializeMaliMeniAndLabels();
 		username.setText(trenutniNalog.getKorisnickoIme());
 
-
-
+		/*****************************************************************************************************************************************************/
+		
+		
 
 		
 		
@@ -67,7 +93,7 @@ public class UserSettingsPanel extends JPanel {
 		
 	}
 	
-	
+
 	private void initializeMaliMeniAndLabels()
 	{
 
@@ -88,7 +114,7 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				lblSauvaniRecepti_1.setHorizontalAlignment(SwingConstants.CENTER);
 				lblSauvaniRecepti_1.setForeground(Color.BLACK);
-				lblSauvaniRecepti_1.setBounds(0, 170, 200, 60);
+				lblSauvaniRecepti_1.setBounds(0, 230, 200, 60);
 				main.add(lblSauvaniRecepti_1);
 				lblSauvaniRecepti_1.addMouseListener(new MouseAdapter() 
 				{
@@ -120,44 +146,8 @@ public class UserSettingsPanel extends JPanel {
 				    }
 				});
 
-				lblSauvaniRecepti_2 = new JLabel("Ure\u0111aji");
-				lblSauvaniRecepti_2.setToolTipText("Unos ure\u0111aja kojim raspola\u017Ee\u0161!");
-				lblSauvaniRecepti_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-				lblSauvaniRecepti_2.setHorizontalAlignment(SwingConstants.CENTER);
-				lblSauvaniRecepti_2.setForeground(Color.BLACK);
-				lblSauvaniRecepti_2.setBounds(0, 230, 200, 60);
-				main.add(lblSauvaniRecepti_2);
-				lblSauvaniRecepti_2.addMouseListener(new MouseAdapter() 
-				{
-				    public void mouseEntered(MouseEvent evt) {
-				    	JLabel label = (JLabel) evt.getSource();
-		                if(!label.isEnabled())
-		                {
-		                    return;
-		                }
-				    	lblSauvaniRecepti_2.setBackground(Color.LIGHT_GRAY);
-				    	lblSauvaniRecepti_2.setOpaque(true);
-				    }
-				    public void mouseExited(MouseEvent evt) {
-				    	JLabel label = (JLabel) evt.getSource();
-		                if(!label.isEnabled())
-		                {
-		                    return;
-		                }
-				    	lblSauvaniRecepti_2.setBackground(Color.WHITE);
-				    }
-				    public void mouseClicked(MouseEvent evt) {
-				    	JLabel label = (JLabel) evt.getSource();
-		                if(!label.isEnabled())
-		                {
-		                    return;
-		                }
-		                naslov.setText("Uredi Uređaje");
-				    }
-				});
-
-				lblSauvaniRecepti_3 = new JLabel("Moji sastojci");
-				lblSauvaniRecepti_3.setToolTipText("Unos sastojaka kojima raspola\u017Ee\u0161!");
+				lblSauvaniRecepti_3 = new JLabel("Moja Kuhinja");
+				lblSauvaniRecepti_3.setToolTipText("Unos sastojaka i uređaja kojima raspolažeš!");
 				lblSauvaniRecepti_3.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				lblSauvaniRecepti_3.setHorizontalAlignment(SwingConstants.CENTER);
 				lblSauvaniRecepti_3.setForeground(Color.BLACK);
@@ -188,7 +178,7 @@ public class UserSettingsPanel extends JPanel {
 		                {
 		                    return;
 		                }
-				    	naslov.setText("Moji sastojci");
+				    	naslov.setText("Moja Kuhinja");
 				    }
 				});
 
@@ -233,7 +223,7 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_5.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				lblSauvaniRecepti_5.setHorizontalAlignment(SwingConstants.CENTER);
 				lblSauvaniRecepti_5.setForeground(Color.BLACK);
-				lblSauvaniRecepti_5.setBounds(0, 410, 200, 60);
+				lblSauvaniRecepti_5.setBounds(0, 530, 200, 60);
 				main.add(lblSauvaniRecepti_5);
 				lblSauvaniRecepti_5.addMouseListener(new MouseAdapter() 
 				{
@@ -261,6 +251,7 @@ public class UserSettingsPanel extends JPanel {
 		                    return;
 		                }
 				    	naslov.setText("Podešavanja naloga");
+				    	informacijPrikazPanel();
 				    }
 				});
 
@@ -302,12 +293,12 @@ public class UserSettingsPanel extends JPanel {
 				    }
 				});
 
-				lblSauvaniRecepti_7 = new JLabel("Info");
-				lblSauvaniRecepti_7.setToolTipText("Informacije o nalogu");
+				lblSauvaniRecepti_7 = new JLabel("Praćeni nalozi");
+				lblSauvaniRecepti_7.setToolTipText("Praćeni nalozi");
 				lblSauvaniRecepti_7.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				lblSauvaniRecepti_7.setHorizontalAlignment(SwingConstants.CENTER);
 				lblSauvaniRecepti_7.setForeground(Color.BLACK);
-				lblSauvaniRecepti_7.setBounds(0, 530, 200, 60);
+				lblSauvaniRecepti_7.setBounds(0, 410, 200, 60);
 				main.add(lblSauvaniRecepti_7);
 				lblSauvaniRecepti_7.addMouseListener(new MouseAdapter() 
 				{
@@ -334,7 +325,7 @@ public class UserSettingsPanel extends JPanel {
 		                {
 		                    return;
 		                }
-				    	naslov.setText("Informacije o nalogu");
+				    	naslov.setText("Praćeni nalozi");
 				    }
 				});
 
@@ -426,19 +417,19 @@ public class UserSettingsPanel extends JPanel {
 		
 	}
 	
-	 public void paintComponent(Graphics g) {
+	public void paintComponent(Graphics g) {
 		    g.drawImage(img, 0, 0, null);
 	 }
 	 
-	 private void postaviPanel(JPanel novi)
+	private void postaviPanel(JPanel novi)
 		{
 			if(trenutniPanel != null)
 			{
-				main.remove(trenutniPanel);
+				remove(trenutniPanel);
 
 			}
 			trenutniPanel=novi;
-			main.add(novi);
+			add(novi);
 			revalidate();
 			repaint();
 		}
@@ -450,7 +441,7 @@ public class UserSettingsPanel extends JPanel {
 			blokada(enabled);
 	 }
 	 
-	 public void blokada(boolean b) {
+	public void blokada(boolean b) {
 			for(Component c: this.getComponents())
 			{
 				if(c.getClass().equals(JPanel.class))
@@ -478,6 +469,217 @@ public class UserSettingsPanel extends JPanel {
 
 	}
 
+	public void informacijPrikazPanel()
+	{
+		
+		
+		
+		
+		info = new JPanel();
+		info.setSize(840, 650);
+		info.setLocation(200, 0);
+		info.setLayout(null);
+		info.setOpaque(false);
+		
+		JSeparator separator = new JSeparator();
+		separator.setBounds(0, 70, 840, 5);
+		info.add(separator);
+		
+		lblKorisnikoIme = new JLabel("Ime:");
+		lblKorisnikoIme.setForeground(Color.WHITE);
+		lblKorisnikoIme.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblKorisnikoIme.setBounds(130, 290, 190, 30);
+		info.add(lblKorisnikoIme);
+		
+		lblPreyime = new JLabel("Prezime");
+		lblPreyime.setForeground(Color.WHITE);
+		lblPreyime.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPreyime.setBounds(130, 240, 190, 30);
+		info.add(lblPreyime);
+		
+		label_2 = new JLabel("Korisničko ime:");
+		label_2.setForeground(Color.WHITE);
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		label_2.setBounds(130, 125, 190, 30);
+		info.add(label_2);
+		
+		lblEmail = new JLabel("e-Mail:");
+		lblEmail.setForeground(Color.WHITE);
+		lblEmail.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblEmail.setBounds(130, 340, 190, 30);
+		info.add(lblEmail);
+		
+		lblTipNaloga = new JLabel("Tip Naloga:");
+		lblTipNaloga.setForeground(Color.WHITE);
+		lblTipNaloga.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblTipNaloga.setBounds(130, 85, 190, 30);
+		info.add(lblTipNaloga);
+		
+		lblPromenaifre = new JLabel("Promena šifre");
+		lblPromenaifre.setForeground(Color.WHITE);
+		lblPromenaifre.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblPromenaifre.setBounds(130, 390, 190, 30);
+		info.add(lblPromenaifre);
+		
+		separator_2 = new JSeparator();
+		separator_2.setBounds(0, 165, 840, 5);
+		info.add(separator_2);
+		
+		JButton btnPrezime = new JButton("Prezime");
+		btnPrezime.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtPrz.isEditable()) 
+				{
+					txtPrz.setEditable(false);
+					return;
+				}
+				txtPrz.setEditable(true);
+			}
+		});
+		btnPrezime.setBounds(70, 241, 30, 30);
+		info.add(btnPrezime);
+		
+		JButton btnIme = new JButton("Ime");
+		btnIme.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtIme.isEditable()) 
+				{
+					txtIme.setEditable(false);
+					return;
+				}
+				txtIme.setEditable(true);
+			}
+		});
+		btnIme.setBounds(70, 290, 30, 30);
+		info.add(btnIme);
+		
+		JButton btnMail = new JButton("mail");
+		btnMail.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(txtMail.isEditable()) 
+				{
+					txtMail.setEditable(false);
+					return;
+				}
+				txtMail.setEditable(true);
+			}
+		});
+		btnMail.setBounds(70, 340, 30, 30);
+		info.add(btnMail);
+		
+		JLabel lblNewLabel_1 = new JLabel("Privilegija:");
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_1.setBounds(70, 485, 125, 30);
+		info.add(lblNewLabel_1);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setBounds(0, 460, 840, 5);
+		info.add(separator_1);
+		
+		btnSifra = new JButton("sifra");
+		btnSifra.setBounds(70, 390, 30, 30);
+		info.add(btnSifra);
+		
+		lblNewLabel_2 = new JLabel("Broj Pratilaca:");
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_2.setBounds(70, 545, 125, 30);
+		info.add(lblNewLabel_2);
+		
+		lblNewLabel_3 = new JLabel("Bedž:");
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_3.setBounds(490, 485, 70, 30);
+		info.add(lblNewLabel_3);
+		
+		lblNewLabel_4 = new JLabel("Ocena:");
+		lblNewLabel_4.setForeground(Color.WHITE);
+		lblNewLabel_4.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lblNewLabel_4.setBounds(490, 545, 70, 30);
+		info.add(lblNewLabel_4);
+		
+		lblPrivrez = new JLabel("");
+		lblPrivrez.setBounds(220, 485, 125, 30);
+		info.add(lblPrivrez);
+		
+		lblBrprtrez = new JLabel("");
+		lblBrprtrez.setBounds(220, 545, 125, 30);
+		info.add(lblBrprtrez);
+		
+		lblBedzrez = new JLabel("");
+		lblBedzrez.setBounds(640, 485, 125, 30);
+		info.add(lblBedzrez);
+		
+		lblOcenarez = new JLabel("");
+		lblOcenarez.setBounds(640, 545, 125, 30);
+		info.add(lblOcenarez);
+		
+		txtPrz = new JTextField();
+		txtPrz.setEditable(false);
+		txtPrz.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtPrz.setBounds(415, 240, 355, 30);
+		info.add(txtPrz);
+		txtPrz.setColumns(10);
+		
+		txtIme = new JTextField();
+		txtIme.setEditable(false);
+		txtIme.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtIme.setBounds(415, 290, 355, 30);
+		info.add(txtIme);
+		txtIme.setColumns(10);
 
 
+		txtMail = new JTextField();
+		txtMail.setEditable(false);
+		txtMail.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		txtMail.setBounds(415, 340, 355, 30);
+		info.add(txtMail);
+		txtMail.setColumns(10);
+
+		
+		JButton btnSacuvaj = new JButton("Sacuvaj");
+		btnSacuvaj.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnSacuvaj.setBounds(640, 390, 125, 30);
+		info.add(btnSacuvaj);
+		
+		txtTipnaloga = new JTextField();
+		txtTipnaloga.setEditable(false);
+		txtTipnaloga.setBounds(415, 85, 355, 30);
+		info.add(txtTipnaloga);
+		txtTipnaloga.setColumns(10);
+		
+		txtUsername = new JTextField();
+		txtUsername.setEditable(false);
+		txtUsername.setBounds(415, 125, 355, 30);
+		info.add(txtUsername);
+		txtUsername.setColumns(10);
+		
+		btnOdbaci = new JButton(new ImageIcon("data/ikonice/cancel.png"));
+		btnOdbaci.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				resetujInfo();
+			}
+		});
+		btnOdbaci.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btnOdbaci.setBounds(585, 390, 45, 30);
+		info.add(btnOdbaci);
+		
+		
+
+
+		resetujInfo();
+		postaviPanel(info);
+	}
+
+	private void resetujInfo()
+	{
+		txtUsername.setText(korisnik.getKorisnickoIme());
+		txtTipnaloga.setText(String.valueOf(trenutni.getTip()));
+		txtMail.setText(korisnik.getEmail());
+		txtIme.setText(korisnik.getIme());
+		txtPrz.setText(korisnik.getPrezime());
+
+	}
+	
 }
