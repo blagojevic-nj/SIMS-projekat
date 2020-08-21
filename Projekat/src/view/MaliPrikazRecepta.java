@@ -55,6 +55,7 @@ public class MaliPrikazRecepta extends JPanel{
 				if(!MainWindow.expands) {
 					zoomPanel.setVisible(true);
 					revalidate();
+					repaint();
 				}
 				
 			}
@@ -63,6 +64,7 @@ public class MaliPrikazRecepta extends JPanel{
 			public void mouseExited(MouseEvent arg0) {
 				zoomPanel.setVisible(false);
 				revalidate();
+				repaint();
 				
 			}
 
