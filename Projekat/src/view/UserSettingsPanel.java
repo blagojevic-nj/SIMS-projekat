@@ -193,7 +193,7 @@ public class UserSettingsPanel extends JPanel {
 				    }
 				});
 
-				lblSauvaniRecepti_6 = new JLabel("Unos novog recepta");
+				lblSauvaniRecepti_6 = new JLabel("Dodaj novi recept");
 				lblSauvaniRecepti_6.setToolTipText("Dodaj novi recept!");
 				lblSauvaniRecepti_6.setFont(new Font("Tahoma", Font.PLAIN, 18));
 				lblSauvaniRecepti_6.setHorizontalAlignment(SwingConstants.CENTER);
