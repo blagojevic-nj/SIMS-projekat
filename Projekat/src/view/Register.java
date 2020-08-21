@@ -202,10 +202,10 @@ public class Register extends JPanel{
 			String ps1  = String.valueOf(passwordField.getPassword());
 			String ps2  = String.valueOf(passwordField_1.getPassword());
 
-			if(str1.isBlank() || str2.isBlank() || str3.isBlank() || str4.isBlank() || ps1.isBlank() ||ps2.isBlank())
+			/*if(str1.isBlank() || str2.isBlank() || str3.isBlank() || str4.isBlank() || ps1.isBlank() || ps2.isBlank())
 			{
 				return false;
-			}
+			}*/
 			return true;
 
 		}
