@@ -49,7 +49,7 @@ public class ReceptManager {
 	private ArrayList<Recept> promenjeniRecepti;	// ovi recepti ce biti upisani nazad u fajl
 	private static ReceptManager instance = null;
 	static final String FOLDER_SA_RECEPTIMA = "data/recepti";
-	static final String FOLDER_SA_SLIKAMA = FOLDER_SA_RECEPTIMA+"/slike";
+	static final String FOLDER_SA_SLIKAMA = FOLDER_SA_RECEPTIMA+"/images";
 	static final String FAJL_SA_TABELOM = FOLDER_SA_RECEPTIMA+"/tabela.json";
 	
 	private ReceptManager() {
@@ -205,6 +205,7 @@ public class ReceptManager {
 		int i = 0;	// brojac
 		while (sifra >= 0 && i < 10) {
 			Recept r = getRecept(sifra);
+			
 			if (r.isUredjen()) {
 				rezultat.add(r);
 				i++;

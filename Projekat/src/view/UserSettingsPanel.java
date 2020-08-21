@@ -13,6 +13,7 @@ import com.jgoodies.forms.factories.DefaultComponentFactory;
 
 public class UserSettingsPanel extends JPanel {
 	
+	private static final long serialVersionUID = -1716355102957653930L;
 	KorisnikManager km;
 	Nalog trenutni;
 	
