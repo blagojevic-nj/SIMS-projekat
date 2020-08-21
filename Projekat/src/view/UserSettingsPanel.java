@@ -8,6 +8,7 @@ import model.Nalog;
 import javax.swing.UIManager;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -53,7 +54,6 @@ public class UserSettingsPanel extends JPanel {
 		main.setBounds(0, 0, 200, 650);
 		add(main);
 		main.setBackground(Color.white);
-
 		initializeMaliMeniAndLabels();
 		username.setText(trenutniNalog.getKorisnickoIme());
 
@@ -82,7 +82,7 @@ public class UserSettingsPanel extends JPanel {
 				lblNewLabel.setForeground(Color.black);
 				main.add(lblNewLabel);
 
-				
+							
 				lblSauvaniRecepti_1 = new JLabel("Omiljene kategorije");
 				lblSauvaniRecepti_1.setToolTipText("Uredi svoje omiljene kategorije!");
 				lblSauvaniRecepti_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -92,15 +92,30 @@ public class UserSettingsPanel extends JPanel {
 				main.add(lblSauvaniRecepti_1);
 				lblSauvaniRecepti_1.addMouseListener(new MouseAdapter() 
 				{
+					
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_1.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_1.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_1.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Omiljene kategorije");
 				    }
 				});
@@ -115,15 +130,29 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_2.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_2.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_2.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_2.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
-				    	naslov.setText("Uredi Uređaje");
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
+		                naslov.setText("Uredi Uređaje");
 				    }
 				});
 
@@ -137,14 +166,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_3.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_3.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_3.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_3.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Moji sastojci");
 				    }
 				});
@@ -159,14 +202,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_4.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_4.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_4.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_4.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Moji recepti");
 				    }
 				});
@@ -181,14 +238,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_5.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_5.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_5.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_5.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Podešavanja naloga");
 				    }
 				});
@@ -203,14 +274,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_6.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_6.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_6.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_6.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Unos novog recepta");
 						mw.postaviDesniPanel(new DodavanjeRecepta(mw));
 
@@ -227,14 +312,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_7.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_7.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_7.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_7.setBackground(Color.WHITE);
 				    }
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Informacije o nalogu");
 				    }
 				});
@@ -249,15 +348,28 @@ public class UserSettingsPanel extends JPanel {
 				lblSauvaniRecepti_8.addMouseListener(new MouseAdapter() 
 				{
 				    public void mouseEntered(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_8.setBackground(Color.LIGHT_GRAY);
 				    	lblSauvaniRecepti_8.setOpaque(true);
 				    }
-
 				    public void mouseExited(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	lblSauvaniRecepti_8.setBackground(Color.WHITE);
-				    }
-				    
+				    }			    
 				    public void mouseClicked(MouseEvent evt) {
+				    	JLabel label = (JLabel) evt.getSource();
+		                if(!label.isEnabled())
+		                {
+		                    return;
+		                }
 				    	naslov.setText("Izveštaj");
 				    }
 				    
@@ -330,4 +442,42 @@ public class UserSettingsPanel extends JPanel {
 			revalidate();
 			repaint();
 		}
+
+	 @Override
+	public void setEnabled(boolean enabled)
+	 {
+			super.setEnabled(enabled);
+			blokada(enabled);
+	 }
+	 
+	 public void blokada(boolean b) {
+			for(Component c: this.getComponents())
+			{
+				if(c.getClass().equals(JPanel.class))
+				{
+					System.out.println("Prosao panel");
+					blokada((JPanel)c,b);
+				}
+				c.setEnabled(b);
+				System.out.println(c);
+			}
+
+		}
+
+	public void blokada(JPanel p, boolean b) {
+		for(Component c: p.getComponents()) {
+			if(c.getClass().equals(JPanel.class))
+			{
+				System.out.println("Prosao panel");
+				blokada((JPanel)c,b);
+			}			
+			c.setEnabled(b);
+			System.out.println(c);
+
+		}
+
+	}
+
+
+
 }

@@ -77,8 +77,7 @@ public class MainWindow extends JFrame {
  * Panel za prikaz recepta, do ovoga se moze doci kad se klikne otkazi kod dodavanja, privremeno onemoguceno jer ce se dadavanje vrsiti iz "moj nalog" panela
  * 
  */
-		postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
-		
+		postaviDesniPanel(new ReceptiPanel(rM.getNajnovijih10()));		
 
 /*
  * 
@@ -124,7 +123,10 @@ public class MainWindow extends JFrame {
 		PretragaPanel panelPretraga = new PretragaPanel();
 		panelMenu.add(panelPretraga, "panelPretraga");
 			
-		
+	//	trenutniNalog = new Nalog();
+	//	trenutniNalog.setTip(TipNaloga.REG_KORISNIK);
+	//	trenutniNalog.setKorisnickoIme("Lule");
+	//	fireNalogChanged();
 
 	}
 
@@ -198,7 +200,7 @@ public class MainWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
+				postaviDesniPanel(new ReceptiPanel(rM.getNajnovijih10()));
 				collapseSmallMenu();
 			}
 		});
@@ -225,7 +227,7 @@ public class MainWindow extends JFrame {
 				fireNalogChanged();
 				JOptionPane.showMessageDialog(null, "Uspešna odjava!");
 				collapseSmallMenu();
-
+				postaviDesniPanel(new ReceptiPanel(rM.getNajnovijih10()));
 			}
 		});
 
@@ -251,6 +253,9 @@ public class MainWindow extends JFrame {
 				if (!expands) {
 					expandSmallMenu();
 				}
+				else {
+					collapseSmallMenu();
+				}
 				menuCardLayout.show(panelMenu, "panelLogIn");
 
 			}
@@ -274,6 +279,9 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (!expands) {
 					expandSmallMenu();
+				}
+				else {
+					collapseSmallMenu();
 				}
 				menuCardLayout.show(panelMenu, "panelRegister");
 
@@ -300,6 +308,9 @@ public class MainWindow extends JFrame {
 					collapseSmallMenu();
 					postaviDesniPanel(new UserSettingsPanel(MainWindow.this,km, trenutniNalog));
 					
+				}else 
+				{
+					collapseSmallMenu();
 				}
 
 			}
@@ -326,6 +337,9 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				if (!expands) {
 					expandSmallMenu();
+				}
+				else {
+					collapseSmallMenu();
 				}
 				menuCardLayout.show(panelMenu, "panelPretraga");
 
