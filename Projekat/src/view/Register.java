@@ -13,6 +13,7 @@ import javax.swing.JSeparator;
 import javax.swing.JTextField;
 
 import manageri.KorisnikManager;
+import model.Korisnik;
 
 import javax.swing.JButton;
 
@@ -24,11 +25,13 @@ public class Register extends JPanel{
 	private JTextField textField_2;
 	private JTextField textField_3;
 	private JTextField textField;
+	private MainWindow m;
 	
 	private KorisnikManager km = KorisnikManager.getInstance();
 	
-		public Register()
+		public Register(MainWindow mw)
 		{
+			m=mw;
 			setBackground(Color.LIGHT_GRAY);
 			setBounds(0, 0, 300, 700);
 			setLayout(null);
@@ -154,11 +157,15 @@ public class Register extends JPanel{
 			}
 			if(finalnaProvera(ime, prz, mail, usr, psd1, psd2))
 			{
-				km.registracijaKorisnika(ime, prz, mail, usr, psd1);
+				Korisnik newKorisnik = km.registracijaKorisnika(ime, prz, mail, usr, psd1);
 				System.out.println("Success Registrovan!!!");
 				fireClearSignal();
 				km.sacuvajKorisnike();
 				km.sacuvajNaloge();
+				MainWindow.trenutniNalog = km.getNalog(newKorisnik.getKorisnickoIme());
+				m.fireNalogChanged();
+				m.collapseSmallMenu();
+				JOptionPane.showMessageDialog(null, "Registracija uspešna!");
 				return true;
 			}
 			return false;

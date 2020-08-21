@@ -289,12 +289,13 @@ public class DodavanjeRecepta extends JPanel{
 					MainWindow.rM.sacuvajRecepte();
 					MainWindow.rM.sacuvajTabelu();
 					JOptionPane.showMessageDialog(null, "Uspesno ste kreirali recept!");
-					mW.rP = new ReceptiPanel(new ArrayList<Recept>());
-					mW.trenutniDesni = mW.rP;
-					mW.mainContentContainerPanel.remove(DodavanjeRecepta.this);
-					mW.mainContentContainerPanel.add(mW.trenutniDesni);
-					revalidate();
-					mW.mainContentContainerPanel.repaint();
+					//mW.rP = new ReceptiPanel(new ArrayList<Recept>());
+					//mW.trenutniDesni = mW.rP;
+					//mW.mainContentContainerPanel.remove(DodavanjeRecepta.this);
+					//mW.mainContentContainerPanel.add(mW.trenutniDesni);
+					//revalidate();
+					//mW.mainContentContainerPanel.repaint();
+					mW.postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
 					
 				}
 				else {
@@ -314,12 +315,13 @@ public class DodavanjeRecepta extends JPanel{
 			public void actionPerformed(ActionEvent arg0) {
 				int result = JOptionPane.showConfirmDialog(mW.mainContentContainerPanel, "Podaci se nece sacuvati, da li ste sigurni?");
 				if(result == JOptionPane.YES_OPTION) {
-					mW.rP = new ReceptiPanel(new ArrayList<Recept>());
-					mW.mainContentContainerPanel.remove(DodavanjeRecepta.this);
-					mW.trenutniDesni = mW.rP;
-					mW.mainContentContainerPanel.add(mW.trenutniDesni);
-					revalidate();
-					mW.mainContentContainerPanel.repaint();
+					//mW.rP = new ReceptiPanel(new ArrayList<Recept>());
+					//mW.mainContentContainerPanel.remove(DodavanjeRecepta.this);
+					//mW.trenutniDesni = mW.rP;
+					//mW.mainContentContainerPanel.add(mW.trenutniDesni);
+					//revalidate();
+					//mW.mainContentContainerPanel.repaint();
+					mW.postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
 				}
 			}
 			

@@ -32,9 +32,8 @@ public class MainWindow extends JFrame {
 
 	// flag da li je prosiren skriveni panel
 	static boolean expands = false;
-	public ReceptiPanel rP;
-	public DodavanjeRecepta dR;
-	public UserSettingsPanel userPanel;
+	//public ReceptiPanel rP;						
+	//public DodavanjeRecepta dR;						
 	private JButton home, login, logout, register, exit, pretraga, settings;
 	public JPanel panelMenu, smallPanelMenu, mainContentContainerPanel, trenutniDesni;
 	private JLayeredPane contentPane;
@@ -58,36 +57,40 @@ public class MainWindow extends JFrame {
 		setSize(1200, 700);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-		/* Content pane koji je layered da bi se preklapali paneli kako treba*/
+/* Content pane koji je layered da bi se preklapali paneli kako treba*/
 		contentPane = new JLayeredPane();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
 		setContentPane(contentPane);
 
-		/* Desni panel koji ce sadrzati sve "Bele (Velike desno) panele",
-		   AbstractMainContentContainer clasa...*/
+/* Desni panel koji ce sadrzati sve "Bele (Velike desno) panele",
+   AbstractMainContentContainer clasa...*/
 		
 		mainContentContainerPanel = new JPanel();
 		mainContentContainerPanel.setBounds(100, 30, 1040, 650);
 		mainContentContainerPanel.setLayout(null);
 		contentPane.add(mainContentContainerPanel, 1);
 		
-		//dodajemo panel za prikaz recepata i postavljamo taj panel za trenutni
-		rP = new ReceptiPanel(new ArrayList<Recept>());
-		mainContentContainerPanel.add(rP);
-		trenutniDesni = rP;
+/*
+ * 
+ * Panel za prikaz recepta, do ovoga se moze doci kad se klikne otkazi kod dodavanja, privremeno onemoguceno jer ce se dadavanje vrsiti iz "moj nalog" panela
+ * 
+ */
+		//postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
 		
-		dR = new DodavanjeRecepta(MainWindow.this);
-		
-		mainContentContainerPanel.remove(trenutniDesni);
-		trenutniDesni = dR;
-		mainContentContainerPanel.add(trenutniDesni);
+/*
+ * 
+ * Panel za dodavanje recepta
+ * 
+ */
+		postaviDesniPanel(new DodavanjeRecepta(MainWindow.this));
 
-		/*
-		 * 
-		 * Levi panel koji ce sadrzati sve male sive panele"
-		 * 
-		 */
+
+/*
+ * 
+ * Levi panel koji ce sadrzati sve male sive panele"
+ * 
+ */
 
 		panelMenu = new JPanel();
 		menuCardLayout = new CardLayout();
@@ -98,43 +101,39 @@ public class MainWindow extends JFrame {
 		panelMenu.setVisible(false);
 		contentPane.add(panelMenu, 0);
 
-		/*************************************
-		 * ZARAD CITLJIVIJEG KODA DUGMICI ZA MENI IDU DOLE
-		 ************************************************************/
+/*************************************
+ * ZARAD CITLJIVIJEG KODA DUGMICI ZA MENI IDU DOLE
+ ************************************************************/
 		initializeMenuButtons();
 		initializeMoveLabel();
-		/************************************************************************************************************************************************/
+/************************************************************/
 
-		/*
-		 * 
-		 * Login Panel
-		 * 
-		 */
+/*
+ * 
+ * Login Panel
+ * 
+ */
 		Login panelLogIn = new Login(this);
 		panelMenu.add(panelLogIn, "panelLogIn");
-		/*
-		 * 
-		 * Register Panel
-		 * 
-		 */
-		Register panelRegister = new Register();
+/*
+ * 
+ * Register Panel
+ * 
+ */
+		Register panelRegister = new Register(this);
 		panelMenu.add(panelRegister, "panelRegister");
-		/*
-		 * 
-		 * Pretraga Panel
-		 * 
-		 */
+/*
+ * 
+ * Pretraga Panel
+ * 
+ */
 		PretragaPanel panelPretraga = new PretragaPanel();
 		panelMenu.add(panelPretraga, "panelPretraga");
 		
-		/*
-		 * 
-		 * Podesavanja Panel
-		 * 
-		 */
-		// ---------------------------------------------------------
-		//userPanel = new UserSettingsPanel(km, trenutniNalog);
-		//mainContentContainerPanel.add(userPanel, "userPanel");
+		
+		
+		
+		
 
 	}
 
@@ -196,19 +195,19 @@ public class MainWindow extends JFrame {
 
 		/*
 		 * 
-		 * Home dugme// Bice collapse verovatno....
-		 * 
+		 * Home dugme// 
 		 */
 		home = new JButton(new ImageIcon("data/ikonice/home.png"));
 		home.setBorderPainted(false);
 		home.setFocusPainted(false);
 		home.setContentAreaFilled(false);
 		home.setBounds(5, 10, 40, 40);
+		home.setToolTipText("Početna");
 		home.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				//contentCardLayout.show(mainContentContainerPanel, "Recepti");
+				postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
 				collapseSmallMenu();
 			}
 		});
@@ -225,6 +224,7 @@ public class MainWindow extends JFrame {
 		logout.setContentAreaFilled(false);
 		logout.setBounds(10, 80, 30, 30);
 		logout.setVisible(false);
+		logout.setToolTipText("Odjava");
 		smallPanelMenu.add(logout);
 		logout.addActionListener(new ActionListener() {
 
@@ -232,7 +232,7 @@ public class MainWindow extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				trenutniNalog = null;
 				fireNalogChanged();
-				JOptionPane.showMessageDialog(null, "Uspe�na odjava!");
+				JOptionPane.showMessageDialog(null, "Uspešna odjava!");
 				collapseSmallMenu();
 
 			}
@@ -299,7 +299,7 @@ public class MainWindow extends JFrame {
 		settings.setBorderPainted(false);
 		settings.setFocusPainted(false);
 		settings.setContentAreaFilled(false);
-		settings.setToolTipText("Registruj se");
+		settings.setToolTipText("Moj Nalog");
 		settings.addActionListener(new ActionListener() {
 
 			@Override
@@ -307,9 +307,9 @@ public class MainWindow extends JFrame {
 				if (!expands) {
 					System.out.println("Podesavanja");
 					collapseSmallMenu();
-
+					postaviDesniPanel(new UserSettingsPanel(km, trenutniNalog));
+					
 				}
-				//contentCardLayout.show(mainContentContainerPanel, "userPanel");
 
 			}
 		});
@@ -353,7 +353,7 @@ public class MainWindow extends JFrame {
 		exit.setBorderPainted(false);
 		exit.setFocusPainted(false);
 		exit.setContentAreaFilled(false);
-
+		exit.setToolTipText("Izlaz");
 		exit.addActionListener(new ActionListener() {
 
 			@Override
@@ -397,4 +397,25 @@ public class MainWindow extends JFrame {
 		contentPane.add(label);
 	}
 
+	public void postaviDesniPanel(JPanel novi)
+	{
+		if(trenutniDesni != null)
+		{
+			mainContentContainerPanel.remove(trenutniDesni);
+
+		}
+		trenutniDesni=novi;
+		mainContentContainerPanel.add(novi);
+		revalidate();
+		repaint();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

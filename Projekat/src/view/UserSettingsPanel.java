@@ -25,11 +25,10 @@ import java.awt.Font;
 
 public class UserSettingsPanel extends JPanel {
 	
-<<<<<<< Updated upstream
+
 	private static final long serialVersionUID = -1716355102957653930L;
-=======
+
 	JPanel main;
->>>>>>> Stashed changes
 	KorisnikManager km;
 	Nalog trenutni;
 	
@@ -45,7 +44,7 @@ public class UserSettingsPanel extends JPanel {
 		add(main);
 		setBackground(Color.white);
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setBounds(0, 472, 285, 60);
+		lblNewLabel.setBounds(0, 0, 285, 60);
 		lblNewLabel.setForeground(Color.black);
 		main.add(lblNewLabel);
 		
