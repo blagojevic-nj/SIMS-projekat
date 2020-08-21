@@ -24,12 +24,8 @@ import javax.swing.JMenu;
 import java.awt.Font;
 
 public class UserSettingsPanel extends JPanel {
-	
-<<<<<<< Updated upstream
 	private static final long serialVersionUID = -1716355102957653930L;
-=======
 	JPanel main;
->>>>>>> Stashed changes
 	KorisnikManager km;
 	Nalog trenutni;
 	

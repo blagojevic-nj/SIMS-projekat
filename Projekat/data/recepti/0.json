@@ -8,19 +8,7 @@
   "tezina" : "LAKO",
   "vremePripreme" : 10,
   "uredjen" : false,
-  "datum" : {
-    "year" : 2020,
-    "month" : "AUGUST",
-    "dayOfMonth" : 20,
-    "dayOfWeek" : "THURSDAY",
-    "era" : "CE",
-    "dayOfYear" : 233,
-    "leapYear" : true,
-    "monthValue" : 8,
-    "chronology" : {
-      "id" : "ISO",
-      "calendarType" : "iso8601"
-    }
+  "datum" : "2020-08-20"
   },
   "uredjaji" : [ {
     "pozeljan" : true,

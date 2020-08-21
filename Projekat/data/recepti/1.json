@@ -8,19 +8,7 @@
   "tezina" : "SREDNJE",
   "vremePripreme" : 28,
   "uredjen" : false,
-  "datum" : {
-    "year" : 2020,
-    "month" : "AUGUST",
-    "dayOfMonth" : 21,
-    "dayOfWeek" : "FRIDAY",
-    "era" : "CE",
-    "dayOfYear" : 234,
-    "leapYear" : true,
-    "monthValue" : 8,
-    "chronology" : {
-      "id" : "ISO",
-      "calendarType" : "iso8601"
-    }
+  "datum" : "2020-08-21"
   },
   "uredjaji" : [ ],
   "sastojci" : [ {

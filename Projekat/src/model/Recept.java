@@ -4,6 +4,12 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import manageri.LocalDateDeserializer;
+import manageri.LocalDateSerializer;
+
 public class Recept {
 	private int id;
 	private String naziv, opis, koraci, youtubeLink;
@@ -11,6 +17,8 @@ public class Recept {
 	private Tezina tezina;
 	private int vremePripreme;
 	private boolean uredjen;
+	@JsonDeserialize(using = LocalDateDeserializer.class)  
+	@JsonSerialize(using = LocalDateSerializer.class)
 	private LocalDate datum;
 	private ArrayList<UredjajUReceptu> uredjaji;
 	private ArrayList<Sastojak> sastojci;

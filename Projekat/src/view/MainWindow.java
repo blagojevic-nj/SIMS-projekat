@@ -73,7 +73,7 @@ public class MainWindow extends JFrame {
 		contentPane.add(mainContentContainerPanel, 1);
 		
 		//dodajemo panel za prikaz recepata i postavljamo taj panel za trenutni
-		rP = new ReceptiPanel(new ArrayList<Recept>());
+		rP = new ReceptiPanel(rM.getNajnovijih10());
 		mainContentContainerPanel.add(rP);
 		trenutniDesni = rP;
 		
