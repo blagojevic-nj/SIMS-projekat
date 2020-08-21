@@ -17,6 +17,8 @@ import manageri.KorisnikManager;
 import javax.swing.JButton;
 
 public class Register extends JPanel{
+
+	private static final long serialVersionUID = 1L;
 	private JPasswordField passwordField,passwordField_1;
 	private JTextField textField_1;
 	private JTextField textField_2;
@@ -202,10 +204,12 @@ public class Register extends JPanel{
 			String ps1  = String.valueOf(passwordField.getPassword());
 			String ps2  = String.valueOf(passwordField_1.getPassword());
 
-			/*if(str1.isBlank() || str2.isBlank() || str3.isBlank() || str4.isBlank() || ps1.isBlank() || ps2.isBlank())
+
+			if(str1.trim().length() == 0 || str2.trim().length() == 0 || str3.trim().length() == 0 
+					|| str4.trim().length() == 0 || ps1.trim().length() == 0 || ps2.trim().length() == 0)
 			{
 				return false;
-			}*/
+			}
 			return true;
 
 		}

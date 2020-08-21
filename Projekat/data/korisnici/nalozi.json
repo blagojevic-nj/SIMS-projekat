@@ -5,6 +5,11 @@
     "tip" : "REG_KORISNIK",
     "idKorisnika" : 4
   }, {
+    "korisnickoIme" : "miki99",
+    "lozinka" : "mikica123",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 8
+  }, {
     "korisnickoIme" : "Gosnje",
     "lozinka" : "123456789",
     "tip" : "REG_KORISNIK",

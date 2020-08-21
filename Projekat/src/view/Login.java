@@ -7,7 +7,6 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import manageri.KorisnikManager;
-import model.Korisnik;
 import model.Nalog;
 
 import javax.swing.JSeparator;
@@ -20,7 +19,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 public class Login extends JPanel{
@@ -160,7 +158,7 @@ public class Login extends JPanel{
 			Nalog real = km.getNalog(usr);
 			if(real.getLozinka().equals(psd))
 			{
-				m.trenutniNalog=real;
+				MainWindow.trenutniNalog=real;
 				m.fireNalogChanged();
 				JOptionPane.showMessageDialog(null, "Uspešna prijava!");
 				m.collapseSmallMenu();

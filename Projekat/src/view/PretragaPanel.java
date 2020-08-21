@@ -21,7 +21,6 @@ import javax.swing.SpinnerNumberModel;
 
 import manageri.KategorijaManager;
 import manageri.ProizvodManager;
-import manageri.ReceptManager;
 
 public class PretragaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -30,7 +29,7 @@ public class PretragaPanel extends JPanel {
 	private JList<String> sastojciList, nepozeljniList, kategorijeList;
 	private JRadioButton rbtnSvi;
 	
-	private ReceptManager rm = ReceptManager.getInstance();
+//	private ReceptManager rm = ReceptManager.getInstance();
 	private ProizvodManager pm = ProizvodManager.getInstance();
 	private KategorijaManager km = KategorijaManager.getInstance();
 	
@@ -73,6 +72,7 @@ public class PretragaPanel extends JPanel {
 		
 		rbtnSvi = new JRadioButton("Svi navedeni sastojci su u receptu");
 		rbtnSvi.setBounds(30, 230, 230, 25);
+		rbtnSvi.setOpaque(false);
 		add(rbtnSvi);
 		
 		JSeparator separator1 = new JSeparator();

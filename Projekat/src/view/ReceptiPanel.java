@@ -27,7 +27,7 @@ public class ReceptiPanel extends JPanel {
 	public ReceptiPanel(ArrayList<Recept> r) {
 		setLayout(null);
 		recepti = r;
-		setBounds(60, 30, 1040, 650);
+		setBounds(0, 0, 1040, 650);
 		
 		donjiDeo = new JPanel(new MigLayout("wrap 2", "[][]20[]", "[]20[]"));
 		
@@ -35,12 +35,6 @@ public class ReceptiPanel extends JPanel {
 			MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec);
 			this.add(mpr);
 		}
-		
-//		for(int i = 0; i < 5; i++) {
-//			MaliPrikazRecepta mpr = new MaliPrikazRecepta(Main.r);
-//			Main.r.setId(2+i);
-//			donjiDeo.add(mpr);
-//		}
 		
 		pane = new JScrollPane(donjiDeo);
 		pane.setBounds(0,  50, 1040, 600);
@@ -109,4 +103,12 @@ public class ReceptiPanel extends JPanel {
 		pane.setWheelScrollingEnabled(b);
 		
 	}
+
+	@Override
+	public void setEnabled(boolean enabled) {
+		super.setEnabled(enabled);
+		blokada(enabled);
+	}
+	
+	
 }

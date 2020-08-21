@@ -1,0 +1,37 @@
+{
+  "id" : 1,
+  "naziv" : "Baklava",
+  "opis" : "Ukusno",
+  "koraci" : "lfhskdjf\nfdhskhfk\nhkdshdfkjdshf\nkdsjfhkds",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 28,
+  "uredjen" : false,
+  "datum" : {
+    "year" : 2020,
+    "month" : "AUGUST",
+    "dayOfMonth" : 21,
+    "dayOfWeek" : "FRIDAY",
+    "era" : "CE",
+    "dayOfYear" : 234,
+    "leapYear" : true,
+    "monthValue" : 8,
+    "chronology" : {
+      "id" : "ISO",
+      "calendarType" : "iso8601"
+    }
+  },
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 2,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "2"
+  } ],
+  "kategorije" : [ 1 ],
+  "autor" : "lule",
+  "ocene" : null,
+  "recenzije" : null,
+  "pregleda" : 0
+}
