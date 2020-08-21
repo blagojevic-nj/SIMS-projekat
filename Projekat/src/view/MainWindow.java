@@ -26,6 +26,7 @@ import manageri.ReceptManager;
 import manageri.UredjajManager;
 import model.Nalog;
 import model.Recept;
+import model.TipNaloga;
 
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -71,24 +72,13 @@ public class MainWindow extends JFrame {
 		mainContentContainerPanel.setLayout(null);
 		contentPane.add(mainContentContainerPanel, 1);
 		
-		//dodajemo panel za prikaz recepata i postavljamo taj panel za trenutni
-//		rP = new ReceptiPanel(rM.getNajnovijih10());
-//		mainContentContainerPanel.add(rP);
-//		trenutniDesni = rP;
 /*
  * 
  * Panel za prikaz recepta, do ovoga se moze doci kad se klikne otkazi kod dodavanja, privremeno onemoguceno jer ce se dadavanje vrsiti iz "moj nalog" panela
  * 
  */
-		//postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
+		postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
 		
-/*
- * 
- * Panel za dodavanje recepta
- * 
- */
-		postaviDesniPanel(new DodavanjeRecepta(MainWindow.this));
-
 
 /*
  * 
@@ -133,10 +123,7 @@ public class MainWindow extends JFrame {
  */
 		PretragaPanel panelPretraga = new PretragaPanel();
 		panelMenu.add(panelPretraga, "panelPretraga");
-		
-		
-		
-		
+			
 		
 
 	}
@@ -305,13 +292,13 @@ public class MainWindow extends JFrame {
 		settings.setContentAreaFilled(false);
 		settings.setToolTipText("Moj Nalog");
 		settings.addActionListener(new ActionListener() {
-
+				
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (!expands) {
 					System.out.println("Podesavanja");
 					collapseSmallMenu();
-					postaviDesniPanel(new UserSettingsPanel(km, trenutniNalog));
+					postaviDesniPanel(new UserSettingsPanel(MainWindow.this,km, trenutniNalog));
 					
 				}
 
