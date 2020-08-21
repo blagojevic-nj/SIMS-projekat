@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListModel;
@@ -21,6 +22,10 @@ import javax.swing.SpinnerNumberModel;
 
 import manageri.KategorijaManager;
 import manageri.ProizvodManager;
+import manageri.ReceptManager;
+import model.Kategorija;
+import model.Proizvod;
+import model.Recept;
 
 public class PretragaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -28,8 +33,9 @@ public class PretragaPanel extends JPanel {
 	private JButton dodaj1, dodaj2, dodaj3, btnPretrazi, btnOcisti;
 	private JList<String> sastojciList, nepozeljniList, kategorijeList;
 	private JRadioButton rbtnSvi;
+	JSpinner spinner;
 	
-//	private ReceptManager rm = ReceptManager.getInstance();
+	private ReceptManager rm = ReceptManager.getInstance();
 	private ProizvodManager pm = ProizvodManager.getInstance();
 	private KategorijaManager km = KategorijaManager.getInstance();
 	
@@ -135,13 +141,14 @@ public class PretragaPanel extends JPanel {
 		add(lblVreme);
 		
 		SpinnerNumberModel sModel = new SpinnerNumberModel(10, 10, 300, 5);
-		JSpinner spinner = new JSpinner(sModel);
+		spinner = new JSpinner(sModel);
 		//spinner.setEditor(new JSpinner.DefaultEditor(spinner));
 		spinner.setBounds(190, 520, 40, 25);
 		add(spinner);
 
 		btnPretrazi = new JButton("Pretrazi", new ImageIcon("data/ikonice/search.png"));
 		btnPretrazi.setBounds(170, 660, 120, 30);
+		btnPretrazi.setEnabled(false);
 		add(btnPretrazi);
 		
 		btnOcisti = new JButton("Ocisti");
@@ -153,6 +160,7 @@ public class PretragaPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (sastojciBox.getSelectedIndex() != 0) {
 					sastojciListModel.addElement((String) sastojciBox.getSelectedItem());
+					btnPretrazi.setEnabled(true);
 				}
 			}
 		});
@@ -162,6 +170,7 @@ public class PretragaPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (nepozeljniBox.getSelectedIndex() != 0) {
 					nepozeljniListModel.addElement((String) nepozeljniBox.getSelectedItem());
+					btnPretrazi.setEnabled(true);
 				}
 			}
 		});
@@ -171,6 +180,7 @@ public class PretragaPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (kategorijeBox.getSelectedIndex() != 0) {
 					kategorijeListModel.addElement((String) kategorijeBox.getSelectedItem());
+					btnPretrazi.setEnabled(true);
 				}
 			}
 		});
@@ -185,6 +195,7 @@ public class PretragaPanel extends JPanel {
 		btnOcisti.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				btnPretrazi.setEnabled(false);
 				sastojciBox.setSelectedIndex(0);
 				nepozeljniBox.setSelectedIndex(0);
 				kategorijeBox.setSelectedIndex(0);
@@ -198,7 +209,22 @@ public class PretragaPanel extends JPanel {
 	}
 	
 	private void preuzmiArgumenteIPretrazi() {
+		ArrayList<Proizvod> sastojci = new ArrayList<Proizvod>();
+		ArrayList<Proizvod> nepozeljni = new ArrayList<Proizvod>();
+		ArrayList<Kategorija> kategorije = new ArrayList<Kategorija>();
 		
+		for (int i = 0; i < sastojciList.getModel().getSize(); i++) {
+			sastojci.add(pm.getProizvod(sastojciList.getModel().getElementAt(i)));
+		}
+		for (int i = 0; i < nepozeljniList.getModel().getSize(); i++) {
+			nepozeljni.add(pm.getProizvod(nepozeljniList.getModel().getElementAt(i)));
+		}
+		for (int i = 0; i < kategorijeList.getModel().getSize(); i++) {
+			kategorije.add(km.getKategorija(kategorijeList.getModel().getElementAt(i)));
+		}
+		ArrayList<Recept> rezulat =
+		rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, (int) spinner.getValue());
+		// treba nekako povezati sa ReceptiPanelom
 	}
 
 }

@@ -12,6 +12,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import manageri.ReceptManager;
 import net.miginfocom.swing.MigLayout;
 import model.Recept;
 
@@ -35,7 +36,7 @@ public class MaliPrikazRecepta extends JPanel{
 		zoomPanel.setVisible(false);
 		
 		
-		ImageIcon img = new ImageIcon("data/recepti/images/"+r.getId()+".jpg");
+		ImageIcon img = new ImageIcon(ReceptManager.getPutanjaDoSlike(r.getId()));
 		Image resize = img.getImage().getScaledInstance(240, 240, Image.SCALE_SMOOTH);
 		
 		JLabel slika = new JLabel(new ImageIcon(resize));
