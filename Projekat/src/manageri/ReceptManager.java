@@ -205,7 +205,7 @@ public class ReceptManager {
 		int i = 0;	// brojac
 		while (sifra >= 0 && i < 10) {
 			Recept r = getRecept(sifra);
-			
+//	dok nema moderatora		
 //			if (r.isUredjen()) {
 //				rezultat.add(r);
 //				i++;
@@ -269,6 +269,14 @@ public class ReceptManager {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static String getPutanjaDoSlike(int sifraRecepta) {
+		String putanja = FOLDER_SA_SLIKAMA+"/"+sifraRecepta+".png";
+		File f = new File(putanja);
+		if (f.exists())
+			return putanja;
+		return FOLDER_SA_SLIKAMA+"/default.png";
 	}
 	
 }
