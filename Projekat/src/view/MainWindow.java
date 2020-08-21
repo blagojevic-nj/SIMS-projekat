@@ -72,9 +72,9 @@ public class MainWindow extends JFrame {
 		contentPane.add(mainContentContainerPanel, 1);
 		
 		//dodajemo panel za prikaz recepata i postavljamo taj panel za trenutni
-		rP = new ReceptiPanel(rM.getNajnovijih10());
-		mainContentContainerPanel.add(rP);
-		trenutniDesni = rP;
+//		rP = new ReceptiPanel(rM.getNajnovijih10());
+//		mainContentContainerPanel.add(rP);
+//		trenutniDesni = rP;
 /*
  * 
  * Panel za prikaz recepta, do ovoga se moze doci kad se klikne otkazi kod dodavanja, privremeno onemoguceno jer ce se dadavanje vrsiti iz "moj nalog" panela

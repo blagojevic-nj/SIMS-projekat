@@ -22,8 +22,8 @@ public class ReceptiPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private ArrayList<Recept> recepti;
 	
-	private static JPanel gornjiDeo, donjiDeo;
-	private static JScrollPane pane;
+	private JPanel gornjiDeo, donjiDeo;
+	private JScrollPane pane;
 	public ReceptiPanel(ArrayList<Recept> r) {
 		setLayout(null);
 		recepti = r;
@@ -33,7 +33,7 @@ public class ReceptiPanel extends JPanel {
 		
 		for(Recept rec: recepti) {
 			MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec);
-			this.add(mpr);
+			this.donjiDeo.add(mpr);
 		}
 		
 		pane = new JScrollPane(donjiDeo);

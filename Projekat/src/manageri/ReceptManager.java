@@ -206,10 +206,12 @@ public class ReceptManager {
 		while (sifra >= 0 && i < 10) {
 			Recept r = getRecept(sifra);
 			
-			if (r.isUredjen()) {
-				rezultat.add(r);
-				i++;
-			}
+//			if (r.isUredjen()) {
+//				rezultat.add(r);
+//				i++;
+//			}
+			rezultat.add(r);
+			i++;
 			sifra--;
 		}
 		return rezultat;

@@ -10,7 +10,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -295,7 +294,8 @@ public class DodavanjeRecepta extends JPanel{
 					//mW.mainContentContainerPanel.add(mW.trenutniDesni);
 					//revalidate();
 					//mW.mainContentContainerPanel.repaint();
-					mW.postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
+					
+					mW.postaviDesniPanel(new ReceptiPanel(MainWindow.rM.getNajnovijih10()));
 					
 				}
 				else {
@@ -321,7 +321,8 @@ public class DodavanjeRecepta extends JPanel{
 					//mW.mainContentContainerPanel.add(mW.trenutniDesni);
 					//revalidate();
 					//mW.mainContentContainerPanel.repaint();
-					mW.postaviDesniPanel(new ReceptiPanel(new ArrayList<Recept>()));
+					
+					mW.postaviDesniPanel(new ReceptiPanel(MainWindow.rM.getNajnovijih10()));
 				}
 			}
 			
