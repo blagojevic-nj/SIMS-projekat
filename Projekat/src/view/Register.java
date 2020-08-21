@@ -211,6 +211,7 @@ public class Register extends JPanel{
 			String ps1  = String.valueOf(passwordField.getPassword());
 			String ps2  = String.valueOf(passwordField_1.getPassword());
 
+
 			if(str1.trim().length() == 0 || str2.trim().length() == 0 || str3.trim().length() == 0 
 					|| str4.trim().length() == 0 || ps1.trim().length() == 0 || ps2.trim().length() == 0)
 			{
