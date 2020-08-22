@@ -1,11 +1,19 @@
 package view;
 
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 
+import manageri.KategorijaManager;
 import manageri.KorisnikManager;
+import manageri.ReceptManager;
+import model.Kategorija;
 import model.Korisnik;
 import model.Nalog;
+import model.Recept;
+import model.RegistrovaniKorisnik;
+import net.miginfocom.swing.MigLayout;
+
 import javax.swing.UIManager;
 
 import java.awt.Color;
@@ -16,9 +24,12 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
 
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import javax.swing.JTextField;
@@ -27,9 +38,11 @@ import java.awt.event.ActionEvent;
 
 public class UserSettingsPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
-	private JPanel main,trenutniPanel,info;
+	private JPanel main,trenutniPanel,info, receptiKorisnika, korisnikKategorije;
 	private JLabel naslov,username,lblNewLabel,lblSauvaniRecepti_1,lblSauvaniRecepti_3,lblSauvaniRecepti_4,lblSauvaniRecepti_5,lblSauvaniRecepti_6,lblSauvaniRecepti_7,lblSauvaniRecepti_8;
 	private KorisnikManager km;
+	private ReceptManager rm;
+	private KategorijaManager kgm;
 	private Nalog trenutni;
 	private MainWindow mw;
 	private Image img;
@@ -55,11 +68,14 @@ public class UserSettingsPanel extends JPanel {
 	private JTextField txtUsername;
 	private JButton btnOdbaci;
 	private Korisnik korisnik;
+	private DefaultListModel<String> listModel;
+	private JList<String> list;
 	
 	
 	public UserSettingsPanel(MainWindow mainWindow,KorisnikManager manager, Nalog trenutniNalog) {
 		mw=mainWindow;
 		km = manager;
+		rm = ReceptManager.getInstance();
 		trenutni = trenutniNalog;
 		korisnik = MainWindow.km.getKorisnik(trenutni.getKorisnickoIme());
 		
@@ -143,6 +159,7 @@ public class UserSettingsPanel extends JPanel {
 		                    return;
 		                }
 				    	naslov.setText("Omiljene kategorije");
+				    	prikazKategorijePanel();
 				    }
 				});
 
@@ -215,6 +232,15 @@ public class UserSettingsPanel extends JPanel {
 		                    return;
 		                }
 				    	naslov.setText("Moji recepti");
+				    	receptiKorisnika = new JPanel(new MigLayout("wrap 2", "[][]20[]", "[]20[]"));
+				    	System.out.println(korisnik.getClass());
+				    	ArrayList<Recept> recepti =  rm.getRecepti(((RegistrovaniKorisnik)korisnik).getRecepti());
+				    	for (Recept recept : recepti) {
+				    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
+				    		receptiKorisnika.add(mpr);
+						}
+			    		postaviPanel(receptiKorisnika);
+			    		//main.add(pane);
 				    }
 				});
 
@@ -680,6 +706,74 @@ public class UserSettingsPanel extends JPanel {
 		txtIme.setText(korisnik.getIme());
 		txtPrz.setText(korisnik.getPrezime());
 
+	}
+	
+	public void prikazKategorijePanel() {
+		korisnikKategorije = new JPanel();
+		korisnikKategorije.setSize(840, 550);
+		korisnikKategorije.setLocation(200, 100);
+		korisnikKategorije.setOpaque(false);
+		korisnikKategorije.setLayout(new MigLayout("", "[grow][]", "[][grow]"));
+		
+		listModel = new DefaultListModel<String>();
+		
+		//ArrayList<Kategorija> kategorije = new ArrayList<Kategorija>();
+		ArrayList<Integer> sifre = ((RegistrovaniKorisnik) korisnik).getKategorije();
+		
+		if(sifre != null) {
+			for (Integer sifra : sifre) {
+				Kategorija kategorija = kgm.getKategorija(sifra);
+				//kategorije.add(kategorija);
+				listModel.addElement(kategorija.getNaziv());
+			}
+		}
+		
+		JScrollPane scrollPane = new JScrollPane();
+		
+		list = new JList<String>(listModel);
+		scrollPane.setViewportView(list);
+		korisnikKategorije.add(scrollPane, "cell 0 1,grow");
+		
+		JButton btnDodajNoveKategorije = new JButton("Dodaj nove kategorije");
+		btnDodajNoveKategorije.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				//TODO nekako povezati sa kategorija panelom i onda dodavati
+			}
+		});
+		korisnikKategorije.add(btnDodajNoveKategorije, "cell 0 0,growx");
+		
+		JButton btnBrisiOdabranuKategoriju = new JButton("Brisi odabranu kategoriju");
+		btnBrisiOdabranuKategoriju.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				for ( String selektovani : list.getSelectedValuesList()) {
+					listModel.removeElement(selektovani);
+				}
+			}
+		});
+		korisnikKategorije.add(btnBrisiOdabranuKategoriju, "cell 1 1,alignx center");
+		
+		JButton btnX = new JButton(new ImageIcon("data/ikonice/cancel.png"));
+		btnX.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				listModel.removeAllElements();
+			}
+		});
+		korisnikKategorije.add(btnX, "flowx,cell 1 2,alignx left");
+		
+		JButton btnSacuvaj = new JButton("Sacuvaj");
+		btnX.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				//TODO sacuvanje kategorija korisniku
+			}
+		});
+		btnSacuvaj.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		korisnikKategorije.add(btnSacuvaj, "cell 1 2,alignx right");
+		
+		postaviPanel(korisnikKategorije);
 	}
 	
 }
