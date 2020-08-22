@@ -8,8 +8,7 @@
   "tezina" : "LAKO",
   "vremePripreme" : 10,
   "uredjen" : false,
-  "datum" : "2020-08-20"
-  },
+  "datum" : "2020-08-20",
   "uredjaji" : [ {
     "pozeljan" : true,
     "uredjaj" : {

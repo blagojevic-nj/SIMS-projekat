@@ -19,8 +19,10 @@ import model.Recept;
 public class MaliPrikazRecepta extends JPanel{
 
 	private static final long serialVersionUID = 1L;
+	private Recept recept;
 	
 	public MaliPrikazRecepta(Recept r){
+		recept = r;
 		setSize(500, 300);
 		this.setMaximumSize(new Dimension(500, 300));
 		setBorder(BorderFactory.createRaisedBevelBorder());
@@ -55,7 +57,7 @@ public class MaliPrikazRecepta extends JPanel{
 				if(!MainWindow.expands) {
 					zoomPanel.setVisible(true);
 					revalidate();
-					repaint();
+					//repaint();
 				}
 				
 			}
@@ -64,7 +66,7 @@ public class MaliPrikazRecepta extends JPanel{
 			public void mouseExited(MouseEvent arg0) {
 				zoomPanel.setVisible(false);
 				revalidate();
-				repaint();
+				//repaint();
 				
 			}
 
@@ -82,7 +84,10 @@ public class MaliPrikazRecepta extends JPanel{
 			
 		});
 		
-		String kategorije = "DOMACA KUHINJA; CORBE";
+		String kategorije = "";
+		for (int k : r.getKategorije()) {
+			kategorije += MainWindow.katM.getKategorija(k).getNaziv()+"; ";
+		}
 		JLabel kat = new JLabel(kategorije);
 		kat.setFont(new Font("Lucida Sans", 0, 14));
 		add(kat, "center, span");
@@ -120,6 +125,10 @@ public class MaliPrikazRecepta extends JPanel{
 		JLabel pregledi = new JLabel(r.getPregleda() + " pregleda");
 		pregledi.setFont(new Font("Lucida Sans", 0, 10));
 		add(pregledi, "align right, wrap");
+	}
+
+	public Recept getRecept() {
+		return recept;
 	}
 
 }
