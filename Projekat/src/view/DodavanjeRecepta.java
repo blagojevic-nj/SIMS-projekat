@@ -29,6 +29,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import manageri.ReceptManager;
 import model.Recept;
 import model.RegistrovaniKorisnik;
+import model.Sastojak;
 import model.Tezina;
 import net.miginfocom.swing.MigLayout;
 
@@ -278,11 +279,20 @@ public class DodavanjeRecepta extends JPanel{
 					validan = false;
 				}
 				if(validan) {
+					RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
 					Recept r = MainWindow.rM.noviRecept(naz.getText().trim(), opisArea.getText().trim(), koraciArea.getText().trim(), tP.getTezinu(), 
 							Integer.parseInt(vreme.getText().trim()), uP.getUredjaji(), sP.getSastojci(), kP.getKategorije(), 
-							(RegistrovaniKorisnik)MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme()), yt.getText().trim());
+							autor, yt.getText().trim());
 					if(path != null) {
 						ReceptManager.dodajSliku(r.getId(), path);
+					}
+					
+					autor.addRecept(r.getId());
+					for (Sastojak s : r.getSastojci()) {
+						MainWindow.pM.getProizvod(s.getNazivProizvoda()).addRecept(r.getId());
+					}
+					for (int k : r.getKategorije()) {
+						MainWindow.katM.getKategorija(k).addRecept(r.getId());
 					}
 					
 					MainWindow.rM.sacuvajRecepte();

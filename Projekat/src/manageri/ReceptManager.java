@@ -100,7 +100,6 @@ public class ReceptManager {
 	}
 	
 	public void sacuvajRecepte() {
-		System.out.println("dsadasdas");
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.enable(SerializationFeature.INDENT_OUTPUT);
 		try {

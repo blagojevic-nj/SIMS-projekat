@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
-import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -25,8 +24,6 @@ import manageri.ProizvodManager;
 import manageri.ReceptManager;
 import manageri.UredjajManager;
 import model.Nalog;
-import model.Recept;
-import model.TipNaloga;
 
 public class MainWindow extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -363,6 +360,13 @@ public class MainWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				rM.sacuvajTabelu();
+				rM.sacuvajRecepte();
+				km.sacuvajNaloge();
+				km.sacuvajKorisnike();
+				katM.sacuvajKategorije();
+				uM.sacuvajUredjaje();
+				pM.sacuvajProizvode();
 				System.exit(0);
 			}
 
