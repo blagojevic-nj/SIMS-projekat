@@ -184,8 +184,12 @@ public class ReceptManager {
 			} 
 		}
 		if (kategorije != null) {
-			for (Kategorija k : kategorije) {
-				medjuRezultat.retainAll(k.getRecepti());
+			if (kategorije.size() != 0) {
+				HashSet<Integer> katRezultat = new HashSet<Integer>();
+				for (Kategorija k : kategorije) {
+					katRezultat.addAll(k.getRecepti());
+				}
+				medjuRezultat.retainAll(katRezultat);
 			}
 		}
 		ArrayList<Recept> rezultat = new ArrayList<Recept>();

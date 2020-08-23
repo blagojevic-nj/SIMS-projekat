@@ -33,13 +33,15 @@ public class PretragaPanel extends JPanel {
 	private JButton dodaj1, dodaj2, dodaj3, btnPretrazi, btnOcisti;
 	private JList<String> sastojciList, nepozeljniList, kategorijeList;
 	private JRadioButton rbtnSvi;
-	JSpinner spinner;
+	private JSpinner spinner;
+	
+	private ArrayList<Recept> rezulat;
 	
 	private ReceptManager rm = ReceptManager.getInstance();
 	private ProizvodManager pm = ProizvodManager.getInstance();
 	private KategorijaManager km = KategorijaManager.getInstance();
 	
-	public PretragaPanel() {
+	public PretragaPanel(MainWindow mw) {
 		setBackground(Color.LIGHT_GRAY);
 		setBounds(0, 0, 300, 700);
 		setLayout(null);
@@ -189,6 +191,8 @@ public class PretragaPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				preuzmiArgumenteIPretrazi();
+				mw.collapseSmallMenu();
+				mw.postaviDesniPanel(new ReceptiPanel(rezulat));
 			}
 		});
 		
@@ -222,9 +226,7 @@ public class PretragaPanel extends JPanel {
 		for (int i = 0; i < kategorijeList.getModel().getSize(); i++) {
 			kategorije.add(km.getKategorija(kategorijeList.getModel().getElementAt(i)));
 		}
-		ArrayList<Recept> rezulat =
-		rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, (int) spinner.getValue());
-		// treba nekako povezati sa ReceptiPanelom
+		rezulat = rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, (int) spinner.getValue());		
 	}
 
 }

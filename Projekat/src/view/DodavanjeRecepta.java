@@ -322,7 +322,7 @@ public class DodavanjeRecepta extends JPanel{
 					//revalidate();
 					//mW.mainContentContainerPanel.repaint();
 					
-					mW.postaviDesniPanel(new ReceptiPanel(MainWindow.rM.getNajnovijih10()));
+					mW.postaviDesniPanel(new ReceptiPanel(null));
 				}
 			}
 			
