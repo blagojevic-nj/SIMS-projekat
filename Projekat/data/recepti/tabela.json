@@ -1,7 +1,16 @@
 {
   "recepti" : {
+    "grasak" : 2,
+    "grasak 1 2 3 4" : 6,
+    "grasak 1 2 3" : 5,
     "baklava" : 1,
-    "recept 1" : 0
+    "rizoto na telepski nacin" : 9,
+    "rizoto na telepski nacin 1" : 10,
+    "recept 1" : 0,
+    "grasak 1 2" : 4,
+    "grasak 1 2 3 4 5" : 7,
+    "cufte" : 8,
+    "grasak 1" : 3
   },
   "najpopularniji" : [ ]
 }

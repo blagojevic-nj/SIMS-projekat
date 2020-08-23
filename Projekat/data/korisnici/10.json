@@ -1,0 +1,17 @@
+{
+  "id" : 10,
+  "ime" : "Lacuka",
+  "prezime" : "veliki",
+  "email" : "laki@citromail.net",
+  "korisnickoIme" : "lucko",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

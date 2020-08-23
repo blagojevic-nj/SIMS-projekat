@@ -11,12 +11,14 @@ public class Kompanija {
 		return proizvodi;
 	}
 	public Kompanija() {
+		this.proizvodi = new ArrayList<Proizvod>();
 	}
 	public Kompanija(String naziv, String telefon, String email) {
 		super();
 		this.naziv = naziv;
 		this.telefon = telefon;
 		this.email = email;
+		this.proizvodi = new ArrayList<Proizvod>();
 	}
 	public Kompanija(String naziv, String telefon, String email, Mesto mesto) {
 		super();

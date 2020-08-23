@@ -25,6 +25,11 @@
     "tip" : "REG_KORISNIK",
     "idKorisnika" : 7
   }, {
+    "korisnickoIme" : "lucko",
+    "lozinka" : "lucimuci",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 10
+  }, {
     "korisnickoIme" : "laki_sb",
     "lozinka" : "987654321",
     "tip" : "REG_KORISNIK",
@@ -34,6 +39,11 @@
     "lozinka" : "123456789",
     "tip" : "REG_KORISNIK",
     "idKorisnika" : 6
+  }, {
+    "korisnickoIme" : "Laki",
+    "lozinka" : "Debeli99",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 9
   }, {
     "korisnickoIme" : "12345678",
     "lozinka" : "12345678",

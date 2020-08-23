@@ -15,6 +15,12 @@ public class RegistrovaniKorisnik extends Korisnik {
 	private ArrayList<Integer> sacuvaniRecepti;
 	
 	public RegistrovaniKorisnik() {
+		this.recepti = new ArrayList<Integer>();
+		this.praceni = new ArrayList<String>();
+		this.kategorije = new ArrayList<Integer>();
+		this.proizvodi = new ArrayList<Integer>();
+		this.uredjaji = new ArrayList<Integer>();
+		this.sacuvaniRecepti = new ArrayList<Integer>();
 	}
 	
 	public RegistrovaniKorisnik(int id, String ime, String prezime, String email, String korisnickoIme,
@@ -24,6 +30,12 @@ public class RegistrovaniKorisnik extends Korisnik {
 		this.bedz = bedz;
 		this.brojPratilaca = brojPratilaca;
 		this.prosecnaOcena = prosecnaOcena;
+		this.recepti = new ArrayList<Integer>();
+		this.praceni = new ArrayList<String>();
+		this.kategorije = new ArrayList<Integer>();
+		this.proizvodi = new ArrayList<Integer>();
+		this.uredjaji = new ArrayList<Integer>();
+		this.sacuvaniRecepti = new ArrayList<Integer>();
 	}
 	
 	public boolean isPrivilegovani() {

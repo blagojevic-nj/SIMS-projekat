@@ -1,0 +1,24 @@
+{
+  "id" : 8,
+  "naziv" : "Cufte",
+  "opis" : "Cuftice dobre",
+  "koraci" : "Treba da napravis cufte, krompir pire i sos. Snadji se....",
+  "youtubeLink" : "https://www.youtube.com/watch?v=l8LjR00GQ14&t=0s",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 25,
+  "uredjen" : false,
+  "datum" : "2020-08-23",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "1"
+  } ],
+  "kategorije" : [ 6 ],
+  "autor" : "Laki",
+  "ocene" : null,
+  "recenzije" : null,
+  "pregleda" : 0
+}

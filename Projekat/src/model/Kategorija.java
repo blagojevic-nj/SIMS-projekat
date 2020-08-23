@@ -8,6 +8,7 @@ public class Kategorija {
 	private ArrayList<Integer> recepti;
 	
 	public Kategorija() {
+		this.recepti = new ArrayList<Integer>();
 	}
 	
 	public Kategorija(int sifra, String naziv) {

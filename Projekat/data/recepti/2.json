@@ -1,0 +1,29 @@
+{
+  "id" : 2,
+  "naziv" : "Grasak",
+  "opis" : "Grasak njam",
+  "koraci" : "Stavite grasak u vodu, kuvate. Ispecete svinjetinu malo ubacite s graskom i  voula",
+  "youtubeLink" : "https://www.youtube.com/watch?v=l8LjR00GQ14&t=0s",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 12,
+  "uredjen" : false,
+  "datum" : "2020-08-23",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "1"
+  }, {
+    "kolicina" : 500,
+    "mernaJedinica" : "g",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "500"
+  } ],
+  "kategorije" : [ 6, 13 ],
+  "autor" : "Laki",
+  "ocene" : null,
+  "recenzije" : null,
+  "pregleda" : 0
+}

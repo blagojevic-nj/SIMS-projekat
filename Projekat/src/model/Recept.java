@@ -29,6 +29,11 @@ public class Recept {
 	private int pregleda;
 	
 	public Recept() {
+		this.uredjaji = new ArrayList<UredjajUReceptu>();
+		this.sastojci = new ArrayList<Sastojak>();
+		this.kategorije = new ArrayList<Integer>();
+		this.ocene = new HashMap<Integer, TipOcene>();
+		this.recenzije = new ArrayList<Recenzija>();
 	}
 	
 	public Recept(int id, int vremePripreme, String naziv, String opis, String koraci, String youtubeLink, float ocena,
@@ -46,6 +51,11 @@ public class Recept {
 		this.datum = datum;
 		this.autor = autor.getKorisnickoIme();
 		this.pregleda = pregleda;
+		this.uredjaji = new ArrayList<UredjajUReceptu>();
+		this.sastojci = new ArrayList<Sastojak>();
+		this.kategorije = new ArrayList<Integer>();
+		this.ocene = new HashMap<Integer, TipOcene>();
+		this.recenzije = new ArrayList<Recenzija>();
 	}
 
 	public int getId() {
