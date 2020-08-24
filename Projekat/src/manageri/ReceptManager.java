@@ -49,7 +49,7 @@ public class ReceptManager {
 	private ArrayList<Recept> promenjeniRecepti;	// ovi recepti ce biti upisani nazad u fajl
 	private static ReceptManager instance = null;
 	static final String FOLDER_SA_RECEPTIMA = "data/recepti";
-	static final String FOLDER_SA_SLIKAMA = FOLDER_SA_RECEPTIMA+"/images";
+	static final String FOLDER_SA_SLIKAMA = FOLDER_SA_RECEPTIMA+"/slike";
 	static final String FAJL_SA_TABELOM = FOLDER_SA_RECEPTIMA+"/tabela.json";
 	
 	private ReceptManager() {
@@ -118,9 +118,10 @@ public class ReceptManager {
 			ArrayList<UredjajUReceptu> uredjaji, ArrayList<Sastojak> sastojci, ArrayList<Integer> kategorije, 
 			RegistrovaniKorisnik autor, String youtubeLink) {
 		int i = 1;
-		while (tabela.recepti.get(naziv.toLowerCase()) != null) {
-			naziv = naziv+" "+i;
-			i++;
+		if (tabela.recepti.get(naziv.toLowerCase()) != null) {
+			while (tabela.recepti.get(naziv.toLowerCase() + " " + i) != null)
+				i++;
+			naziv += " " + i;
 		}
 		Recept recept = new Recept(tabela.recepti.size(), vremePripreme, naziv, opis, koraci,
 				youtubeLink, 0, tezina, false, LocalDate.now(), autor, 0);

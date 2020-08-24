@@ -288,6 +288,7 @@ public class DodavanjeRecepta extends JPanel{
 					}
 					
 					autor.addRecept(r.getId());
+					MainWindow.km.promenjen(autor);
 					for (Sastojak s : r.getSastojci()) {
 						MainWindow.pM.getProizvod(s.getNazivProizvoda()).addRecept(r.getId());
 					}

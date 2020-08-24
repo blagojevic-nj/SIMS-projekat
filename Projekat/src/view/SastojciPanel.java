@@ -82,13 +82,15 @@ public class SastojciPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				String naziv = JOptionPane.showInputDialog("Unesite ime novog sastojka:");
-				if (!naziv.trim().equals("")) {
-					MainWindow.pM.sacuvajProizvode();
-					Stavka s = new Stavka(naziv);
-					stavke.add(s);
-					revalidate();
-					repaint();
-				}
+				if (naziv != null)
+					if (!naziv.trim().equals("")) {
+						MainWindow.pM.novProizvod(naziv.trim());
+						MainWindow.pM.sacuvajProizvode();
+						Stavka s = new Stavka(naziv.trim());
+						stavke.add(s);
+						revalidate();
+						repaint();
+					}
 			}
 
 		});
@@ -238,7 +240,7 @@ class Stavka extends JPanel {
 		if (mera.getText().equals(""))
 			validan = false;
 		if (validan) {
-			Sastojak s = new Sastojak(k, mera.getText(), (TipSastojka) tip.getSelectedItem(), kolicina.getText());
+			Sastojak s = new Sastojak(k, mera.getText(), (TipSastojka) tip.getSelectedItem(), cb.getText());
 			return s;
 		}
 		return null;

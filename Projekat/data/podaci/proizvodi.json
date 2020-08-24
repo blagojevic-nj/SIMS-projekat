@@ -349,7 +349,7 @@
     "recepti" : [ ]
   }, {
     "sifra" : 87,
-    "naziv" : "cokolada",
+    "naziv" : "Cokolada",
     "recepti" : [ ]
   }, {
     "sifra" : 88,
@@ -398,6 +398,22 @@
   }, {
     "sifra" : 99,
     "naziv" : "Kakao",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 100,
+    "naziv" : "Spagete",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 101,
+    "naziv" : "Rezanci",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 102,
+    "naziv" : "Voda",
+    "recepti" : [ ]
+  }, {
+    "sifra" : 103,
+    "naziv" : "Jaje",
     "recepti" : [ ]
   } ]
 }
