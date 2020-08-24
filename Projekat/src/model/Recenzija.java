@@ -2,8 +2,16 @@ package model;
 
 import java.time.LocalDateTime;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import manageri.LocalDateTimeDeserializer;
+import manageri.LocalDateTimeSerializer;
+
 public class Recenzija {
 	private String komentar;
+	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
+	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime datum;
 	private int idKorisnika;
 

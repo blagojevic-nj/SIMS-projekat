@@ -226,7 +226,10 @@ public class PretragaPanel extends JPanel {
 		for (int i = 0; i < kategorijeList.getModel().getSize(); i++) {
 			kategorije.add(km.getKategorija(kategorijeList.getModel().getElementAt(i)));
 		}
-		rezulat = rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, (int) spinner.getValue());		
+		int vreme = (int) spinner.getValue();
+		if (vreme >= 300)
+			vreme = Integer.MAX_VALUE;
+		rezulat = rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, vreme);		
 	}
 
 }

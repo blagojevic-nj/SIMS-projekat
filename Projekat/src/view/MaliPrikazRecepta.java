@@ -24,16 +24,16 @@ public class MaliPrikazRecepta extends JPanel{
 	public MaliPrikazRecepta(Recept r){
 		recept = r;
 		setSize(500, 300);
-		this.setMaximumSize(new Dimension(500, 300));
+		setMaximumSize(new Dimension(500, 300));
 		setBorder(BorderFactory.createRaisedBevelBorder());
 		setLayout(new MigLayout("", "[][]10[]", "[]10[]"));		
 		
 		JPanel zoomPanel = new JPanel();
-		zoomPanel.add(new JLabel(new ImageIcon("data/images/zoom.png")));
+		zoomPanel.add(new JLabel(new ImageIcon("data/ikonice/zoom.png")));
 		JLabel see = new JLabel("Pogledaj recept");
 		see.setForeground(Color.white);
 		zoomPanel.add(see);
-		zoomPanel.setBackground(new Color(0, 0, 0, 123));
+		zoomPanel.setBackground(new Color(0, 0, 0, 100));
 		add(zoomPanel, "pos 70 100", 0);
 		zoomPanel.setVisible(false);
 		
@@ -49,37 +49,28 @@ public class MaliPrikazRecepta extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
-				if(!MainWindow.expands) {
+				if (!MainWindow.expands) {
 					zoomPanel.setVisible(true);
-					revalidate();
-					//repaint();
 				}
-				
 			}
 
 			@Override
 			public void mouseExited(MouseEvent arg0) {
 				zoomPanel.setVisible(false);
-				revalidate();
-				//repaint();
-				
 			}
 
 			@Override
 			public void mousePressed(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
 			}
 
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
 				// TODO Auto-generated method stub
-				
 			}
 			
 		});

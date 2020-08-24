@@ -1,23 +1,23 @@
 package manageri;
 
 import java.io.IOException;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
 
-public class LocalDateDeserializer extends StdDeserializer<LocalDate> {
+public class LocalDateTimeDeserializer extends StdDeserializer<LocalDateTime> {
 
     private static final long serialVersionUID = 1L;
 
-    protected LocalDateDeserializer() {
-        super(LocalDate.class);
+    protected LocalDateTimeDeserializer() {
+        super(LocalDateTime.class);
     }
     @Override
-    public LocalDate deserialize(JsonParser jp, DeserializationContext ctxt)
+    public LocalDateTime deserialize(JsonParser jp, DeserializationContext ctxt)
             throws IOException, JsonProcessingException {
-        return LocalDate.parse(jp.readValueAs(String.class));
+        return LocalDateTime.parse(jp.readValueAs(String.class));
     }
 }
