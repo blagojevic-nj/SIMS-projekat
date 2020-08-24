@@ -14,14 +14,11 @@ import model.Recept;
 import model.RegistrovaniKorisnik;
 import net.miginfocom.swing.MigLayout;
 
-import javax.swing.UIManager;
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
-import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;

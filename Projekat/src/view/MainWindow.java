@@ -303,7 +303,7 @@ public class MainWindow extends JFrame {
 				if (!expands) {
 					System.out.println("Podesavanja");
 					collapseSmallMenu();
-					postaviDesniPanel(new UserSettingsPanel(MainWindow.this,km, trenutniNalog));
+					postaviDesniPanel(new KorisnikPanel(MainWindow.this, trenutniNalog));
 					
 				}else 
 				{

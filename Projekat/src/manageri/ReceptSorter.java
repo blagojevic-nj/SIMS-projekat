@@ -31,7 +31,9 @@ public class ReceptSorter implements Comparator<Recept> {
 			retVal = (r1.getOcena() >= r2.getOcena())? 1 : -1;
 			break;
 		case DATUM:
-			retVal = r1.getDatum().compareTo(r2.getDatum());
+			// retVal = r1.getDatum().compareTo(r2.getDatum());
+			// stariji imaju manju sifru
+			retVal = r1.getId() - r2.getId();
 			break;
 		case POPULARNOST:
 			retVal = r1.getPregleda() - r2.getPregleda();
