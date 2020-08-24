@@ -51,9 +51,7 @@ public class KategorijaPanel extends JPanel{
 				}
 				
 				KategorijaPanel.this.setVisible(false);
-				if(parent != null) {
-					KategorijaPanel.this.parent.blokada(true);
-				}		
+				KategorijaPanel.this.parent.blokada(true);
 			}	
 		});
 	}

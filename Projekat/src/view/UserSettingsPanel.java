@@ -72,11 +72,8 @@ public class UserSettingsPanel extends JPanel {
 	private DefaultListModel<String> listModel;
 	private JList<String> list;
 	private JScrollPane scrollPanela;
-	private boolean pozvaoKategorije;
-	private KategorijaPanel kp;
 	
 	public UserSettingsPanel(MainWindow mainWindow,KorisnikManager manager, Nalog trenutniNalog) {
-		pozvaoKategorije = false;
 		mw=mainWindow;
 		km = manager;
 		rm = ReceptManager.getInstance();
@@ -744,20 +741,11 @@ public class UserSettingsPanel extends JPanel {
 		scrollPane.setViewportView(list);
 		korisnikKategorije.add(scrollPane, "cell 0 1,grow");
 		
-		kp = new KategorijaPanel();
-		kp.setVisible(false);
-		kp.setOpaque(true);
-		korisnikKategorije.add(kp, "cell 0 1,growx");
-		kp.parent = null;
-		
 		JButton btnDodajNoveKategorije = new JButton("Dodaj nove kategorije");
 		btnDodajNoveKategorije.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				pozvaoKategorije = true;
-				kp.setVisible(true);
-				blokada(kp, false);
-				korisnikKategorije.revalidate();
+				//TODO nekako povezati sa kategorija panelom i onda dodavati
 			}
 		});
 		korisnikKategorije.add(btnDodajNoveKategorije, "cell 0 0,growx");
