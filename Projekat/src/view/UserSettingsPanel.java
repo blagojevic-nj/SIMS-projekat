@@ -21,6 +21,7 @@ import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -70,7 +71,7 @@ public class UserSettingsPanel extends JPanel {
 	private Korisnik korisnik;
 	private DefaultListModel<String> listModel;
 	private JList<String> list;
-	
+	private JScrollPane scrollPanela;
 	
 	public UserSettingsPanel(MainWindow mainWindow,KorisnikManager manager, Nalog trenutniNalog) {
 		mw=mainWindow;
@@ -232,18 +233,21 @@ public class UserSettingsPanel extends JPanel {
 		                    return;
 		                }
 				    	naslov.setText("Moji recepti");
-				    	receptiKorisnika = new JPanel(new MigLayout("wrap 1", "[][]20[]", "[]20[]"));
-				    	JScrollPane scrollPanela = new JScrollPane(receptiKorisnika);
-				    	receptiKorisnika.setSize(1000, 550);
-				    	receptiKorisnika.setLocation(200, 100);
-				    	receptiKorisnika.setOpaque(false);
-				    	ArrayList<Recept> recepti =  rm.getRecepti(((RegistrovaniKorisnik)korisnik).getRecepti());
-				    	for (Recept recept : recepti) {
-				    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
-				    		receptiKorisnika.add(mpr);
-						}
-			    		postaviPanel(receptiKorisnika);
-			    		main.add(scrollPanela);
+				    	if (receptiKorisnika == null) {
+					    	receptiKorisnika = new JPanel(null);
+					    	receptiKorisnika.setBounds(200, 50, 840, 600);
+					    	JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
+					    	receptiPane.setBackground(Color.DARK_GRAY);
+					    	scrollPanela = new JScrollPane(receptiPane);
+					    	scrollPanela.setBounds(0, 0, 840, 600);
+							scrollPanela.getVerticalScrollBar().setUnitIncrement(20);
+					    	receptiKorisnika.add(scrollPanela);
+					    	for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik)korisnik).getRecepti())) {
+					    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
+					    		receptiPane.add(mpr);
+							}
+				    	}
+				    	postaviPanel(receptiKorisnika);
 				    }
 				});
 
@@ -544,7 +548,7 @@ public class UserSettingsPanel extends JPanel {
 		lblTipNaloga.setBounds(130, 85, 190, 30);
 		info.add(lblTipNaloga);
 		
-		lblPromenaifre = new JLabel("Promena šifre");
+		lblPromenaifre = new JLabel("Promena lozinke");
 		lblPromenaifre.setForeground(Color.WHITE);
 		lblPromenaifre.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblPromenaifre.setBounds(130, 390, 190, 30);
@@ -606,7 +610,7 @@ public class UserSettingsPanel extends JPanel {
 		separator_1.setBounds(0, 460, 840, 5);
 		info.add(separator_1);
 		
-		btnSifra = new JButton("sifra");
+		btnSifra = new JButton("lozinka");
 		btnSifra.setBounds(70, 390, 30, 30);
 		info.add(btnSifra);
 		
