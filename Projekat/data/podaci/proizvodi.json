@@ -118,7 +118,7 @@
   }, {
     "sifra" : 29,
     "naziv" : "Teletina",
-    "recepti" : [ ]
+    "recepti" : [ 2 ]
   }, {
     "sifra" : 30,
     "naziv" : "Jagnjetina",
@@ -386,7 +386,7 @@
   }, {
     "sifra" : 96,
     "naziv" : "So",
-    "recepti" : [ ]
+    "recepti" : [ 1 ]
   }, {
     "sifra" : 97,
     "naziv" : "Biber",
@@ -394,7 +394,7 @@
   }, {
     "sifra" : 98,
     "naziv" : "Secer",
-    "recepti" : [ ]
+    "recepti" : [ 1 ]
   }, {
     "sifra" : 99,
     "naziv" : "Kakao",

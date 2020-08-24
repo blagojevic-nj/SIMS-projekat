@@ -232,15 +232,18 @@ public class UserSettingsPanel extends JPanel {
 		                    return;
 		                }
 				    	naslov.setText("Moji recepti");
-				    	receptiKorisnika = new JPanel(new MigLayout("wrap 2", "[][]20[]", "[]20[]"));
-				    	System.out.println(korisnik.getClass());
+				    	receptiKorisnika = new JPanel(new MigLayout("wrap 1", "[][]20[]", "[]20[]"));
+				    	JScrollPane scrollPanela = new JScrollPane(receptiKorisnika);
+				    	receptiKorisnika.setSize(1000, 550);
+				    	receptiKorisnika.setLocation(200, 100);
+				    	receptiKorisnika.setOpaque(false);
 				    	ArrayList<Recept> recepti =  rm.getRecepti(((RegistrovaniKorisnik)korisnik).getRecepti());
 				    	for (Recept recept : recepti) {
 				    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
 				    		receptiKorisnika.add(mpr);
 						}
 			    		postaviPanel(receptiKorisnika);
-			    		//main.add(pane);
+			    		main.add(scrollPanela);
 				    }
 				});
 

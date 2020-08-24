@@ -2,7 +2,7 @@
   "kategorije" : [ {
     "sifra" : 0,
     "naziv" : "Kolaci",
-    "recepti" : [ ]
+    "recepti" : [ 1 ]
   }, {
     "sifra" : 1,
     "naziv" : "Namazi",
@@ -26,7 +26,7 @@
   }, {
     "sifra" : 6,
     "naziv" : "Mesna jela",
-    "recepti" : [ ]
+    "recepti" : [ 2 ]
   }, {
     "sifra" : 7,
     "naziv" : "Pica",

@@ -1,0 +1,29 @@
+{
+  "id" : 1,
+  "naziv" : "Kolac slatki 1",
+  "opis" : "dobar",
+  "koraci" : "predobar",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 15,
+  "uredjen" : false,
+  "datum" : "2020-08-24",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 10,
+    "mernaJedinica" : "grama",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 100,
+    "mernaJedinica" : "toni",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  } ],
+  "kategorije" : [ 0 ],
+  "autor" : "lucko",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}
