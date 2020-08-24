@@ -1,0 +1,24 @@
+{
+  "uredjaji" : [ {
+    "sifra" : 0,
+    "naziv" : "Mikser"
+  }, {
+    "sifra" : 1,
+    "naziv" : "Stapni mikser"
+  }, {
+    "sifra" : 2,
+    "naziv" : "Sokovnik"
+  }, {
+    "sifra" : 3,
+    "naziv" : "Blender"
+  }, {
+    "sifra" : 4,
+    "naziv" : "Toster"
+  }, {
+    "sifra" : 5,
+    "naziv" : "Mini pekara"
+  }, {
+    "sifra" : 6,
+    "naziv" : "Friteza"
+  } ]
+}

@@ -1,0 +1,17 @@
+{
+  "id" : 1,
+  "ime" : "Albert",
+  "prezime" : "Makan",
+  "email" : "makanalbert@gmail.com",
+  "korisnickoIme" : "albert_makan",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

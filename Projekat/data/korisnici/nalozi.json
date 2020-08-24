@@ -1,0 +1,58 @@
+{
+  "nalozi" : [ {
+    "korisnickoIme" : "lule",
+    "lozinka" : "123456789",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 4
+  }, {
+    "korisnickoIme" : "miki99",
+    "lozinka" : "mikica123",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 8
+  }, {
+    "korisnickoIme" : "Gosnje",
+    "lozinka" : "123456789",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 0
+  }, {
+    "korisnickoIme" : "njegi99",
+    "lozinka" : "123456789",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 3
+  }, {
+    "korisnickoIme" : "Test",
+    "lozinka" : "TestTest",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 7
+  }, {
+    "korisnickoIme" : "lucko",
+    "lozinka" : "lucimuci",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 10
+  }, {
+    "korisnickoIme" : "laki_sb",
+    "lozinka" : "987654321",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 2
+  }, {
+    "korisnickoIme" : "123456789",
+    "lozinka" : "123456789",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 6
+  }, {
+    "korisnickoIme" : "Laki",
+    "lozinka" : "Debeli99",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 9
+  }, {
+    "korisnickoIme" : "12345678",
+    "lozinka" : "12345678",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 5
+  }, {
+    "korisnickoIme" : "albert_makan",
+    "lozinka" : "123456789",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 1
+  } ]
+}

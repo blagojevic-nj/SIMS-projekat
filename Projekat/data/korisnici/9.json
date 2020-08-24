@@ -1,0 +1,17 @@
+{
+  "id" : 9,
+  "ime" : "Laslo",
+  "prezime" : "Sabadi Baranji",
+  "email" : "szabadib.laci@gmail.com",
+  "korisnickoIme" : "Laki",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

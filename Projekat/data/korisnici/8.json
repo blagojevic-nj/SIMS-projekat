@@ -1,0 +1,17 @@
+{
+  "id" : 8,
+  "ime" : "Milos",
+  "prezime" : "Peric",
+  "email" : "miki@gmail.com",
+  "korisnickoIme" : "miki99",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

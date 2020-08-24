@@ -1,0 +1,17 @@
+{
+  "id" : 2,
+  "ime" : "Laslo",
+  "prezime" : "Baranji",
+  "email" : "szblaci@gmail.com",
+  "korisnickoIme" : "laki_sb",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

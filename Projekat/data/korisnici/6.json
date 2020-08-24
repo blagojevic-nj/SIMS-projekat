@@ -1,0 +1,17 @@
+{
+  "id" : 6,
+  "ime" : "lk",
+  "prezime" : "Test",
+  "email" : "123456789",
+  "korisnickoIme" : "123456789",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}

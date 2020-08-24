@@ -1,0 +1,17 @@
+{
+  "id" : 0,
+  "ime" : "Njegos",
+  "prezime" : "Bl",
+  "email" : "adfzcb",
+  "korisnickoIme" : "Gosnje",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ ],
+  "kategorije" : [ ],
+  "proizvodi" : [ ],
+  "recepti" : [ ],
+  "sacuvaniRecepti" : [ ]
+}
