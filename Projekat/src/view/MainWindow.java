@@ -74,7 +74,7 @@ public class MainWindow extends JFrame {
  * Panel za prikaz recepta, do ovoga se moze doci kad se klikne otkazi kod dodavanja, privremeno onemoguceno jer ce se dadavanje vrsiti iz "moj nalog" panela
  * 
  */
-		postaviDesniPanel(new ReceptiPanel(null));		
+		postaviDesniPanel(new ReceptiPanel(null, MainWindow.this));		
 
 /*
  * 
@@ -197,7 +197,7 @@ public class MainWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				postaviDesniPanel(new ReceptiPanel(null));
+				postaviDesniPanel(new ReceptiPanel(null, MainWindow.this));
 				collapseSmallMenu();
 			}
 		});
@@ -224,7 +224,7 @@ public class MainWindow extends JFrame {
 				fireNalogChanged();
 				JOptionPane.showMessageDialog(null, "Uspešna odjava!");
 				collapseSmallMenu();
-				postaviDesniPanel(new ReceptiPanel(null));
+				postaviDesniPanel(new ReceptiPanel(null, MainWindow.this));
 			}
 		});
 

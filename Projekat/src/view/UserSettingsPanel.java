@@ -240,7 +240,7 @@ public class UserSettingsPanel extends JPanel {
 							scrollPanela.getVerticalScrollBar().setUnitIncrement(20);
 					    	receptiKorisnika.add(scrollPanela);
 					    	for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik)korisnik).getRecepti())) {
-					    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
+					    		MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
 					    		receptiPane.add(mpr);
 							}
 				    	}

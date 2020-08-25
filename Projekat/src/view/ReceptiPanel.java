@@ -34,15 +34,15 @@ public class ReceptiPanel extends JPanel {
 	private JScrollPane pane;
 	private static final String UPIT_TEKST = "Unesite recept koji trazite";
 
-	public ReceptiPanel(ArrayList<Recept> r) {
+	public ReceptiPanel(ArrayList<Recept> r, MainWindow mW) {
 		paneli = new ArrayList<MaliPrikazRecepta>();
 		setLayout(null);
 		setBounds(0, 0, 1040, 650);
-		initGornjiDeo();
-		initDonjiDeo(r);
+		initGornjiDeo(mW);
+		initDonjiDeo(r, mW);
 	}
 
-	void initGornjiDeo() {
+	void initGornjiDeo(MainWindow mW) {
 		gornjiDeo = new JPanel(null);
 		gornjiDeo.setBounds(0, 0, 1040, 50);
 		gornjiDeo.setBackground(Color.gray);
@@ -135,7 +135,7 @@ public class ReceptiPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String upit = search.getText();
 				if (!upit.equals(UPIT_TEKST) && !upit.equals("")) {
-					initDonjiDeo(MainWindow.rM.pretraziPoNazivu(upit));
+					initDonjiDeo(MainWindow.rM.pretraziPoNazivu(upit), mW);
 					System.out.println(upit);
 					searchBtn.setEnabled(false);
 				}
@@ -143,7 +143,7 @@ public class ReceptiPanel extends JPanel {
 		});
 	}
 
-	void initDonjiDeo(ArrayList<Recept> r) {
+	void initDonjiDeo(ArrayList<Recept> r, MainWindow mW) {
 		if (donjiDeo == null) {
 			donjiDeo = new JPanel(new MigLayout("wrap 2", "[][]10[]", "[]10[]"));
 			pane = new JScrollPane(donjiDeo);
@@ -162,7 +162,7 @@ public class ReceptiPanel extends JPanel {
 			JSeparator sep1 = new JSeparator();
 			donjiDeo.add(sep1);
 			for (Recept rec : MainWindow.rM.getNajnovijih10()) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);
 			}
@@ -175,7 +175,7 @@ public class ReceptiPanel extends JPanel {
 			JSeparator sep2 = new JSeparator();
 			donjiDeo.add(sep2);
 			for (Recept rec : MainWindow.rM.getNajpopularnijih10()) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);
 			}
@@ -186,7 +186,7 @@ public class ReceptiPanel extends JPanel {
 				donjiDeo.add(nema);
 			} else
 				for (Recept rec : r) {
-					MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec);
+					MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
 					donjiDeo.add(mpr);
 					paneli.add(mpr);
 				}

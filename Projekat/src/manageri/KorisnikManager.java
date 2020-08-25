@@ -167,7 +167,7 @@ public class KorisnikManager {
 		return sviNalozi.get(username);
 	}
 	
-	public void promenjen(Korisnik k) {
-		promenjeniNalozi.add(getNalog(k.getKorisnickoIme()));
+	public void promenjen(String username) {
+		promenjeniNalozi.add(sviNalozi.get(username));
 	}
 }

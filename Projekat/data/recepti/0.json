@@ -1,29 +1,87 @@
 {
   "id" : 0,
-  "naziv" : "Kolac slatki",
-  "opis" : "dobar",
-  "koraci" : "predobar",
-  "youtubeLink" : "",
+  "naziv" : "Gulardi Sos",
+  "opis" : "Jako ukusan sos sa malo kalorija. Odlican za sportiste, jako lako se pravi.",
+  "koraci" : "1 korak: Iseckati articoku \n2 korak: Iseckati blitvu na jako sitne komade.\n3 korak: Ubaciti u vanglu i mikserom izmesati\n4 korak: Dodati so i biber\n5 korak: kuvati 4 min",
+  "youtubeLink" : "https://www.youtube.com/watch?v=iStSHxFvUK8",
   "ocena" : 0.0,
   "tezina" : "LAKO",
   "vremePripreme" : 15,
   "uredjen" : false,
-  "datum" : "2020-08-24",
-  "uredjaji" : [ ],
+  "datum" : "2020-08-22",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  } ],
   "sastojci" : [ {
-    "kolicina" : 10,
-    "mernaJedinica" : "grama",
-    "tip" : "POZELJAN",
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Articoka"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Blitva"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "So"
   }, {
-    "kolicina" : 100,
-    "mernaJedinica" : "toni",
+    "kolicina" : 2,
+    "mernaJedinica" : "kasicice",
     "tip" : "ESENCIJALAN",
-    "nazivProizvoda" : "Secer"
+    "nazivProizvoda" : "Biber"
   } ],
-  "kategorije" : [ 0 ],
-  "autor" : "lucko",
-  "ocene" : { },
-  "recenzije" : [ ],
-  "pregleda" : 2
+  "kategorije" : [ 2, 12, 13 ],
+  "autor" : "lule",
+  "ocene" : {
+    "3" : "TRI"
+  },
+  "recenzije" : [ {
+    "komentar" : "Dobar",
+    "datum" : "2020-08-25T20:07:41.703",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "Super",
+    "datum" : "2020-08-25T20:24:40.954",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "Vrh",
+    "datum" : "2020-08-25T20:24:47.893",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "Odlican,\njako ukusno",
+    "datum" : "2020-08-25T20:31:51.86",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "blabla",
+    "datum" : "2020-08-25T20:39:21.581",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "fdsfsdfsdf",
+    "datum" : "2020-08-25T20:39:55.171",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "kldsflkdsajflkjadsfl",
+    "datum" : "2020-08-25T20:41:01.284",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "fdlslfdsjlfk",
+    "datum" : "2020-08-25T20:41:35.813",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "djjidjasidjisajdiasjdijsdijasi",
+    "datum" : "2020-08-25T20:42:40.092",
+    "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "ajdeeee",
+    "datum" : "2020-08-25T20:43:10.867",
+    "idKorisnika" : "njegi99"
+  } ],
+  "pregleda" : 0
 }
