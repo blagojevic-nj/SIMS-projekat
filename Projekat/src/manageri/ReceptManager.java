@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -281,6 +282,17 @@ public class ReceptManager {
 		if (f.exists())
 			return putanja;
 		return FOLDER_SA_SLIKAMA+"/default.png";
+	}
+	
+	public void promenjen(Recept r) {
+		promenjeniRecepti.add(r);
+	}
+	
+	
+	public static String dateTimeToString(LocalDateTime dt) {
+		String retVal = "";
+		retVal += dt.getDayOfMonth() + "-" + dt.getMonthValue() + "-" + dt.getYear() + " u " + dt.getHour() + ":" + dt.getMinute();
+		return retVal;
 	}
 	
 }

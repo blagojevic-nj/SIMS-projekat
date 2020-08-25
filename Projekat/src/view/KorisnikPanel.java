@@ -40,7 +40,7 @@ public class KorisnikPanel extends JPanel {
 		rm = ReceptManager.getInstance();
 		this.trenutniNalog = trenutniNalog;
 		korisnik = km.getKorisnik(trenutniNalog.getKorisnickoIme());
-		km.promenjen(korisnik);
+		km.promenjen(korisnik.getKorisnickoIme());
 
 		setLayout(null);
 		setBounds(0, 0, 1040, 650);
@@ -317,7 +317,7 @@ public class KorisnikPanel extends JPanel {
 			scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
 			pnlRecepti.add(scrollRecepti);
 			for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) korisnik).getRecepti())) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
 				receptiPane.add(mpr);
 			}
 		}

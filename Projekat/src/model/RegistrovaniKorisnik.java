@@ -159,4 +159,12 @@ public class RegistrovaniKorisnik extends Korisnik {
 	public boolean deleteProizvod(Integer proizvod) {
 		return proizvodi.remove(proizvod);
 	}
+	
+	public void povecajBrojPratilaca() {
+		brojPratilaca++;
+	}
+	
+	public void smanjiBrojPratilaca() {
+		brojPratilaca--;
+	}
 }

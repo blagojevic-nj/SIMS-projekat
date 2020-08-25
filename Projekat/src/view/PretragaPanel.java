@@ -192,7 +192,7 @@ public class PretragaPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				preuzmiArgumenteIPretrazi();
 				mw.collapseSmallMenu();
-				mw.postaviDesniPanel(new ReceptiPanel(rezulat));
+				mw.postaviDesniPanel(new ReceptiPanel(rezulat, mw));
 			}
 		});
 		

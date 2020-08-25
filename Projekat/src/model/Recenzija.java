@@ -13,12 +13,12 @@ public class Recenzija {
 	@JsonDeserialize(using = LocalDateTimeDeserializer.class)
 	@JsonSerialize(using = LocalDateTimeSerializer.class)
 	private LocalDateTime datum;
-	private int idKorisnika;
+	private String idKorisnika;
 
 	public Recenzija() {
 	}
 
-	public Recenzija(String komentar, LocalDateTime datum, int idKorisnika) {
+	public Recenzija(String komentar, LocalDateTime datum, String idKorisnika) {
 		super();
 		this.komentar = komentar;
 		this.datum = datum;
@@ -41,11 +41,11 @@ public class Recenzija {
 		this.datum = datum;
 	}
 
-	public int getIdKorisnika() {
+	public String getIdKorisnika() {
 		return idKorisnika;
 	}
 
-	public void setIdKorisnika(int idKorisnika) {
+	public void setIdKorisnika(String idKorisnika) {
 		this.idKorisnika = idKorisnika;
 	}
 
