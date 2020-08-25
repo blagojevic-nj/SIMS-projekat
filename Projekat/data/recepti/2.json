@@ -19,6 +19,10 @@
   "kategorije" : [ 6 ],
   "autor" : "lucko",
   "ocene" : { },
-  "recenzije" : [ ],
+  "recenzije" : [ {
+    "komentar" : "komentar",
+    "datum" : "2020-08-25T20:43:10.867",
+    "idKorisnika" : "lule"
+  } ],
   "pregleda" : 0
 }
