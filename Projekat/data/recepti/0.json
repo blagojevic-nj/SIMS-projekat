@@ -40,7 +40,8 @@
   "kategorije" : [ 2, 12, 13 ],
   "autor" : "lule",
   "ocene" : {
-    "3" : "TRI"
+    "3" : "TRI",
+    "10" : "PET"
   },
   "recenzije" : [ {
     "komentar" : "Dobar",
@@ -82,6 +83,10 @@
     "komentar" : "ajdeeee",
     "datum" : "2020-08-25T20:43:10.867",
     "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "si dobro druze moj jel treba pomoc?",
+    "datum" : "2020-08-26T00:21:59.459",
+    "idKorisnika" : "lucko"
   } ],
-  "pregleda" : 0
+  "pregleda" : 4
 }

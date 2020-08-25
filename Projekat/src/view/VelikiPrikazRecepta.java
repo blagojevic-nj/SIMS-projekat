@@ -53,6 +53,10 @@ public class VelikiPrikazRecepta extends JPanel {
 	private JButton follow;
 	private JButton unfollow, sacuvaj;
 	JPanel recenzije;
+	 
+	public VelikiPrikazRecepta() {
+		
+	}
 
 	public VelikiPrikazRecepta(MainWindow mW, Recept r) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
@@ -547,5 +551,45 @@ public class VelikiPrikazRecepta extends JPanel {
 	public void paintComponent(Graphics g) {
 		g.drawImage(img, 0, 0, null);
 	}
-
+	
+	public float prosekOcenaRecepta(Recept recept) {
+		float prosek = 0;
+		float count = 0;
+		for (TipOcene ocena : recept.getOcene().values()) {
+			switch(ocena) {
+				case JEDAN:
+					prosek++;
+					break;
+				case DVA:
+					prosek += 2;
+					break;
+				case TRI:
+					prosek += 3;
+					break;
+				case CETIRI:
+					prosek += 4;
+					break;
+				case PET:
+					prosek += 5;
+					break;
+			}
+			count++;
+		}
+		//recept.setOcena(prosek / count),  ako ocete da se u funkciji setuje
+		return prosek / count;
+	}
+	
+	
+	public float prosekOcenaKorisnik(RegistrovaniKorisnik korisnik) {
+		ReceptManager rp = ReceptManager.getInstance();
+		float prosek = 0;
+		float count = 0;
+		for (Integer sifra : korisnik.getRecepti()) {
+			Recept recept = rp.getRecept(sifra);
+			prosek += prosekOcenaRecepta(recept);
+			count++;
+		}
+		//korisnik.setOcena(prosek / count),  ako ocete da se u funkciji setuje
+		return prosek / count;
+	}
 }
