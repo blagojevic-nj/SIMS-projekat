@@ -40,7 +40,7 @@ public class ReceptManager {
 		}
 		
 		public void azurirajPopularnost(int sifra, int mesto) {
-			najpopularniji.remove(sifra);
+			najpopularniji.remove(new Integer(sifra));
 			najpopularniji.add(mesto, sifra);
 		}
 	}
