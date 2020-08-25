@@ -243,7 +243,7 @@ public class ReceptManager {
 		// uporedjuje se popularnost aktuelnog recepta sa popularnoscu ostalih najpopularnijih recepata
 		while (mesto > 0) {
 			Recept r = getRecept(tabela.najpopularniji.get(mesto-1));
-			if (recept.getPregleda() > r.getPregleda()) {
+			if (recept.getPregleda() >= r.getPregleda()) {
 				mesto--;
 			} else {
 				break;

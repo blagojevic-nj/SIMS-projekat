@@ -422,13 +422,11 @@ public class VelikiPrikazRecepta extends JPanel {
 				
 				add(mojKomPane);
 				add(objavi);
-				
-			//TODO Albert
-				
-//				MainWindow.rM.pregledaoRecept(r, rk);
-//				MainWindow.rM.sacuvajTabelu();
-//				MainWindow.rM.sacuvajRecepte();
+								
+				MainWindow.rM.pregledaoRecept(r, rk);
 			}
+		} else {
+			MainWindow.rM.pregledaoRecept(r, null);
 		}
 
 		if (MainWindow.trenutniNalog != null && !MainWindow.trenutniNalog.getKorisnickoIme().equals(r.getAutor())) {

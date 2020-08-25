@@ -39,40 +39,6 @@ public class MaliPrikazRecepta extends JPanel{
 		add(zoomPanel, "pos 70 100", 0);
 		zoomPanel.setVisible(false);
 		
-		zoomPanel.addMouseListener(new MouseListener() {
-
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				mW.postaviDesniPanel(new VelikiPrikazRecepta(mW, r));
-				
-			}
-
-			@Override
-			public void mouseEntered(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mouseExited(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-
-			@Override
-			public void mousePressed(MouseEvent arg0) {
-				mW.postaviDesniPanel(new VelikiPrikazRecepta(mW, r));
-				
-			}
-
-			@Override
-			public void mouseReleased(MouseEvent arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-		});
-		
 		ImageIcon img = new ImageIcon(ReceptManager.getPutanjaDoSlike(r.getId()));
 		Image resize = img.getImage().getScaledInstance(240, 240, Image.SCALE_SMOOTH);
 		
@@ -80,10 +46,9 @@ public class MaliPrikazRecepta extends JPanel{
 		add(slika, "spany");
 		
 		slika.addMouseListener(new MouseListener() {
-
 			@Override
-			public void mouseClicked(MouseEvent arg0) {
-				// TODO Auto-generated method stub
+			public void mouseClicked(MouseEvent e) {
+				mW.postaviDesniPanel(new VelikiPrikazRecepta(mW, r));
 			}
 
 			@Override
@@ -96,21 +61,20 @@ public class MaliPrikazRecepta extends JPanel{
 			}
 
 			@Override
-			public void mouseExited(MouseEvent arg0) {
+			public void mouseExited(MouseEvent e) {
 				zoomPanel.setVisible(false);
 				revalidate();
 			}
 
 			@Override
-			public void mousePressed(MouseEvent arg0) {
+			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
 			}
 
 			@Override
-			public void mouseReleased(MouseEvent arg0) {
+			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
 			}
-			
 		});
 		
 		String kategorije = "";
