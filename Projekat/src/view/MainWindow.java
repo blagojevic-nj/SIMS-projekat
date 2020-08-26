@@ -419,6 +419,10 @@ public class MainWindow extends JFrame {
 		repaint();
 	}
 	
+	public JPanel getTrenutniPanel() {
+		return trenutniDesni;
+	}
+	
 	
 	
 	

@@ -58,7 +58,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		
 	}
 
-	public VelikiPrikazRecepta(MainWindow mW, Recept r) {
+	public VelikiPrikazRecepta(MainWindow mW, JPanel prethodni, Recept r) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		setPreferredSize(size);
@@ -67,6 +67,19 @@ public class VelikiPrikazRecepta extends JPanel {
 		setSize(size);
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
+		
+		JButton nazad = new JButton(new ImageIcon("data/ikonice/reduce.png"));
+		nazad.setBounds(10, 0, 50, 50);
+		nazad.setBorderPainted(false);
+		nazad.setFocusPainted(false);
+		nazad.setContentAreaFilled(false);
+		add(nazad);
+		nazad.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				mW.postaviDesniPanel(prethodni);
+			}
+		});
 
 		JLabel naslov = new JLabel(r.getNaziv());
 		naslov.setFont(new Font(font, 1, 20));
@@ -250,6 +263,31 @@ public class VelikiPrikazRecepta extends JPanel {
 		JLabel korisnik = new JLabel(new ImageIcon("data/ikonice/user.png"));
 		korisnik.setBounds(20, 570, 50, 50);
 		add(korisnik);
+		
+		korisnik.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseReleased(MouseEvent e) {
+			}
+			
+			@Override
+			public void mousePressed(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseExited(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseEntered(MouseEvent e) {
+			}
+			
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				mW.postaviDesniPanel(new PregledKorisnikaPanel(mW, VelikiPrikazRecepta.this, 
+						(RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor())));
+			}
+		});
+		
 		JLabel autor = new JLabel(r.getAutor());
 		autor.setForeground(Color.white);
 		autor.setFont(new Font(font, 1, 15));
