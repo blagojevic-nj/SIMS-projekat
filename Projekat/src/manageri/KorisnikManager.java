@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import model.Bedz;
 import model.Korisnik;
 import model.Nalog;
+import model.Recept;
 import model.RegistrovaniKorisnik;
 import model.TipNaloga;
 
@@ -169,5 +170,17 @@ public class KorisnikManager {
 	
 	public void promenjen(String username) {
 		promenjeniNalozi.add(sviNalozi.get(username));
+	}
+	
+	public void prosekOcenaKorisnik(RegistrovaniKorisnik korisnik) {
+		ReceptManager rp = ReceptManager.getInstance();
+		float prosek = 0;
+		float count = 0;
+		for (Integer sifra : korisnik.getRecepti()) {
+			Recept recept = rp.getRecept(sifra);
+			prosek += recept.getOcena();
+			count++;
+		}
+		korisnik.setProsecnaOcena(prosek / count);
 	}
 }

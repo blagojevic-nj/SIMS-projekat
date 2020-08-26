@@ -428,168 +428,132 @@ public class VelikiPrikazRecepta extends JPanel {
 				add(objavi);
 								
 				MainWindow.rM.pregledaoRecept(r, rk);
+				
+				if (r.getOcene() != null && r.getOcene().containsKey(MainWindow.trenutniNalog.getIdKorisnika())) {
+					switch (r.getOcene().get(MainWindow.trenutniNalog.getIdKorisnika())) {
+					case CETIRI:
+						brojacZvezdi = 4;
+						privremenaOcena = 4;
+						break;
+					case DVA:
+						brojacZvezdi = 2;
+						privremenaOcena = 2;
+						break;
+					case JEDAN:
+						brojacZvezdi = 1;
+						privremenaOcena = 1;
+						break;
+					case PET:
+						brojacZvezdi = 5;
+						privremenaOcena = 5;
+						break;
+					case TRI:
+						brojacZvezdi = 3;
+						privremenaOcena = 3;
+						break;
+					default:
+						break;
+					}
+				}
+
+				zvezde = new JLabel(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
+				zvezde.setBounds(330, 330, 93, 20);
+				add(zvezde);
+
+				zvezde.addMouseListener(new MouseListener() {
+
+					@Override
+					public void mouseClicked(MouseEvent arg0) {
+						brojacZvezdi = privremenaOcena;
+						zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
+						if (r.getOcene() == null) {
+							r.setOcene(new HashMap<Integer, TipOcene>());
+						}
+						if (brojacZvezdi == 1)
+							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.JEDAN);
+						else if (brojacZvezdi == 2)
+							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.DVA);
+						else if (brojacZvezdi == 3)
+							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.TRI);
+						else if (brojacZvezdi == 4)
+							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.CETIRI);
+						else if (brojacZvezdi == 5)
+							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.PET);
+						
+						MainWindow.rM.prosekOcenaRecepta(r);
+						MainWindow.km.prosekOcenaKorisnik(rk);
+						MainWindow.km.promenjen(rk.getKorisnickoIme());
+						MainWindow.rM.promenjen(r);
+						MainWindow.rM.sacuvajRecepte();
+						MainWindow.km.sacuvajKorisnike();
+						
+						zvezde.revalidate();
+						zvezde.repaint();
+					}
+
+					@Override
+					public void mouseEntered(MouseEvent arg0) {
+
+					}
+
+					@Override
+					public void mouseExited(MouseEvent arg0) {
+						privremenaOcena = brojacZvezdi;
+						zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
+						zvezde.revalidate();
+						zvezde.repaint();
+
+					}
+
+					@Override
+					public void mousePressed(MouseEvent arg0) {
+
+					}
+
+					@Override
+					public void mouseReleased(MouseEvent arg0) {
+
+					}
+
+				});
+
+				zvezde.addMouseMotionListener(new MouseMotionListener() {
+
+					@Override
+					public void mouseDragged(MouseEvent arg0) {
+
+					}
+
+					@Override
+					public void mouseMoved(MouseEvent e) {
+						int x = e.getX();
+						if (x <= 3)
+							privremenaOcena = 0;
+						else if (x > 3 && x < 20)
+							privremenaOcena = 1;
+						else if (21 <= x && x <= 38)
+							privremenaOcena = 2;
+						else if (39 <= x && x <= 56)
+							privremenaOcena = 3;
+						else if (57 <= x && x <= 70)
+							privremenaOcena = 4;
+						else
+							privremenaOcena = 5;
+
+						zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
+						repaint();
+					}
+				});
+			} else if (MainWindow.trenutniNalog.getTip() == TipNaloga.REG_KORISNIK) {
+				add(mojKomPane);
+				add(objavi);
 			}
 		} else {
 			MainWindow.rM.pregledaoRecept(r, null);
 		}
-
-		if (MainWindow.trenutniNalog != null && !MainWindow.trenutniNalog.getKorisnickoIme().equals(r.getAutor())) {
-			if (r.getOcene() != null && r.getOcene().containsKey(MainWindow.trenutniNalog.getIdKorisnika())) {
-				switch (r.getOcene().get(MainWindow.trenutniNalog.getIdKorisnika())) {
-				case CETIRI:
-					brojacZvezdi = 4;
-					privremenaOcena = 4;
-					break;
-				case DVA:
-					brojacZvezdi = 2;
-					privremenaOcena = 2;
-					break;
-				case JEDAN:
-					brojacZvezdi = 1;
-					privremenaOcena = 1;
-					break;
-				case PET:
-					brojacZvezdi = 5;
-					privremenaOcena = 5;
-					break;
-				case TRI:
-					brojacZvezdi = 3;
-					privremenaOcena = 3;
-					break;
-				default:
-					break;
-				}
-			}
-
-			zvezde = new JLabel(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
-			zvezde.setBounds(330, 330, 93, 20);
-			add(zvezde);
-
-			zvezde.addMouseListener(new MouseListener() {
-
-				@Override
-				public void mouseClicked(MouseEvent arg0) {
-					brojacZvezdi = privremenaOcena;
-					zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
-					if (r.getOcene() == null) {
-						r.setOcene(new HashMap<Integer, TipOcene>());
-					}
-					if (brojacZvezdi == 1)
-						r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.JEDAN);
-					else if (brojacZvezdi == 2)
-						r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.DVA);
-					else if (brojacZvezdi == 3)
-						r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.TRI);
-					else if (brojacZvezdi == 4)
-						r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.CETIRI);
-					else if (brojacZvezdi == 5)
-						r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.PET);
-					MainWindow.rM.promenjen(r);
-					MainWindow.rM.sacuvajRecepte();
-					zvezde.revalidate();
-					zvezde.repaint();
-				}
-
-				@Override
-				public void mouseEntered(MouseEvent arg0) {
-
-				}
-
-				@Override
-				public void mouseExited(MouseEvent arg0) {
-					privremenaOcena = brojacZvezdi;
-					zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
-					zvezde.revalidate();
-					zvezde.repaint();
-
-				}
-
-				@Override
-				public void mousePressed(MouseEvent arg0) {
-
-				}
-
-				@Override
-				public void mouseReleased(MouseEvent arg0) {
-
-				}
-
-			});
-
-			zvezde.addMouseMotionListener(new MouseMotionListener() {
-
-				@Override
-				public void mouseDragged(MouseEvent arg0) {
-
-				}
-
-				@Override
-				public void mouseMoved(MouseEvent e) {
-					int x = e.getX();
-					if (x <= 3)
-						privremenaOcena = 0;
-					else if (x > 3 && x < 20)
-						privremenaOcena = 1;
-					else if (21 <= x && x <= 38)
-						privremenaOcena = 2;
-					else if (39 <= x && x <= 56)
-						privremenaOcena = 3;
-					else if (57 <= x && x <= 70)
-						privremenaOcena = 4;
-					else
-						privremenaOcena = 5;
-
-					zvezde.setIcon(new ImageIcon("data/ikonice/stars/" + privremenaOcena + ".png"));
-					repaint();
-				}
-			});
-		}
-		
-		
 	}
 
 	public void paintComponent(Graphics g) {
 		g.drawImage(img, 0, 0, null);
-	}
-	
-	public float prosekOcenaRecepta(Recept recept) {
-		float prosek = 0;
-		float count = 0;
-		for (TipOcene ocena : recept.getOcene().values()) {
-			switch(ocena) {
-				case JEDAN:
-					prosek++;
-					break;
-				case DVA:
-					prosek += 2;
-					break;
-				case TRI:
-					prosek += 3;
-					break;
-				case CETIRI:
-					prosek += 4;
-					break;
-				case PET:
-					prosek += 5;
-					break;
-			}
-			count++;
-		}
-		//recept.setOcena(prosek / count),  ako ocete da se u funkciji setuje
-		return prosek / count;
-	}
-	
-	
-	public float prosekOcenaKorisnik(RegistrovaniKorisnik korisnik) {
-		ReceptManager rp = ReceptManager.getInstance();
-		float prosek = 0;
-		float count = 0;
-		for (Integer sifra : korisnik.getRecepti()) {
-			Recept recept = rp.getRecept(sifra);
-			prosek += prosekOcenaRecepta(recept);
-			count++;
-		}
-		//korisnik.setOcena(prosek / count),  ako ocete da se u funkciji setuje
-		return prosek / count;
 	}
 }
