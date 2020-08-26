@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -264,23 +265,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		korisnik.setBounds(20, 570, 50, 50);
 		add(korisnik);
 		
-		korisnik.addMouseListener(new MouseListener() {
-			@Override
-			public void mouseReleased(MouseEvent e) {
-			}
-			
-			@Override
-			public void mousePressed(MouseEvent e) {
-			}
-			
-			@Override
-			public void mouseExited(MouseEvent e) {
-			}
-			
-			@Override
-			public void mouseEntered(MouseEvent e) {
-			}
-			
+		korisnik.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				mW.postaviDesniPanel(new PregledKorisnikaPanel(mW, VelikiPrikazRecepta.this, 
@@ -335,7 +320,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		        	mojKom.setText("Unesite komentar:");
 		        }
 		    }
-		    });
+		});
 		
 		
 		recenzije = new JPanel(null);
