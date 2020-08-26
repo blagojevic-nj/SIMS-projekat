@@ -20,6 +20,7 @@ import model.Recept;
 import model.RegistrovaniKorisnik;
 import model.Sastojak;
 import model.Tezina;
+import model.TipOcene;
 import model.UredjajUReceptu;
 
 public class ReceptManager {
@@ -295,5 +296,30 @@ public class ReceptManager {
 		return retVal;
 	}
 	
+	public void prosekOcenaRecepta(Recept recept) {
+		float prosek = 0;
+		float count = 0;
+		for (TipOcene ocena : recept.getOcene().values()) {
+			switch(ocena) {
+				case JEDAN:
+					prosek++;
+					break;
+				case DVA:
+					prosek += 2;
+					break;
+				case TRI:
+					prosek += 3;
+					break;
+				case CETIRI:
+					prosek += 4;
+					break;
+				case PET:
+					prosek += 5;
+					break;
+			}
+			count++;
+		}
+		recept.setOcena(prosek / count);
+	}
 }
 

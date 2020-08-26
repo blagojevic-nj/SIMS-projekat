@@ -4,7 +4,7 @@
   "opis" : "Jako ukusan sos sa malo kalorija. Odlican za sportiste, jako lako se pravi.",
   "koraci" : "1 korak: Iseckati articoku \n2 korak: Iseckati blitvu na jako sitne komade.\n3 korak: Ubaciti u vanglu i mikserom izmesati\n4 korak: Dodati so i biber\n5 korak: kuvati 4 min",
   "youtubeLink" : "https://www.youtube.com/watch?v=iStSHxFvUK8",
-  "ocena" : 0.0,
+  "ocena" : 5.0,
   "tezina" : "LAKO",
   "vremePripreme" : 15,
   "uredjen" : false,
@@ -40,7 +40,8 @@
   "kategorije" : [ 2, 12, 13 ],
   "autor" : "lule",
   "ocene" : {
-    "3" : "TRI"
+    "3" : "PET",
+    "10" : "PET"
   },
   "recenzije" : [ {
     "komentar" : "Dobar",
@@ -82,6 +83,14 @@
     "komentar" : "ajdeeee",
     "datum" : "2020-08-25T20:43:10.867",
     "idKorisnika" : "njegi99"
+  }, {
+    "komentar" : "si dobro druze moj jel treba pomoc?",
+    "datum" : "2020-08-26T00:21:59.459",
+    "idKorisnika" : "lucko"
+  }, {
+    "komentar" : "Fala njegi99",
+    "datum" : "2020-08-26T09:53:40.905",
+    "idKorisnika" : "lule"
   } ],
-  "pregleda" : 1
+  "pregleda" : 6
 }
