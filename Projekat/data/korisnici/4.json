@@ -8,7 +8,7 @@
   "bedz" : "NEMA",
   "brojPratilaca" : 0,
   "prosecnaOcena" : 0.0,
-  "praceni" : [ ],
+  "praceni" : [ "lucko" ],
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],
   "proizvodi" : [ 0, 1, 2, 3, 5, 24 ],

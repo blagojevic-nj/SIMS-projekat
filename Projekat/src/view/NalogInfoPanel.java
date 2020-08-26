@@ -16,6 +16,7 @@ import javax.swing.JTextField;
 
 import model.Korisnik;
 import model.Nalog;
+import model.RegistrovaniKorisnik;
 
 public class NalogInfoPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -167,7 +168,7 @@ public class NalogInfoPanel extends JPanel {
 		JLabel lblPratilaca = new JLabel("Broj pratilaca:");
 		lblPratilaca.setForeground(Color.WHITE);
 		lblPratilaca.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPratilaca.setBounds(70, 545, 125, 30);
+		lblPratilaca.setBounds(70, 545, 200, 30);
 		add(lblPratilaca);
 
 		JLabel lblBedz = new JLabel("Bedz:");
@@ -182,19 +183,27 @@ public class NalogInfoPanel extends JPanel {
 		lblOcena.setBounds(490, 545, 70, 30);
 		add(lblOcena);
 
-		lblPrivilegijaVal = new JLabel("");
+		lblPrivilegijaVal = new JLabel(((RegistrovaniKorisnik)korisnik).isPrivilegovani()+"");
+		lblPrivilegijaVal.setForeground(Color.WHITE);
+		lblPrivilegijaVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblPrivilegijaVal.setBounds(220, 485, 125, 30);
 		add(lblPrivilegijaVal);
 
-		lblBrojPratilaca = new JLabel("");
+		lblBrojPratilaca = new JLabel(((RegistrovaniKorisnik)korisnik).getBrojPratilaca()+"");
+		lblBrojPratilaca.setForeground(Color.WHITE);
+		lblBrojPratilaca.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblBrojPratilaca.setBounds(220, 545, 125, 30);
 		add(lblBrojPratilaca);
 
-		lblBedzVal = new JLabel("");
+		lblBedzVal = new JLabel(((RegistrovaniKorisnik)korisnik).getBedz()+"");
+		lblBedzVal.setForeground(Color.WHITE);
+		lblBedzVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblBedzVal.setBounds(640, 485, 125, 30);
 		add(lblBedzVal);
 
-		lblOcenaVal = new JLabel("");
+		lblOcenaVal = new JLabel(((RegistrovaniKorisnik)korisnik).getProsecnaOcena()+"");
+		lblOcenaVal.setForeground(Color.WHITE);
+		lblOcenaVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblOcenaVal.setBounds(640, 545, 125, 30);
 		add(lblOcenaVal);
 
