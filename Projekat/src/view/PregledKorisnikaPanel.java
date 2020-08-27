@@ -79,8 +79,7 @@ public class PregledKorisnikaPanel extends JPanel {
 				follow.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						rk.addPracen(korisnik.getKorisnickoIme());
-						korisnik.povecajBrojPratilaca();
+						rk.zaprati(korisnik);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(korisnik.getKorisnickoIme());
 						MainWindow.km.sacuvajKorisnike();
@@ -93,8 +92,7 @@ public class PregledKorisnikaPanel extends JPanel {
 				unfollow.addActionListener(new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						rk.deletePracen(korisnik.getKorisnickoIme());
-						korisnik.smanjiBrojPratilaca();
+						rk.otprati(korisnik);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(korisnik.getKorisnickoIme());
 						MainWindow.km.sacuvajKorisnike();
@@ -167,9 +165,15 @@ public class PregledKorisnikaPanel extends JPanel {
 		scrollRecepti.setBounds(500, 50, 540, 600);
 		scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
 		add(scrollRecepti);
-		for (Recept recept : MainWindow.rM.getRecepti(korisnik.getRecepti())) {
-			MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
-			receptiPane.add(mpr);
-		}
+		
+		if (korisnik.getRecepti().size() == 0) {
+			JLabel nema = new JLabel("Nema recepata");
+			nema.setFont(new Font("Lucida Sans", Font.BOLD, 20));
+			receptiPane.add(nema);
+		} else
+			for (Recept recept : MainWindow.rM.getRecepti(korisnik.getRecepti())) {
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
+				receptiPane.add(mpr);
+			}
 	}
 }

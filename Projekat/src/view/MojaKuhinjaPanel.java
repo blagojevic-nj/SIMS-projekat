@@ -55,6 +55,8 @@ public class MojaKuhinjaPanel extends JPanel {
 		
 		DefaultListModel<String> sastojciListModel = new DefaultListModel<String>();
 		JList<String> sastojciList = new JList<String>(sastojciListModel);
+		sastojciList.setFixedCellHeight(40);
+		sastojciList.setFont(new Font("Tahoma", Font.BOLD, 18));
 		JScrollPane sastojciSP = new JScrollPane(sastojciList);
 		sastojciSP.setBounds(30, 170, 250, 250);
 		add(sastojciSP);
@@ -83,6 +85,8 @@ public class MojaKuhinjaPanel extends JPanel {
 
 		DefaultListModel<String> kategorijeListModel = new DefaultListModel<String>();
 		JList<String> kategorijeList = new JList<String>(kategorijeListModel);
+		kategorijeList.setFixedCellHeight(40);
+		kategorijeList.setFont(new Font("Tahoma", Font.BOLD, 18));
 		JScrollPane kategorijeSP = new JScrollPane(kategorijeList);
 		kategorijeSP.setBounds(300, 170, 250, 250);
 		add(kategorijeSP);
@@ -111,6 +115,8 @@ public class MojaKuhinjaPanel extends JPanel {
 
 		DefaultListModel<String> uredjajiListModel = new DefaultListModel<String>();
 		JList<String> uredjajiList = new JList<String>(uredjajiListModel);
+		uredjajiList.setFixedCellHeight(40);
+		uredjajiList.setFont(new Font("Tahoma", Font.BOLD, 18));
 		JScrollPane uredjajiSP = new JScrollPane(uredjajiList);
 		uredjajiSP.setBounds(570, 170, 250, 250);
 		add(uredjajiSP);

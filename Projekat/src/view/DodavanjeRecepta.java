@@ -46,7 +46,7 @@ public class DodavanjeRecepta extends JPanel{
 	private TezinaPanel tP;
 	String path;
 	
-	public DodavanjeRecepta(MainWindow mW) {
+	public DodavanjeRecepta(MainWindow mW, JPanel prethodni) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 	    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 	    setPreferredSize(size);
@@ -319,9 +319,8 @@ public class DodavanjeRecepta extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				int result = JOptionPane.showConfirmDialog(mW.mainContentContainerPanel, "Podaci se nece sacuvati, da li ste sigurni?");
-				if(result == JOptionPane.YES_OPTION) {
-					
-					mW.postaviDesniPanel(new ReceptiPanel(null, mW));
+				if (result == JOptionPane.YES_OPTION) {
+					mW.postaviDesniPanel(prethodni);
 				}
 			}
 			

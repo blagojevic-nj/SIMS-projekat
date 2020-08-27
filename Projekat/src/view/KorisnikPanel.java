@@ -18,14 +18,16 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.SwingConstants;
 
 public class KorisnikPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private NalogInfoPanel pnlInfo;
 	private MojaKuhinjaPanel pnlKuhinja;
-	private JPanel mainMenu, trenutniPanel, pnlRecepti;
+	private JPanel mainMenu, trenutniPanel, pnlRecepti, pnlPraceni;
 	private JLabel naslov, username, lblNalog, lblKuhinja, lblRecepti,
 			lblPodesavanje, lblDodajRecept, lblPraceni, lblIzvestaj;
 	private KorisnikManager km;
@@ -196,12 +198,12 @@ public class KorisnikPanel extends JPanel {
 					return;
 				}
 				naslov.setText("Unos novog recepta");
-				mw.postaviDesniPanel(new DodavanjeRecepta(mw));
+				mw.postaviDesniPanel(new DodavanjeRecepta(mw, KorisnikPanel.this));
 			}
 		});
 
-		lblPraceni = new JLabel("Praceni nalozi");
-		lblPraceni.setToolTipText("Praceni nalozi");
+		lblPraceni = new JLabel("<html>Praceni korisnici<br>i sacuvani recepti");
+		lblPraceni.setToolTipText("Praceni korisnici i sacuvani recepti");
 		lblPraceni.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblPraceni.setHorizontalAlignment(SwingConstants.CENTER);
 		lblPraceni.setForeground(Color.BLACK);
@@ -225,8 +227,8 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
-				naslov.setText("Praceni nalozi");
-				// TODO praceni
+				naslov.setText("Praceni korisnici i sacuvani recepti");
+				prikazPraceni();
 			}
 		});
 
@@ -263,7 +265,8 @@ public class KorisnikPanel extends JPanel {
 		/* Naslovna labela */
 		naslov = new JLabel("");
 		naslov.setFont(new Font("Tahoma", Font.BOLD, 20));
-		naslov.setBounds(500, 10, 300, 30);
+		naslov.setHorizontalAlignment(SwingConstants.CENTER);
+		naslov.setBounds(200, 10, 840, 30);
 		naslov.setForeground(Color.WHITE);
 		add(naslov);
 	}
@@ -334,6 +337,47 @@ public class KorisnikPanel extends JPanel {
 		if (pnlKuhinja == null)
 			pnlKuhinja = new MojaKuhinjaPanel((RegistrovaniKorisnik) korisnik);
 		postaviPanel(pnlKuhinja);
+	}
+
+	protected void prikazPraceni() {
+		if (pnlPraceni == null) {
+			pnlPraceni = new JPanel(null);
+			pnlPraceni.setOpaque(false);
+			pnlPraceni.setBounds(200, 50, 840, 600);
+			
+			DefaultListModel<String> korisniciListModel = new DefaultListModel<String>();
+			JList<String> korisniciList = new JList<String>(korisniciListModel);
+			korisniciList.setFixedCellHeight(40);
+			korisniciList.setFont(new Font("Tahoma", Font.BOLD, 18));
+			JScrollPane praceniSP = new JScrollPane(korisniciList);
+			praceniSP.setBounds(30, 0, 250, 400);
+			pnlPraceni.add(praceniSP);
+			for (String pracen : ((RegistrovaniKorisnik) korisnik).getPraceni())
+				korisniciListModel.addElement(pracen);
+			korisniciListModel.addElement("------------------------------");
+			korisniciList.addMouseListener(new MouseAdapter() {
+				@Override
+				public void mouseClicked(MouseEvent e) {
+					if (korisniciList.getSelectedValue() != null)
+						if (korisniciList.getSelectedIndex() != korisniciListModel.getSize() - 1) {
+							mw.postaviDesniPanel(new PregledKorisnikaPanel(mw, KorisnikPanel.this,
+									(RegistrovaniKorisnik) MainWindow.km.getKorisnik(korisniciList.getSelectedValue())));
+						}
+				}
+			});
+			
+			JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
+			receptiPane.setBackground(Color.DARK_GRAY);
+			JScrollPane scrollRecepti = new JScrollPane(receptiPane);
+			scrollRecepti.setBounds(320, 0, 520, 600);
+			scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
+			pnlPraceni.add(scrollRecepti);
+			for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) korisnik).getSacuvaniRecepti())) {
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
+				receptiPane.add(mpr);
+			}
+		}
+		postaviPanel(pnlPraceni);
 	}
 
 }

@@ -112,14 +112,6 @@ public class RegistrovaniKorisnik extends Korisnik {
 		this.sacuvaniRecepti = sacuvaniRecepti;
 	}
 
-	public void addPracen(String pracen) {
-		praceni.add(pracen);
-	}
-
-	public boolean deletePracen(String pracen) {
-		return praceni.remove(pracen);
-	}
-
 	public void addRecept(int recept) {
 		recepti.add(recept);
 	}
@@ -160,11 +152,13 @@ public class RegistrovaniKorisnik extends Korisnik {
 		return proizvodi.remove(proizvod);
 	}
 	
-	public void povecajBrojPratilaca() {
-		brojPratilaca++;
+	public void zaprati(RegistrovaniKorisnik rk) {
+		if (praceni.add(rk.getKorisnickoIme()));
+			rk.brojPratilaca++;
 	}
 	
-	public void smanjiBrojPratilaca() {
-		brojPratilaca--;
+	public void otprati(RegistrovaniKorisnik rk) {
+		if (praceni.remove(rk.getKorisnickoIme()));
+			rk.brojPratilaca--;
 	}
 }

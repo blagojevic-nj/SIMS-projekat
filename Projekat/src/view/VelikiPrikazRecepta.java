@@ -404,9 +404,8 @@ public class VelikiPrikazRecepta extends JPanel {
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						rk.addPracen(r.getAutor());
 						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
-						autor.povecajBrojPratilaca();
+						rk.zaprati(autor);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(r.getAutor());
 						MainWindow.km.sacuvajKorisnike();
@@ -422,9 +421,8 @@ public class VelikiPrikazRecepta extends JPanel {
 					
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						rk.deletePracen(r.getAutor());
 						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
-						autor.smanjiBrojPratilaca();
+						rk.otprati(autor);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(r.getAutor());
 						MainWindow.km.sacuvajKorisnike();
