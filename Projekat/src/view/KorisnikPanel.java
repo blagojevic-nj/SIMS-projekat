@@ -109,7 +109,7 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
-				naslov.setText("Moja Kuhinja");
+				naslov.setText("");
 				prikaziKuhinjaPanel();
 			}
 		});
@@ -293,18 +293,15 @@ public class KorisnikPanel extends JPanel {
 				blokada((JPanel) c, b);
 			}
 			c.setEnabled(b);
-			System.out.println(c);
 		}
 	}
 
 	public void blokada(JPanel p, boolean b) {
 		for (Component c : p.getComponents()) {
 			if (c.getClass().equals(JPanel.class)) {
-				System.out.println("Prosao panel");
 				blokada((JPanel) c, b);
 			}
 			c.setEnabled(b);
-			System.out.println(c);
 		}
 	}
 	

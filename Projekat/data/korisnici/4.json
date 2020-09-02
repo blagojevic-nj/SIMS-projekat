@@ -11,7 +11,7 @@
   "praceni" : [ "lucko" ],
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],
-  "proizvodi" : [ 0, 1, 2, 3, 5, 24, 15 ],
+  "proizvodi" : [ 0, 2, 3, 5, 24, 15, 1 ],
   "recepti" : [ 0, 1, 2 ],
   "sacuvaniRecepti" : [ 2, 1 ]
 }
