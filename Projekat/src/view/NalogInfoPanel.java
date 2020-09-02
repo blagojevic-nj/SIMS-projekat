@@ -29,11 +29,11 @@ public class NalogInfoPanel extends JPanel {
 	private JLabel lblBrojPratilaca;
 	private JLabel lblBedzVal;
 	private JLabel lblOcenaVal;
-	private Korisnik korisnik;
+	private RegistrovaniKorisnik korisnik;
 	private Nalog nalog;
 	
 	public NalogInfoPanel(Nalog nalog, Korisnik korisnik) {
-		this.korisnik = korisnik;
+		this.korisnik = (RegistrovaniKorisnik)korisnik;
 		this.nalog = nalog;
 		setLayout(null);
 		setBounds(200, 0, 840, 650);
@@ -116,6 +116,8 @@ public class NalogInfoPanel extends JPanel {
 		Image edit1 = img.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
 		Image edit2 = img.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
 		Image edit3 = img.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+		
+
 
 		JButton btnPrezime = new JButton(new ImageIcon(edit1));
 		btnPrezime.addActionListener(new ActionListener() {
@@ -183,10 +185,10 @@ public class NalogInfoPanel extends JPanel {
 		lblOcena.setBounds(490, 545, 70, 30);
 		add(lblOcena);
 
-		lblPrivilegijaVal = new JLabel(((RegistrovaniKorisnik)korisnik).isPrivilegovani()+"");
+		lblPrivilegijaVal = new JLabel();
 		lblPrivilegijaVal.setForeground(Color.WHITE);
 		lblPrivilegijaVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPrivilegijaVal.setBounds(220, 485, 125, 30);
+		lblPrivilegijaVal.setBounds(200, 470, 50, 50);
 		add(lblPrivilegijaVal);
 
 		lblBrojPratilaca = new JLabel(((RegistrovaniKorisnik)korisnik).getBrojPratilaca()+"");
@@ -198,7 +200,7 @@ public class NalogInfoPanel extends JPanel {
 		lblBedzVal = new JLabel(((RegistrovaniKorisnik)korisnik).getBedz()+"");
 		lblBedzVal.setForeground(Color.WHITE);
 		lblBedzVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBedzVal.setBounds(640, 485, 125, 30);
+		lblBedzVal.setBounds(630, 470, 50, 50);
 		add(lblBedzVal);
 
 		lblOcenaVal = new JLabel(((RegistrovaniKorisnik)korisnik).getProsecnaOcena()+"");
@@ -233,12 +235,49 @@ public class NalogInfoPanel extends JPanel {
 		resetujInfo();
 	}
 	
+	
+	
 	private void resetujInfo() {
+		
 		txtUsername.setText(korisnik.getKorisnickoIme());
 		txtTipNaloga.setText(String.valueOf(nalog.getTip()));
 		txtMail.setText(korisnik.getEmail());
 		txtIme.setText(korisnik.getIme());
 		txtPrezime.setText(korisnik.getPrezime());
+		postavidonjeInf();
 	}
+	
+	
+	
+	private void postavidonjeInf()
+	{
+		ImageIcon priv1 = new ImageIcon("data/ikonice/privilegija.png");
+		Image privilegija = priv1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		
+		ImageIcon priv2 = new ImageIcon("data/ikonice/privilegijeBez.png");
+		Image privilegijeBez = priv2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		
+
+		if(korisnik.isPrivilegovani())
+		{
+			
+			lblPrivilegijaVal.setIcon(new ImageIcon(privilegija));
+			
+		}
+		else
+		{
+			
+			lblPrivilegijaVal.setIcon(new ImageIcon(privilegijeBez));
+
+		}
+		
+		
+		
+	}
+	
+	
+	
+	
+	
 
 }
