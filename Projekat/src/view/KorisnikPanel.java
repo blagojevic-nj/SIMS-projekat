@@ -17,6 +17,9 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
@@ -35,6 +38,8 @@ public class KorisnikPanel extends JPanel {
 	private Nalog trenutniNalog;
 	private Korisnik korisnik;
 	private MainWindow mw;
+	private JLabel selected;
+	ArrayList<JLabel>btnLabele = new ArrayList<JLabel>();
 
 	public KorisnikPanel(MainWindow mainWindow, Nalog trenutniNalog) {
 		mw = mainWindow;
@@ -102,7 +107,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblKuhinja.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 			public void mouseClicked(MouseEvent evt) {
@@ -111,9 +116,13 @@ public class KorisnikPanel extends JPanel {
 				}
 				naslov.setText("Moja Kuhinja");
 				prikaziKuhinjaPanel();
+				selected=lblKuhinja;
+				obojKliknutog();
 			}
 		});
+		btnLabele.add(lblKuhinja);
 
+		
 		lblRecepti = new JLabel("Moji recepti");
 		lblRecepti.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblRecepti.setHorizontalAlignment(SwingConstants.CENTER);
@@ -130,7 +139,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblRecepti.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 
@@ -138,10 +147,13 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
+				selected = lblRecepti;
+				obojKliknutog();
 				naslov.setText("Moji recepti");
 				prikaziMojiReceptiPanel();
 			}
 		});
+		btnLabele.add(lblRecepti);
 
 		lblPodesavanje = new JLabel("Pode\u0161avanja naloga");
 		lblPodesavanje.setToolTipText("Promena korisni\u010Dkih informacija!");
@@ -160,7 +172,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblPodesavanje.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 
@@ -168,10 +180,13 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
+				selected = lblPodesavanje;
+				obojKliknutog();
 				naslov.setText("Podešavanja naloga");
 				prikaziInfoPanel();
 			}
 		});
+		btnLabele.add(lblPodesavanje);
 
 		lblDodajRecept = new JLabel("Dodaj novi recept");
 		lblDodajRecept.setFont(new Font("Tahoma", Font.PLAIN, 18));
@@ -189,7 +204,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblDodajRecept.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 
@@ -197,10 +212,13 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
+				selected = lblDodajRecept;
+				obojKliknutog();
 				naslov.setText("Unos novog recepta");
 				mw.postaviDesniPanel(new DodavanjeRecepta(mw, KorisnikPanel.this));
 			}
 		});
+		btnLabele.add(lblDodajRecept);
 
 		lblPraceni = new JLabel("<html>Praceni korisnici<br>i sacuvani recepti");
 		lblPraceni.setToolTipText("Praceni korisnici i sacuvani recepti");
@@ -219,7 +237,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblPraceni.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 
@@ -227,17 +245,20 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
+				selected=lblPraceni;
+				obojKliknutog();
 				naslov.setText("Praceni korisnici i sacuvani recepti");
 				prikazPraceni();
 			}
 		});
+		btnLabele.add(lblPraceni);
 
 		lblIzvestaj = new JLabel("Izve\u0161taj");
 		lblIzvestaj.setToolTipText("Izve\u0161taj");
 		lblIzvestaj.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblIzvestaj.setHorizontalAlignment(SwingConstants.CENTER);
 		lblIzvestaj.setForeground(Color.BLACK);
-		lblIzvestaj.setBounds(0, 590, 200, 60);
+		lblIzvestaj.setBounds(0, 530, 200, 60);
 		mainMenu.add(lblIzvestaj);
 		lblIzvestaj.addMouseListener(new MouseAdapter() {
 			public void mouseEntered(MouseEvent evt) {
@@ -249,7 +270,7 @@ public class KorisnikPanel extends JPanel {
 
 			public void mouseExited(MouseEvent evt) {
 				if (((Component) evt.getSource()).isEnabled()) {
-					lblIzvestaj.setBackground(Color.WHITE);
+					obojKliknutog();
 				}
 			}
 
@@ -257,10 +278,12 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
-				naslov.setText("Izve\u0161taj");
-				// TODO izvestaji
+				selected = lblIzvestaj;
+				obojKliknutog();
+				//naslov.setText("Izve\u0161taj");
 			}
 		});
+		btnLabele.add(lblIzvestaj);
 
 		/* Naslovna labela */
 		naslov = new JLabel("");
@@ -380,4 +403,20 @@ public class KorisnikPanel extends JPanel {
 		postaviPanel(pnlPraceni);
 	}
 
+	private void obojKliknutog()
+	{
+		for (JLabel i : btnLabele) {
+			if(i == selected)
+			{
+				i.setBackground(Color.DARK_GRAY);
+				i.setForeground(Color.WHITE);
+			}
+			else
+			{
+				i.setBackground(Color.WHITE);
+				i.setForeground(Color.BLACK);
+			}
+
+		}
+	}
 }
