@@ -162,7 +162,7 @@ public class ReceptiPanel extends JPanel {
 			JSeparator sep1 = new JSeparator();
 			donjiDeo.add(sep1);
 			for (Recept rec : MainWindow.rM.getNajnovijih10()) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW, false);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);
 			}
@@ -175,7 +175,7 @@ public class ReceptiPanel extends JPanel {
 			JSeparator sep2 = new JSeparator();
 			donjiDeo.add(sep2);
 			for (Recept rec : MainWindow.rM.getNajpopularnijih10()) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW, false);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);
 			}
@@ -186,7 +186,7 @@ public class ReceptiPanel extends JPanel {
 				donjiDeo.add(nema);
 			} else
 				for (Recept rec : r) {
-					MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW);
+					MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW, false);
 					donjiDeo.add(mpr);
 					paneli.add(mpr);
 				}

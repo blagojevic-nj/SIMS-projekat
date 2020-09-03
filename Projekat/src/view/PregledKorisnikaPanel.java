@@ -172,7 +172,7 @@ public class PregledKorisnikaPanel extends JPanel {
 			receptiPane.add(nema);
 		} else
 			for (Recept recept : MainWindow.rM.getRecepti(korisnik.getRecepti())) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 				receptiPane.add(mpr);
 			}
 	}

@@ -18,8 +18,7 @@ import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
+
 
 import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
@@ -30,7 +29,8 @@ public class KorisnikPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private NalogInfoPanel pnlInfo;
 	private MojaKuhinjaPanel pnlKuhinja;
-	private JPanel mainMenu, trenutniPanel, pnlRecepti, pnlPraceni;
+	private MojiReceptiPanel pnlRecepti;
+	private JPanel mainMenu, trenutniPanel, pnlPraceni;
 	private JLabel naslov, username, lblNalog, lblKuhinja, lblRecepti,
 			lblPodesavanje, lblDodajRecept, lblPraceni, lblIzvestaj;
 	private KorisnikManager km;
@@ -60,7 +60,7 @@ public class KorisnikPanel extends JPanel {
 		initMeni();
 		username.setText(trenutniNalog.getKorisnickoIme());
 		
-		naslov.setText("Moji recepti");
+		naslov.setText("");
 		prikaziMojiReceptiPanel();
 	}
 
@@ -149,7 +149,7 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected = lblRecepti;
 				obojKliknutog();
-				naslov.setText("Moji recepti");
+				naslov.setText("");
 				prikaziMojiReceptiPanel();
 			}
 		});
@@ -330,19 +330,7 @@ public class KorisnikPanel extends JPanel {
 	
 	public void prikaziMojiReceptiPanel() {
 		if (pnlRecepti == null) {
-			pnlRecepti = new JPanel(null);
-			pnlRecepti.setOpaque(false);
-			pnlRecepti.setBounds(200, 50, 840, 600);
-			JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
-			receptiPane.setBackground(Color.DARK_GRAY);
-			JScrollPane scrollRecepti = new JScrollPane(receptiPane);
-			scrollRecepti.setBounds(30, 0, 810, 600);
-			scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
-			pnlRecepti.add(scrollRecepti);
-			for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) korisnik).getRecepti())) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
-				receptiPane.add(mpr);
-			}
+			pnlRecepti = new MojiReceptiPanel(korisnik, mw);
 		}
 		postaviPanel(pnlRecepti);
 	}
@@ -393,7 +381,7 @@ public class KorisnikPanel extends JPanel {
 			scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
 			pnlPraceni.add(scrollRecepti);
 			for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) korisnik).getSacuvaniRecepti())) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw);
+				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 				receptiPane.add(mpr);
 			}
 		}
