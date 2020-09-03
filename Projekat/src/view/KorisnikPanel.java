@@ -31,7 +31,7 @@ public class KorisnikPanel extends JPanel {
 	private MojaKuhinjaPanel pnlKuhinja;
 	private MojiReceptiPanel pnlRecepti;
 	private JPanel mainMenu, trenutniPanel, pnlPraceni;
-	private JLabel naslov, username, lblNalog, lblKuhinja, lblRecepti,
+	private JLabel username, lblNalog, lblKuhinja, lblRecepti,
 			lblPodesavanje, lblDodajRecept, lblPraceni, lblIzvestaj;
 	private KorisnikManager km;
 	private ReceptManager rm;
@@ -60,7 +60,7 @@ public class KorisnikPanel extends JPanel {
 		initMeni();
 		username.setText(trenutniNalog.getKorisnickoIme());
 		
-		naslov.setText("");
+		
 		prikaziMojiReceptiPanel();
 	}
 
@@ -114,7 +114,8 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
-				naslov.setText("");
+
+				
 				prikaziKuhinjaPanel();
 				selected=lblKuhinja;
 				obojKliknutog();
@@ -149,11 +150,14 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected = lblRecepti;
 				obojKliknutog();
-				naslov.setText("");
 				prikaziMojiReceptiPanel();
+				
 			}
 		});
+		
+		
 		btnLabele.add(lblRecepti);
+
 
 		lblPodesavanje = new JLabel("Pode\u0161avanja naloga");
 		lblPodesavanje.setToolTipText("Promena korisni\u010Dkih informacija!");
@@ -182,10 +186,11 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected = lblPodesavanje;
 				obojKliknutog();
-				naslov.setText("Podešavanja naloga");
 				prikaziInfoPanel();
 			}
 		});
+		
+		
 		btnLabele.add(lblPodesavanje);
 
 		lblDodajRecept = new JLabel("Dodaj novi recept");
@@ -214,10 +219,11 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected = lblDodajRecept;
 				obojKliknutog();
-				naslov.setText("Unos novog recepta");
 				mw.postaviDesniPanel(new DodavanjeRecepta(mw, KorisnikPanel.this));
 			}
 		});
+		
+		
 		btnLabele.add(lblDodajRecept);
 
 		lblPraceni = new JLabel("<html>Praceni korisnici<br>i sacuvani recepti");
@@ -247,10 +253,11 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected=lblPraceni;
 				obojKliknutog();
-				naslov.setText("Praceni korisnici i sacuvani recepti");
 				prikazPraceni();
 			}
 		});
+		
+		
 		btnLabele.add(lblPraceni);
 
 		lblIzvestaj = new JLabel("Izve\u0161taj");
@@ -284,14 +291,19 @@ public class KorisnikPanel extends JPanel {
 			}
 		});
 		btnLabele.add(lblIzvestaj);
-
-		/* Naslovna labela */
-		naslov = new JLabel("");
-		naslov.setFont(new Font("Tahoma", Font.BOLD, 20));
-		naslov.setHorizontalAlignment(SwingConstants.CENTER);
-		naslov.setBounds(200, 10, 840, 30);
-		naslov.setForeground(Color.WHITE);
-		add(naslov);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		selected = lblRecepti;
+		selected.setOpaque(true);
+		obojKliknutog();
+		
 	}
 
 	private void postaviPanel(JPanel novi) {
@@ -404,4 +416,7 @@ public class KorisnikPanel extends JPanel {
 
 		}
 	}
+	
+	
+	
 }

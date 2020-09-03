@@ -175,6 +175,7 @@ public class Login extends JPanel{
 	{
 		textField.setText("lule");
 		passwordField.setText("123456789");
+		textField.requestFocus();
 	}
 
 

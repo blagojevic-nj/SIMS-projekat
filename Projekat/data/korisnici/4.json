@@ -4,14 +4,14 @@
   "prezime" : "Kralj",
   "email" : "LuleK@gmail.com",
   "korisnickoIme" : "lule",
-  "privilegovani" : false,
-  "bedz" : "NEMA",
+  "privilegovani" : true,
+  "bedz" : "OMLET",
   "brojPratilaca" : 0,
   "prosecnaOcena" : 0.0,
   "praceni" : [ "lucko" ],
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],
-  "proizvodi" : [ 0, 2, 3, 5, 24, 15, 1 ],
+  "proizvodi" : [ 3, 24, 15 ],
   "recepti" : [ 0, 1, 2 ],
   "sacuvaniRecepti" : [ 2, 1 ]
 }

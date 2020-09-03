@@ -2,6 +2,7 @@ package view;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,6 +18,7 @@ import javax.swing.JTextField;
 import model.Korisnik;
 import model.Nalog;
 import model.RegistrovaniKorisnik;
+import javax.swing.SwingConstants;
 
 public class NalogInfoPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -31,46 +33,48 @@ public class NalogInfoPanel extends JPanel {
 	private JLabel lblOcenaVal;
 	private RegistrovaniKorisnik korisnik;
 	private Nalog nalog;
+	private Image img;
 	
 	public NalogInfoPanel(Nalog nalog, Korisnik korisnik) {
 		this.korisnik = (RegistrovaniKorisnik)korisnik;
 		this.nalog = nalog;
+		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		setLayout(null);
 		setBounds(200, 0, 840, 650);
 		setOpaque(false);
 
 		JSeparator sep1 = new JSeparator();
-		sep1.setBounds(0, 70, 840, 5);
+		sep1.setBounds(0, 105, 840, 5);
 		add(sep1);
 		
 		JLabel lblTipNaloga = new JLabel("Tip naloga:");
 		lblTipNaloga.setForeground(Color.WHITE);
 		lblTipNaloga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblTipNaloga.setBounds(130, 85, 190, 30);
+		lblTipNaloga.setBounds(130, 120, 190, 30);
 		add(lblTipNaloga);
 
 		JLabel lblKorisnicko = new JLabel("Korisnicko ime:");
 		lblKorisnicko.setForeground(Color.WHITE);
 		lblKorisnicko.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblKorisnicko.setBounds(130, 125, 190, 30);
+		lblKorisnicko.setBounds(130, 160, 190, 30);
 		add(lblKorisnicko);
 		
 		txtTipNaloga = new JTextField();
 		txtTipNaloga.setEditable(false);
 		txtTipNaloga.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		txtTipNaloga.setBounds(415, 85, 355, 30);
+		txtTipNaloga.setBounds(415, 120, 355, 30);
 		txtTipNaloga.setColumns(10);
 		add(txtTipNaloga);
 
 		txtUsername = new JTextField();
 		txtUsername.setEditable(false);
 		txtUsername.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		txtUsername.setBounds(415, 125, 355, 30);
+		txtUsername.setBounds(415, 160, 355, 30);
 		txtUsername.setColumns(10);
 		add(txtUsername);
 		
 		JSeparator sep2 = new JSeparator();
-		sep2.setBounds(0, 165, 840, 5);
+		sep2.setBounds(0, 200, 840, 5);
 		add(sep2);
 		
 		JLabel lblPrezime = new JLabel("Prezime:");
@@ -146,9 +150,19 @@ public class NalogInfoPanel extends JPanel {
 		btnMail.setBounds(70, 340, 30, 30);
 		add(btnMail);
 		
-		JButton btnLozinka = new JButton("Promena lozinke");
-		btnLozinka.setBounds(70, 400, 200, 30);
+		
+		ImageIcon psdImg = new ImageIcon("data/ikonice/novaLozinka.png");
+		Image lozinka = psdImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+		
+		
+		JButton btnLozinka = new JButton(new ImageIcon(lozinka));
+		btnLozinka.setHorizontalAlignment(SwingConstants.LEFT);
+		btnLozinka.setBounds(40, 370, 160, 65);
 		add(btnLozinka);
+		btnLozinka.setToolTipText("Promena Lozinke!");
+		btnLozinka.setBorderPainted(false);
+		btnLozinka.setFocusPainted(false);
+		btnLozinka.setContentAreaFilled(false);
 		btnLozinka.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -164,55 +178,61 @@ public class NalogInfoPanel extends JPanel {
 		JLabel lblPrivilegija = new JLabel("Privilegija:");
 		lblPrivilegija.setForeground(Color.WHITE);
 		lblPrivilegija.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPrivilegija.setBounds(70, 485, 125, 30);
+		lblPrivilegija.setBounds(70, 510, 125, 30);
 		add(lblPrivilegija);
 
 		JLabel lblPratilaca = new JLabel("Broj pratilaca:");
 		lblPratilaca.setForeground(Color.WHITE);
 		lblPratilaca.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPratilaca.setBounds(70, 545, 200, 30);
+		lblPratilaca.setBounds(70, 590, 200, 30);
 		add(lblPratilaca);
 
 		JLabel lblBedz = new JLabel("Bedz:");
 		lblBedz.setForeground(Color.WHITE);
 		lblBedz.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBedz.setBounds(490, 485, 70, 30);
+		lblBedz.setBounds(490, 510, 70, 30);
 		add(lblBedz);
 
 		JLabel lblOcena = new JLabel("Ocena:");
 		lblOcena.setForeground(Color.WHITE);
 		lblOcena.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblOcena.setBounds(490, 545, 70, 30);
+		lblOcena.setBounds(490, 590, 70, 30);
 		add(lblOcena);
 
 		lblPrivilegijaVal = new JLabel();
 		lblPrivilegijaVal.setForeground(Color.WHITE);
 		lblPrivilegijaVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblPrivilegijaVal.setBounds(200, 470, 50, 50);
+		lblPrivilegijaVal.setBounds(205, 490, 75, 75);
 		add(lblPrivilegijaVal);
 
 		lblBrojPratilaca = new JLabel(((RegistrovaniKorisnik)korisnik).getBrojPratilaca()+"");
 		lblBrojPratilaca.setForeground(Color.WHITE);
 		lblBrojPratilaca.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBrojPratilaca.setBounds(220, 545, 125, 30);
+		lblBrojPratilaca.setBounds(220, 590, 125, 30);
 		add(lblBrojPratilaca);
 
 		lblBedzVal = new JLabel(((RegistrovaniKorisnik)korisnik).getBedz()+"");
 		lblBedzVal.setForeground(Color.WHITE);
 		lblBedzVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBedzVal.setBounds(630, 470, 50, 50);
+		lblBedzVal.setBounds(630, 475, 100, 100);
 		add(lblBedzVal);
 
 		lblOcenaVal = new JLabel(((RegistrovaniKorisnik)korisnik).getProsecnaOcena()+"");
 		lblOcenaVal.setForeground(Color.WHITE);
 		lblOcenaVal.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblOcenaVal.setBounds(640, 545, 125, 30);
+		lblOcenaVal.setBounds(665, 590, 125, 30);
 		add(lblOcenaVal);
 
-		JButton btnSacuvaj = new JButton("Sacuvaj");
-		btnSacuvaj.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnSacuvaj.setBounds(640, 390, 125, 30);
+		ImageIcon saveDugme = new ImageIcon("data/ikonice/save.png");
+		Image save = saveDugme.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		
+		JButton btnSacuvaj = new JButton(new ImageIcon(save));
+		btnSacuvaj.setBounds(710, 380, 50, 45);
 		add(btnSacuvaj);
+		btnSacuvaj.setToolTipText("Sačuvaj!");
+		btnSacuvaj.setBorderPainted(false);
+		btnSacuvaj.setFocusPainted(false);
+		btnSacuvaj.setContentAreaFilled(false);
 		btnSacuvaj.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -223,9 +243,15 @@ public class NalogInfoPanel extends JPanel {
 			}
 		});
 
-		JButton btnOdbaci = new JButton(new ImageIcon("data/ikonice/cancel.png"));
-		btnOdbaci.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btnOdbaci.setBounds(585, 390, 45, 30);
+		
+		ImageIcon odbaci = new ImageIcon("data/ikonice/dismiss.png");
+		Image dismiss = odbaci.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+		JButton btnOdbaci = new JButton(new ImageIcon(dismiss));
+		btnSacuvaj.setToolTipText("Odbaci izmene!");
+		btnOdbaci.setBorderPainted(false);
+		btnOdbaci.setFocusPainted(false);
+		btnOdbaci.setContentAreaFilled(false);		
+		btnOdbaci.setBounds(630, 375, 60, 55);
 		add(btnOdbaci);
 		btnOdbaci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -233,6 +259,37 @@ public class NalogInfoPanel extends JPanel {
 			}
 		});
 		resetujInfo();
+		
+		
+		ImageIcon mainIcon = new ImageIcon("data/ikonice/podesavanja.png");
+		Image podesavanja = mainIcon.getImage().getScaledInstance(70, 70, Image.SCALE_SMOOTH);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBounds(315, 10, 245, 85);
+		add(lblNewLabel);
+		lblNewLabel.setIcon(mainIcon);
+		
+		
+		
+		ImageIcon info = new ImageIcon("data/ikonice/info.png");
+		Image infoSl = info.getImage().getScaledInstance(40, 40, Image.SCALE_SMOOTH);
+		
+		JButton button = new JButton(new ImageIcon(infoSl));
+		button.setToolTipText("Info");
+		button.setBorderPainted(false);
+		button.setFocusPainted(false);
+		button.setContentAreaFilled(false);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				BedzInfo bi = new BedzInfo();
+				bi.setVisible(true);
+			}
+		});
+		button.setBounds(440, 505, 40, 40);
+		add(button);
+		
+		
+
 	}
 	
 	
@@ -252,10 +309,25 @@ public class NalogInfoPanel extends JPanel {
 	private void postavidonjeInf()
 	{
 		ImageIcon priv1 = new ImageIcon("data/ikonice/privilegija.png");
-		Image privilegija = priv1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		Image privilegija = priv1.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
 		
 		ImageIcon priv2 = new ImageIcon("data/ikonice/privilegijeBez.png");
-		Image privilegijeBez = priv2.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		Image privilegijeBez = priv2.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz1 = new ImageIcon("data/ikonice/bedzevi/nemaBedz.png");
+		Image b1 = bedz1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz2 = new ImageIcon("data/ikonice/bedzevi/oneStar.png");
+		Image b2 = bedz2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz3 = new ImageIcon("data/ikonice/bedzevi/twoStar.png");
+		Image b3 = bedz3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz4 = new ImageIcon("data/ikonice/bedzevi/threeStar.png");
+		Image b4 = bedz4.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz5 = new ImageIcon("data/ikonice/bedzevi/master.png");
+		Image b5 = bedz5.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
 		
 
 		if(korisnik.isPrivilegovani())
@@ -273,11 +345,47 @@ public class NalogInfoPanel extends JPanel {
 		
 		
 		
+		switch (korisnik.getBedz()) {
+		
+		
+			case NEMA:
+				lblBedzVal.setIcon(new ImageIcon(b1));
+				break;
+				
+				
+			case JAJE:
+				
+				lblBedzVal.setIcon(new ImageIcon(b2));
+				break;
+				
+				
+			case KUVANO_JAJE:
+				lblBedzVal.setIcon(new ImageIcon(b3));
+				break;
+				
+				
+			case PRZENO_JAJE:
+				lblBedzVal.setIcon(new ImageIcon(b4));
+				break;
+				
+				
+			case OMLET:
+				lblBedzVal.setIcon(new ImageIcon(b5));
+				break;
+				
+				
+				
+			default:
+				break;
+			}
+		
+		
+		
 	}
 	
 	
 	
-	
-	
-
+	public void paintComponent(Graphics g) {
+		g.drawImage(img, 0, 0, null);
+	}
 }
