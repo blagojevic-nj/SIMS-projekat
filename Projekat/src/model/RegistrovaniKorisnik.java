@@ -121,7 +121,8 @@ public class RegistrovaniKorisnik extends Korisnik {
 	}
 
 	public void addSacuvaniRecept(int recept) {
-		sacuvaniRecepti.add(recept);
+		if(!sacuvaniRecepti.contains(recept))
+			sacuvaniRecepti.add(recept);
 	}
 
 	public boolean deleteSacuvaniRecept(Integer recept) {
