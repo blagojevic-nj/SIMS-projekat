@@ -1,10 +1,13 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -16,11 +19,15 @@ import model.Recept;
 import model.RegistrovaniKorisnik;
 import model.TipNaloga;
 import net.miginfocom.swing.MigLayout;
+import javax.swing.SwingConstants;
 
 public class PregledKorisnikaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
+	private RegistrovaniKorisnik k;
+	JLabel bedzVal ;
 
 	public PregledKorisnikaPanel(MainWindow mw, JPanel prethodni, RegistrovaniKorisnik korisnik) {
+		k=korisnik;
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
 		setBackground(Color.DARK_GRAY);
@@ -55,7 +62,7 @@ public class PregledKorisnikaPanel extends JPanel {
 		JLabel imePrezime = new JLabel(korisnik.getIme() + " " + korisnik.getPrezime());
 		imePrezime.setFont(new Font("Tahoma", Font.PLAIN, 35));
 		imePrezime.setForeground(Color.WHITE);
-		imePrezime.setBounds(30, 200, 400, 50);
+		imePrezime.setBounds(30, 290, 400, 50);
 		add(imePrezime);
 
 		JButton follow = new JButton("Zaprati", new ImageIcon("data/ikonice/add-user.png"));
@@ -108,55 +115,73 @@ public class PregledKorisnikaPanel extends JPanel {
 		JLabel email = new JLabel(korisnik.getEmail());
 		email.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		email.setForeground(Color.WHITE);
-		email.setBounds(30, 250, 400, 50);
+		email.setBounds(30, 340, 400, 50);
 		add(email);
+	/*
+	 * Staro****************************************************************************************************	
+	 */
+		//JLabel lblBedz = new JLabel("Bedz:");
+		//lblBedz.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		//.setForeground(Color.WHITE);
+		//lblBedz.setBounds(30, 530, 200, 50);
+		//add(lblBedz);
 		
-		JLabel lblBedz = new JLabel("Bedz:");
-		lblBedz.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblBedz.setForeground(Color.WHITE);
-		lblBedz.setBounds(30, 350, 200, 50);
-		add(lblBedz);
+		//bedzVal = new JLabel(korisnik.getBedz()+"");
+		//bedzVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		//bedzVal.setForeground(Color.WHITE);
+		//bedzVal.setBounds(225, 520, 100, 100);
+		//add(bedzVal);
+	/*
+	 * *********************************************************************************************************	
+	 */
 		
-		JLabel bedzVal = new JLabel(korisnik.getBedz()+"");
+		bedzVal = new JLabel(korisnik.getBedz()+"");
 		bedzVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		bedzVal.setForeground(Color.WHITE);
-		bedzVal.setBounds(250, 350, 200, 50);
+		bedzVal.setBounds(330, 480, 150, 150);
 		add(bedzVal);
+		
+		
+		
+		
+	/*
+	 * *********************************************************************************************************	
+	 */
 		
 		JLabel lblOcena = new JLabel("Ocena:");
 		lblOcena.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblOcena.setForeground(Color.WHITE);
-		lblOcena.setBounds(30, 400, 200, 50);
+		lblOcena.setBounds(30, 459, 200, 50);
 		add(lblOcena);
 		
 		JLabel ocenaVal = new JLabel(korisnik.getProsecnaOcena()+"");
 		ocenaVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		ocenaVal.setForeground(Color.WHITE);
-		ocenaVal.setBounds(250, 400, 200, 50);
+		ocenaVal.setBounds(187, 459, 87, 50);
 		add(ocenaVal);
 		
 		JLabel lblPratioci = new JLabel("Pratioci:");
 		lblPratioci.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblPratioci.setForeground(Color.WHITE);
-		lblPratioci.setBounds(30, 450, 200, 50);
+		lblPratioci.setBounds(30, 509, 200, 50);
 		add(lblPratioci);
 		
 		JLabel pratiociVal = new JLabel(korisnik.getBrojPratilaca()+"");
 		pratiociVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		pratiociVal.setForeground(Color.WHITE);
-		pratiociVal.setBounds(250, 450, 200, 50);
+		pratiociVal.setBounds(187, 509, 87, 50);
 		add(pratiociVal);
 		
 		JLabel lblBrRecepata = new JLabel("Broj recepata:");
 		lblBrRecepata.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		lblBrRecepata.setForeground(Color.WHITE);
-		lblBrRecepata.setBounds(30, 500, 200, 50);
+		lblBrRecepata.setBounds(30, 559, 200, 50);
 		add(lblBrRecepata);
 		
 		JLabel receptiVal = new JLabel(korisnik.getRecepti().size()+"");
 		receptiVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		receptiVal.setForeground(Color.WHITE);
-		receptiVal.setBounds(250, 500, 200, 50);
+		receptiVal.setBounds(187, 559, 87, 50);
 		add(receptiVal);
 
 		JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
@@ -164,7 +189,29 @@ public class PregledKorisnikaPanel extends JPanel {
 		JScrollPane scrollRecepti = new JScrollPane(receptiPane);
 		scrollRecepti.setBounds(500, 50, 540, 600);
 		scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
+		scrollRecepti.setOpaque(false);
+		scrollRecepti.getViewport().setOpaque(false);
+		scrollRecepti.getVerticalScrollBar().setVisible(false);
+		scrollRecepti.setBorder(BorderFactory.createEmptyBorder());
+		scrollRecepti.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		add(scrollRecepti);
+		
+		JSeparator separator = new JSeparator();
+		separator.setForeground(Color.WHITE);
+		separator.setOrientation(SwingConstants.VERTICAL);
+		separator.setBounds(300, 465, 2, 175);
+		add(separator);
+		
+		JSeparator separator_1 = new JSeparator();
+		separator_1.setForeground(Color.WHITE);
+		separator_1.setBounds(10, 450, 480, 2);
+		add(separator_1);
+		
+		JSeparator separator_2 = new JSeparator();
+		separator_2.setForeground(Color.WHITE);
+		separator_2.setOrientation(SwingConstants.VERTICAL);
+		separator_2.setBounds(500, 50, 1, 600);
+		add(separator_2);
 		
 		if (korisnik.getRecepti().size() == 0) {
 			JLabel nema = new JLabel("Nema recepata");
@@ -175,5 +222,68 @@ public class PregledKorisnikaPanel extends JPanel {
 				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 				receptiPane.add(mpr);
 			}
+		
+		
+		postaviBedz();
+	}
+
+	
+	private void postaviBedz()
+	{
+		
+		ImageIcon bedz1 = new ImageIcon("data/ikonice/bedzevi/nemaBedz.png");
+		Image b1 = bedz1.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz2 = new ImageIcon("data/ikonice/bedzevi/oneStar.png");
+		Image b2 = bedz2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz3 = new ImageIcon("data/ikonice/bedzevi/twoStar.png");
+		Image b3 = bedz3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz4 = new ImageIcon("data/ikonice/bedzevi/threeStar.png");
+		Image b4 = bedz4.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		ImageIcon bedz5 = new ImageIcon("data/ikonice/bedzevi/master.png");
+		Image b5 = bedz5.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+		
+		
+		
+		
+		switch (k.getBedz()) {
+		
+		
+			case NEMA:
+				bedzVal.setIcon(new ImageIcon(b1));
+				break;
+				
+				
+			case JAJE:
+				
+				bedzVal.setIcon(new ImageIcon(b2));
+				break;
+				
+				
+			case KUVANO_JAJE:
+				bedzVal.setIcon(new ImageIcon(b3));
+				break;
+				
+				
+			case PRZENO_JAJE:
+				bedzVal.setIcon(new ImageIcon(b4));
+				break;
+				
+				
+			case OMLET:
+				bedzVal.setIcon(new ImageIcon(b5));
+				break;
+				
+				
+				
+			default:
+				break;
+			}
+		
+		
+		
 	}
 }
