@@ -1,16 +1,12 @@
 package view;
 
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 
 import manageri.KorisnikManager;
-import manageri.ReceptManager;
 import model.Korisnik;
 import model.Nalog;
-import model.Recept;
 import model.RegistrovaniKorisnik;
-import net.miginfocom.swing.MigLayout;
 
 import java.awt.Color;
 import java.awt.Component;
@@ -19,10 +15,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-
-import javax.swing.DefaultListModel;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.SwingConstants;
 
 public class KorisnikPanel extends JPanel {
@@ -30,21 +23,21 @@ public class KorisnikPanel extends JPanel {
 	private NalogInfoPanel pnlInfo;
 	private MojaKuhinjaPanel pnlKuhinja;
 	private MojiReceptiPanel pnlRecepti;
-	private JPanel mainMenu, trenutniPanel, pnlPraceni;
-	private JLabel username, lblNalog, lblKuhinja, lblRecepti,
-			lblPodesavanje, lblDodajRecept, lblPraceni, lblIzvestaj;
+
+	private JPanel mainMenu, trenutniPanel;
+	private PraceniSacuvaniPanel pnlPraceni;
+	private JLabel username, lblNalog, lblKuhinja, lblRecepti, lblPodesavanje, lblDodajRecept, lblPraceni,lblIzvestaj;
+
 	private KorisnikManager km;
-	private ReceptManager rm;
 	private Nalog trenutniNalog;
 	private Korisnik korisnik;
 	private MainWindow mw;
 	private JLabel selected;
-	ArrayList<JLabel>btnLabele = new ArrayList<JLabel>();
+	ArrayList<JLabel> btnLabele = new ArrayList<JLabel>();
 
 	public KorisnikPanel(MainWindow mainWindow, Nalog trenutniNalog) {
 		mw = mainWindow;
 		km = KorisnikManager.getInstance();
-		rm = ReceptManager.getInstance();
 		this.trenutniNalog = trenutniNalog;
 		korisnik = km.getKorisnik(trenutniNalog.getKorisnickoIme());
 		km.promenjen(korisnik.getKorisnickoIme());
@@ -59,8 +52,7 @@ public class KorisnikPanel extends JPanel {
 		add(mainMenu);
 		initMeni();
 		username.setText(trenutniNalog.getKorisnickoIme());
-		
-		
+
 		prikaziMojiReceptiPanel();
 	}
 
@@ -71,21 +63,21 @@ public class KorisnikPanel extends JPanel {
 		lblNalog.setBounds(0, 0, 200, 60);
 		lblNalog.setForeground(Color.black);
 		mainMenu.add(lblNalog);
-		
+
 		JSeparator sep1 = new JSeparator();
 		sep1.setBounds(0, 70, 200, 5);
 		mainMenu.add(sep1);
-		
+
 		JLabel lblKorisnik = new JLabel("Korisnik:");
 		lblKorisnik.setFont(new Font("Tahoma", Font.BOLD, 15));
 		lblKorisnik.setBounds(10, 90, 75, 20);
 		mainMenu.add(lblKorisnik);
-		
+
 		username = new JLabel();
 		username.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		username.setBounds(10, 125, 180, 25);
 		mainMenu.add(username);
-		
+
 		JSeparator sep2 = new JSeparator();
 		sep2.setBounds(0, 165, 200, 5);
 		mainMenu.add(sep2);
@@ -110,6 +102,7 @@ public class KorisnikPanel extends JPanel {
 					obojKliknutog();
 				}
 			}
+
 			public void mouseClicked(MouseEvent evt) {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
@@ -117,13 +110,12 @@ public class KorisnikPanel extends JPanel {
 
 				
 				prikaziKuhinjaPanel();
-				selected=lblKuhinja;
+				selected = lblKuhinja;
 				obojKliknutog();
 			}
 		});
 		btnLabele.add(lblKuhinja);
 
-		
 		lblRecepti = new JLabel("Moji recepti");
 		lblRecepti.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblRecepti.setHorizontalAlignment(SwingConstants.CENTER);
@@ -251,7 +243,7 @@ public class KorisnikPanel extends JPanel {
 				if (!((Component) evt.getSource()).isEnabled()) {
 					return;
 				}
-				selected=lblPraceni;
+				selected = lblPraceni;
 				obojKliknutog();
 				prikazPraceni();
 			}
@@ -287,7 +279,7 @@ public class KorisnikPanel extends JPanel {
 				}
 				selected = lblIzvestaj;
 				obojKliknutog();
-				//naslov.setText("Izve\u0161taj");
+				// naslov.setText("Izve\u0161taj");
 			}
 		});
 		btnLabele.add(lblIzvestaj);
@@ -339,7 +331,7 @@ public class KorisnikPanel extends JPanel {
 			c.setEnabled(b);
 		}
 	}
-	
+
 	public void prikaziMojiReceptiPanel() {
 		if (pnlRecepti == null) {
 			pnlRecepti = new MojiReceptiPanel(korisnik, mw);
@@ -361,55 +353,17 @@ public class KorisnikPanel extends JPanel {
 
 	protected void prikazPraceni() {
 		if (pnlPraceni == null) {
-			pnlPraceni = new JPanel(null);
-			pnlPraceni.setOpaque(false);
-			pnlPraceni.setBounds(200, 50, 840, 600);
-			
-			DefaultListModel<String> korisniciListModel = new DefaultListModel<String>();
-			JList<String> korisniciList = new JList<String>(korisniciListModel);
-			korisniciList.setFixedCellHeight(40);
-			korisniciList.setFont(new Font("Tahoma", Font.BOLD, 18));
-			JScrollPane praceniSP = new JScrollPane(korisniciList);
-			praceniSP.setBounds(30, 0, 250, 400);
-			pnlPraceni.add(praceniSP);
-			for (String pracen : ((RegistrovaniKorisnik) korisnik).getPraceni())
-				korisniciListModel.addElement(pracen);
-			korisniciListModel.addElement("------------------------------");
-			korisniciList.addMouseListener(new MouseAdapter() {
-				@Override
-				public void mouseClicked(MouseEvent e) {
-					if (korisniciList.getSelectedValue() != null)
-						if (korisniciList.getSelectedIndex() != korisniciListModel.getSize() - 1) {
-							mw.postaviDesniPanel(new PregledKorisnikaPanel(mw, KorisnikPanel.this,
-									(RegistrovaniKorisnik) MainWindow.km.getKorisnik(korisniciList.getSelectedValue())));
-						}
-				}
-			});
-			
-			JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
-			receptiPane.setBackground(Color.DARK_GRAY);
-			JScrollPane scrollRecepti = new JScrollPane(receptiPane);
-			scrollRecepti.setBounds(320, 0, 520, 600);
-			scrollRecepti.getVerticalScrollBar().setUnitIncrement(20);
-			pnlPraceni.add(scrollRecepti);
-			for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) korisnik).getSacuvaniRecepti())) {
-				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
-				receptiPane.add(mpr);
-			}
+			pnlPraceni = new PraceniSacuvaniPanel(korisnik, mw, KorisnikPanel.this);
 		}
 		postaviPanel(pnlPraceni);
 	}
 
-	private void obojKliknutog()
-	{
+	private void obojKliknutog() {
 		for (JLabel i : btnLabele) {
-			if(i == selected)
-			{
+			if (i == selected) {
 				i.setBackground(Color.DARK_GRAY);
 				i.setForeground(Color.WHITE);
-			}
-			else
-			{
+			} else {
 				i.setBackground(Color.WHITE);
 				i.setForeground(Color.BLACK);
 			}
