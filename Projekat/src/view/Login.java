@@ -1,6 +1,7 @@
 package view;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
@@ -172,11 +173,13 @@ public class Login extends JPanel{
 		lblLogin.setBounds(75, 30, 150, 150);
 		add(lblLogin);
 		
-		JLabel lblUsername = new JLabel(new ImageIcon("data/ikonice/username.png"));
+		JLabel lblUsername = new JLabel("Username:");
+		lblUsername.setFont(new Font("Tahoma", 1, 20));
 		lblUsername.setBounds(50, 200, 150, 30);
 		add(lblUsername);
 		
-		JLabel lblPassword = new JLabel(new ImageIcon("data/ikonice/password.png"));
+		JLabel lblPassword = new JLabel("Password:");
+		lblPassword.setFont(new Font("Tahoma", 1, 20));
 		lblPassword.setBounds(50, 280, 150, 30);
 		add(lblPassword);
 		
