@@ -50,6 +50,11 @@
     "tip" : "REG_KORISNIK",
     "idKorisnika" : 5
   }, {
+    "korisnickoIme" : "blagojevic_nj",
+    "lozinka" : "lozinka123",
+    "tip" : "REG_KORISNIK",
+    "idKorisnika" : 11
+  }, {
     "korisnickoIme" : "albert_makan",
     "lozinka" : "123456789",
     "tip" : "REG_KORISNIK",

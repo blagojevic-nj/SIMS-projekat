@@ -52,11 +52,11 @@ public class VelikiPrikazRecepta extends JPanel {
 	private int brojacRecenzija;
 	private JLabel zvezde;
 	private JButton follow;
-	private JButton unfollow, sacuvaj;
+	private JButton unfollow, sacuvaj, zaboravi;
 	JPanel recenzije;
-	 
+
 	public VelikiPrikazRecepta() {
-		
+
 	}
 
 	public VelikiPrikazRecepta(MainWindow mW, JPanel prethodni, Recept r) {
@@ -68,7 +68,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		setSize(size);
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
-		
+
 		JButton nazad = new JButton(new ImageIcon("data/ikonice/reduce.png"));
 		nazad.setBounds(10, 0, 50, 50);
 		nazad.setBorderPainted(false);
@@ -157,7 +157,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		youtube.setFocusPainted(false);
 		youtube.setContentAreaFilled(false);
 		youtube.setBounds(290, 290, 150, 30);
-		
+
 		youtube.addActionListener(new ActionListener() {
 
 			@Override
@@ -170,9 +170,9 @@ public class VelikiPrikazRecepta extends JPanel {
 				}
 			}
 		});
-		
+
 		add(youtube);
-		
+
 		JSeparator sep1 = new JSeparator();
 		sep1.setBounds(40, 430, 440, 7);
 		add(sep1);
@@ -264,36 +264,39 @@ public class VelikiPrikazRecepta extends JPanel {
 		JLabel korisnik = new JLabel(new ImageIcon("data/ikonice/user.png"));
 		korisnik.setBounds(20, 570, 50, 50);
 		add(korisnik);
-		
+
 		korisnik.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				mW.postaviDesniPanel(new PregledKorisnikaPanel(mW, VelikiPrikazRecepta.this, 
-						(RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor())));
+				mW.postaviDesniPanel(new PregledKorisnikaPanel(mW, VelikiPrikazRecepta.this,
+						(RegistrovaniKorisnik) MainWindow.km.getKorisnik(r.getAutor())));
 			}
 		});
-		
+
 		JLabel autor = new JLabel(r.getAutor());
 		autor.setForeground(Color.white);
 		autor.setFont(new Font(font, 1, 15));
 		autor.setBounds(80, 570, 100, 50);
 		add(autor);
-		
+
 		follow = new JButton("Zaprati", new ImageIcon("data/ikonice/add-user.png"));
 		follow.setBounds(180, 580, 130, 30);
-		
+
 		sacuvaj = new JButton("Sacuvaj");
 		sacuvaj.setBounds(350, 580, 130, 30);
-		
+
+		zaboravi = new JButton("Zaboravi", new ImageIcon("data/ikonice/cancel.png"));
+		zaboravi.setBounds(350, 580, 130, 30);
+
 		unfollow = new JButton("Otprati", new ImageIcon("data/ikonice/unfollow.png"));
 		unfollow.setBounds(180, 580, 130, 30);
-		
+
 		JLabel komentari = new JLabel("Komentari: ");
 		komentari.setForeground(Color.white);
 		komentari.setFont(new Font(font, 1, 15));
 		komentari.setBounds(750, 430, 150, 25);
 		add(komentari);
-		
+
 		JTextArea mojKom = new JTextArea("Unesite komentar:");
 		mojKom.setForeground(Color.white);
 		mojKom.setBackground(Color.DARK_GRAY);
@@ -306,79 +309,82 @@ public class VelikiPrikazRecepta extends JPanel {
 		objavi.setFocusPainted(false);
 		objavi.setContentAreaFilled(false);
 		objavi.setToolTipText("Postavi komentar");
-		
+
 		mojKom.addFocusListener(new FocusListener() {
-		    @Override
-		    public void focusGained(FocusEvent e) {
-		        if (mojKom.getText().equals("Unesite komentar:")) {
-		        	mojKom.setText("");
-		        }
-		    }
-		    @Override
-		    public void focusLost(FocusEvent e) {
-		        if (mojKom.getText().isEmpty()) {
-		        	mojKom.setText("Unesite komentar:");
-		        }
-		    }
+			@Override
+			public void focusGained(FocusEvent e) {
+				if (mojKom.getText().equals("Unesite komentar:")) {
+					mojKom.setText("");
+				}
+			}
+
+			@Override
+			public void focusLost(FocusEvent e) {
+				if (mojKom.getText().isEmpty()) {
+					mojKom.setText("Unesite komentar:");
+				}
+			}
 		});
-		
-		
+
 		recenzije = new JPanel(null);
 		recenzije.setBackground(Color.DARK_GRAY);
 		brojacRecenzija = 0;
-		for(Recenzija rec: r.getRecenzije()) {
+		for (Recenzija rec : r.getRecenzije()) {
 			JTextArea recenzija = new JTextArea(rec.getKomentar());
 			recenzija.setBackground(Color.DARK_GRAY);
 			recenzija.setForeground(Color.white);
 			recenzija.setEditable(false);
 			JScrollPane recenzijaPane = new JScrollPane(recenzija);
-			TitledBorder tB = BorderFactory.createTitledBorder(rec.getIdKorisnika()+ " " + ReceptManager.dateTimeToString(rec.getDatum()));
+			TitledBorder tB = BorderFactory
+					.createTitledBorder(rec.getIdKorisnika() + " " + ReceptManager.dateTimeToString(rec.getDatum()));
 			recenzijaPane.setBorder(tB);
-			recenzijaPane.setBounds(10, 10+brojacRecenzija*70, 440, 70);
+			recenzijaPane.setBounds(10, 10 + brojacRecenzija * 70, 440, 70);
 			recenzije.add(recenzijaPane);
 			brojacRecenzija++;
 		}
-		
+
 		JScrollPane recenzijePane = new JScrollPane();
-		recenzije.setPreferredSize(new Dimension(460, brojacRecenzija*70 + 20));
+		recenzije.setPreferredSize(new Dimension(460, brojacRecenzija * 70 + 20));
 		recenzijePane.getViewport().add(recenzije);
 		recenzijePane.setBackground(Color.DARK_GRAY);
 		recenzijePane.setBounds(540, 480, 480, 150);
-		
+
 		objavi.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				if(mojKom.getText().equals("Unesite komentar:") || mojKom.getText().trim().equals("")) {
+				if (mojKom.getText().equals("Unesite komentar:") || mojKom.getText().trim().equals("")) {
 					JOptionPane.showMessageDialog(mW, "Prvo unesite komentar a zatim ga objavite!");
-				}else {
-					Recenzija rec = new Recenzija(mojKom.getText().trim(), LocalDateTime.now(), MainWindow.trenutniNalog.getKorisnickoIme());
+				} else {
+					Recenzija rec = new Recenzija(mojKom.getText().trim(), LocalDateTime.now(),
+							MainWindow.trenutniNalog.getKorisnickoIme());
 					r.addRecenzija(rec);
 					MainWindow.rM.promenjen(r);
 					MainWindow.rM.sacuvajRecepte();
 					JOptionPane.showMessageDialog(mW, "Uspesno ste dodali recenziju!");
 					mojKom.setText("Unesite komentar:");
-					
+
 					JTextArea recenzija = new JTextArea(rec.getKomentar());
 					recenzija.setBackground(Color.DARK_GRAY);
 					recenzija.setForeground(Color.white);
 					recenzija.setEditable(false);
 					JScrollPane recenzijaPane = new JScrollPane(recenzija);
-					TitledBorder tB = BorderFactory.createTitledBorder(rec.getIdKorisnika()+ " " + ReceptManager.dateTimeToString(rec.getDatum()));
+					TitledBorder tB = BorderFactory.createTitledBorder(
+							rec.getIdKorisnika() + " " + ReceptManager.dateTimeToString(rec.getDatum()));
 					recenzijaPane.setBorder(tB);
-					recenzijaPane.setBounds(10, 10+brojacRecenzija*70, 440, 70);
+					recenzijaPane.setBounds(10, 10 + brojacRecenzija * 70, 440, 70);
 					recenzije.add(recenzijaPane);
 					brojacRecenzija++;
 					recenzijePane.getViewport().remove(recenzije);
-					recenzije.setPreferredSize(new Dimension(460, brojacRecenzija*70 + 20));
+					recenzije.setPreferredSize(new Dimension(460, brojacRecenzija * 70 + 20));
 					recenzijePane.getViewport().add(recenzije);
 					revalidate();
 					repaint();
 				}
 			}
-			
+
 		});
-		
+
 		add(recenzijePane);
 		if (MainWindow.trenutniNalog != null) {
 			if (MainWindow.trenutniNalog.getTip() == TipNaloga.REG_KORISNIK
@@ -387,24 +393,25 @@ public class VelikiPrikazRecepta extends JPanel {
 						.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
 				if (rk.getPraceni() == null) {
 					add(follow);
-					add(sacuvaj);
 				} else {
 					if (rk.getPraceni().contains(r.getAutor())) {
-						add(unfollow);		
-						add(sacuvaj);
-						
+						add(unfollow);
 
 					} else {
 						add(follow);
-						add(sacuvaj);
 					}
 				}
 				
+				if(rk.getSacuvaniRecepti().contains(r.getId()))
+					add(zaboravi);
+				else
+					add(sacuvaj);
+
 				follow.addActionListener(new ActionListener() {
 
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
-						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
+						RegistrovaniKorisnik autor = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(r.getAutor());
 						rk.zaprati(autor);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(r.getAutor());
@@ -415,13 +422,12 @@ public class VelikiPrikazRecepta extends JPanel {
 						repaint();
 					}
 				});
-				
-				
+
 				unfollow.addActionListener(new ActionListener() {
-					
+
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
+						RegistrovaniKorisnik autor = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(r.getAutor());
 						rk.otprati(autor);
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.promenjen(r.getAutor());
@@ -431,8 +437,8 @@ public class VelikiPrikazRecepta extends JPanel {
 						revalidate();
 						repaint();
 					}
-					});
-				
+				});
+
 				sacuvaj.addActionListener(new ActionListener() {
 
 					@Override
@@ -441,15 +447,36 @@ public class VelikiPrikazRecepta extends JPanel {
 						MainWindow.km.promenjen(rk.getKorisnickoIme());
 						MainWindow.km.sacuvajKorisnike();
 						JOptionPane.showMessageDialog(mW, "Sacuvali ste recept. Mozete ga pogledati kasnije.");
+						
+						add(zaboravi);
+						remove(sacuvaj);
+						revalidate();
+						repaint();
+					}
+
+				});
+				
+				zaboravi.addActionListener(new ActionListener() {
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						rk.deleteSacuvaniRecept(r.getId());
+						MainWindow.km.promenjen(rk.getKorisnickoIme());
+						MainWindow.km.sacuvajKorisnike();
+						JOptionPane.showMessageDialog(mW, "Izbacili ste recept iz vasih sacuvanih recepata!");
+						remove(zaboravi);
+						add(sacuvaj);
+						revalidate();
+						repaint();
 					}
 					
 				});
-				
+
 				add(mojKomPane);
 				add(objavi);
-								
+
 				MainWindow.rM.pregledaoRecept(r, rk);
-				
+
 				if (r.getOcene() != null && r.getOcene().containsKey(MainWindow.trenutniNalog.getIdKorisnika())) {
 					switch (r.getOcene().get(MainWindow.trenutniNalog.getIdKorisnika())) {
 					case CETIRI:
@@ -500,15 +527,15 @@ public class VelikiPrikazRecepta extends JPanel {
 							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.CETIRI);
 						else if (brojacZvezdi == 5)
 							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.PET);
-						
-						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
+
+						RegistrovaniKorisnik autor = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(r.getAutor());
 						MainWindow.rM.prosekOcenaRecepta(r);
 						MainWindow.km.prosekOcenaKorisnik(autor);
 						MainWindow.km.promenjen(r.getAutor());
 						MainWindow.rM.promenjen(r);
 						MainWindow.rM.sacuvajRecepte();
 						MainWindow.km.sacuvajKorisnike();
-						
+
 						zvezde.revalidate();
 						zvezde.repaint();
 					}

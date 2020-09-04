@@ -2,7 +2,10 @@ package view;
 
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
@@ -13,6 +16,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -32,12 +36,15 @@ public class ReceptiPanel extends JPanel {
 	private ArrayList<MaliPrikazRecepta> paneli;
 	private JPanel gornjiDeo, donjiDeo;
 	private JScrollPane pane;
+	private Image img;
 	private static final String UPIT_TEKST = "Unesite recept koji trazite";
 
 	public ReceptiPanel(ArrayList<Recept> r, MainWindow mW) {
+		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		paneli = new ArrayList<MaliPrikazRecepta>();
 		setLayout(null);
 		setBounds(0, 0, 1040, 650);
+		setBorder(BorderFactory.createRaisedBevelBorder());
 		initGornjiDeo(mW);
 		initDonjiDeo(r, mW);
 	}
@@ -45,9 +52,10 @@ public class ReceptiPanel extends JPanel {
 	void initGornjiDeo(MainWindow mW) {
 		gornjiDeo = new JPanel(null);
 		gornjiDeo.setBounds(0, 0, 1040, 50);
-		gornjiDeo.setBackground(Color.gray);
+		gornjiDeo.setOpaque(false);
 
 		JLabel sort = new JLabel("Sortiraj: ");
+		sort.setForeground(Color.white);
 		sort.setBounds(10, 10, 100, 30);
 		gornjiDeo.add(sort);
 
@@ -146,9 +154,15 @@ public class ReceptiPanel extends JPanel {
 	void initDonjiDeo(ArrayList<Recept> r, MainWindow mW) {
 		if (donjiDeo == null) {
 			donjiDeo = new JPanel(new MigLayout("wrap 2", "[][]10[]", "[]10[]"));
+			donjiDeo.setOpaque(false);
 			pane = new JScrollPane(donjiDeo);
-			pane.setBounds(0, 50, 1040, 600);
+			pane.setOpaque(false);
+			pane.getViewport().setOpaque(false);
+			pane.setBounds(30, 50, 1040, 600);
 			pane.getVerticalScrollBar().setUnitIncrement(20);
+			pane.getVerticalScrollBar().setVisible(false);
+			pane.setBorder(BorderFactory.createEmptyBorder());
+			pane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 			add(pane);
 		} else {
 			donjiDeo.removeAll();
@@ -158,6 +172,7 @@ public class ReceptiPanel extends JPanel {
 		if (r == null) { // prikazuju se najnoviji i najpopularniji recepti
 			JLabel lbl1 = new JLabel("Najnoviji");
 			lbl1.setFont(new Font("Lucida Sans", Font.BOLD, 20));
+			lbl1.setForeground(Color.white);
 			donjiDeo.add(lbl1);
 			JSeparator sep1 = new JSeparator();
 			donjiDeo.add(sep1);
@@ -171,6 +186,7 @@ public class ReceptiPanel extends JPanel {
 			}
 			JLabel lbl2 = new JLabel("Najpopularniji");
 			lbl2.setFont(new Font("Lucida Sans", Font.BOLD, 20));
+			lbl2.setForeground(Color.white);
 			donjiDeo.add(lbl2);
 			JSeparator sep2 = new JSeparator();
 			donjiDeo.add(sep2);
@@ -226,6 +242,10 @@ public class ReceptiPanel extends JPanel {
 	public void setEnabled(boolean enabled) {
 		super.setEnabled(enabled);
 		blokada(enabled);
+	}
+	
+	public void paintComponent(Graphics g) {
+		g.drawImage(img, 0, 0, null);
 	}
 
 }
