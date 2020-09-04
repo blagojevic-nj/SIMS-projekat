@@ -7,7 +7,7 @@
   "privilegovani" : true,
   "bedz" : "OMLET",
   "brojPratilaca" : 0,
-  "prosecnaOcena" : 0.0,
+  "prosecnaOcena" : 1.5,
   "praceni" : [ "mucko", "njegi", "ovo", "je", "samo", "probaDaVidim", "kako", "ce", "izgledatiKada", "imaPuno", "pracenih", "lucko" ],
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],

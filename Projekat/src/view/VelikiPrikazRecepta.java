@@ -501,9 +501,10 @@ public class VelikiPrikazRecepta extends JPanel {
 						else if (brojacZvezdi == 5)
 							r.getOcene().put(MainWindow.trenutniNalog.getIdKorisnika(), TipOcene.PET);
 						
+						RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(r.getAutor());
 						MainWindow.rM.prosekOcenaRecepta(r);
-						MainWindow.km.prosekOcenaKorisnik(rk);
-						MainWindow.km.promenjen(rk.getKorisnickoIme());
+						MainWindow.km.prosekOcenaKorisnik(autor);
+						MainWindow.km.promenjen(r.getAutor());
 						MainWindow.rM.promenjen(r);
 						MainWindow.rM.sacuvajRecepte();
 						MainWindow.km.sacuvajKorisnike();
