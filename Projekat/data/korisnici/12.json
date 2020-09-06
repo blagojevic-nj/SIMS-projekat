@@ -1,0 +1,17 @@
+{
+  "id" : 12,
+  "ime" : "Laci",
+  "prezime" : "Sabadi Baranji",
+  "email" : "szabadicka@gmail.com",
+  "korisnickoIme" : "laci",
+  "privilegovani" : false,
+  "bedz" : "NEMA",
+  "brojPratilaca" : 0,
+  "prosecnaOcena" : 0.0,
+  "praceni" : [ ],
+  "uredjaji" : [ 4 ],
+  "kategorije" : [ 13 ],
+  "proizvodi" : [ ],
+  "recepti" : [ 15, 16, 17, 18, 19, 20 ],
+  "sacuvaniRecepti" : [ ]
+}

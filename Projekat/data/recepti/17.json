@@ -1,0 +1,39 @@
+{
+  "id" : 17,
+  "naziv" : "Krompir čorba",
+  "opis" : "ćorba sa krompirom i ostalim povrćem i kobasicama",
+  "koraci" : "1. oljuštite krompir\n\n2. kuvajte krompir\n\n3. kad se krompir poprilićno skuvao dodajte šargarepu i \nostalo povrće i začine šta god želite",
+  "youtubeLink" : "https://www.youtube.com/watch?v=-qErsAzvPMo&ab_channel=Eboys",
+  "ocena" : 0.0,
+  "tezina" : "TESKO",
+  "vremePripreme" : 60,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 400,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sargarepa"
+  }, {
+    "kolicina" : 400,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 3,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kobasica"
+  } ],
+  "kategorije" : [ 13 ],
+  "autor" : "laci",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

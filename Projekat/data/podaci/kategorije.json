@@ -10,7 +10,7 @@
   }, {
     "sifra" : 2,
     "naziv" : "Predjela i prilozi",
-    "recepti" : [ 11, 12 ]
+    "recepti" : [ 11, 12, 15, 19 ]
   }, {
     "sifra" : 3,
     "naziv" : "Testa",
@@ -26,11 +26,11 @@
   }, {
     "sifra" : 6,
     "naziv" : "Mesna jela",
-    "recepti" : [ 2, 3 ]
+    "recepti" : [ 2, 3, 16 ]
   }, {
     "sifra" : 7,
     "naziv" : "Pica",
-    "recepti" : [ ]
+    "recepti" : [ 20 ]
   }, {
     "sifra" : 8,
     "naziv" : "Salate",
@@ -46,7 +46,7 @@
   }, {
     "sifra" : 11,
     "naziv" : "Morski i recni specijaliteti",
-    "recepti" : [ 6, 13 ]
+    "recepti" : [ 6, 13, 18 ]
   }, {
     "sifra" : 12,
     "naziv" : "Posna jela",
@@ -54,7 +54,7 @@
   }, {
     "sifra" : 13,
     "naziv" : "Supe i corbe",
-    "recepti" : [ 7 ]
+    "recepti" : [ 7, 17, 18 ]
   }, {
     "sifra" : 14,
     "naziv" : "Torte",

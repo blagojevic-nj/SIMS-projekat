@@ -22,7 +22,7 @@
   }, {
     "sifra" : 5,
     "naziv" : "Zelena salata",
-    "recepti" : [ ]
+    "recepti" : [ 16 ]
   }, {
     "sifra" : 6,
     "naziv" : "Zelje",
@@ -46,7 +46,7 @@
   }, {
     "sifra" : 11,
     "naziv" : "Krompir",
-    "recepti" : [ 7, 12 ]
+    "recepti" : [ 7, 12, 17, 19 ]
   }, {
     "sifra" : 12,
     "naziv" : "Kukuruz",
@@ -66,7 +66,7 @@
   }, {
     "sifra" : 16,
     "naziv" : "Paradajz",
-    "recepti" : [ 7, 10 ]
+    "recepti" : [ 7, 10, 16 ]
   }, {
     "sifra" : 17,
     "naziv" : "Pasulj",
@@ -114,7 +114,7 @@
   }, {
     "sifra" : 28,
     "naziv" : "Junetina",
-    "recepti" : [ 3 ]
+    "recepti" : [ 3, 16 ]
   }, {
     "sifra" : 29,
     "naziv" : "Teletina",
@@ -130,7 +130,7 @@
   }, {
     "sifra" : 32,
     "naziv" : "Riba",
-    "recepti" : [ ]
+    "recepti" : [ 18 ]
   }, {
     "sifra" : 33,
     "naziv" : "Divljac",
@@ -154,7 +154,7 @@
   }, {
     "sifra" : 38,
     "naziv" : "Sargarepa",
-    "recepti" : [ 7, 11 ]
+    "recepti" : [ 7, 11, 17 ]
   }, {
     "sifra" : 39,
     "naziv" : "Spargla",
@@ -186,7 +186,7 @@
   }, {
     "sifra" : 46,
     "naziv" : "Visnja",
-    "recepti" : [ ]
+    "recepti" : [ 15 ]
   }, {
     "sifra" : 47,
     "naziv" : "Grozde",
@@ -294,7 +294,7 @@
   }, {
     "sifra" : 73,
     "naziv" : "Sir",
-    "recepti" : [ 8 ]
+    "recepti" : [ 8, 16, 20 ]
   }, {
     "sifra" : 74,
     "naziv" : "Kackavalj",
@@ -410,7 +410,7 @@
   }, {
     "sifra" : 102,
     "naziv" : "Voda",
-    "recepti" : [ 3, 6 ]
+    "recepti" : [ 3, 6, 15, 17, 18 ]
   }, {
     "sifra" : 103,
     "naziv" : "Jaje",
@@ -418,7 +418,7 @@
   }, {
     "sifra" : 104,
     "naziv" : "Brasno",
-    "recepti" : [ 3, 4, 5, 8, 9, 14 ]
+    "recepti" : [ 3, 4, 5, 8, 9, 14, 15 ]
   }, {
     "sifra" : 105,
     "naziv" : "Vegeta",
@@ -474,7 +474,7 @@
   }, {
     "sifra" : 118,
     "naziv" : "Majonez",
-    "recepti" : [ 12 ]
+    "recepti" : [ 12, 19 ]
   }, {
     "sifra" : 119,
     "naziv" : "Karanfilić",
@@ -499,5 +499,37 @@
     "sifra" : 124,
     "naziv" : "Maslac",
     "recepti" : [ 14 ]
+  }, {
+    "sifra" : 125,
+    "naziv" : "bun",
+    "recepti" : [ 16 ]
+  }, {
+    "sifra" : 126,
+    "naziv" : "Kobasica",
+    "recepti" : [ 17 ]
+  }, {
+    "sifra" : 127,
+    "naziv" : "začini za riblju čorbu",
+    "recepti" : [ 18 ]
+  }, {
+    "sifra" : 128,
+    "naziv" : "kečap",
+    "recepti" : [ 19 ]
+  }, {
+    "sifra" : 129,
+    "naziv" : "pizza podloga",
+    "recepti" : [ 20 ]
+  }, {
+    "sifra" : 130,
+    "naziv" : "paradajz pelat",
+    "recepti" : [ 20 ]
+  }, {
+    "sifra" : 131,
+    "naziv" : "salama",
+    "recepti" : [ 20 ]
+  }, {
+    "sifra" : 132,
+    "naziv" : "feferone",
+    "recepti" : [ 20 ]
   } ]
 }

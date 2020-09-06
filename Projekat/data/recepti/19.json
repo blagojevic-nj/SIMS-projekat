@@ -1,0 +1,34 @@
+{
+  "id" : 19,
+  "naziv" : "Pomfrit",
+  "opis" : "Pomfrit od krompira",
+  "koraci" : "1. oljuštite krompir\n\n2. formirajte u oblike kao na slici\n\n3. spremite ulje za prženje\n\n4. pažljivo ubacujte u ulje krompir deliće\n\n5. kad su braon izvadite",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 30,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 500,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 10,
+    "mernaJedinica" : "g",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "Majonez"
+  }, {
+    "kolicina" : 10,
+    "mernaJedinica" : "g",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "kečap"
+  } ],
+  "kategorije" : [ 2 ],
+  "autor" : "laci",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

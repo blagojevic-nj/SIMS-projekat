@@ -1,0 +1,44 @@
+{
+  "id" : 16,
+  "naziv" : "Burger",
+  "opis" : "Hamburger",
+  "koraci" : "1. izpecite meso\n2. stavite sve sastojke kako god želite",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 20,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "list",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Zelena salata"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "Paradajz"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Junetina"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "Sir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "bun"
+  } ],
+  "kategorije" : [ 6 ],
+  "autor" : "laci",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

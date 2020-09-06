@@ -1,0 +1,44 @@
+{
+  "id" : 20,
+  "naziv" : "Pizza",
+  "opis" : "Italijanski specijalitet koji svi dobro znamo",
+  "koraci" : "1. spremite podlogu\n\n2. na podlogu prvo dodajte pelat\n\n3. zatim dodajte sir pa ostale sastojke koje želite\n\n4. pecite u rerni na 200 stepeni za 15 min\n\n5. poslužite",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 25,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "pizza podloga"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "paradajz pelat"
+  }, {
+    "kolicina" : 8,
+    "mernaJedinica" : "komada",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "salama"
+  }, {
+    "kolicina" : 6,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "feferone"
+  } ],
+  "kategorije" : [ 7 ],
+  "autor" : "laci",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

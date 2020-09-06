@@ -11,10 +11,16 @@
     "krompir punjen pečurkama" : 12,
     "strudla sa dzemom" : 9,
     "palacinke" : 4,
+    "pizza" : 20,
+    "burger" : 16,
     "salata sa krastavcima" : 10,
+    "pomfrit" : 19,
     "gulas madzsarski" : 2,
+    "riblja čorba" : 18,
     "salata od šargarepe" : 11,
-    "lovacke snicle u sosu" : 3
+    "lovacke snicle u sosu" : 3,
+    "krompir čorba" : 17,
+    "sos od visanja" : 15
   },
-  "najpopularniji" : [ 2, 0, 1, 9, 7, 4 ]
+  "najpopularniji" : [ 2, 0, 1, 9, 14, 7, 4 ]
 }

@@ -1,0 +1,34 @@
+{
+  "id" : 15,
+  "naziv" : "Sos od visanja",
+  "opis" : "Sos od visanja kao prilog uz meso",
+  "koraci" : "1. kuvajte visnje u vodi\n2. dodajte polako brasno\n3. kad se sgusi dobro je\n4. servirajte uz meso",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 25,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 600,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Visnja"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  } ],
+  "kategorije" : [ 2 ],
+  "autor" : "laci",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}
