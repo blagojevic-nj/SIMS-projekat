@@ -53,7 +53,7 @@ public class VelikiPrikazRecepta extends JPanel {
 	private JLabel zvezde;
 	private JButton follow;
 	private JButton unfollow, sacuvaj, zaboravi;
-	JPanel recenzije;
+	private JPanel recenzije;
 
 	public VelikiPrikazRecepta() {
 

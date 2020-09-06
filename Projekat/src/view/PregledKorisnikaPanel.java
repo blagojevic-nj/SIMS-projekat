@@ -26,10 +26,13 @@ public class PregledKorisnikaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private RegistrovaniKorisnik k;
 	private JLabel bedzVal ;
+	private JButton follow,unfollow;
 	private Image img;
-
+	private RegistrovaniKorisnik trenutni = null;
+	
 	public PregledKorisnikaPanel(MainWindow mw, JPanel prethodni, RegistrovaniKorisnik korisnik) {
 		
+
 		k=korisnik;
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		setBounds(0, 0, 1040, 650);
@@ -74,63 +77,80 @@ public class PregledKorisnikaPanel extends JPanel {
 
 		ImageIcon zaprati1 = new ImageIcon("data/ikonice/follow.png");
 		Image z1 = zaprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
-		JButton follow = new JButton(new ImageIcon(z1));
+		follow = new JButton(new ImageIcon(z1));
 		follow.setBounds(220, 235, 50, 50);
 		follow.setToolTipText("Zaprati!");
 		follow.setBorderPainted(false);
 		follow.setFocusPainted(false);
 		follow.setContentAreaFilled(false);
+		add(follow);
+		follow.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				trenutni.zaprati(korisnik);
+				MainWindow.km.promenjen(trenutni.getKorisnickoIme());
+				MainWindow.km.promenjen(korisnik.getKorisnickoIme());
+				MainWindow.km.sacuvajKorisnike();
+				unfollow.setVisible(true);
+				follow.setVisible(false);
+				revalidate();
+				repaint();			
+			}
+		});
 
 		
 		ImageIcon otprati1 = new ImageIcon("data/ikonice/unfollow.png");
 		Image o1 = otprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-		JButton unfollow = new JButton(new ImageIcon(o1));
+		unfollow = new JButton(new ImageIcon(o1));
+		unfollow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				trenutni.otprati(korisnik);
+				MainWindow.km.promenjen(trenutni.getKorisnickoIme());
+				MainWindow.km.promenjen(korisnik.getKorisnickoIme());
+				MainWindow.km.sacuvajKorisnike();
+				unfollow.setVisible(false);
+				follow.setVisible(true);
+				revalidate();
+				repaint();
+			}
+		});
 		unfollow.setBounds(220, 235, 50, 50);
 		unfollow.setToolTipText("Otprati!");
 		unfollow.setBorderPainted(false);
 		unfollow.setFocusPainted(false);
 		unfollow.setContentAreaFilled(false);
-		if (MainWindow.trenutniNalog != null) {
-			if (MainWindow.trenutniNalog.getTip() == TipNaloga.REG_KORISNIK
-					&& !MainWindow.trenutniNalog.getKorisnickoIme().equals(korisnik.getKorisnickoIme())) {
-				RegistrovaniKorisnik rk = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
-				if (rk.getPraceni() == null)
-					add(follow);
-				else {
-					if (rk.getPraceni().contains(korisnik.getKorisnickoIme()))
-						add(unfollow);
-					else
-						add(follow);
-				}
-				follow.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						rk.zaprati(korisnik);
-						MainWindow.km.promenjen(rk.getKorisnickoIme());
-						MainWindow.km.promenjen(korisnik.getKorisnickoIme());
-						MainWindow.km.sacuvajKorisnike();
-						remove(follow);
-						add(unfollow);
-						revalidate();
-						repaint();
-					}
-				});
-				unfollow.addActionListener(new ActionListener() {
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						rk.otprati(korisnik);
-						MainWindow.km.promenjen(rk.getKorisnickoIme());
-						MainWindow.km.promenjen(korisnik.getKorisnickoIme());
-						MainWindow.km.sacuvajKorisnike();
-						remove(unfollow);
-						add(follow);
-						revalidate();
-						repaint();
-					}
-				});
-			}
-		}
 		add(unfollow);
+		
+		
+		unfollow.setVisible(false);
+		follow.setVisible(false);
+		if(MainWindow.trenutniNalog != null)
+		{
+			trenutni = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
+			
+			if (trenutni.getPraceni() == null)
+			{
+				unfollow.setVisible(false);
+				follow.setVisible(true);
+			}
+			else 
+			{
+				if (trenutni.getPraceni().contains(korisnik.getKorisnickoIme()))
+				{
+					unfollow.setVisible(true);
+					follow.setVisible(false);
+				}
+				else
+				{
+					unfollow.setVisible(false);
+					follow.setVisible(true);
+				}
+
+			}
+
+		}
 		
 		JLabel email = new JLabel(korisnik.getEmail());
 		email.setFont(new Font("Tahoma", Font.BOLD, 20));
@@ -155,7 +175,7 @@ public class PregledKorisnikaPanel extends JPanel {
 	 * *********************************************************************************************************	
 	 */
 		
-		bedzVal = new JLabel(korisnik.getBedz()+"");
+		bedzVal = new JLabel();
 		bedzVal.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		bedzVal.setForeground(Color.WHITE);
 		bedzVal.setBounds(330, 480, 150, 150);
