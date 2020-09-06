@@ -398,6 +398,7 @@ public class MainWindow extends JFrame {
 		 * 
 		 */
 		label = new JLabel("");
+		label.setOpaque(false);
 		label.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mousePressed(MouseEvent e) {
@@ -417,7 +418,6 @@ public class MainWindow extends JFrame {
 		});
 		label.setBounds(0, 0, 1200, 25);
 		label.setVerticalAlignment(SwingConstants.TOP);
-		label.setOpaque(true);
 		contentPane.add(label);
 	}
 
@@ -464,7 +464,7 @@ class BarPanel extends JPanel
 	    public ContentPane()
 	    {
 	
-	        img =new ImageIcon("data/ikonice/whiteBackSmall.jpg").getImage();
+	        img =new ImageIcon("data/ikonice/whiteBack.jpg").getImage();
 	        img.getScaledInstance(1200, 700, Image.SCALE_SMOOTH);
 	
 	    }
@@ -473,7 +473,7 @@ class BarPanel extends JPanel
 	
 	    {      
 	
-	      //  g.drawImage(img,0,0,null);
+	        g.drawImage(img,0,0,null);
 	
 	    } 
 	

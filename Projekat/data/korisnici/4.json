@@ -8,10 +8,10 @@
   "bedz" : "OMLET",
   "brojPratilaca" : 1,
   "prosecnaOcena" : 1.5,
-  "praceni" : [ "mucko", "njegi", "ovo", "je", "samo", "probaDaVidim", "kako", "ce", "izgledatiKada", "imaPuno", "pracenih", "lucko", "njegi99" ],
+  "praceni" : [ "mucko", "njegi", "ovo", "je", "samo", "probaDaVidim", "kako", "ce", "izgledatiKada", "imaPuno", "pracenih", "njegi99" ],
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],
   "proizvodi" : [ 3, 24, 15 ],
   "recepti" : [ 0, 21, 22, 23, 24 ],
-  "sacuvaniRecepti" : [ 2, 1 ]
+  "sacuvaniRecepti" : [ 1 ]
 }
