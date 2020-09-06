@@ -1,0 +1,81 @@
+{
+  "id" : 22,
+  "naziv" : "Banana Split",
+  "opis" : "Osvežavajuće, neobicna verzija popularnog recepta, mali eksperiment sa sastojcima,\nispalo je sjajno!",
+  "koraci" : "1.Umutiti 4 kašike gustina, 3 žumanca, 2 pudinga od vanille,\n    200 g šećera rastopljenog u pola čaše vode i malo mleka. \n2. Kada mleko provri dodajte masu i kuvajte 5 minuta na tihoj vatri.\n3. Kada se fil ohladi dodati margarin i izmiksati.\n4. U pleh poređati keks malo natopljen u mlako mleko.\n5. Poželjno je da pleh bude četvrtast, zatim preko keksa staviti banane\n    izrezane na pola po dužini, preko banana naneti fil.\n6. Preko fila šlag i ukrasiti bananama iseckanim na kolutove.\n7. Poželjno dodati višnju na vrh.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 20,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  }, {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 1,
+      "naziv" : "Stapni mikser"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 6,
+    "mernaJedinica" : "500",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Banana"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "1",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Visnja"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "1000",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mleko"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "200",
+    "tip" : "POZELJAN",
+    "nazivProizvoda" : "Plazma keks"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "150",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "0.5",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 3,
+    "mernaJedinica" : "60",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Puding Vanila"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "150",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "margarin"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "200",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Slag"
+  } ],
+  "kategorije" : [ 0, 5 ],
+  "autor" : "lule",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

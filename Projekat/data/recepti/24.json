@@ -1,0 +1,45 @@
+{
+  "id" : 24,
+  "naziv" : "Svinjski kotlet",
+  "opis" : "Svinjski kotlet sa grila servirati sa pire krompirom,\ngrilovanom paprikom, gljivama i lepinjama.",
+  "koraci" : "1. Meso saseckati na komade veličine većeg zalogaja.\n2. Zagrejati ulje u tiganj i staviti meso da se prži na umerenoj vatri.\n3. Vatra ne sme biti prejaka da komadi unutra ne ostanu živi, a spolja zagore.\n4. Posoliti po ukusu.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "TESKO",
+  "vremePripreme" : 90,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "250",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Svinjetina"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "20",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "10",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "20",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  } ],
+  "kategorije" : [ 6 ],
+  "autor" : "lule",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

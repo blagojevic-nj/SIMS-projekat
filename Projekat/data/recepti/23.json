@@ -1,0 +1,64 @@
+{
+  "id" : 23,
+  "naziv" : "Tartar Biftek",
+  "opis" : "Juneći file, začini, maslac, paradajz, tost...",
+  "koraci" : "1. Goveđi biftek sitno iseckati ili samleti u fine sitne komadice.\n2. Potom ga staviti u frizider, da se dobro ohladi pre pripreme i posluženja.\n3. Umutiti 4 žumanceta, dodati majonez, kečap, senf, sitno seckane kapre,\n    luk i kisele krastavce. U tu smesu dodati po želji so, biber, alevu papriku,\n    beli luk u prahu i sitno seckan sveži peršun.\n4. Dodati takodje dve supene kašike vorčester sosa i po želji tabasko sos.\n5. Pomešati sitno seckan biftek iz frižidera sa smesom. \n6. Tako pripremljeno meso služiti na tanjiru uz pomfri i salatu po zelji. \n7. Ja licno preferiram zelenu salatu sa lukom i paradajzom sa malo majoneza i\n    pavlake.\n8. Ukrasiti sa malo svezeg persuna. \n9. Prijatno!",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 80,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Luk"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "20",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "Persun"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "200",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sir"
+  }, {
+    "kolicina" : 4,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "30",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Majonez"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "paradajz pelat"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "500",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Govedji biftek"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "60",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Senf"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "10",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "Aleva Paprika"
+  } ],
+  "kategorije" : [ 6 ],
+  "autor" : "lule",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 1
+}

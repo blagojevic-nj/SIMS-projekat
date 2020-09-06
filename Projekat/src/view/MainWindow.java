@@ -4,6 +4,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -37,7 +38,7 @@ public class MainWindow extends JFrame {
 	private JButton home, login, logout, register, exit, pretraga, settings;
 	public JPanel panelMenu, mainContentContainerPanel, trenutniDesni;
 	public BarPanel smallPanelMenu;
-	private JLayeredPane contentPane;
+	private ContentPane contentPane;
 	private JLabel label;
 	private int xx, xy;
 	private CardLayout menuCardLayout;
@@ -58,9 +59,10 @@ public class MainWindow extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		/* Content pane koji je layered da bi se preklapali paneli kako treba */
-		contentPane = new JLayeredPane();
+		contentPane = new ContentPane();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		contentPane.setLayout(null);
+		contentPane.setBounds(0, 0, 1200, 700);
 		setContentPane(contentPane);
 
 		/*
@@ -70,6 +72,7 @@ public class MainWindow extends JFrame {
 
 		mainContentContainerPanel = new JPanel();
 		mainContentContainerPanel.setBounds(100, 30, 1040, 650);
+		mainContentContainerPanel.setBackground(Color.RED);
 		mainContentContainerPanel.setLayout(null);
 		contentPane.add(mainContentContainerPanel, 1);
 
@@ -193,7 +196,9 @@ public class MainWindow extends JFrame {
 		 * 
 		 * Home dugme//
 		 */
-		home = new JButton(new ImageIcon("data/ikonice/home.png"));
+		ImageIcon hom1 = new ImageIcon("data/ikonice/home.png");
+		Image h1 = hom1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+		home = new JButton(new ImageIcon(h1));
 		home.setBorderPainted(false);
 		home.setFocusPainted(false);
 		home.setContentAreaFilled(false);
@@ -214,7 +219,9 @@ public class MainWindow extends JFrame {
 		 * Logout dugme
 		 * 
 		 */
-		logout = new JButton(new ImageIcon("data/ikonice/exit.png"));
+		ImageIcon logg1 = new ImageIcon("data/ikonice/exit.png");
+		Image lg1 = logg1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+		logout = new JButton(new ImageIcon(lg1));
 		logout.setBorderPainted(false);
 		logout.setFocusPainted(false);
 		logout.setContentAreaFilled(false);
@@ -239,8 +246,9 @@ public class MainWindow extends JFrame {
 		 * Login dugme
 		 * 
 		 */
-
-		login = new JButton(new ImageIcon("data/ikonice/login.png"));
+		ImageIcon log1 = new ImageIcon("data/ikonice/login.png");
+		Image l1 = log1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);	
+		login = new JButton(new ImageIcon(l1));
 		login.setBounds(10, 80, 30, 30);
 		login.setBorderPainted(false);
 		login.setFocusPainted(false);
@@ -269,7 +277,9 @@ public class MainWindow extends JFrame {
 		 * Registracija dugme
 		 * 
 		 */
-		register = new JButton(new ImageIcon("data/ikonice/register.png"));
+		ImageIcon reg1 = new ImageIcon("data/ikonice/register.png");
+		Image r1 = reg1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);	
+		register = new JButton(new ImageIcon(r1));
 		register.setBounds(10, 140, 30, 30);
 		register.setBorderPainted(false);
 		register.setFocusPainted(false);
@@ -294,7 +304,9 @@ public class MainWindow extends JFrame {
 		 * Podesavanja dugme
 		 * 
 		 */
-		settings = new JButton(new ImageIcon("data/ikonice/gear.png"));
+		ImageIcon gear1 = new ImageIcon("data/ikonice/gear.png");
+		Image g1 = gear1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);	
+		settings = new JButton(new ImageIcon(g1));
 		settings.setBounds(10, 140, 30, 30);
 		settings.setBorderPainted(false);
 		settings.setFocusPainted(false);
@@ -321,8 +333,9 @@ public class MainWindow extends JFrame {
 		/*
 		 * Pretraga dugme
 		 */
-
-		pretraga = new JButton(new ImageIcon("data/ikonice/search.png"));
+		ImageIcon PRETRAGA1 = new ImageIcon("data/ikonice/search.png");
+		Image p1 = PRETRAGA1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);	
+		pretraga = new JButton(new ImageIcon(p1));
 		pretraga.setBounds(10, 200, 30, 30);
 		pretraga.setBorderPainted(false);
 		pretraga.setFocusPainted(false);
@@ -351,8 +364,9 @@ public class MainWindow extends JFrame {
 		 * Exit dugme
 		 * 
 		 */
-
-		exit = new JButton(new ImageIcon("data/ikonice/close.png"));
+		ImageIcon exit1 = new ImageIcon("data/ikonice/close.png");
+		Image e1 = exit1.getImage().getScaledInstance(30, 30, Image.SCALE_SMOOTH);	
+		exit = new JButton(new ImageIcon(e1));
 		exit.setBounds(10, getHeight() - 50, 30, 30);
 		exit.setBorderPainted(false);
 		exit.setFocusPainted(false);
@@ -424,17 +438,44 @@ public class MainWindow extends JFrame {
 	}
 }
 
-class BarPanel extends JPanel{
-
+class BarPanel extends JPanel
+	{
+	
+		private static final long serialVersionUID = 1L;
+		private Image img;
+		
+		public BarPanel() {
+			this.img = new ImageIcon("data/ikonice/bar.jpg").getImage();
+		}
+	
+		public void paintComponent(Graphics g) {
+			g.drawImage(img, 0, 0, null);
+		}
+		
+	}
+ class ContentPane extends JLayeredPane
+	{
+		
+	    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
-	private Image img;
+		Image img;
 	
-	public BarPanel() {
-		this.img = new ImageIcon("data/ikonice/bar.jpg").getImage();
-	}
-
-	public void paintComponent(Graphics g) {
-		g.drawImage(img, 0, 0, null);
-	}
+	    public ContentPane()
+	    {
 	
-}
+	        img =new ImageIcon("data/ikonice/whiteBackSmall.jpg").getImage();
+	        img.getScaledInstance(1200, 700, Image.SCALE_SMOOTH);
+	
+	    }
+	
+	    public void paintComponent(Graphics g)
+	
+	    {      
+	
+	      //  g.drawImage(img,0,0,null);
+	
+	    } 
+	
+	}

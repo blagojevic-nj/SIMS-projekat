@@ -148,7 +148,7 @@ public class PretragaPanel extends JPanel {
 		spinner.setBounds(190, 520, 40, 25);
 		add(spinner);
 
-		btnPretrazi = new JButton("Pretrazi", new ImageIcon("data/ikonice/search.png"));
+		btnPretrazi = new JButton("Pretrazi", new ImageIcon("data/ikonice/search2.png"));
 		btnPretrazi.setBounds(170, 660, 120, 30);
 		btnPretrazi.setEnabled(false);
 		add(btnPretrazi);
