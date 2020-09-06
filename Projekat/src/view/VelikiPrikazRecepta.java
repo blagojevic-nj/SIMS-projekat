@@ -69,8 +69,10 @@ public class VelikiPrikazRecepta extends JPanel {
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
 
-		JButton nazad = new JButton(new ImageIcon("data/ikonice/reduce.png"));
-		nazad.setBounds(10, 0, 50, 50);
+		ImageIcon back1 = new ImageIcon("data/ikonice/back1.png");
+		Image b1 = back1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		JButton nazad = new JButton(new ImageIcon(b1));
+		nazad.setBounds(20, 0, 50, 50);
 		nazad.setBorderPainted(false);
 		nazad.setFocusPainted(false);
 		nazad.setContentAreaFilled(false);
@@ -262,7 +264,11 @@ public class VelikiPrikazRecepta extends JPanel {
 		koraciPane.setBounds(540, 280, 480, 150);
 		add(koraciPane);
 
-		JLabel korisnik = new JLabel(new ImageIcon("data/ikonice/user.png"));
+		//JLabel korisnik = new JLabel(new ImageIcon("data/ikonice/user.png"));
+		ImageIcon korisnikIcon = new ImageIcon("data/ikonice/noUser.png");
+		Image ki1 = korisnikIcon.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		JLabel korisnik = new JLabel(new ImageIcon(ki1));
+
 		korisnik.setBounds(20, 570, 50, 50);
 		add(korisnik);
 
@@ -277,7 +283,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		JLabel autor = new JLabel(r.getAutor());
 		autor.setForeground(Color.white);
 		autor.setFont(new Font(font, 1, 15));
-		autor.setBounds(80, 570, 100, 50);
+		autor.setBounds(80, 583, 100, 50);
 		add(autor);
 
 		follow = new JButton("Zaprati", new ImageIcon("data/ikonice/add-user.png"));

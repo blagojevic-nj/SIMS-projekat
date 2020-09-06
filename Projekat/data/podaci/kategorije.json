@@ -2,7 +2,7 @@
   "kategorije" : [ {
     "sifra" : 0,
     "naziv" : "Kolaci",
-    "recepti" : [ 1, 4, 9 ]
+    "recepti" : [ 1, 4, 9, 22 ]
   }, {
     "sifra" : 1,
     "naziv" : "Namazi",
@@ -22,11 +22,11 @@
   }, {
     "sifra" : 5,
     "naziv" : "Vocni deserti",
-    "recepti" : [ ]
+    "recepti" : [ 22 ]
   }, {
     "sifra" : 6,
     "naziv" : "Mesna jela",
-    "recepti" : [ 2, 3, 16 ]
+    "recepti" : [ 2, 3, 16, 23, 24 ]
   }, {
     "sifra" : 7,
     "naziv" : "Pica",
@@ -34,7 +34,7 @@
   }, {
     "sifra" : 8,
     "naziv" : "Salate",
-    "recepti" : [ 10, 11 ]
+    "recepti" : [ 10, 11, 21 ]
   }, {
     "sifra" : 9,
     "naziv" : "Testenine",

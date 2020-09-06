@@ -109,7 +109,7 @@ public class ReceptiPanel extends JPanel {
 			}
 		});
 
-		JButton searchBtn = new JButton("Pretrazi", new ImageIcon("data/ikonice/search.png"));
+		JButton searchBtn = new JButton("Pretrazi", new ImageIcon("data/ikonice/search2.png"));
 		searchBtn.setBounds(730, 10, 120, 30);
 		searchBtn.setEnabled(false);
 

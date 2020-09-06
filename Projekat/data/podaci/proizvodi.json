@@ -6,7 +6,7 @@
   }, {
     "sifra" : 1,
     "naziv" : "Blitva",
-    "recepti" : [ ]
+    "recepti" : [ 21 ]
   }, {
     "sifra" : 2,
     "naziv" : "Boranija",
@@ -42,7 +42,7 @@
   }, {
     "sifra" : 10,
     "naziv" : "Krastavac",
-    "recepti" : [ 10 ]
+    "recepti" : [ 10, 21 ]
   }, {
     "sifra" : 11,
     "naziv" : "Krompir",
@@ -58,7 +58,7 @@
   }, {
     "sifra" : 14,
     "naziv" : "Luk",
-    "recepti" : [ ]
+    "recepti" : [ 21, 23 ]
   }, {
     "sifra" : 15,
     "naziv" : "Paprika",
@@ -66,7 +66,7 @@
   }, {
     "sifra" : 16,
     "naziv" : "Paradajz",
-    "recepti" : [ 7, 10, 16 ]
+    "recepti" : [ 7, 10, 16, 21 ]
   }, {
     "sifra" : 17,
     "naziv" : "Pasulj",
@@ -74,7 +74,7 @@
   }, {
     "sifra" : 18,
     "naziv" : "Persun",
-    "recepti" : [ 3, 6, 7, 13 ]
+    "recepti" : [ 3, 6, 7, 13, 23 ]
   }, {
     "sifra" : 19,
     "naziv" : "Plavi patlidzan",
@@ -110,7 +110,7 @@
   }, {
     "sifra" : 27,
     "naziv" : "Svinjetina",
-    "recepti" : [ ]
+    "recepti" : [ 24 ]
   }, {
     "sifra" : 28,
     "naziv" : "Junetina",
@@ -170,7 +170,7 @@
   }, {
     "sifra" : 42,
     "naziv" : "Banana",
-    "recepti" : [ ]
+    "recepti" : [ 22 ]
   }, {
     "sifra" : 43,
     "naziv" : "Breskva",
@@ -186,7 +186,7 @@
   }, {
     "sifra" : 46,
     "naziv" : "Visnja",
-    "recepti" : [ 15 ]
+    "recepti" : [ 15, 22 ]
   }, {
     "sifra" : 47,
     "naziv" : "Grozde",
@@ -290,11 +290,11 @@
   }, {
     "sifra" : 72,
     "naziv" : "Mleko",
-    "recepti" : [ 4, 5, 8, 9 ]
+    "recepti" : [ 4, 5, 8, 9, 22 ]
   }, {
     "sifra" : 73,
     "naziv" : "Sir",
-    "recepti" : [ 8, 16, 20 ]
+    "recepti" : [ 8, 16, 20, 23 ]
   }, {
     "sifra" : 74,
     "naziv" : "Kackavalj",
@@ -342,7 +342,7 @@
   }, {
     "sifra" : 85,
     "naziv" : "Plazma keks",
-    "recepti" : [ ]
+    "recepti" : [ 22 ]
   }, {
     "sifra" : 86,
     "naziv" : "Piskote",
@@ -386,15 +386,15 @@
   }, {
     "sifra" : 96,
     "naziv" : "So",
-    "recepti" : [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 ]
+    "recepti" : [ 1, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 24 ]
   }, {
     "sifra" : 97,
     "naziv" : "Biber",
-    "recepti" : [ 3, 7, 8, 10, 12, 13 ]
+    "recepti" : [ 3, 7, 8, 10, 12, 13, 24 ]
   }, {
     "sifra" : 98,
     "naziv" : "Secer",
-    "recepti" : [ 1, 4, 9, 14 ]
+    "recepti" : [ 1, 4, 9, 14, 22 ]
   }, {
     "sifra" : 99,
     "naziv" : "Kakao",
@@ -410,11 +410,11 @@
   }, {
     "sifra" : 102,
     "naziv" : "Voda",
-    "recepti" : [ 3, 6, 15, 17, 18 ]
+    "recepti" : [ 3, 6, 15, 17, 18, 22 ]
   }, {
     "sifra" : 103,
     "naziv" : "Jaje",
-    "recepti" : [ 4, 8, 9, 13, 14 ]
+    "recepti" : [ 4, 8, 9, 13, 14, 22, 23 ]
   }, {
     "sifra" : 104,
     "naziv" : "Brasno",
@@ -434,7 +434,7 @@
   }, {
     "sifra" : 108,
     "naziv" : "Ulje",
-    "recepti" : [ 4, 6, 7, 8, 9, 10, 11, 13 ]
+    "recepti" : [ 4, 6, 7, 8, 9, 10, 11, 13, 24 ]
   }, {
     "sifra" : 109,
     "naziv" : "Puter",
@@ -450,7 +450,7 @@
   }, {
     "sifra" : 112,
     "naziv" : "Sirce",
-    "recepti" : [ 6, 10, 11, 12 ]
+    "recepti" : [ 6, 10, 11, 12, 21 ]
   }, {
     "sifra" : 113,
     "naziv" : "Crno vino",
@@ -474,7 +474,7 @@
   }, {
     "sifra" : 118,
     "naziv" : "Majonez",
-    "recepti" : [ 12, 19 ]
+    "recepti" : [ 12, 19, 23 ]
   }, {
     "sifra" : 119,
     "naziv" : "Karanfilić",
@@ -522,7 +522,7 @@
   }, {
     "sifra" : 130,
     "naziv" : "paradajz pelat",
-    "recepti" : [ 20 ]
+    "recepti" : [ 20, 23 ]
   }, {
     "sifra" : 131,
     "naziv" : "salama",
@@ -531,5 +531,37 @@
     "sifra" : 132,
     "naziv" : "feferone",
     "recepti" : [ 20 ]
+  }, {
+    "sifra" : 133,
+    "naziv" : "Feta Sir",
+    "recepti" : [ 21 ]
+  }, {
+    "sifra" : 134,
+    "naziv" : "Rukola",
+    "recepti" : [ 21 ]
+  }, {
+    "sifra" : 135,
+    "naziv" : "Puding Vanila",
+    "recepti" : [ 22 ]
+  }, {
+    "sifra" : 136,
+    "naziv" : "margarin",
+    "recepti" : [ 22 ]
+  }, {
+    "sifra" : 137,
+    "naziv" : "Slag",
+    "recepti" : [ 22 ]
+  }, {
+    "sifra" : 138,
+    "naziv" : "Govedji biftek",
+    "recepti" : [ 23 ]
+  }, {
+    "sifra" : 139,
+    "naziv" : "Senf",
+    "recepti" : [ 23 ]
+  }, {
+    "sifra" : 140,
+    "naziv" : "Aleva Paprika",
+    "recepti" : [ 23 ]
   } ]
 }

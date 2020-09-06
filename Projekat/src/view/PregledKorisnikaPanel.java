@@ -3,6 +3,7 @@ package view;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,15 +25,21 @@ import javax.swing.SwingConstants;
 public class PregledKorisnikaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private RegistrovaniKorisnik k;
-	JLabel bedzVal ;
+	private JLabel bedzVal ;
+	private Image img;
 
 	public PregledKorisnikaPanel(MainWindow mw, JPanel prethodni, RegistrovaniKorisnik korisnik) {
+		
 		k=korisnik;
+		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
 		setBackground(Color.DARK_GRAY);
 
-		JButton nazad = new JButton(new ImageIcon("data/ikonice/reduce.png"));
+		
+		ImageIcon back1 = new ImageIcon("data/ikonice/back1.png");
+		Image b1 = back1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		JButton nazad = new JButton(new ImageIcon(b1));
 		nazad.setBounds(10, 0, 50, 50);
 		nazad.setBorderPainted(false);
 		nazad.setFocusPainted(false);
@@ -46,31 +53,43 @@ public class PregledKorisnikaPanel extends JPanel {
 		});
 
 		JLabel lblKorisnickoIme = new JLabel(korisnik.getKorisnickoIme());
-		lblKorisnickoIme.setFont(new Font("Tahoma", Font.PLAIN, 30));
+		lblKorisnickoIme.setFont(new Font("Tahoma", Font.BOLD, 30));
 		lblKorisnickoIme.setForeground(Color.WHITE);
-		lblKorisnickoIme.setBounds(70, 10, 300, 30);
+		lblKorisnickoIme.setBounds(80, 0, 300, 50);
 		add(lblKorisnickoIme);
 
 		JSeparator sep = new JSeparator();
 		sep.setBounds(0, 50, 1040, 5);
 		add(sep);
 
-		JLabel korisnikImg = new JLabel(new ImageIcon("data/ikonice/user.png"));
-		korisnikImg.setBounds(20, 80, 100, 100);
+		JLabel korisnikImg = new JLabel(new ImageIcon("data/ikonice/noUser.png"));
+		korisnikImg.setBounds(20, 80, 200, 200);
 		add(korisnikImg);
 
 		JLabel imePrezime = new JLabel(korisnik.getIme() + " " + korisnik.getPrezime());
-		imePrezime.setFont(new Font("Tahoma", Font.PLAIN, 35));
+		imePrezime.setFont(new Font("Tahoma", Font.BOLD, 35));
 		imePrezime.setForeground(Color.WHITE);
 		imePrezime.setBounds(30, 290, 400, 50);
 		add(imePrezime);
 
-		JButton follow = new JButton("Zaprati", new ImageIcon("data/ikonice/add-user.png"));
-		follow.setBounds(150, 150, 150, 30);
+		ImageIcon zaprati1 = new ImageIcon("data/ikonice/follow.png");
+		Image z1 = zaprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		JButton follow = new JButton(new ImageIcon(z1));
+		follow.setBounds(220, 235, 50, 50);
+		follow.setToolTipText("Zaprati!");
+		follow.setBorderPainted(false);
+		follow.setFocusPainted(false);
+		follow.setContentAreaFilled(false);
 
-		JButton unfollow = new JButton("Otprati", new ImageIcon("data/ikonice/unfollow.png"));
-		unfollow.setBounds(150, 150, 150, 30);
-
+		
+		ImageIcon otprati1 = new ImageIcon("data/ikonice/unfollow.png");
+		Image o1 = otprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		JButton unfollow = new JButton(new ImageIcon(o1));
+		unfollow.setBounds(220, 235, 50, 50);
+		unfollow.setToolTipText("Otprati!");
+		unfollow.setBorderPainted(false);
+		unfollow.setFocusPainted(false);
+		unfollow.setContentAreaFilled(false);
 		if (MainWindow.trenutniNalog != null) {
 			if (MainWindow.trenutniNalog.getTip() == TipNaloga.REG_KORISNIK
 					&& !MainWindow.trenutniNalog.getKorisnickoIme().equals(korisnik.getKorisnickoIme())) {
@@ -111,9 +130,10 @@ public class PregledKorisnikaPanel extends JPanel {
 				});
 			}
 		}
+		add(unfollow);
 		
 		JLabel email = new JLabel(korisnik.getEmail());
-		email.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		email.setFont(new Font("Tahoma", Font.BOLD, 20));
 		email.setForeground(Color.WHITE);
 		email.setBounds(30, 340, 400, 50);
 		add(email);
@@ -210,7 +230,7 @@ public class PregledKorisnikaPanel extends JPanel {
 		JSeparator separator_2 = new JSeparator();
 		separator_2.setForeground(Color.WHITE);
 		separator_2.setOrientation(SwingConstants.VERTICAL);
-		separator_2.setBounds(500, 50, 1, 600);
+		separator_2.setBounds(498, 50, 1, 600);
 		add(separator_2);
 		
 		if (korisnik.getRecepti().size() == 0) {
@@ -286,4 +306,12 @@ public class PregledKorisnikaPanel extends JPanel {
 		
 		
 	}
+	
+	
+	public void paintComponent(Graphics g) {
+		g.drawImage(img, 0, 0, null);
+	}
+	
+	
+	
 }

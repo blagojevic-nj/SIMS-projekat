@@ -1,0 +1,54 @@
+{
+  "id" : 21,
+  "naziv" : "Grcka salata",
+  "opis" : "Kombinacija svežih salata, rukole, paradajza, krastavaca, crnog luka, crnih maslina,\n sa dodatkom feta sira,",
+  "koraci" : "1. Svo povrće iseći na krupnije komade, a fetu na kockice.\n2. Posebno izmešati maslinovo ulje sa limunovim sokom.\n3. Posoliti i pobiberiti, pa dodati začin. \n4. Pre serviranja ostaviti u frižideru da se ukusi prožmu.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 5,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Blitva"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "300",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krastavac"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Luk"
+  }, {
+    "kolicina" : 4,
+    "mernaJedinica" : "200",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Paradajz"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "5",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sirce"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "50",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Feta Sir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "100",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Rukola"
+  } ],
+  "kategorije" : [ 8 ],
+  "autor" : "lule",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 4
+}

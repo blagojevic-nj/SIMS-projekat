@@ -18,7 +18,6 @@ import javax.swing.JTextField;
 import model.Korisnik;
 import model.Nalog;
 import model.RegistrovaniKorisnik;
-import javax.swing.SwingConstants;
 
 public class NalogInfoPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -152,12 +151,11 @@ public class NalogInfoPanel extends JPanel {
 		
 		
 		ImageIcon psdImg = new ImageIcon("data/ikonice/novaLozinka.png");
-		Image lozinka = psdImg.getImage().getScaledInstance(150, 150, Image.SCALE_SMOOTH);
+		Image lozinka = psdImg.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
 		
 		
 		JButton btnLozinka = new JButton(new ImageIcon(lozinka));
-		btnLozinka.setHorizontalAlignment(SwingConstants.LEFT);
-		btnLozinka.setBounds(40, 370, 160, 65);
+		btnLozinka.setBounds(60, 400, 50, 50);
 		add(btnLozinka);
 		btnLozinka.setToolTipText("Promena Lozinke!");
 		btnLozinka.setBorderPainted(false);
@@ -227,7 +225,7 @@ public class NalogInfoPanel extends JPanel {
 		Image save = saveDugme.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
 		
 		JButton btnSacuvaj = new JButton(new ImageIcon(save));
-		btnSacuvaj.setBounds(710, 380, 50, 45);
+		btnSacuvaj.setBounds(720, 400, 50, 50);
 		add(btnSacuvaj);
 		btnSacuvaj.setToolTipText("Sačuvaj!");
 		btnSacuvaj.setBorderPainted(false);
@@ -245,13 +243,13 @@ public class NalogInfoPanel extends JPanel {
 
 		
 		ImageIcon odbaci = new ImageIcon("data/ikonice/dismiss.png");
-		Image dismiss = odbaci.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+		Image dismiss = odbaci.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
 		JButton btnOdbaci = new JButton(new ImageIcon(dismiss));
 		btnSacuvaj.setToolTipText("Odbaci izmene!");
 		btnOdbaci.setBorderPainted(false);
 		btnOdbaci.setFocusPainted(false);
 		btnOdbaci.setContentAreaFilled(false);		
-		btnOdbaci.setBounds(630, 375, 60, 55);
+		btnOdbaci.setBounds(665, 400, 50, 50);
 		add(btnOdbaci);
 		btnOdbaci.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -262,7 +260,7 @@ public class NalogInfoPanel extends JPanel {
 		
 		
 		ImageIcon mainIcon = new ImageIcon("data/ikonice/podesavanja.png");
-		Image podesavanja = mainIcon.getImage().getScaledInstance(70, 70, Image.SCALE_SMOOTH);
+		//Image podesavanja = mainIcon.getImage().getScaledInstance(70, 70, Image.SCALE_SMOOTH);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBounds(315, 10, 245, 85);
