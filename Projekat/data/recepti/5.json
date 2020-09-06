@@ -1,0 +1,56 @@
+{
+  "id" : 5,
+  "naziv" : "Besamel sos",
+  "opis" : "Jako ukusan sos koji moze da se koristi uz razna jela. \nSvako ga moze napraviti.",
+  "koraci" : "1 - Na rastopljenom puteru kratko propržiti brašno da ostane vrlo. \nLagano mešajući žicom dodavati hladno mleko (da se sos ne bi zgrusao).\nDodati so i muskatni orah i biber. \nKuvati petnaestak minuta da se sve izjednači i zgusne.\n\n2 - Besamel sos može poslužiti kao osnova za druge sosove \ntako što se u gotov sos umešaju razni dodatći kao rendani sir, \nkisela ili pavlaka za kuvanje, iseckan beli luk, iseckani šampinjoni, \niseckana, kuvana jaja, dve tri kašike koncentrata paradajza, sok od limuna...\n\nFunFact: Ovaj čuveni sos pronalazak je markiza Besamela\n koji je živeo na dvoru Luja XIV i sa njim stekao svetsku slavu.\nKasnije, kroz vekove poslužio je i kao osnova za mnoge druge sosove.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 35,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  }, {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 1,
+      "naziv" : "Stapni mikser"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 500,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mleko"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasika",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 50,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 50,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Puter"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica/4",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Beli biber"
+  } ],
+  "kategorije" : [ 4 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

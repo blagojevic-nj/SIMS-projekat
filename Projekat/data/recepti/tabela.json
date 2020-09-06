@@ -1,8 +1,15 @@
 {
   "recepti" : {
+    "skusa na zaru" : 6,
+    "strudla sa dzemom" : 9,
+    "palacinke" : 4,
+    "besamel sos" : 5,
     "gulardi sos" : 0,
+    "pileci paprikas sa krompirom" : 7,
     "kolac slatki 1" : 1,
-    "gulas madzsarski" : 2
+    "forneti sa sirom" : 8,
+    "gulas madzsarski" : 2,
+    "lovacke snicle u sosu" : 3
   },
-  "najpopularniji" : [ 2, 0, 1 ]
+  "najpopularniji" : [ 2, 0, 1, 9 ]
 }

@@ -12,6 +12,6 @@
   "uredjaji" : [ 0, 1, 2, 3 ],
   "kategorije" : [ 0, 1, 2, 3 ],
   "proizvodi" : [ 3, 24, 15 ],
-  "recepti" : [ 0, 1, 2 ],
+  "recepti" : [ 0 ],
   "sacuvaniRecepti" : [ 2, 1 ]
 }

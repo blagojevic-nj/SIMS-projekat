@@ -1,0 +1,70 @@
+{
+  "id" : 6,
+  "naziv" : "Skusa na zaru",
+  "opis" : "Odlicno posno jelo koje ce sigurno ulepsati vasu posnu trpezu.",
+  "koraci" : "1 - Najbolje je uzeti skuse srednje veliÄŤine (oko 300g). \nKako najÄŤeĹˇÄ‡e nalazimo zaledjenu skusu, potrebno je prvo je odlediti u hladnoj vodi.\n\n2 - Paziti da se skroz ne odledi \nveÄ‡ da bude taman da se moĹľe zaseÄ‡i i oÄŤistiti dobro iznutrice.\n\n3 - Svakoj oÄŤiĹˇÄ‡enoj skuĹˇi isprati utrobu i posusiti papirnim ubrusom. \nPosoliti je spolja i iznutra. \nPripremiti marinadu tako Ĺˇto Ä‡emo u jednu ÄŤiniju sipati sve navedene sastojke. \nSkuse poreÄ‘ati u veÄ‡i Ä‘uveÄŤ.\n\n4 - U svaku skusu u unutrasnjost sipati malo marinade, \na onda sipati marinadu preko svih poreÄ‘anih skuĹˇa. \nSkuĹˇe treba staviti tako da leĹľe na leÄ‘ima.\n\n5 - Treba da ostane marinade i za sluĹľenje ribe, a ako ne ostane napraviti joĹˇ malo.\n\n6 - Ä�uveÄŤ sa skuĹˇama pokriti providnom folijom i ostaviti ih u friĹľider da stoje 2-3 h.\n\n7 - Kad skuĹˇe odstoje raspaliti rostilj pa kad se vatra stisa \ni ostane samo zar od uglja, \npremazati reĹˇetke uljem i reÄ‘ati skuĹˇe.\n\n8 - PeÄ‡i ih sa obe strane da budu lepo peÄŤene, tj. rumene. \nPovremeno vrlo malo ih premazivati sa uljem.\n\n9 - ReÄ‘ati ih u sud u kome Ä‡ete ih sluĹľiti.\n\n10 - Ranije pripremiti prilog tj. Dalmatinsku garnituru \n(objavila sam ranije recept) od skuvanih krompira, blitve, belog luka, soli, \nbibera, sirÄ‡eta i ulja. TakoÄ‘e moĹľe se pripremiti i prilog od skuvanog pirinÄŤa i \nĹˇargarepe.\n\n11 - Skusu posluĹľiti vruÄ‡u uz prilog i salatu. \nLimun iseÄ‡i na kolutove i poreÄ‘ati po skuĹˇi,\n a moĹľe i na kriĹˇke ako neko Ĺľeli da nacedi sok. \nTakoÄ‘e kad se skuĹˇa stavi na tanjir i otvori preliti je sa malo marinade.\n\n12 - Kako smo je ovaj put pravili za veÄŤeru za goste, \nnapravila sam i domaÄ‡e hlepÄŤiÄ‡e Ĺˇto je uz dobro crno vino, \na sve posluĹľeno na terasi bilo pravo uĹľivanje.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "TESKO",
+  "vremePripreme" : 75,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "veza",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Persun"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Limun"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po osobi",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Skusa"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sirce"
+  }, {
+    "kolicina" : 150,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Crno vino"
+  }, {
+    "kolicina" : 7,
+    "mernaJedinica" : "cena",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Beli luk"
+  } ],
+  "kategorije" : [ 11 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

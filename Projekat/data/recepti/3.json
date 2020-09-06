@@ -1,0 +1,75 @@
+{
+  "id" : 3,
+  "naziv" : "Lovacke snicle u sosu",
+  "opis" : "Lovačke nicle u sosu predstavljaju pikantne šnicle, \npo želji ljutkaste. Uz pire krompir ručak je gotov. \nNaravno, prilozi mogu biti razni, preporučujem još i kremasti rižoto, \nidealno slažu. Salata opet, ona koju volite.",
+  "koraci" : "Čekićem za meso sve šnicle izlupati pa ih sa jedne strane dobro posoliti i pobiberiti.\n\nDok odstoje pomešati brašno i mlevenu papriku u jednoj posudi.\nU tiganj sipati ulja, malo manje od 1 cm visine.\nKada se ulje zagrejalo, smanjiti temperaturu prženja, ne treba da bude najjača.\nUvaljati šniclu u mešavinu brašna i paprike, pa je spustiti u vrelo ulje.\nPržiti sa svake strane nekoliko minuta, dok blago ne porumene.\nSlagati na jadan tanjir.\n\nPazite na vatru, jer ulje i brašno u tiganju ne smeju da izgore.\n( ukoliko vam se to desi, prospite pa uspite novo ulje )\nU ulje koje je preostalo od prženja stavite jednu ipo kašiku \nmešavine brašna i paprike, ostalo vam je od valjanja šnicli.\nPropržite par minuta, pa nalijte 700 ml ( 7 dl ) vode ili supe ukoliko \nimate i promešajte.\nDodajte začine sve začine koje ste nameravali da dodate.\nJa sam stavila sve gore navedene.\nPoslažite meso u dobijeni saft, pa smanjite vatru na slabije, da onako tek vri.\nIseckajte šampinjone, nemojte rendati, jer će biti pretanki, \nnego seckajte nožem na listiće i stavite preko mesa.\nKako se jelo bude krčkalo tako će i šampinjoni da otpuste.\nPovremeno drmajte tiganj, ne bi smele šnicle da vam se zalepe za dno.\nMožete malo višljuškom da ih pomerite ako pomislite da vam se lepe za dno.\nKrčkati nekih sat vremena dok pripremite prilog i salatu.\n\nPrijatno.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 40,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Paprika"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "suvi list",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Persun"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Junetina"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "l",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 5,
+    "mernaJedinica" : "kasika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Vegeta"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "list",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Lovor"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sampinjoni"
+  } ],
+  "kategorije" : [ 6 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

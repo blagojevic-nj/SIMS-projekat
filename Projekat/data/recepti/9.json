@@ -1,0 +1,60 @@
+{
+  "id" : 9,
+  "naziv" : "Strudla sa dzemom",
+  "opis" : "Ova poslastica je jedna od omijenih. \nBrza priprema a nikog nece ostaviti ravnodusnim.",
+  "koraci" : "1 - U 250 ml mlakog mleka razmutiti kvasac i dodati mu kašiku šećera, \npa ostaviti da naraste 15-ak minuta. U brašno dodati nadošli kvasac, jaja, \nulje, šećer i so. Umsti glatko testo. \nMožete ga mešati dodacima za testo uz pomoć miksera. \nSjedinjeno testo mesiti još malo na malo pobrašnjanoj podlozi.\n\n2 - Testo podeliti na dva dela (dve jufke), prekriti krpom i ostaviti 45 minuta da naraste.\n\n3 - Jufke istanjiti što više može, \npa celu površinu testa obilno namazati džemom. \nUrolati i ređati u podmazan pleh. \nRolate premazati žumancem u koji se stavi nekoliko kapi ulja. \nPeći oko 45 minuta na temperaturi od 200 stepeni.\n\n4 - Gotovu štrudlu vrlo malo poprskati vodom, prekriti i ostaviti da se malo ohladi. \nRolate posipati prah šećerom i poslužiti tople.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 60,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 250,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mleko"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 5,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 500,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 100,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 25,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kvasac"
+  } ],
+  "kategorije" : [ 0, 3 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 1
+}

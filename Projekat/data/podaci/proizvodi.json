@@ -46,7 +46,7 @@
   }, {
     "sifra" : 11,
     "naziv" : "Krompir",
-    "recepti" : [ ]
+    "recepti" : [ 7 ]
   }, {
     "sifra" : 12,
     "naziv" : "Kukuruz",
@@ -62,11 +62,11 @@
   }, {
     "sifra" : 15,
     "naziv" : "Paprika",
-    "recepti" : [ ]
+    "recepti" : [ 3, 7 ]
   }, {
     "sifra" : 16,
     "naziv" : "Paradajz",
-    "recepti" : [ ]
+    "recepti" : [ 7 ]
   }, {
     "sifra" : 17,
     "naziv" : "Pasulj",
@@ -74,7 +74,7 @@
   }, {
     "sifra" : 18,
     "naziv" : "Persun",
-    "recepti" : [ ]
+    "recepti" : [ 3, 6, 7 ]
   }, {
     "sifra" : 19,
     "naziv" : "Plavi patlidzan",
@@ -106,7 +106,7 @@
   }, {
     "sifra" : 26,
     "naziv" : "Piletina",
-    "recepti" : [ ]
+    "recepti" : [ 7 ]
   }, {
     "sifra" : 27,
     "naziv" : "Svinjetina",
@@ -114,7 +114,7 @@
   }, {
     "sifra" : 28,
     "naziv" : "Junetina",
-    "recepti" : [ ]
+    "recepti" : [ 3 ]
   }, {
     "sifra" : 29,
     "naziv" : "Teletina",
@@ -154,7 +154,7 @@
   }, {
     "sifra" : 38,
     "naziv" : "Sargarepa",
-    "recepti" : [ ]
+    "recepti" : [ 7 ]
   }, {
     "sifra" : 39,
     "naziv" : "Spargla",
@@ -246,7 +246,7 @@
   }, {
     "sifra" : 61,
     "naziv" : "Limun",
-    "recepti" : [ ]
+    "recepti" : [ 6 ]
   }, {
     "sifra" : 62,
     "naziv" : "Lubenica",
@@ -290,11 +290,11 @@
   }, {
     "sifra" : 72,
     "naziv" : "Mleko",
-    "recepti" : [ ]
+    "recepti" : [ 4, 5, 8, 9 ]
   }, {
     "sifra" : 73,
     "naziv" : "Sir",
-    "recepti" : [ ]
+    "recepti" : [ 8 ]
   }, {
     "sifra" : 74,
     "naziv" : "Kackavalj",
@@ -386,15 +386,15 @@
   }, {
     "sifra" : 96,
     "naziv" : "So",
-    "recepti" : [ 1 ]
+    "recepti" : [ 1, 3, 4, 5, 6, 7, 8, 9 ]
   }, {
     "sifra" : 97,
     "naziv" : "Biber",
-    "recepti" : [ ]
+    "recepti" : [ 3, 7, 8 ]
   }, {
     "sifra" : 98,
     "naziv" : "Secer",
-    "recepti" : [ 1 ]
+    "recepti" : [ 1, 4, 9 ]
   }, {
     "sifra" : 99,
     "naziv" : "Kakao",
@@ -410,10 +410,62 @@
   }, {
     "sifra" : 102,
     "naziv" : "Voda",
-    "recepti" : [ ]
+    "recepti" : [ 3, 6 ]
   }, {
     "sifra" : 103,
     "naziv" : "Jaje",
-    "recepti" : [ ]
+    "recepti" : [ 4, 8, 9 ]
+  }, {
+    "sifra" : 104,
+    "naziv" : "Brasno",
+    "recepti" : [ 3, 4, 5, 8, 9 ]
+  }, {
+    "sifra" : 105,
+    "naziv" : "Vegeta",
+    "recepti" : [ 3 ]
+  }, {
+    "sifra" : 106,
+    "naziv" : "Lovor",
+    "recepti" : [ 3 ]
+  }, {
+    "sifra" : 107,
+    "naziv" : "Sampinjoni",
+    "recepti" : [ 3 ]
+  }, {
+    "sifra" : 108,
+    "naziv" : "Ulje",
+    "recepti" : [ 4, 6, 7, 8, 9 ]
+  }, {
+    "sifra" : 109,
+    "naziv" : "Puter",
+    "recepti" : [ 5 ]
+  }, {
+    "sifra" : 110,
+    "naziv" : "Beli biber",
+    "recepti" : [ 5 ]
+  }, {
+    "sifra" : 111,
+    "naziv" : "Skusa",
+    "recepti" : [ 6 ]
+  }, {
+    "sifra" : 112,
+    "naziv" : "Sirce",
+    "recepti" : [ 6 ]
+  }, {
+    "sifra" : 113,
+    "naziv" : "Crno vino",
+    "recepti" : [ 6 ]
+  }, {
+    "sifra" : 114,
+    "naziv" : "Beli luk",
+    "recepti" : [ 6 ]
+  }, {
+    "sifra" : 115,
+    "naziv" : "Crni luk",
+    "recepti" : [ 7 ]
+  }, {
+    "sifra" : 116,
+    "naziv" : "Kvasac",
+    "recepti" : [ 9 ]
   } ]
 }

@@ -164,7 +164,8 @@ public class VelikiPrikazRecepta extends JPanel {
 			public void actionPerformed(ActionEvent arg0) {
 				Desktop d = Desktop.getDesktop();
 				try {
-					d.browse(new URI(r.getYoutubeLink()));
+					if(!r.getYoutubeLink().equals(""))
+						d.browse(new URI(r.getYoutubeLink()));
 				} catch (IOException | URISyntaxException e) {
 					e.printStackTrace();
 				}
@@ -254,7 +255,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		JTextArea koraci = new JTextArea(r.getKoraci());
 		koraci.setBackground(Color.DARK_GRAY);
 		koraci.setForeground(Color.white);
-		koraci.setFont(new Font(font, 1, 15));
+//		koraci.setFont(new Font(font, 1, 15));
 		koraci.setEditable(false);
 
 		JScrollPane koraciPane = new JScrollPane(koraci);

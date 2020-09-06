@@ -1,0 +1,60 @@
+{
+  "id" : 8,
+  "naziv" : "Forneti sa sirom",
+  "opis" : "Ukusno pecivo za svakoga.\nLako se pravi",
+  "koraci" : "U manju posudu stavite kvasac, \nmlako mleko i kašičicu šećera, promešajte pa ostavite da nadođe.\n\nU međuvremenu, u manju posudu stavite brašno i u sredini napravite udubljenje, \npa u to dodajte narasli kvasac. \nZatim sipajte i ostatak mleka, ulje, žumance, oko 200 grama sira i so.\n\nDobro sve izmešajte da se sjedini i formira testo – ako je lepljivo, \nstavite malo ulja na ruke i nastavite da mesite. \nOstavite testo da narasta oko sat vremena prekriveno na toplom mestu.\n\nNakon toga, stavite testo na sto, još malo mesite, \npa razvucite na debljinu oko jednog centimetra i čašom vadite krugove.\n\nZagrejte rernu na 180 stepeni, na pleh stavite aluminijumsku foliju, \npoređajte fornete i ostavite odstoje oko 15 minuta. \nU međuvremenu ulupajte jedno jaje i namažite preko forneta. \nDodajte još malo sira odozgo, posolite i pecite ih oko 25 minuta – \nkada sir postane zlatne boje, vreme je da ih izvadite iz rerne.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 50,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 150,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mleko"
+  }, {
+    "kolicina" : 250,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 350,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 50,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  } ],
+  "kategorije" : [ 3 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

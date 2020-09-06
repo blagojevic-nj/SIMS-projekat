@@ -1,0 +1,69 @@
+{
+  "id" : 7,
+  "naziv" : "Pileci paprikas",
+  "opis" : "Jako ukusan paprikas, idealan za svakoga.\nUzivajte",
+  "koraci" : "1 - Očišćeno pile iseći na komade i oprati.\n\n2 - Na zagrejanom ulju ili masti propržiti sitno iseckan crni luk, \ndodati na kolutove isečenu šargarenu, isečenu papriku, meso, \nposoliti po ukusu, sipati pola čaše vode i dinstati uz povremeno \ndolivanje vode. \n\nKada je meso upola kuvano dodati kašičicu paradajza iz tube, \nmalo aleve naprike, očišćen i na kocke isečen krompir, naliti pola litra vode \ni sve zajedno kuvati dok ne bude gotovo. Kuvan paprikaš skinuti sa vatre, \numešati pola kašičice sitno iseckanog peršunovog lista i malo mlevenog bibera.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 120,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Paprika"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Paradajz"
+  }, {
+    "kolicina" : 100,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Persun"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Piletina"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sargarepa"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "glavica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Crni luk"
+  } ],
+  "kategorije" : [ 13 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

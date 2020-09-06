@@ -1,0 +1,55 @@
+{
+  "id" : 4,
+  "naziv" : "Palacinke",
+  "opis" : "Jako ukusne palacinke. Lake za napraviti. \nPrava poslastica za svakoga.",
+  "koraci" : "1 - Uzmite dublju plastičnu posudu i u nju sipajte brašno, \ndodajte jaja i oko 2 dl mleka. \nProbajte da umutite i ako ne ide dodajte još malo mleka.\n\n2 - Savet: testo možete napraviti samo sa vodom ili samo sa mlekom. \nNajbolje je kada stavite pola mineralne vode i pola mleka.\n\n3 - Važno je da testo bude gusto i da ga mutite dok ne postane glatko, \nbez grudvica, potom dodajte još mleka, \npa malo kisele vode i tako dok ne dobijete testo koje liči na čorbu. \nU umućeno testo dodajte oko 1 dl ulja i dobro promešajte.\n\n4 - Savet: testo će biti bolje ako ga pustite da odstoji 20-30 minuta.\n\n5 - U tiganj sipajte ulje pa kad se zagreje izručite ulje, \ntako da tiganj ostane samo masan. \nVratite ga na ringlu i onda sipajte kutlačom testo, \nkoje treba da bude ravnomerno raspoređeno po tiganju. \nTemperatura na kojoj se palačinke peku mora biti visoka. \nOstavite nekoliko trenutaka na ringli, a onda prevrnite nožem ili bacite u vis.\n\n6 - Savet: koristite samo teflonske tiganje jer ćete tako izbeći da Vam se palačinke \nzalepe za dno, tj. neće morati stalno da \"podmazujete\" tiganj.\n\n7 - Čim se ispeče jedna strana palačinke, okrenite je na drugu stranu i \npecite isto koliko i prvu (otprilike oko 1 minut). \nGotove palačinke izbacite na plitak tanjir i filujte.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 25,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 3,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mleko"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  } ],
+  "kategorije" : [ 0, 3 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}
