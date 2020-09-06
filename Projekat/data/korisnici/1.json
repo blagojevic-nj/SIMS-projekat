@@ -8,10 +8,10 @@
   "bedz" : "NEMA",
   "brojPratilaca" : 0,
   "prosecnaOcena" : 1.0,
-  "praceni" : [ ],
+  "praceni" : [ "lucko", "lule", "laci", "njegi99" ],
   "uredjaji" : [ ],
   "kategorije" : [ ],
   "proizvodi" : [ ],
   "recepti" : [ 10, 11, 12, 13, 14 ],
-  "sacuvaniRecepti" : [ ]
+  "sacuvaniRecepti" : [ 20 ]
 }
