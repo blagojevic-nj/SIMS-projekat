@@ -1,0 +1,69 @@
+{
+  "id" : 13,
+  "naziv" : "Punjeni šaran",
+  "opis" : "Punjeni šaran.",
+  "koraci" : "1 - Šarana od 1-1,5 kg očistiti od krlušti, izvaditi iznutricu, oprati, posušiti čistom salvetom,\n zaseći preko leđa na nekoliko mesta, spolja natrljati belim lukom i malo posoliti, \na zatim nadenuti.\n\n2 - Nadev: 200 g kravljeg tvrdog sira izgnječiti viljuškom, dodati 2 kašike prezli, \n2 razmućena jajeta,3 čena sitno iseckanog belog luka, kašičicu iseckanog \nperšunovog lišća i malo mlevenog bibera. Ovim napuniti šarana, zašiti belim koncem, \nstaviti u đuvečaru, preliti uljem i peći u zagrejanoj rerni na umerenoj temperaturi. \nPri kraju pečenja preliti belim vinom i dopeći.\n\n3 - Služiti sa kromnir salatom.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "TESKO",
+  "vremePripreme" : 120,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 10,
+    "mernaJedinica" : "lišće",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Persun"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kravlji sir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kom.",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "pola glavice",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Beli luk"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "veći",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Šaran"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Belo vino"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kašike",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Prezla"
+  } ],
+  "kategorije" : [ 11 ],
+  "autor" : "albert_makan",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

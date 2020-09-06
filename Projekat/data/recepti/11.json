@@ -1,0 +1,44 @@
+{
+  "id" : 11,
+  "naziv" : "Salata od šargarepe",
+  "opis" : "Salata od šargarepe i kupusa.",
+  "koraci" : "1 - Opranu i očišćenu šargarepu iseći na kolutove.\n2 - Kupus sitno iseckati, a potom ga preliti sirćetom i izgnječiti ga dok ne omekša.\n3 - Zatim mešajući kupus dodavati ulje, so i senf.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 20,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kupus"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sargarepa"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 3,
+    "mernaJedinica" : "kašike",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kašičica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sirce"
+  } ],
+  "kategorije" : [ 2, 8, 12, 15 ],
+  "autor" : "albert_makan",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

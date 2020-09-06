@@ -1,0 +1,59 @@
+{
+  "id" : 10,
+  "naziv" : "Salata sa krastavcima",
+  "opis" : "Laka salata sa krastavcima.",
+  "koraci" : "1 - Hleb iseckati na kockice i propržiti na ulju. Napraviti sos od ulja, sirćeta, soli i bibera.\nNaseći paradajz, krastavac i luk pa sve pomešati sa prepečenim hlebom i sosom od \nzačina.\n\n2- Može se ukrasiti paprikom, kaprijem ili ringlicama. Držati u frižideru do služenja.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 15,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 1,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krastavac"
+  }, {
+    "kolicina" : 4,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Paradajz"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kriska",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Hleb"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "dl",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kasike",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sirce"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Mladi luk"
+  } ],
+  "kategorije" : [ 8 ],
+  "autor" : "albert_makan",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

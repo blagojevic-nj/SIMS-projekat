@@ -1,0 +1,59 @@
+{
+  "id" : 12,
+  "naziv" : "Krompir punjen pečurkama",
+  "opis" : "Krompir punjen pečurkama, idejalno predjelo.",
+  "koraci" : "1 - Uposudu sipati tri čaše vode, dodati sirće, karanfilić, nekoliko zrna bibera i so i \nstaviti da provri.\n\n2 - Kada počne da vri, spustiti pripremljene i isečene pečurke i ostaviti da se kuvaju 3 \nminuta, zatim ih izvaditi i ocediti. Krompir u ljusci skuvati, ali voditi računa da ostane \nčvrst.\n\n3 - Kada se ohladi, oljuštiti ih i izbušiti im sredinu. Izmešati majonez sa sokom od \nlimuna, dodati pečurke promešati i tom masom puniti krompire.\n\n4 - Staviti u hladnjak do serviranja.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 60,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ ],
+  "sastojci" : [ {
+    "kolicina" : 4,
+    "mernaJedinica" : "veća kom.",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kom.",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Limun"
+  }, {
+    "kolicina" : 300,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Pecurke"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "po ukusu",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 10,
+    "mernaJedinica" : "zrna",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Biber"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "šoljica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sirce"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Majonez"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "zrno",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Karanfilić"
+  } ],
+  "kategorije" : [ 2, 15 ],
+  "autor" : "albert_makan",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}

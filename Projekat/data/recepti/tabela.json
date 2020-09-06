@@ -1,15 +1,20 @@
 {
   "recepti" : {
     "skusa na zaru" : 6,
-    "strudla sa dzemom" : 9,
-    "palacinke" : 4,
+    "doboš torta" : 14,
     "besamel sos" : 5,
     "gulardi sos" : 0,
     "pileci paprikas sa krompirom" : 7,
     "kolac slatki 1" : 1,
     "forneti sa sirom" : 8,
+    "punjeni šaran" : 13,
+    "krompir punjen pečurkama" : 12,
+    "strudla sa dzemom" : 9,
+    "palacinke" : 4,
+    "salata sa krastavcima" : 10,
     "gulas madzsarski" : 2,
+    "salata od šargarepe" : 11,
     "lovacke snicle u sosu" : 3
   },
-  "najpopularniji" : [ 2, 0, 1, 9 ]
+  "najpopularniji" : [ 2, 0, 1, 9, 7, 4 ]
 }

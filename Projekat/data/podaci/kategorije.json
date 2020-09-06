@@ -10,7 +10,7 @@
   }, {
     "sifra" : 2,
     "naziv" : "Predjela i prilozi",
-    "recepti" : [ ]
+    "recepti" : [ 11, 12 ]
   }, {
     "sifra" : 3,
     "naziv" : "Testa",
@@ -34,7 +34,7 @@
   }, {
     "sifra" : 8,
     "naziv" : "Salate",
-    "recepti" : [ ]
+    "recepti" : [ 10, 11 ]
   }, {
     "sifra" : 9,
     "naziv" : "Testenine",
@@ -46,11 +46,11 @@
   }, {
     "sifra" : 11,
     "naziv" : "Morski i recni specijaliteti",
-    "recepti" : [ 6 ]
+    "recepti" : [ 6, 13 ]
   }, {
     "sifra" : 12,
     "naziv" : "Posna jela",
-    "recepti" : [ 6 ]
+    "recepti" : [ 6, 11 ]
   }, {
     "sifra" : 13,
     "naziv" : "Supe i corbe",
@@ -58,10 +58,10 @@
   }, {
     "sifra" : 14,
     "naziv" : "Torte",
-    "recepti" : [ ]
+    "recepti" : [ 14 ]
   }, {
     "sifra" : 15,
     "naziv" : "Vegetarijanska jela",
-    "recepti" : [ ]
+    "recepti" : [ 11, 12 ]
   } ]
 }

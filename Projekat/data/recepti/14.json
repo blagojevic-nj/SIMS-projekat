@@ -1,0 +1,55 @@
+{
+  "id" : 14,
+  "naziv" : "Doboš torta",
+  "opis" : "Doboš torta. Slojevi piškote sa čokoladnim filom i sa glazurom od ušpinovanog šećera.",
+  "koraci" : "1 - Piškote: 10 jaja, 150g šećera, 10 kašika brašna.\nPenasto umutiti belanca, lagano dodavati šećer i jedno po jedno žumance. \nKada je masa penasta, dodati joj jednu po jednu kašiku brašna, uz neprestano \nmešanje. Od ove mase peći 10 kora u posebnom plehu za doboš tortu.\n\n2 - Nadev: 8 jaja, sećer u prahu, čokolada, maslac.\nU međuvremenu, ulupati cela jaja sa šećerom u prahu i kuvati na pari. \nKada krem počne da se zgušnjava, dodavati omekšalu čokoladu i kuvati još kratko \nvreme na pari. Ostaviti da se ohladi. Maslac penasto umutiti i dodavati mu jednu po \njednu kašiku ohlađenog krema. Ovim nadevom premazati svaku koru i ređati ih jednu \nna drugu.\n\n3 - Glazura: 250 g ušpinovanog šećera\nGornju koru preliti ušpinovanim šećerom zlatnožute boje, pa kada se glazura učvrsti, \nvrelim nožem seći na režnjeve.",
+  "youtubeLink" : "https://www.youtube.com/watch?v=1DYUnFhrlN8",
+  "ocena" : 0.0,
+  "tezina" : "TESKO",
+  "vremePripreme" : 150,
+  "uredjen" : false,
+  "datum" : "2020-09-06",
+  "uredjaji" : [ {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Cokolada"
+  }, {
+    "kolicina" : 400,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  }, {
+    "kolicina" : 18,
+    "mernaJedinica" : "kom.",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 10,
+    "mernaJedinica" : "kašika",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 400,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Šećer u prahu"
+  }, {
+    "kolicina" : 500,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Maslac"
+  } ],
+  "kategorije" : [ 14 ],
+  "autor" : "albert_makan",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 0
+}
