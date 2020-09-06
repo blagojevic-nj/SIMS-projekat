@@ -129,8 +129,12 @@ public class PregledKorisnikaPanel extends JPanel {
 		if(MainWindow.trenutniNalog != null)
 		{
 			trenutni = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
-			
-			if (trenutni.getPraceni() == null)
+			if(korisnik.getKorisnickoIme().equals(trenutni.getKorisnickoIme()))
+			{
+				unfollow.setVisible(false);
+				follow.setVisible(false);
+			}
+			else if (trenutni.getPraceni() == null)
 			{
 				unfollow.setVisible(false);
 				follow.setVisible(true);

@@ -285,19 +285,45 @@ public class VelikiPrikazRecepta extends JPanel {
 		autor.setFont(new Font(font, 1, 15));
 		autor.setBounds(80, 583, 100, 50);
 		add(autor);
+		
+		ImageIcon zaprati1 = new ImageIcon("data/ikonice/follow.png");
+		Image z1 = zaprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		follow = new JButton(new ImageIcon(z1));
+		follow.setBounds(400, 570, 50, 50);
+		follow.setToolTipText("Zaprati!");
+		follow.setBorderPainted(false);
+		follow.setFocusPainted(false);
+		follow.setContentAreaFilled(false);
+		
+		
+		ImageIcon book1 = new ImageIcon("data/ikonice/bookmark.png");
+		Image bk1 = book1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		sacuvaj = new JButton(new ImageIcon(bk1));
+		sacuvaj.setBounds(460, 570, 50, 50);
+		sacuvaj.setToolTipText("Sacuvaj!");
+		sacuvaj.setBorderPainted(false);
+		sacuvaj.setFocusPainted(false);
+		sacuvaj.setContentAreaFilled(false);
 
-		follow = new JButton("Zaprati", new ImageIcon("data/ikonice/add-user.png"));
-		follow.setBounds(180, 580, 130, 30);
+		ImageIcon unbook1 = new ImageIcon("data/ikonice/unbookmark.png");
+		Image ubk1 = unbook1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);	
+		zaboravi = new JButton(new ImageIcon(ubk1));
+		zaboravi.setBounds(460, 570, 50, 50);
+		zaboravi.setToolTipText("Obrisi sacuvano!");
+		zaboravi.setBorderPainted(false);
+		zaboravi.setFocusPainted(false);
+		zaboravi.setContentAreaFilled(false);
 
-		sacuvaj = new JButton("Sacuvaj");
-		sacuvaj.setBounds(350, 580, 130, 30);
-
-		zaboravi = new JButton("Zaboravi", new ImageIcon("data/ikonice/cancel.png"));
-		zaboravi.setBounds(350, 580, 130, 30);
-
-		unfollow = new JButton("Otprati", new ImageIcon("data/ikonice/unfollow.png"));
-		unfollow.setBounds(180, 580, 130, 30);
-
+		ImageIcon otprati1 = new ImageIcon("data/ikonice/unfollow.png");
+		Image o1 = otprati1.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+		unfollow = new JButton(new ImageIcon(o1));
+		unfollow.setBounds(400, 570, 50, 50);
+		unfollow.setToolTipText("Otprati!");
+		unfollow.setBorderPainted(false);
+		unfollow.setFocusPainted(false);
+		unfollow.setContentAreaFilled(false);
+		
+		
 		JLabel komentari = new JLabel("Komentari: ");
 		komentari.setForeground(Color.white);
 		komentari.setFont(new Font(font, 1, 15));
