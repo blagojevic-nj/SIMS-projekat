@@ -4,7 +4,7 @@
   "opis" : "Osvežavajuće, neobicna verzija popularnog recepta, mali eksperiment sa sastojcima,\nispalo je sjajno!",
   "koraci" : "1.Umutiti 4 kašike gustina, 3 žumanca, 2 pudinga od vanille,\n    200 g šećera rastopljenog u pola čaše vode i malo mleka. \n2. Kada mleko provri dodajte masu i kuvajte 5 minuta na tihoj vatri.\n3. Kada se fil ohladi dodati margarin i izmiksati.\n4. U pleh poređati keks malo natopljen u mlako mleko.\n5. Poželjno je da pleh bude četvrtast, zatim preko keksa staviti banane\n    izrezane na pola po dužini, preko banana naneti fil.\n6. Preko fila šlag i ukrasiti bananama iseckanim na kolutove.\n7. Poželjno dodati višnju na vrh.",
   "youtubeLink" : "",
-  "ocena" : 0.0,
+  "ocena" : 3.0,
   "tezina" : "LAKO",
   "vremePripreme" : 20,
   "uredjen" : false,
@@ -75,7 +75,9 @@
   } ],
   "kategorije" : [ 0, 5 ],
   "autor" : "lule",
-  "ocene" : { },
+  "ocene" : {
+    "3" : "TRI"
+  },
   "recenzije" : [ ],
-  "pregleda" : 0
+  "pregleda" : 2
 }

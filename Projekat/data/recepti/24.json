@@ -4,7 +4,7 @@
   "opis" : "Svinjski kotlet sa grila servirati sa pire krompirom,\ngrilovanom paprikom, gljivama i lepinjama.",
   "koraci" : "1. Meso saseckati na komade veličine većeg zalogaja.\n2. Zagrejati ulje u tiganj i staviti meso da se prži na umerenoj vatri.\n3. Vatra ne sme biti prejaka da komadi unutra ne ostanu živi, a spolja zagore.\n4. Posoliti po ukusu.",
   "youtubeLink" : "",
-  "ocena" : 0.0,
+  "ocena" : 5.0,
   "tezina" : "TESKO",
   "vremePripreme" : 90,
   "uredjen" : false,
@@ -39,7 +39,13 @@
   } ],
   "kategorije" : [ 6 ],
   "autor" : "lule",
-  "ocene" : { },
-  "recenzije" : [ ],
-  "pregleda" : 12
+  "ocene" : {
+    "3" : "PET"
+  },
+  "recenzije" : [ {
+    "komentar" : "Nije lose. Sve preporuke",
+    "datum" : "2020-09-06T20:57:39.285",
+    "idKorisnika" : "njegi99"
+  } ],
+  "pregleda" : 14
 }

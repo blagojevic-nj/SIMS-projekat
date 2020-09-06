@@ -4,7 +4,7 @@
   "opis" : "Sos od visanja kao prilog uz meso",
   "koraci" : "1. kuvajte visnje u vodi\n2. dodajte polako brasno\n3. kad se sgusi dobro je\n4. servirajte uz meso",
   "youtubeLink" : "",
-  "ocena" : 0.0,
+  "ocena" : 4.0,
   "tezina" : "SREDNJE",
   "vremePripreme" : 25,
   "uredjen" : false,
@@ -28,7 +28,13 @@
   } ],
   "kategorije" : [ 2 ],
   "autor" : "laci",
-  "ocene" : { },
-  "recenzije" : [ ],
-  "pregleda" : 2
+  "ocene" : {
+    "3" : "CETIRI"
+  },
+  "recenzije" : [ {
+    "komentar" : "Dobro je. Jako detaljno objasnjeno :)",
+    "datum" : "2020-09-06T20:59:31.604",
+    "idKorisnika" : "njegi99"
+  } ],
+  "pregleda" : 3
 }
