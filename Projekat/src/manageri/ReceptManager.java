@@ -44,6 +44,8 @@ public class ReceptManager {
 		public void azurirajPopularnost(int sifra, int mesto) {
 			najpopularniji.remove(new Integer(sifra));
 			najpopularniji.add(mesto, sifra);
+			while (najpopularniji.size() > 10)
+				najpopularniji.remove(najpopularniji.size()-1);
 		}
 	}
 	private TabelaRecepata tabela;
