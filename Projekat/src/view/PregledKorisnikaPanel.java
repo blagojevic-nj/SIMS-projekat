@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -24,6 +25,7 @@ import javax.swing.SwingConstants;
 public class PregledKorisnikaPanel extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private RegistrovaniKorisnik k;
+	private ArrayList<MaliPrikazRecepta> paneli;
 	private JLabel bedzVal;
 	private JButton follow, unfollow;
 	private Image img;
@@ -32,6 +34,7 @@ public class PregledKorisnikaPanel extends JPanel {
 	public PregledKorisnikaPanel(MainWindow mw, JPanel prethodni, RegistrovaniKorisnik korisnik) {
 
 		k = korisnik;
+		paneli = new ArrayList<MaliPrikazRecepta>();
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		setBounds(0, 0, 1040, 650);
 		setLayout(null);
@@ -48,6 +51,8 @@ public class PregledKorisnikaPanel extends JPanel {
 		nazad.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if (prethodni instanceof KorisnikPanel)
+					((KorisnikPanel) prethodni).pnlPraceni.refreshPraceni(k.getKorisnickoIme());
 				mw.postaviDesniPanel(prethodni);
 			}
 		});
@@ -250,6 +255,7 @@ public class PregledKorisnikaPanel extends JPanel {
 			for (Recept recept : MainWindow.rM.getRecepti(korisnik.getRecepti())) {
 				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 				receptiPane.add(mpr);
+				paneli.add(mpr);
 			}
 
 		postaviBedz();
@@ -305,4 +311,10 @@ public class PregledKorisnikaPanel extends JPanel {
 		g.drawImage(img, 0, 0, null);
 	}
 
+	public void refreshRecept(int sifra) {
+		for (MaliPrikazRecepta mpr : paneli) {
+			if (mpr.getRecept().getId() == sifra)
+				mpr.refresh();
+		}
+	}
 }

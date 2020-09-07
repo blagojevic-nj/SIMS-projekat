@@ -199,6 +199,7 @@ public class ReceptiPanel extends JPanel {
 			if (r.size() == 0) {
 				JLabel nema = new JLabel("Nema rezultata");
 				nema.setFont(new Font("Lucida Sans", Font.BOLD, 20));
+				nema.setForeground(Color.WHITE);
 				donjiDeo.add(nema);
 			} else
 				for (Recept rec : r) {
@@ -246,6 +247,13 @@ public class ReceptiPanel extends JPanel {
 	
 	public void paintComponent(Graphics g) {
 		g.drawImage(img, 0, 0, null);
+	}
+	
+	public void refreshRecept(int sifra) {
+		for (MaliPrikazRecepta mpr : paneli) {
+			if (mpr.getRecept().getId() == sifra)
+				mpr.refresh();
+		}
 	}
 
 }

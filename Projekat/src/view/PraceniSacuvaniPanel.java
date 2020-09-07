@@ -7,6 +7,7 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -16,7 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 
 import manageri.ReceptManager;
-import model.Korisnik;
 import model.Recept;
 import model.RegistrovaniKorisnik;
 import net.miginfocom.swing.MigLayout;
@@ -27,12 +27,17 @@ public class PraceniSacuvaniPanel extends JPanel {
 	private ReceptManager rm;
 
 	private Image img;
-	private JPanel praceni;
-	private JScrollPane praceniPane, scrollRecepti;
+	private RegistrovaniKorisnik rk;
+	private ArrayList<MaliPrikazRecepta> paneli;
+	private ArrayList<JednaStavkaPanel> praceni;
+	private JPanel praceniPane, receptiPane;
+	private JScrollPane scrollPraceni, scrollRecepti;
 
-	public PraceniSacuvaniPanel(Korisnik k, MainWindow mw, KorisnikPanel kP) {
+	public PraceniSacuvaniPanel(RegistrovaniKorisnik k, MainWindow mw, KorisnikPanel kP) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
-
+		paneli = new ArrayList<MaliPrikazRecepta>();
+		praceni = new ArrayList<JednaStavkaPanel>();
+		rk = k;
 		rm = ReceptManager.getInstance();
 
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
@@ -45,21 +50,24 @@ public class PraceniSacuvaniPanel extends JPanel {
 		logoPraceni.setBounds(70, 40, 150, 150);
 		add(logoPraceni);
 		
-		praceni = new JPanel(new MigLayout("wrap 1", "[]10[]", "[][]10[]"));
-		praceni.setOpaque(false);
-		
-		for (String pracen : ((RegistrovaniKorisnik) k).getPraceni())
-			praceni.add(new JednaStavkaPanel(pracen, PraceniSacuvaniPanel.this, mw, kP));
-		
-		praceniPane = new JScrollPane(praceni);
+		praceniPane = new JPanel(new MigLayout("wrap 1", "[]10[]", "[][]10[]"));
 		praceniPane.setOpaque(false);
-		praceniPane.getViewport().setOpaque(false);
-		praceniPane.setBounds(20,200, 350, 400);
-		praceniPane.getVerticalScrollBar().setUnitIncrement(20);
-		praceniPane.getVerticalScrollBar().setVisible(false);
-		praceniPane.setBorder(BorderFactory.createEmptyBorder());
-		praceniPane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
-		add(praceniPane);
+		
+		for (String pracen : k.getPraceni()) {
+			JednaStavkaPanel jsp = new JednaStavkaPanel(pracen, PraceniSacuvaniPanel.this, mw, kP);
+			praceniPane.add(jsp);
+			praceni.add(jsp);
+		}
+		
+		scrollPraceni = new JScrollPane(praceniPane);
+		scrollPraceni.setOpaque(false);
+		scrollPraceni.getViewport().setOpaque(false);
+		scrollPraceni.setBounds(20,200, 350, 400);
+		scrollPraceni.getVerticalScrollBar().setUnitIncrement(20);
+		scrollPraceni.getVerticalScrollBar().setVisible(false);
+		scrollPraceni.setBorder(BorderFactory.createEmptyBorder());
+		scrollPraceni.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
+		add(scrollPraceni);
 		
 		JSeparator sep = new JSeparator();
 		sep.setBounds(310, 50, 7, 570);
@@ -71,7 +79,7 @@ public class PraceniSacuvaniPanel extends JPanel {
 		logoSacuvani.setBounds(540, 40, 150, 150);
 		add(logoSacuvani);
 		
-		JPanel receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
+		receptiPane = new JPanel(new MigLayout("wrap 1", "[][]10[]", "[]10[]"));
 		receptiPane.setOpaque(false);
 		scrollRecepti = new JScrollPane(receptiPane);
 		scrollRecepti.setOpaque(false);
@@ -82,9 +90,10 @@ public class PraceniSacuvaniPanel extends JPanel {
 		scrollRecepti.setBorder(BorderFactory.createEmptyBorder());
 		scrollRecepti.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		add(scrollRecepti);
-		for (Recept recept : rm.getRecepti(((RegistrovaniKorisnik) k).getSacuvaniRecepti())) {
+		for (Recept recept : rm.getRecepti(k.getSacuvaniRecepti())) {
 			MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 			receptiPane.add(mpr);
+			paneli.add(mpr);
 		}
 		
 	}
@@ -92,13 +101,52 @@ public class PraceniSacuvaniPanel extends JPanel {
 	public void paintComponent(Graphics g) {
 		g.drawImage(img, 0, 0, null);
 	}
+
+	public void refreshRecept(int sifra) {
+		if (rk.getSacuvaniRecepti().contains(sifra)) {
+			for (MaliPrikazRecepta mpr : paneli) {
+				if (mpr.getRecept().getId() == sifra)
+					mpr.refresh();
+			}
+		} else {
+			receptiPane.removeAll();
+			for (MaliPrikazRecepta mpr : paneli) {
+				if (mpr.getRecept().getId() == sifra) {
+					paneli.remove(mpr);
+					break;
+				}
+			}
+			for (MaliPrikazRecepta mpr : paneli)
+				receptiPane.add(mpr);
+			receptiPane.repaint();
+			receptiPane.revalidate();
+		}
+	}
+
+	public void refreshPraceni(String korisnickoIme) {
+		if (!rk.getPraceni().contains(korisnickoIme)) {
+			praceniPane.removeAll();
+			for (JednaStavkaPanel jsp : praceni) {
+				if (jsp.username.equals(korisnickoIme)) {
+					praceni.remove(jsp);
+					break;
+				}
+			}
+			for (JednaStavkaPanel jsp : praceni)
+				praceniPane.add(jsp);
+			praceniPane.repaint();
+			praceniPane.revalidate();
+		}
+	}
 }
 
 class JednaStavkaPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
+	String username;
 	
 	public JednaStavkaPanel(String username, PraceniSacuvaniPanel pisp, MainWindow mw, KorisnikPanel kP) {
+		this.username = username;
 		setLayout(new MigLayout());
 		setOpaque(false);
 		setPreferredSize(new Dimension(270, 60));
