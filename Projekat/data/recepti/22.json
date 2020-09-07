@@ -24,52 +24,52 @@
   } ],
   "sastojci" : [ {
     "kolicina" : 6,
-    "mernaJedinica" : "500",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Banana"
   }, {
     "kolicina" : 1,
-    "mernaJedinica" : "1",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Visnja"
   }, {
     "kolicina" : 1,
-    "mernaJedinica" : "1000",
+    "mernaJedinica" : "l",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Mleko"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "200",
+    "kolicina" : 200,
+    "mernaJedinica" : "gr",
     "tip" : "POZELJAN",
     "nazivProizvoda" : "Plazma keks"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "150",
+    "kolicina" : 150,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Secer"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "0.5",
+    "kolicina" : 500,
+    "mernaJedinica" : "ml",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Voda"
   }, {
     "kolicina" : 3,
-    "mernaJedinica" : "60",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Jaje"
   }, {
     "kolicina" : 2,
-    "mernaJedinica" : "100",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Puding Vanila"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "150",
+    "kolicina" : 150,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "margarin"
   }, {
     "kolicina" : 1,
-    "mernaJedinica" : "200",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Slag"
   } ],

@@ -17,23 +17,23 @@
     }
   } ],
   "sastojci" : [ {
-    "kolicina" : 1,
-    "mernaJedinica" : "250",
+    "kolicina" : 250,
+    "mernaJedinica" : "g",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Svinjetina"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "20",
+    "kolicina" : 10,
+    "mernaJedinica" : "g",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "So"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "10",
+    "kolicina" : 2,
+    "mernaJedinica" : "g",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Biber"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "20",
+    "kolicina" : 20,
+    "mernaJedinica" : "ml",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Ulje"
   } ],

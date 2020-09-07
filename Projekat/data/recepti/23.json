@@ -11,48 +11,48 @@
   "datum" : "2020-09-06",
   "uredjaji" : [ ],
   "sastojci" : [ {
-    "kolicina" : 1,
-    "mernaJedinica" : "100",
+    "kolicina" : 2,
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Luk"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "20",
+    "kolicina" : 5,
+    "mernaJedinica" : "gr",
     "tip" : "PO_IZBORU",
     "nazivProizvoda" : "Persun"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "200",
+    "kolicina" : 200,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Sir"
   }, {
     "kolicina" : 4,
-    "mernaJedinica" : "100",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Jaje"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "30",
+    "kolicina" : 30,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Majonez"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "100",
+    "kolicina" : 100,
+    "mernaJedinica" : "ml",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "paradajz pelat"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "500",
+    "kolicina" : 500,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Govedji biftek"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "60",
+    "kolicina" : 50,
+    "mernaJedinica" : "gr",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Senf"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "10",
+    "kolicina" : 10,
+    "mernaJedinica" : "gr",
     "tip" : "PO_IZBORU",
     "nazivProizvoda" : "Aleva Paprika"
   } ],

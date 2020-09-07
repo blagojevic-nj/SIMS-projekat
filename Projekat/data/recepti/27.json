@@ -4,7 +4,7 @@
   "opis" : "Jako ukusno, sve preporuke. \nBrzo se sprema",
   "koraci" : "Šargarepu i luk očistiti, oprati, sitno iseckati i u šerpu propržiti na ulju 5 minuta. \nDodati belo meso seckano na kockice i dinstati još 10 minuta. \nDodati grašk, izmešati i naliti vodom da ogrezne i posoliti. \nSkuvati i krompir očistiti, oprati, iseckati na kockice i dodati u grašak. \nAko treba doliti još malo vode. Kuvati na srednjoj temperaturi 45 minuta. \nRazmutiti brašno, začin i alevu papriku sa vodom i \nnaliti preko graška i kuvati još 10 minuta. \nDodati mirođiju i peršunov list, izmešati i isključiti šporet.",
   "youtubeLink" : "",
-  "ocena" : 0.0,
+  "ocena" : 1.0,
   "tezina" : "SREDNJE",
   "vremePripreme" : 45,
   "uredjen" : false,
@@ -54,7 +54,13 @@
   } ],
   "kategorije" : [ 13 ],
   "autor" : "njegi99",
-  "ocene" : { },
-  "recenzije" : [ ],
-  "pregleda" : 8
+  "ocene" : {
+    "4" : "JEDAN"
+  },
+  "recenzije" : [ {
+    "komentar" : "Gde nadje ovu sliku joj.......",
+    "datum" : "2020-09-07T16:13:09.6723653",
+    "idKorisnika" : "lule"
+  } ],
+  "pregleda" : 10
 }

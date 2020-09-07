@@ -4,7 +4,7 @@
   "opis" : "Jako ukusan.\nLako se pravi.\nIdealan za letnje dane.",
   "koraci" : "1 - spasirajte ili izblendirajte oko 200 g jagoda. \nU posudu za mućenje stavite 3 kesice šlaga, \ndodajte 2 dl mleka i 5-6 kašika prah šećera i umutite.\n\n2 - Zatim dodajte 1 dl jogurta i izmiksane jagode i sve zajedno \nmutite još minut-dva najmanjom brzinom.\n\n3 - Dobijenu smesu sipajte u plastične posude i stavite u friz.\nNakon nekoliko časova, možete poslužiti svoj sladoled...",
   "youtubeLink" : "",
-  "ocena" : 0.0,
+  "ocena" : 5.0,
   "tezina" : "LAKO",
   "vremePripreme" : 25,
   "uredjen" : false,
@@ -44,7 +44,9 @@
   } ],
   "kategorije" : [ 0 ],
   "autor" : "njegi99",
-  "ocene" : { },
+  "ocene" : {
+    "4" : "PET"
+  },
   "recenzije" : [ ],
-  "pregleda" : 3
+  "pregleda" : 5
 }

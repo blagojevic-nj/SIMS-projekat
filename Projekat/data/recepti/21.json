@@ -17,32 +17,32 @@
     "nazivProizvoda" : "Blitva"
   }, {
     "kolicina" : 2,
-    "mernaJedinica" : "300",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Krastavac"
   }, {
     "kolicina" : 2,
-    "mernaJedinica" : "100",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Luk"
   }, {
     "kolicina" : 4,
-    "mernaJedinica" : "200",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Paradajz"
   }, {
-    "kolicina" : 1,
-    "mernaJedinica" : "5",
+    "kolicina" : 5,
+    "mernaJedinica" : "ml",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Sirce"
   }, {
     "kolicina" : 1,
-    "mernaJedinica" : "50",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Feta Sir"
   }, {
     "kolicina" : 1,
-    "mernaJedinica" : "100",
+    "mernaJedinica" : "kom",
     "tip" : "ESENCIJALAN",
     "nazivProizvoda" : "Rukola"
   } ],
