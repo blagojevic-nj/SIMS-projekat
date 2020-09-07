@@ -25,7 +25,7 @@ public class KorisnikPanel extends JPanel {
 	private MojiReceptiPanel pnlRecepti;
 
 	private JPanel mainMenu, trenutniPanel;
-	private PraceniSacuvaniPanel pnlPraceni;
+	public PraceniSacuvaniPanel pnlPraceni;
 	private JLabel username, lblNalog, lblKuhinja, lblRecepti, lblPodesavanje, lblDodajRecept, lblPraceni,lblIzvestaj;
 
 	private KorisnikManager km;
@@ -33,7 +33,7 @@ public class KorisnikPanel extends JPanel {
 	private Korisnik korisnik;
 	private MainWindow mw;
 	private JLabel selected;
-	ArrayList<JLabel> btnLabele = new ArrayList<JLabel>();
+	private ArrayList<JLabel> btnLabele = new ArrayList<JLabel>();
 
 	public KorisnikPanel(MainWindow mainWindow, Nalog trenutniNalog) {
 		mw = mainWindow;
@@ -353,7 +353,7 @@ public class KorisnikPanel extends JPanel {
 
 	protected void prikazPraceni() {
 		if (pnlPraceni == null) {
-			pnlPraceni = new PraceniSacuvaniPanel(korisnik, mw, KorisnikPanel.this);
+			pnlPraceni = new PraceniSacuvaniPanel((RegistrovaniKorisnik) korisnik, mw, KorisnikPanel.this);
 		}
 		postaviPanel(pnlPraceni);
 	}

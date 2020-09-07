@@ -156,7 +156,7 @@ public class PretragaPanel extends JPanel {
 		lblVreme.setBounds(30, 520, 200, 25);
 		add(lblVreme);
 
-		SpinnerNumberModel sModel = new SpinnerNumberModel(10, 10, 300, 5);
+		SpinnerNumberModel sModel = new SpinnerNumberModel(60, 10, 300, 5);
 		spinner = new JSpinner(sModel);
 		// spinner.setEditor(new JSpinner.DefaultEditor(spinner));
 		spinner.setBounds(190, 520, 40, 25);

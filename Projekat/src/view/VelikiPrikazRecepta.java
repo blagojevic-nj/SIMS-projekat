@@ -80,6 +80,14 @@ public class VelikiPrikazRecepta extends JPanel {
 		nazad.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				if (prethodni instanceof ReceptiPanel)
+					((ReceptiPanel) prethodni).refreshRecept(r.getId());
+				else if (prethodni instanceof PregledKorisnikaPanel)
+					((PregledKorisnikaPanel) prethodni).refreshRecept(r.getId());
+				else if (prethodni instanceof KorisnikPanel) {
+					((KorisnikPanel) prethodni).pnlPraceni.refreshRecept(r.getId());
+					((KorisnikPanel) prethodni).pnlPraceni.refreshPraceni(r.getAutor());
+				}
 				mW.postaviDesniPanel(prethodni);
 			}
 		});

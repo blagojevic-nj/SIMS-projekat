@@ -22,6 +22,7 @@ public class MaliPrikazRecepta extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private Recept recept;
+	private JLabel star, pregledi;
 
 	public MaliPrikazRecepta(Recept r, MainWindow mW, boolean b) {
 		recept = r;
@@ -107,7 +108,7 @@ public class MaliPrikazRecepta extends JPanel {
 		add(naslov, "center, span");
 		JLabel ocena = new JLabel("Ocena: ");
 		ocena.setFont(new Font("Lucida Sans", Font.ITALIC, 14));
-		JLabel star = new JLabel(new ImageIcon("data/ikonice/stars/" + (int) r.getOcena() + ".png"));
+		star = new JLabel(new ImageIcon("data/ikonice/stars/" + (int) r.getOcena() + ".png"));
 
 		add(ocena);
 		add(star, "wrap");
@@ -130,13 +131,20 @@ public class MaliPrikazRecepta extends JPanel {
 		JLabel datum = new JLabel(r.getDatum().toString());
 		datum.setFont(new Font("Lucida Sans", 0, 10));
 		add(datum, "align left");
-		JLabel pregledi = new JLabel(r.getPregleda() + " pregleda");
+		pregledi = new JLabel(r.getPregleda() + " pregleda");
 		pregledi.setFont(new Font("Lucida Sans", 0, 10));
 		add(pregledi, "align right, wrap");
 	}
 
 	public Recept getRecept() {
 		return recept;
+	}
+	
+	public void refresh() {
+		star.setIcon(new ImageIcon("data/ikonice/stars/" + (int) recept.getOcena() + ".png"));
+		pregledi.setText(recept.getPregleda() + " pregleda");
+		revalidate();
+		repaint();
 	}
 
 }
