@@ -1,0 +1,70 @@
+{
+  "id" : 25,
+  "naziv" : "Cizkejk",
+  "opis" : "Jako ukusna poslastica. Ozvezavajuceg ukusa. \nPrepuricio bih ga svakome.",
+  "koraci" : "Podloga:\n1 - margarin pomesati sa plazmom\n2 - dodati 100g secera u prahu\n\nFil:\n1 - umutiti 500ml slatke pavlake\n2 - odvojeno umutiti 150g kisele pavlake i 500 g kajmaka\n3 - sve sastaviti i dodati zelatin\n\nVocni sloj:\n1 - maline prokuvati  sa vodom i dodati 100g secera i zelatin\n\nPrijatno",
+  "youtubeLink" : "https://www.youtube.com/watch?v=sN6a4llYevQ&ab_channel=SerpicaRecepti",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 60,
+  "uredjen" : false,
+  "datum" : "2020-09-07",
+  "uredjaji" : [ {
+    "pozeljan" : true,
+    "uredjaj" : {
+      "sifra" : 0,
+      "naziv" : "Mikser"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 300,
+    "mernaJedinica" : "g",
+    "tip" : "PO_IZBORU",
+    "nazivProizvoda" : "Malina"
+  }, {
+    "kolicina" : 500,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kajmak"
+  }, {
+    "kolicina" : 300,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Plazma keks"
+  }, {
+    "kolicina" : 200,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Secer"
+  }, {
+    "kolicina" : 300,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Voda"
+  }, {
+    "kolicina" : 250,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "margarin"
+  }, {
+    "kolicina" : 500,
+    "mernaJedinica" : "ml",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Slatka pavlaka"
+  }, {
+    "kolicina" : 150,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Kisela pavlaka"
+  }, {
+    "kolicina" : 40,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Zelatin"
+  } ],
+  "kategorije" : [ 0, 5 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 3
+}

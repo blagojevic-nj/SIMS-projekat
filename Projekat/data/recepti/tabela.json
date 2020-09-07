@@ -5,6 +5,7 @@
     "forneti sa sirom" : 8,
     "punjeni šaran" : 13,
     "krompir punjen pečurkama" : 12,
+    "domaće njoke" : 26,
     "grčka salata" : 21,
     "strudla sa dzemom" : 9,
     "pizza" : 20,
@@ -18,6 +19,9 @@
     "gulardi sos" : 0,
     "pileci paprikas sa krompirom" : 7,
     "svinjski kotlet" : 24,
+    "sladoled od jagode" : 28,
+    "cizkejk" : 25,
+    "grasak sa piletinom" : 27,
     "palacinke" : 4,
     "salata sa krastavcima" : 10,
     "tertar biftek" : 23,
@@ -26,5 +30,5 @@
     "krompir čorba" : 17,
     "sos od visanja" : 15
   },
-  "najpopularniji" : [ 2, 0, 1, 24, 20, 21, 17, 19, 16, 23 ]
+  "najpopularniji" : [ 2, 0, 1, 24, 27, 21, 19, 20, 17, 16 ]
 }

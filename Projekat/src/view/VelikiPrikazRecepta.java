@@ -188,6 +188,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		add(sastojci);
 
 		JPanel listaSastojaka = new JPanel(new MigLayout());
+		listaSastojaka.setOpaque(false);
 		listaSastojaka.setBackground(Color.DARK_GRAY);
 
 		for (Sastojak s : r.getSastojci()) {
@@ -203,6 +204,12 @@ public class VelikiPrikazRecepta extends JPanel {
 		}
 
 		JScrollPane sastojciPane = new JScrollPane(listaSastojaka);
+		sastojciPane.setOpaque(false);
+		sastojciPane.getViewport().setOpaque(false);
+		sastojciPane.getVerticalScrollBar().setUnitIncrement(20);
+		//sastojciPane.getVerticalScrollBar().setVisible(false);
+		sastojciPane.setBorder(BorderFactory.createRaisedBevelBorder());
+		//sastojciPane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		sastojciPane.setBounds(540, 80, 230, 150);
 		add(sastojciPane);
 
@@ -213,6 +220,7 @@ public class VelikiPrikazRecepta extends JPanel {
 		add(uredjaji);
 
 		JPanel listaUredjaja = new JPanel(new MigLayout());
+		listaUredjaja.setOpaque(false);
 		listaUredjaja.setBackground(Color.DARK_GRAY);
 
 		for (UredjajUReceptu u : r.getUredjaji()) {
@@ -225,6 +233,12 @@ public class VelikiPrikazRecepta extends JPanel {
 		}
 
 		JScrollPane uredjajiPane = new JScrollPane(listaUredjaja);
+		uredjajiPane.setOpaque(false);
+		uredjajiPane.getViewport().setOpaque(false);
+		uredjajiPane.getVerticalScrollBar().setUnitIncrement(20);
+		//uredjajiPane.getVerticalScrollBar().setVisible(false);
+		uredjajiPane.setBorder(BorderFactory.createRaisedBevelBorder());
+		//uredjajiPane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		uredjajiPane.setBounds(790, 80, 230, 150);
 		add(uredjajiPane);
 
@@ -234,12 +248,19 @@ public class VelikiPrikazRecepta extends JPanel {
 		sep2.setForeground(Color.black);
 
 		JTextArea opis = new JTextArea(r.getOpis());
+		opis.setOpaque(false);
 		opis.setBackground(Color.DARK_GRAY);
 		opis.setForeground(Color.white);
 		opis.setEditable(false);
 		opis.setFont(new Font(font, 1, 12));
 
 		JScrollPane opisPane = new JScrollPane(opis);
+		opisPane.setOpaque(false);
+		opisPane.getViewport().setOpaque(false);
+		opisPane.getVerticalScrollBar().setUnitIncrement(20);
+		//opisPane.getVerticalScrollBar().setVisible(false);
+		opisPane.setBorder(BorderFactory.createRaisedBevelBorder());
+		//opisPane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		opisPane.setBounds(20, 440, 480, 100);
 		add(opisPane);
 
@@ -255,12 +276,18 @@ public class VelikiPrikazRecepta extends JPanel {
 		add(koraciLabela);
 
 		JTextArea koraci = new JTextArea(r.getKoraci());
+		koraci.setOpaque(false);
 		koraci.setBackground(Color.DARK_GRAY);
 		koraci.setForeground(Color.white);
-//		koraci.setFont(new Font(font, 1, 15));
 		koraci.setEditable(false);
 
 		JScrollPane koraciPane = new JScrollPane(koraci);
+		koraciPane.setOpaque(false);
+		koraciPane.getViewport().setOpaque(false);
+		koraciPane.getVerticalScrollBar().setUnitIncrement(20);
+		//koraciPane.getVerticalScrollBar().setVisible(false);
+		koraciPane.setBorder(BorderFactory.createRaisedBevelBorder());
+		//koraciPane.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		koraciPane.setBounds(540, 280, 480, 150);
 		add(koraciPane);
 

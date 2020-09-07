@@ -131,7 +131,11 @@ public class BedzInfo extends JFrame {
 
 
 class ImagePanel extends JComponent {
-    private Image image;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private Image image;
     public ImagePanel(Image image) {
         this.image = image;
     }

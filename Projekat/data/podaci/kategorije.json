@@ -2,7 +2,7 @@
   "kategorije" : [ {
     "sifra" : 0,
     "naziv" : "Kolaci",
-    "recepti" : [ 1, 4, 9, 22 ]
+    "recepti" : [ 1, 4, 9, 22, 25, 28 ]
   }, {
     "sifra" : 1,
     "naziv" : "Namazi",
@@ -22,7 +22,7 @@
   }, {
     "sifra" : 5,
     "naziv" : "Vocni deserti",
-    "recepti" : [ 22 ]
+    "recepti" : [ 22, 25 ]
   }, {
     "sifra" : 6,
     "naziv" : "Mesna jela",
@@ -54,7 +54,7 @@
   }, {
     "sifra" : 13,
     "naziv" : "Supe i corbe",
-    "recepti" : [ 7, 17, 18 ]
+    "recepti" : [ 7, 17, 18, 26, 27 ]
   }, {
     "sifra" : 14,
     "naziv" : "Torte",

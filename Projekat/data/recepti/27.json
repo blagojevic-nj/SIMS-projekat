@@ -1,0 +1,60 @@
+{
+  "id" : 27,
+  "naziv" : "Grasak sa piletinom",
+  "opis" : "Jako ukusno, sve preporuke. \nBrzo se sprema",
+  "koraci" : "Šargarepu i luk očistiti, oprati, sitno iseckati i u šerpu propržiti na ulju 5 minuta. \nDodati belo meso seckano na kockice i dinstati još 10 minuta. \nDodati grašk, izmešati i naliti vodom da ogrezne i posoliti. \nSkuvati i krompir očistiti, oprati, iseckati na kockice i dodati u grašak. \nAko treba doliti još malo vode. Kuvati na srednjoj temperaturi 45 minuta. \nRazmutiti brašno, začin i alevu papriku sa vodom i \nnaliti preko graška i kuvati još 10 minuta. \nDodati mirođiju i peršunov list, izmešati i isključiti šporet.",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "SREDNJE",
+  "vremePripreme" : 45,
+  "uredjen" : false,
+  "datum" : "2020-09-07",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 5,
+      "naziv" : "Mini pekara"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 600,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Grasak"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 400,
+    "mernaJedinica" : "g",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Piletina"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Tikvice"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sargarepa"
+  }, {
+    "kolicina" : 2,
+    "mernaJedinica" : "kasike",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Ulje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "glavica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Crni luk"
+  } ],
+  "kategorije" : [ 13 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 8
+}

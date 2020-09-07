@@ -89,30 +89,6 @@ public class Login extends JPanel{
 				}
 				});
 		
-		
-//		JButton btnNewButton = new JButton();
-//		btnNewButton.setText("Prijavi se");
-//		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-//		btnNewButton.setBounds(150, 385, 100, 40);
-//		//btnNewButton.setBorderPainted(false);
-//		//btnNewButton.setFocusPainted(false);
-//		//btnNewButton.setContentAreaFilled(false);
-//		btnNewButton.setToolTipText("Prijavi se");
-//		add(btnNewButton);
-//		btnNewButton.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) 
-//			{
-//				String username= textField.getText();
-//				String password = String.valueOf(passwordField.getPassword());
-//				if(! uloguj(username,password))
-//				{
-//					JOptionPane.showMessageDialog(null, "Netačan username/password");
-//				}
-//			}
-//		});
-		
 		JLabel netacan = new JLabel("Netacan username/pasword");
 		netacan.setForeground(Color.red);
 		netacan.setBounds(70, 350, 200, 20);

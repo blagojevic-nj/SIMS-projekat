@@ -1,0 +1,55 @@
+{
+  "id" : 26,
+  "naziv" : "Domaće njoke",
+  "opis" : "jedne fine domaće njoke.. \nna klasičan način... sa krem špinatom... \njednostavno i ukusno..",
+  "koraci" : "1 - Krumpir skuhati, ishladiti, oguliti, naribati.. \n(najbolje je kada se krumpir skuha dan prije) .. \nodati jaje, brašno, sol .. napraviti tijesto\n\n2 - od tijesta napraviti valjuške..\n\n3 - formirati njoke, zatim ih malo pritisnuti viljuškom .. \novaj put su mi njoke različite od veličine\n\n4 - u tavi zagrijati maslac, dodati sitno narezan luk i češnjak\n\n5 - kada luk malo omekša, dodati špinat.. \novaj put sam koristila smrznuti.. dodati malo soli, malo vegete",
+  "youtubeLink" : "",
+  "ocena" : 0.0,
+  "tezina" : "LAKO",
+  "vremePripreme" : 20,
+  "uredjen" : false,
+  "datum" : "2020-09-07",
+  "uredjaji" : [ {
+    "pozeljan" : false,
+    "uredjaj" : {
+      "sifra" : 3,
+      "naziv" : "Blender"
+    }
+  } ],
+  "sastojci" : [ {
+    "kolicina" : 6,
+    "mernaJedinica" : "komada",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Krompir"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "ceno",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Luk"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kasicica",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "So"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "komad",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Jaje"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "casa",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Brasno"
+  }, {
+    "kolicina" : 1,
+    "mernaJedinica" : "kg",
+    "tip" : "ESENCIJALAN",
+    "nazivProizvoda" : "Sampinjoni"
+  } ],
+  "kategorije" : [ 13 ],
+  "autor" : "njegi99",
+  "ocene" : { },
+  "recenzije" : [ ],
+  "pregleda" : 2
+}
