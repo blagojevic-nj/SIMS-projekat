@@ -92,7 +92,7 @@ public class MaliPrikazRecepta extends JPanel {
 				kategorije += "...";
 				break;
 			}
-			kategorije += MainWindow.katM.getKategorija(k).getNaziv() + "; ";
+			kategorije += mW.katM.getKategorija(k).getNaziv() + "; ";
 			brojac++;
 		}
 		

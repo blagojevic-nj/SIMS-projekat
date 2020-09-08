@@ -18,7 +18,7 @@ public class UredjajiPanel extends JPanel {
 	private ArrayList<UredjajUReceptu> uredjaji;
 	private ArrayList<StavkaUredjaja> stavke;
 
-	public UredjajiPanel() {
+	public UredjajiPanel(MainWindow mw) {
 		uredjaji = new ArrayList<UredjajUReceptu>();
 		stavke = new ArrayList<StavkaUredjaja>();
 		setLayout(null);
@@ -26,7 +26,7 @@ public class UredjajiPanel extends JPanel {
 		setBounds(560, 160, 250, 200);
 
 		JPanel lista = new JPanel(new MigLayout());
-		for (String s : MainWindow.uM.getNaziviUredjaja()) {
+		for (String s : mw.uM.getNaziviUredjaja()) {
 			StavkaUredjaja stavka = new StavkaUredjaja(s);
 			stavke.add(stavka);
 			lista.add(stavka.cb);
@@ -49,7 +49,7 @@ public class UredjajiPanel extends JPanel {
 				for (StavkaUredjaja s : stavke) {
 					if (s.cb.isSelected()) {
 						UredjajUReceptu uur = new UredjajUReceptu(s.neophodan.isSelected(),
-								MainWindow.uM.getUredjaj(s.cb.getText()));
+								mw.uM.getUredjaj(s.cb.getText()));
 						uredjaji.add(uur);
 					}
 				}

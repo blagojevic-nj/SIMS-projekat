@@ -10,17 +10,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import manageri.ReceptManager;
 import model.Korisnik;
 import model.Recept;
 import model.RegistrovaniKorisnik;
 import net.miginfocom.swing.MigLayout;
 
 public class MojiReceptiPanel extends JPanel {
-
 	private static final long serialVersionUID = 1L;
-
-	private ReceptManager rM;
+	
 	private JScrollPane scrollRecepti;
 	private Image img;
 
@@ -28,8 +25,6 @@ public class MojiReceptiPanel extends JPanel {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		setPreferredSize(size);
-
-		rM = ReceptManager.getInstance();
 
 		setLayout(null);
 		setBounds(200, 0, 1040, 650);
@@ -49,7 +44,7 @@ public class MojiReceptiPanel extends JPanel {
 		scrollRecepti.setBorder(BorderFactory.createEmptyBorder());
 		scrollRecepti.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		add(scrollRecepti);
-		for (Recept recept : rM.getRecepti(((RegistrovaniKorisnik) k).getRecepti())) {
+		for (Recept recept : mw.rM.getRecepti(((RegistrovaniKorisnik) k).getRecepti())) {
 			MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, true);
 			receptiPane.add(mpr);
 		}

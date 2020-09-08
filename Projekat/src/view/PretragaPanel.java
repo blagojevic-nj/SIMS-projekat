@@ -22,9 +22,6 @@ import javax.swing.JSeparator;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
-import manageri.KategorijaManager;
-import manageri.ProizvodManager;
-import manageri.ReceptManager;
 import model.Kategorija;
 import model.Proizvod;
 import model.Recept;
@@ -38,12 +35,10 @@ public class PretragaPanel extends JPanel {
 	private JSpinner spinner;
 	private Image img;
 	private ArrayList<Recept> rezulat;
-
-	private ReceptManager rm = ReceptManager.getInstance();
-	private ProizvodManager pm = ProizvodManager.getInstance();
-	private KategorijaManager km = KategorijaManager.getInstance();
+	private MainWindow mw;
 
 	public PretragaPanel(MainWindow mw) {
+		this.mw = mw;
 		this.img = new ImageIcon("data/ikonice/whiteBackSmall.jpg").getImage();
 		setBackground(Color.LIGHT_GRAY);
 		setBounds(0, 0, 300, 700);
@@ -65,7 +60,7 @@ public class PretragaPanel extends JPanel {
 
 		DefaultComboBoxModel<String> proizvodBoxModel = new DefaultComboBoxModel<String>();
 		proizvodBoxModel.addElement("");
-		for (String s : pm.getNaziviProizvoda())
+		for (String s : mw.pM.getNaziviProizvoda())
 			proizvodBoxModel.addElement(s);
 
 		sastojciBox = new JComboBox<String>(proizvodBoxModel);
@@ -127,7 +122,7 @@ public class PretragaPanel extends JPanel {
 
 		DefaultComboBoxModel<String> kategorijaBoxModel = new DefaultComboBoxModel<String>();
 		kategorijaBoxModel.addElement("");
-		for (String k : km.getNaziviKategorija())
+		for (String k : mw.katM.getNaziviKategorija())
 			kategorijaBoxModel.addElement(k);
 
 		kategorijeBox = new JComboBox<String>(kategorijaBoxModel);
@@ -232,18 +227,18 @@ public class PretragaPanel extends JPanel {
 		ArrayList<Kategorija> kategorije = new ArrayList<Kategorija>();
 
 		for (int i = 0; i < sastojciList.getModel().getSize(); i++) {
-			sastojci.add(pm.getProizvod(sastojciList.getModel().getElementAt(i)));
+			sastojci.add(mw.pM.getProizvod(sastojciList.getModel().getElementAt(i)));
 		}
 		for (int i = 0; i < nepozeljniList.getModel().getSize(); i++) {
-			nepozeljni.add(pm.getProizvod(nepozeljniList.getModel().getElementAt(i)));
+			nepozeljni.add(mw.pM.getProizvod(nepozeljniList.getModel().getElementAt(i)));
 		}
 		for (int i = 0; i < kategorijeList.getModel().getSize(); i++) {
-			kategorije.add(km.getKategorija(kategorijeList.getModel().getElementAt(i)));
+			kategorije.add(mw.katM.getKategorija(kategorijeList.getModel().getElementAt(i)));
 		}
 		int vreme = (int) spinner.getValue();
 		if (vreme >= 300)
 			vreme = Integer.MAX_VALUE;
-		rezulat = rm.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, vreme);
+		rezulat = mw.rM.pretraziPoKriterijumima(sastojci, rbtnSvi.isSelected(), nepozeljni, kategorije, vreme);
 	}
 
 	public void paintComponent(Graphics g) {

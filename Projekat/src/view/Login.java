@@ -25,13 +25,14 @@ public class Login extends JPanel{
 	private JPasswordField passwordField;
 	private JTextField textField;
 	private MainWindow m;
-	private KorisnikManager km = KorisnikManager.getInstance();
+	private KorisnikManager km;
 	private Image img;
 
 	public Login(MainWindow mw)
 	{
 		this.img = new ImageIcon("data/ikonice/whiteBackSmall.jpg").getImage();
 		m = mw;
+		km = mw.km;
 		setBounds(0, 0, 300, 700);
 		setLayout(null);
 

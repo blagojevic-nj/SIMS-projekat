@@ -17,21 +17,13 @@ public class KategorijaManager {
 	private HashMap<Integer, Kategorija> sveKategorije;
 	private ArrayList<String> naziviKategorija; // trebace za autocomplete prilikom izbora kategorija
 	private boolean promenjen;
-	private static KategorijaManager instance = null;
 	static final String FAJL_SA_KATEGORIJAMA = "data/podaci/kategorije.json";
 	
-	private KategorijaManager() {
+	public KategorijaManager() {
 		sveKategorije = new HashMap<Integer, Kategorija>();
 		naziviKategorija = new ArrayList<String>();
 		ucitajKategorije();
 		promenjen = false;
-	}
-	
-	public static KategorijaManager getInstance() {
-		if (instance == null) {
-			instance = new KategorijaManager();
-		}
-		return instance;
 	}
 	
 	private void ucitajKategorije() {

@@ -42,11 +42,11 @@ public class MainWindow extends JFrame {
 	private int xx, xy;
 	private CardLayout menuCardLayout;
 
-	static ReceptManager rM = ReceptManager.getInstance();
-	static KorisnikManager km = KorisnikManager.getInstance();
-	static ProizvodManager pM = ProizvodManager.getInstance();
-	static UredjajManager uM = UredjajManager.getInstance();
-	static KategorijaManager katM = KategorijaManager.getInstance();
+	public ReceptManager rM = new ReceptManager();
+	public KorisnikManager km = new KorisnikManager();
+	public ProizvodManager pM = new ProizvodManager();
+	public UredjajManager uM = new UredjajManager();
+	public KategorijaManager katM = new KategorijaManager();
 
 	static public Nalog trenutniNalog;
 

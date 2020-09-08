@@ -31,11 +31,12 @@ public class Register extends JPanel {
 	private MainWindow m;
 	private Image img;
 
-	private KorisnikManager km = KorisnikManager.getInstance();
+	private KorisnikManager km;
 
 	public Register(MainWindow mw) {
 		this.img = new ImageIcon("data/ikonice/whiteBackSmall.jpg").getImage();
 		m = mw;
+		km = m.km;
 		setBackground(Color.LIGHT_GRAY);
 		setBounds(0, 0, 300, 700);
 		setLayout(null);

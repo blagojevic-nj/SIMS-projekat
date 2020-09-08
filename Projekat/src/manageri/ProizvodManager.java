@@ -17,21 +17,13 @@ public class ProizvodManager {
 	private HashMap<Integer, Proizvod> sviProizvodi;
 	private ArrayList<String> naziviProizvoda; // trebace za autocomplete prilikom izbora sastojaka
 	private boolean promenjen;
-	private static ProizvodManager instance = null;
 	static final String FAJL_SA_PROIZVODIMA = "data/podaci/proizvodi.json";
 	
-	private ProizvodManager() {
+	public ProizvodManager() {
 		sviProizvodi = new HashMap<Integer, Proizvod>();
 		naziviProizvoda = new ArrayList<String>();
 		ucitajProizvode();
 		promenjen = false;
-	}
-	
-	public static ProizvodManager getInstance() {
-		if (instance == null) {
-			instance = new ProizvodManager();
-		}
-		return instance;
 	}
 	
 	private void ucitajProizvode() {

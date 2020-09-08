@@ -30,7 +30,7 @@ public class SastojciPanel extends JPanel {
 	private ArrayList<Stavka> stavke;
 	public DodavanjeRecepta parent;
 
-	public SastojciPanel() {
+	public SastojciPanel(MainWindow mw) {
 		sastojci = new ArrayList<Sastojak>();
 		stavke = new ArrayList<Stavka>();
 		setLayout(null);
@@ -57,7 +57,7 @@ public class SastojciPanel extends JPanel {
 		add(pretraga);
 
 		JPanel lista = new JPanel(new MigLayout());
-		for (String s : MainWindow.pM.getNaziviProizvoda()) {
+		for (String s : mw.pM.getNaziviProizvoda()) {
 			Stavka stavka = new Stavka(s);
 			stavke.add(stavka);
 			lista.add(stavka.cb);
@@ -84,8 +84,8 @@ public class SastojciPanel extends JPanel {
 				String naziv = JOptionPane.showInputDialog("Unesite ime novog sastojka:");
 				if (naziv != null)
 					if (!naziv.trim().equals("")) {
-						MainWindow.pM.novProizvod(naziv.trim());
-						MainWindow.pM.sacuvajProizvode();
+						mw.pM.novProizvod(naziv.trim());
+						mw.pM.sacuvajProizvode();
 						Stavka s = new Stavka(naziv.trim());
 						stavke.add(s);
 						revalidate();

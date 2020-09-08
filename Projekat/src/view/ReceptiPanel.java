@@ -143,7 +143,7 @@ public class ReceptiPanel extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				String upit = search.getText();
 				if (!upit.equals(UPIT_TEKST) && !upit.equals("")) {
-					initDonjiDeo(MainWindow.rM.pretraziPoNazivu(upit), mW);
+					initDonjiDeo(mW.rM.pretraziPoNazivu(upit), mW);
 					System.out.println(upit);
 					searchBtn.setEnabled(false);
 				}
@@ -176,7 +176,7 @@ public class ReceptiPanel extends JPanel {
 			donjiDeo.add(lbl1);
 			JSeparator sep1 = new JSeparator();
 			donjiDeo.add(sep1);
-			for (Recept rec : MainWindow.rM.getNajnovijih10()) {
+			for (Recept rec : mW.rM.getNajnovijih10()) {
 				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW, false);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);
@@ -190,7 +190,7 @@ public class ReceptiPanel extends JPanel {
 			donjiDeo.add(lbl2);
 			JSeparator sep2 = new JSeparator();
 			donjiDeo.add(sep2);
-			for (Recept rec : MainWindow.rM.getNajpopularnijih10()) {
+			for (Recept rec : mW.rM.getNajpopularnijih10()) {
 				MaliPrikazRecepta mpr = new MaliPrikazRecepta(rec, mW, false);
 				donjiDeo.add(mpr);
 				paneli.add(mpr);

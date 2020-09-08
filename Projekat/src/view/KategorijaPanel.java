@@ -17,14 +17,14 @@ public class KategorijaPanel extends JPanel{
 	private ArrayList<Integer> kategorije;
 	private ArrayList<JCheckBox> boksovi;
 	public DodavanjeRecepta parent;
-	public KategorijaPanel() {
+	public KategorijaPanel(MainWindow mw) {
 		setBounds(560, 80, 210, 150);
 		setLayout(null);
 		JPanel lista = new JPanel(new MigLayout());
 		kategorije = new ArrayList<Integer>();
 		boksovi = new ArrayList<JCheckBox>();
 		
-		for(String s: MainWindow.katM.getNaziviKategorija()) {
+		for(String s: mw.katM.getNaziviKategorija()) {
 			JCheckBox cb = new JCheckBox(s);
 			boksovi.add(cb);
 			lista.add(cb, "wrap");
@@ -46,7 +46,7 @@ public class KategorijaPanel extends JPanel{
 				kategorije.clear();
 				for(JCheckBox cb: boksovi) {
 					if(cb.isSelected()) {
-						kategorije.add(MainWindow.katM.getKategorija(cb.getText()).getSifra());
+						kategorije.add(mw.katM.getKategorija(cb.getText()).getSifra());
 					}
 				}
 				

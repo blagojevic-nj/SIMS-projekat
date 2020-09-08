@@ -16,15 +16,12 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSeparator;
 
-import manageri.ReceptManager;
 import model.Recept;
 import model.RegistrovaniKorisnik;
 import net.miginfocom.swing.MigLayout;
 
 public class PraceniSacuvaniPanel extends JPanel {
-
 	private static final long serialVersionUID = 1L;
-	private ReceptManager rm;
 
 	private Image img;
 	private RegistrovaniKorisnik rk;
@@ -38,7 +35,6 @@ public class PraceniSacuvaniPanel extends JPanel {
 		paneli = new ArrayList<MaliPrikazRecepta>();
 		praceni = new ArrayList<JednaStavkaPanel>();
 		rk = k;
-		rm = ReceptManager.getInstance();
 
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		setPreferredSize(size);
@@ -90,7 +86,7 @@ public class PraceniSacuvaniPanel extends JPanel {
 		scrollRecepti.setBorder(BorderFactory.createEmptyBorder());
 		scrollRecepti.getVerticalScrollBar().setPreferredSize(new Dimension(0, 0));
 		add(scrollRecepti);
-		for (Recept recept : rm.getRecepti(k.getSacuvaniRecepti())) {
+		for (Recept recept : mw.rM.getRecepti(k.getSacuvaniRecepti())) {
 			MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 			receptiPane.add(mpr);
 			paneli.add(mpr);
@@ -165,7 +161,7 @@ class JednaStavkaPanel extends JPanel{
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
 				mw.postaviDesniPanel(new PregledKorisnikaPanel(mw, kP,
-					(RegistrovaniKorisnik) MainWindow.km.getKorisnik(username)));
+					(RegistrovaniKorisnik) mw.km.getKorisnik(username)));
 			}
 
 			@Override

@@ -91,9 +91,9 @@ public class PregledKorisnikaPanel extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				trenutni.zaprati(korisnik);
-				MainWindow.km.promenjen(trenutni.getKorisnickoIme());
-				MainWindow.km.promenjen(korisnik.getKorisnickoIme());
-				MainWindow.km.sacuvajKorisnike();
+				mw.km.promenjen(trenutni.getKorisnickoIme());
+				mw.km.promenjen(korisnik.getKorisnickoIme());
+				mw.km.sacuvajKorisnike();
 				unfollow.setVisible(true);
 				follow.setVisible(false);
 				revalidate();
@@ -107,9 +107,9 @@ public class PregledKorisnikaPanel extends JPanel {
 		unfollow.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				trenutni.otprati(korisnik);
-				MainWindow.km.promenjen(trenutni.getKorisnickoIme());
-				MainWindow.km.promenjen(korisnik.getKorisnickoIme());
-				MainWindow.km.sacuvajKorisnike();
+				mw.km.promenjen(trenutni.getKorisnickoIme());
+				mw.km.promenjen(korisnik.getKorisnickoIme());
+				mw.km.sacuvajKorisnike();
 				unfollow.setVisible(false);
 				follow.setVisible(true);
 				revalidate();
@@ -126,7 +126,7 @@ public class PregledKorisnikaPanel extends JPanel {
 		unfollow.setVisible(false);
 		follow.setVisible(false);
 		if (MainWindow.trenutniNalog != null) {
-			trenutni = (RegistrovaniKorisnik) MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
+			trenutni = (RegistrovaniKorisnik) mw.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
 			if (korisnik.getKorisnickoIme().equals(trenutni.getKorisnickoIme())) {
 				unfollow.setVisible(false);
 				follow.setVisible(false);
@@ -252,7 +252,7 @@ public class PregledKorisnikaPanel extends JPanel {
 			nema.setFont(new Font("Lucida Sans", Font.BOLD, 20));
 			receptiPane.add(nema);
 		} else
-			for (Recept recept : MainWindow.rM.getRecepti(korisnik.getRecepti())) {
+			for (Recept recept : mw.rM.getRecepti(korisnik.getRecepti())) {
 				MaliPrikazRecepta mpr = new MaliPrikazRecepta(recept, mw, false);
 				receptiPane.add(mpr);
 				paneli.add(mpr);

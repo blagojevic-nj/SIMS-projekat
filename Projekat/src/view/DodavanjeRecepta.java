@@ -46,7 +46,7 @@ public class DodavanjeRecepta extends JPanel{
 	private TezinaPanel tP;
 	String path;
 	
-	public DodavanjeRecepta(MainWindow mW, JPanel prethodni) {
+	public DodavanjeRecepta(MainWindow mw, JPanel prethodni) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 	    Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 	    setPreferredSize(size);
@@ -152,7 +152,7 @@ public class DodavanjeRecepta extends JPanel{
 		
 		add(kat);
 		
-		kP = new KategorijaPanel();
+		kP = new KategorijaPanel(mw);
 		kP.setVisible(false);
 		add(kP);
 		kP.parent = this;
@@ -187,7 +187,7 @@ public class DodavanjeRecepta extends JPanel{
 		
 		add(sas);
 		
-		sP = new SastojciPanel();
+		sP = new SastojciPanel(mw);
 		sP.setVisible(false);
 		add(sP);
 		sP.parent = this;
@@ -207,7 +207,7 @@ public class DodavanjeRecepta extends JPanel{
 		
 		add(ure);
 		
-		uP = new UredjajiPanel();
+		uP = new UredjajiPanel(mw);
 		uP.setVisible(false);
 		add(uP);
 		uP.parent = this;
@@ -279,8 +279,8 @@ public class DodavanjeRecepta extends JPanel{
 					validan = false;
 				}
 				if(validan) {
-					RegistrovaniKorisnik autor = (RegistrovaniKorisnik)MainWindow.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
-					Recept r = MainWindow.rM.noviRecept(naz.getText().trim(), opisArea.getText().trim(), koraciArea.getText().trim(), tP.getTezinu(), 
+					RegistrovaniKorisnik autor = (RegistrovaniKorisnik)mw.km.getKorisnik(MainWindow.trenutniNalog.getKorisnickoIme());
+					Recept r = mw.rM.noviRecept(naz.getText().trim(), opisArea.getText().trim(), koraciArea.getText().trim(), tP.getTezinu(), 
 							Integer.parseInt(vreme.getText().trim()), uP.getUredjaji(), sP.getSastojci(), kP.getKategorije(), 
 							autor, yt.getText().trim());
 					if(path != null) {
@@ -288,19 +288,19 @@ public class DodavanjeRecepta extends JPanel{
 					}
 					
 					autor.addRecept(r.getId());
-					MainWindow.km.promenjen(autor.getKorisnickoIme());
+					mw.km.promenjen(autor.getKorisnickoIme());
 					for (Sastojak s : r.getSastojci()) {
-						MainWindow.pM.getProizvod(s.getNazivProizvoda()).addRecept(r.getId());
+						mw.pM.getProizvod(s.getNazivProizvoda()).addRecept(r.getId());
 					}
 					for (int k : r.getKategorije()) {
-						MainWindow.katM.getKategorija(k).addRecept(r.getId());
+						mw.katM.getKategorija(k).addRecept(r.getId());
 					}
 					
-					MainWindow.rM.sacuvajRecepte();
-					MainWindow.rM.sacuvajTabelu();
+					mw.rM.sacuvajRecepte();
+					mw.rM.sacuvajTabelu();
 					JOptionPane.showMessageDialog(null, "Uspesno ste kreirali recept!");
 					
-					mW.postaviDesniPanel(new ReceptiPanel(MainWindow.rM.getNajnovijih10(), mW));
+					mw.postaviDesniPanel(new ReceptiPanel(mw.rM.getNajnovijih10(), mw));
 					
 				}
 				else {
@@ -318,9 +318,9 @@ public class DodavanjeRecepta extends JPanel{
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				int result = JOptionPane.showConfirmDialog(mW.mainContentContainerPanel, "Podaci se nece sacuvati, da li ste sigurni?");
+				int result = JOptionPane.showConfirmDialog(mw.mainContentContainerPanel, "Podaci se nece sacuvati, da li ste sigurni?");
 				if (result == JOptionPane.YES_OPTION) {
-					mW.postaviDesniPanel(prethodni);
+					mw.postaviDesniPanel(prethodni);
 				}
 			}
 			

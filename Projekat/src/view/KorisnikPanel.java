@@ -3,7 +3,6 @@ package view;
 import javax.swing.JPanel;
 import javax.swing.JSeparator;
 
-import manageri.KorisnikManager;
 import model.Korisnik;
 import model.Nalog;
 import model.RegistrovaniKorisnik;
@@ -28,7 +27,6 @@ public class KorisnikPanel extends JPanel {
 	public PraceniSacuvaniPanel pnlPraceni;
 	private JLabel username, lblNalog, lblKuhinja, lblRecepti, lblPodesavanje, lblDodajRecept, lblPraceni,lblIzvestaj;
 
-	private KorisnikManager km;
 	private Nalog trenutniNalog;
 	private Korisnik korisnik;
 	private MainWindow mw;
@@ -37,10 +35,9 @@ public class KorisnikPanel extends JPanel {
 
 	public KorisnikPanel(MainWindow mainWindow, Nalog trenutniNalog) {
 		mw = mainWindow;
-		km = KorisnikManager.getInstance();
 		this.trenutniNalog = trenutniNalog;
-		korisnik = km.getKorisnik(trenutniNalog.getKorisnickoIme());
-		km.promenjen(korisnik.getKorisnickoIme());
+		korisnik = mw.km.getKorisnik(trenutniNalog.getKorisnickoIme());
+		mw.km.promenjen(korisnik.getKorisnickoIme());
 
 		setLayout(null);
 		setBounds(0, 0, 1040, 650);
@@ -347,7 +344,7 @@ public class KorisnikPanel extends JPanel {
 
 	public void prikaziKuhinjaPanel() {
 		if (pnlKuhinja == null)
-			pnlKuhinja = new MojaKuhinjaPanel((RegistrovaniKorisnik) korisnik);
+			pnlKuhinja = new MojaKuhinjaPanel((RegistrovaniKorisnik) korisnik, mw);
 		postaviPanel(pnlKuhinja);
 	}
 

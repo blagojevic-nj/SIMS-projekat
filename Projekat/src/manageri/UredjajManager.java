@@ -17,21 +17,13 @@ public class UredjajManager {
 	private HashMap<Integer, Uredjaj> sviUredjaji;
 	private ArrayList<String> naziviUredjaja; // trebace za autocomplete prilikom izbora uredjaja
 	private boolean promenjen;
-	private static UredjajManager instance = null;
 	static final String FAJL_SA_UREDJAJIMA = "data/podaci/uredjaji.json";
 	
-	private UredjajManager() {
+	public UredjajManager() {
 		sviUredjaji = new HashMap<Integer, Uredjaj>();
 		naziviUredjaja = new ArrayList<String>();
 		ucitajUredjaje();
 		promenjen = false;
-	}
-	
-	public static UredjajManager getInstance() {
-		if (instance == null) {
-			instance = new UredjajManager();
-		}
-		return instance;
 	}
 	
 	private void ucitajUredjaje() {

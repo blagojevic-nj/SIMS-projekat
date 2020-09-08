@@ -11,7 +11,6 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import model.Bedz;
 import model.Korisnik;
 import model.Nalog;
-import model.Recept;
 import model.RegistrovaniKorisnik;
 import model.TipNaloga;
 
@@ -22,22 +21,14 @@ public class KorisnikManager {
 	private HashMap<String, Nalog> sviNalozi;
 	private HashMap<Integer, Korisnik> ucitaniKorisnici;
 	private ArrayList<Nalog> promenjeniNalozi;
-	private static KorisnikManager instance = null;
 	static final String FOLDER_SA_KORISNICIMA = "data/korisnici";
 	static final String FAJL_SA_NALOZIMA = FOLDER_SA_KORISNICIMA+"/nalozi.json";
 	
-	private KorisnikManager() {
+	public KorisnikManager() {
 		sviNalozi = new HashMap<String, Nalog>();
 		ucitaniKorisnici = new HashMap<Integer, Korisnik>();
 		promenjeniNalozi = new ArrayList<Nalog>();
 		ucitajNaloge();
-	}
-	
-	public static KorisnikManager getInstance() {
-		if (instance == null) {
-			instance = new KorisnikManager();
-		}
-		return instance;
 	}
 	
 	private void ucitajNaloge() {
@@ -172,15 +163,4 @@ public class KorisnikManager {
 		promenjeniNalozi.add(sviNalozi.get(username));
 	}
 	
-	public void prosekOcenaKorisnik(RegistrovaniKorisnik korisnik) {
-		ReceptManager rp = ReceptManager.getInstance();
-		float prosek = 0;
-		float count = 0;
-		for (Integer sifra : korisnik.getRecepti()) {
-			Recept recept = rp.getRecept(sifra);
-			prosek += recept.getOcena();
-			count++;
-		}
-		korisnik.setProsecnaOcena(prosek / count);
-	}
 }

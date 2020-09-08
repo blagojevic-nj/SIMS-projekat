@@ -33,14 +33,14 @@ public class MojaKuhinjaPanel extends JPanel {
 	private JList<String> sastojciList, kategorijeList, uredjajiList;
 	private JScrollPane sastojciSP, kategorijeSP, uredjajiSP;
 
-	public MojaKuhinjaPanel(RegistrovaniKorisnik korisnik) {
+	public MojaKuhinjaPanel(RegistrovaniKorisnik korisnik, MainWindow mw) {
 		this.img = new ImageIcon("data/ikonice/back2.jpg").getImage();
 		Dimension size = new Dimension(img.getWidth(null), img.getHeight(null));
 		setPreferredSize(size);
 
-		um = UredjajManager.getInstance();
-		pm = ProizvodManager.getInstance();
-		kgm = KategorijaManager.getInstance();
+		um = mw.uM;
+		pm = mw.pM;
+		kgm = mw.katM;
 
 		setLayout(null);
 		setBounds(200, 0, 1040, 650);
