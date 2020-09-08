@@ -53,8 +53,10 @@ public class MaliPrikazRecepta extends JPanel {
 		slika.addMouseListener(new MouseListener() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (!MainWindow.expands)
+				if (!MainWindow.expands) {
+					zoomPanel.setVisible(false);
 					mW.postaviDesniPanel(new VelikiPrikazRecepta(mW, mW.getTrenutniPanel(), r));
+				}
 			}
 
 			@Override
